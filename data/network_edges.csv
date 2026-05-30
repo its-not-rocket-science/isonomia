@@ -1,0 +1,761 @@
+source,target,edge_type
+Neanderthal Megafauna Councils,Zulu Impi Regiments,parallel
+Inuit Qaggiq Assemblies,Neanderthal Megafauna Councils,contrast
+Denisovan Cave Networks,Inuit Qaggiq Assemblies,comparator
+Denisovan Cave Networks,Lapita Voyaging Networks,parallel
+Denisovan Cave Networks,Pueblo Kiva Councils,contrast
+Natufian Grain Storage Pacts,Çatalhöyük,comparator
+Mohenjo-daro / Indus Valley Civilisation,Natufian Grain Storage Pacts,comparator
+Natufian Grain Storage Pacts,Pre-Pottery Neolithic A (PPNA),parallel
+Jomon Shellfish Consensus,Natufian Communities,comparator
+Inuit Qaggiq Assemblies,Jomon Shellfish Consensus,comparator
+Igbo Assemblies,San Xaro Networks,comparator
+Pacific Potlatch,San Xaro Networks,comparator
+Inuit Qaggiq Assemblies,San Xaro Networks,parallel
+Ainu Bear Ritual Governance,Inuit Qaggiq Assemblies,comparator
+Ainu Bear Ritual Governance,Norse Thing System,comparator
+Ainu Bear Ritual Governance,Natufian Communities,parallel
+Ainu Bear Ritual Governance,Jomon Shellfish Consensus,contrast
+Indigenous IPLCs,Iroquois Confederacy / Haudenosaunee,comparator
+Aboriginal Elders Councils,Indigenous IPLCs,comparator
+Bhutanese Gross National Happiness,Indigenous IPLCs,parallel
+Akan Amanhene Gold States,Indigenous IPLCs,contrast
+Iroquois Confederacy / Haudenosaunee,Yolngu Aboriginal Kinship,comparator
+Inuit Qaggiq Assemblies,Yolngu Aboriginal Kinship,parallel
+Chumash Tomol Canoe Guilds,Fuegian Canoe Councils,comparator
+Fuegian Canoe Councils,Pueblo Kiva Councils,contrast
+Aboriginal Tjurunga Councils,Iroquois Confederacy / Haudenosaunee,parallel
+Aboriginal Tjurunga Councils,Pueblo Kiva Councils,comparator
+Aboriginal Tjurunga Councils,Blemmyes Desert Assemblies,contrast
+Cucuteni-Trypillia Mega-Settlements,Pueblo Kiva Councils,comparator
+Cucuteni-Trypillia Mega-Settlements,Rhenish Hanseatic Cities,comparator
+Anasazi Kiva Water Councils,Cucuteni-Trypillia Mega-Settlements,parallel
+Egyptian Old Kingdom,Nubian Qustul Sacral Kingship,comparator
+Egyptian Nomarchies,Nubian Qustul Sacral Kingship,parallel
+Andean Ayllu Systems,Sumerian Temple States,comparator
+Khmer Devaraja,Sumerian Temple States,comparator
+Hawaiian Kapu System,Sumerian Temple States,contrast
+Indus Priest-Kings,Minoan Crete,comparator
+Indus Priest-Kings,Napoleonic Meritocracy,parallel
+Egyptian Nomarchies,Persian Satrapy System,comparator
+Egyptian Nomarchies,Hittite Panku Council,contrast
+Egyptian Nomarchies,Xia Dynasty Hydraulic Rule,comparator
+Mohenjo-daro / Indus Valley Civilisation,Xia Dynasty Hydraulic Rule,comparator
+Akan Amanhene Gold States,Xia Dynasty Hydraulic Rule,parallel
+Minoan Thalassocracy,Venetian Republic,comparator
+Minoan Thalassocracy,Phoenician Merchant Oligarchies,comparator
+Lapita Voyaging Networks,Minoan Thalassocracy,parallel
+British Parliamentary System,Poverty Point Earthwork League,parallel
+Hopewell Copper Exchange,Poverty Point Earthwork League,contrast
+Hittite Panku Council,Holy Roman Empire,comparator
+Hittite Panku Council,Late Uruk / Early Dynastic,parallel
+Athenian Democracy,Hittite Panku Council,contrast
+Egyptian Old Kingdom,Hittite Sun Priest-Kings,comparator
+Hittite Panku Council,Mycenaean Wanax System,comparator
+Celtic Druidic Synods,Mycenaean Wanax System,comparator
+Mycenaean Wanax System,Viking Law Speakers,parallel
+Mycenaean Wanax System,Phoenician Merchant Oligarchies,contrast
+Egyptian Old Kingdom,Shang Dynasty Oracle Kings,comparator
+Shang Dynasty Oracle Kings,Zapotec Cocijo Cult,parallel
+Greek Democracy,Vedic Sabha Assemblies,comparator
+Iroquois Confederacy / Haudenosaunee,Vedic Sabha Assemblies,comparator
+Norse Thing System,Vedic Sabha Assemblies,parallel
+Holy Roman Empire,Vedic Sabha Assemblies,contrast
+Lapita Voyaging Networks,Viking Law Speakers,comparator
+Lapita Voyaging Networks,Phoenician Merchant Oligarchies,parallel
+Minoan Crete,Olmec Were-Jaguar Cult,comparator
+Aztec Triple Alliance,Olmec Were-Jaguar Cult,comparator
+Olmec Were-Jaguar Cult,Shang Dynasty,parallel
+Holy Roman Empire,Zhou Dynasty Mandate of Heaven,comparator
+Tokugawa Shogunate,Zhou Dynasty Mandate of Heaven,comparator
+European Union Governance,Zhou Dynasty Mandate of Heaven,parallel
+Hittite Panku Council,Zhou Dynasty Mandate of Heaven,contrast
+Hallstatt Salt Lords,Phoenician Merchant Oligarchies,comparator
+Hallstatt Salt Lords,Volga Bulgar Islamic Merchants,comparator
+Hallstatt Salt Lords,Nabatean Water Merchants,parallel
+Phoenician Merchant Oligarchies,Venetian Republic,comparator
+Hanseatic League,Phoenician Merchant Oligarchies,comparator
+Egyptian Nomarchies,Phoenician Merchant Oligarchies,contrast
+Adena Moundbuilder Councils,Hopewell Copper Exchange,comparator
+Adena Moundbuilder Councils,Mississippian Chiefdoms,comparator
+Adena Moundbuilder Councils,Jomon Shellfish Consensus,parallel
+Adena Moundbuilder Councils,Cahokia Birdman Dynasty,contrast
+Nok Terracotta Chiefdoms,Shang Dynasty,comparator
+Nok Terracotta Chiefdoms,Olmec,parallel
+Assyrian Military Autocracy,Holy Roman Empire,comparator
+Assyrian Military Autocracy,Napoleonic Meritocracy,comparator
+Assyrian Military Autocracy,Persian Satrapy System,contrast
+Khmer Devaraja,Urartian Hydraulic Kings,comparator
+Nabatean Water Merchants,Urartian Hydraulic Kings,comparator
+Irish Traveller Cant Systems,Urartian Hydraulic Kings,parallel
+Minoan Crete,Phrygian Matar Cult,comparator
+Etruscan Haruspex Diviners,Shang Dynasty,comparator
+Etruscan Haruspex Diviners,Hittite Panku Council,comparator
+Nabatean Water Merchants,Sabaean Dam Council,comparator
+Khmer Devaraja,Sabaean Dam Council,comparator
+Anasazi Kiva Water Councils,Sabaean Dam Council,parallel
+Egyptian Nomarchies,Kingdom of Kush,comparator
+Greek Diarchy,Scythian Kurgan Diarchy,comparator
+Etruscan Lucumones,Holy Roman Empire,contrast
+Etruscan Lucumones,Greek Democracy,comparator
+Lydian Electrum Oligarchy,Phoenician Merchant Oligarchies,comparator
+Greek Democracy,Lydian Electrum Oligarchy,comparator
+Lydian Electrum Oligarchy,Venetian Arsenal Guilds,parallel
+Ottoman Millet System,Satrapy System,comparator
+Icelandic Crowdsourced Constitution,Roman Republic,comparator
+Roman Republic,Venetian Arsenal Guilds,parallel
+Athenian Democracy,Roman Republic,contrast
+Athenian Democracy,Swiss Cantonal Democracy,comparator
+Athenian Democracy,Iroquois Confederacy / Haudenosaunee,comparator
+Celtic Druidic Synods,Irish Brehon Law,comparator
+Celtic Druidic Synods,Tibetan Ganden Phodrang,parallel
+Roman Collegia Guild Republics,Sinti Musical Guilds,comparator
+Ottoman Millet System,Roman Collegia Guild Republics,comparator
+Bantu Mfecane Councils,Celtic Druidic Synods,comparator
+Bantu Mfecane Councils,Iroquois Confederacy / Haudenosaunee,comparator
+Bantu Mfecane Councils,Lapita Voyaging Networks,parallel
+Bantu Mfecane Councils,Great Zimbabwe Rain Priests,contrast
+Iroquois Confederacy / Haudenosaunee,Proto-Norse Thing Assemblies,comparator
+Greek Democracy,Proto-Norse Thing Assemblies,comparator
+Celtic Druidic Synods,Proto-Norse Thing Assemblies,parallel
+Shang Dynasty,Zapotec Glyph-Judge System,comparator
+Egyptian Nomarchies,Zapotec Glyph-Judge System,parallel
+Aztec Triple Alliance,Zapotec Glyph-Judge System,contrast
+Berber Jemaa,Celtic Druidic Synods,comparator
+Berber Jemaa,Sami Noaide Shamanic Bands,parallel
+Iroquois Confederacy / Haudenosaunee,La Tène Tribal Federations,comparator
+La Tène Tribal Federations,Viking Law Speakers,parallel
+Rhodes Naval Oligarchy,Venetian Republic,comparator
+Phoenician Merchant Oligarchies,Rhodes Naval Oligarchy,comparator
+Hanseatic League,Rhodes Naval Oligarchy,parallel
+Nabatean Water Merchants,Phoenician Merchant Oligarchies,comparator
+Nabatean Water Merchants,Venetian Republic,comparator
+Nabatean Water Merchants,Sogdian Merchant Caravanserais,parallel
+Garamantian Foggaras,Nabatean Water Merchants,comparator
+Garamantian Foggaras,Persian Satrapy System,comparator
+Garamantian Foggaras,Khmer Water Mandala,parallel
+Byzantine Theme System,Mauryan Empire,comparator
+Mauryan Empire,Qin Legalism,comparator
+Greek Diarchy,Yuezhi Nomad Diarchy,comparator
+Holy Roman Empire,Yuezhi Nomad Diarchy,parallel
+Dahomey Mino Amazon State,Sarmatian Female Warbands,comparator
+D'mt Beehive Councils,Minoan Crete,comparator
+D'mt Beehive Councils,Hittite Panku Council,comparator
+D'mt Beehive Councils,Saho-Irob Mountain Democracies,parallel
+Bactrian Greek Syncretism,Kushan Devaputra,comparator
+Byzantine Theme System,Han Dynasty Examination Prototype,comparator
+British Parliamentary System,Han Dynasty Examination Prototype,comparator
+Han Dynasty Examination Prototype,Ottoman Millet System,parallel
+Hopewell Copper Exchange,Minoan Crete,comparator
+Hopewell Copper Exchange,Lapita Voyaging Networks,parallel
+Cahokia Birdman Dynasty,Hopewell Copper Exchange,contrast
+Rhenish Hanseatic Cities,Teotihuacan Theocratic Oligarchy,comparator
+Khmer Devaraja,Teotihuacan Theocratic Oligarchy,comparator
+Mogollon Pit-House Democracies,Pueblo Kiva Councils,comparator
+Iroquois Confederacy / Haudenosaunee,Mogollon Pit-House Democracies,comparator
+Anasazi Kiva Water Councils,Mogollon Pit-House Democracies,parallel
+Kushan Devaputra,Mauryan Empire,comparator
+Indian Panchayati Raj,Silla Bone-Rank System,comparator
+Persian Satrapy System,Silla Bone-Rank System,parallel
+Aztec Triple Alliance,Moche Sacrificial Hydraulics,comparator
+Moche Sacrificial Hydraulics,Shang Dynasty,comparator
+Moche Ceremonial Brewmasters,Sumerian Temple States,comparator
+Moche Ceremonial Brewmasters,Tibetan Ganden Phodrang,parallel
+Champa Linga-Kings,Khmer Devaraja,comparator
+Champa Linga-Kings,Javanese Kabuyutan Councils,comparator
+Champa Linga-Kings,Greek Democracy,parallel
+Blemmyes Desert Assemblies,Mongolian Kurultai,parallel
+Khotanese Buddhist Monarchy,Tibetan Ganden Phodrang,comparator
+Khmer Devaraja,Khotanese Buddhist Monarchy,comparator
+Shang Dynasty,Tairona Gold-Shaman Councils,parallel
+Tairona Gold-Shaman Councils,Teotihuacan,contrast
+Classic Maya City-States,Khmer Devaraja,comparator
+Classic Maya City-States,Egyptian Old Kingdom,comparator
+Bitcoin Decentralized Governance,Classic Maya City-States,contrast
+Pallava Guild Republics,Venetian Republic,comparator
+Pallava Guild Republics,Phoenician Merchant Oligarchies,comparator
+Pallava Guild Republics,Sinti Musical Guilds,parallel
+Pallava Guild Republics,Rhodes Naval Oligarchy,contrast
+Pictish Matrilineal Kings,Tang Fanzhen Clans,comparator
+Lunda Ruwej Matrilineacy,Pictish Matrilineal Kings,parallel
+Irish Traveller Cant Systems,Pictish Matrilineal Kings,contrast
+Gupta Golden Age,Holy Roman Empire,comparator
+Ghana Empire Wagadu,Venetian Republic,comparator
+Ghana Empire Wagadu,Hanseatic League,comparator
+Ghana Empire Wagadu,Phoenician Merchant Oligarchies,parallel
+Marajoara Amazonian Queens,Minoan Crete,comparator
+Bantu Mfecane Councils,Marajoara Amazonian Queens,comparator
+Cucuteni-Trypillia Mega-Settlements,Marajoara Amazonian Queens,parallel
+Byzantine Theme System,Visigothic Code Judges,comparator
+Visigothic Code Judges,Volga Bulgar Islamic Merchants,comparator
+Phoenician Merchant Oligarchies,Sogdian Merchant-Republics,comparator
+Hanseatic League,Sogdian Merchant-Republics,comparator
+Sogdian Merchant-Republics,Swahili Waungwana Councils,parallel
+Frisian Tribal Thing,Icelandic Althing,comparator
+Frisian Tribal Thing,Transylvanian Saxon Seats,comparator
+Frisian Tribal Thing,Viking Law Speakers,parallel
+Frisian Tribal Thing,Holy Roman Empire,contrast
+Sogdian Merchant Caravanserais,Venetian Republic,comparator
+Phoenician Merchant Oligarchies,Sogdian Merchant Caravanserais,comparator
+Berber Amazigh Councils,Sogdian Merchant Caravanserais,parallel
+Rhenish Hanseatic Cities,Sogdian Merchant Caravanserais,contrast
+Dalriada Gaelic Law Schools,Irish Brehon Law,comparator
+Celtic Druidic Synods,Dalriada Gaelic Law Schools,parallel
+Dalriada Gaelic Law Schools,Holy Roman Empire,contrast
+Sao Clay Wall Cities,Ubaid Culture,comparator
+Great Zimbabwe Rain Priests,Sao Clay Wall Cities,comparator
+Pueblo Kiva Councils,Sao Clay Wall Cities,parallel
+Irish Brehon Law,Iroquois Confederacy / Haudenosaunee,comparator
+Holy Roman Empire,Irish Brehon Law,comparator
+Irish Brehon Law,Norman Feudal Domesday,contrast
+Cahokia Birdman Dynasty,Calusa Shell Mound Kingdom,comparator
+Calusa Shell Mound Kingdom,Poverty Point Earthwork League,comparator
+Calusa Shell Mound Kingdom,Jomon Shellfish Consensus,parallel
+Chumash Tomol Canoe Guilds,Viking Law Speakers,comparator
+Chumash Tomol Canoe Guilds,Rhenish Hanseatic Cities,parallel
+Inuit Qaggiq Assemblies,Sámi Siida Councils,comparator
+Nenets Yamal Clan Councils,Sámi Siida Councils,parallel
+Norse Thing System,Sámi Siida Councils,contrast
+Blemmyes Desert Assemblies,Göktürk Orkhon Script Khans,comparator
+Göktürk Orkhon Script Khans,Hittite Panku Council,comparator
+Göktürk Orkhon Script Khans,Viking Law Speakers,comparator
+Göktürk Orkhon Script Khans,Pictish Matrilineal Kings,parallel
+Göktürk Orkhon Script Khans,Kalderash Gold-Smithing Dynasties,contrast
+Holy Roman Empire,Wari Tinku Labor System,comparator
+Greek Democracy,Wari Tinku Labor System,parallel
+British Parliamentary System,Tang Dynasty,comparator
+Sarmatian Female Warbands,Tang Dynasty,contrast
+Tang Fanzhen Clans,Venetian Arsenal Guilds,parallel
+Holy Roman Empire,Khazar Jewish Khaganate,comparator
+Khazar Jewish Khaganate,Polish-Lithuanian Elective Monarchy,comparator
+Almoravid Lamtuna Councils,Khazar Jewish Khaganate,parallel
+Majapahit Mandala,Srivijayan Mandala,comparator
+Phoenician Merchant Oligarchies,Srivijayan Mandala,comparator
+Srivijayan Mandala,Venetian Republic,parallel
+Khmer Devaraja,Srivijayan Mandala,comparator
+Athenian Democracy,Srivijayan Mandala,parallel
+Byzantine Theme System,Persian Satrapy System,comparator
+Byzantine Theme System,Ottoman Millet System,parallel
+Dutch Republic States-General,Venetian Republic,comparator
+Singaporean Technocracy,Venetian Republic,parallel
+Göktürk Orkhon Script Khans,Kanem Duguwa Nomad-Kings,comparator
+Berber Jemaa,Kanem Duguwa Nomad-Kings,comparator
+Kanem Duguwa Nomad-Kings,Pomeranian Veleti Tribal Republic,parallel
+Anasazi Kiva Water Councils,Pueblo Kiva Councils,comparator
+Anasazi Kiva Water Councils,Nabatean Water Merchants,comparator
+Anasazi Kiva Water Councils,Irish Traveller Cant Systems,parallel
+Celtic Tribal Assemblies,Viking Law Speakers,comparator
+Holy Roman Empire,Viking Law Speakers,contrast
+Swiss Consensus Democracy,Welsh Cantrefi,comparator
+Andean Ayllu Systems,Welsh Cantrefi,comparator
+Icelandic Althing,Orkney Jarl Sea-Kingdoms,comparator
+Faroese Sheep Court,Orkney Jarl Sea-Kingdoms,parallel
+Frisian Sea-Law Republics,Venetian Arsenal Guilds,comparator
+Frisian Sea-Law Republics,Icelandic Althing,comparator
+Frisian Sea-Law Republics,Nan Madol Coral Kingdoms,parallel
+Frisian Moot Hall Democracy,Icelandic Althing,comparator
+Frisian Moot Hall Democracy,Swiss Cantonal Democracy,comparator
+Frisian Moot Hall Democracy,Venetian Arsenal Guilds,parallel
+Iroquois Confederacy / Haudenosaunee,Taino Cacique Matrilineage,comparator
+Taino Cacique Matrilineage,Tang Fanzhen Clans,parallel
+Byzantine Theme System,Holy Roman Imperial Diarchy,comparator
+Holy Roman Imperial Diarchy,Pictish Matrilineal Kings,comparator
+Egyptian Old Kingdom,Khmer Devaraja,comparator
+Khmer Devaraja,Shilluk Divine Kingship,parallel
+Ghana Empire,Venetian Republic,comparator
+Ghana Empire,Great Zimbabwe Rain Priests,comparator
+Ghana Empire,Phoenician Merchant Oligarchies,parallel
+Ghana Empire,Timbuktu Qadi Scholar-Judges,contrast
+Khmer Devaraja,Pagan Temple-State,comparator
+Egyptian Nomarchies,Pagan Temple-State,parallel
+Pagan Temple-State,Tongan Maritime Empire,contrast
+Chola Naval Assemblies,Venetian Republic,comparator
+Chola Naval Assemblies,Marshallese Stick Chart Navigators,comparator
+Chola Naval Assemblies,Phoenician Merchant Oligarchies,parallel
+Chola Naval Assemblies,Icelandic Crowdsourced Constitution,contrast
+Aztec Triple Alliance,Toltec Warrior-Priest State,comparator
+Mycenaean Wanax System,Toltec Warrior-Priest State,comparator
+Aztec Triple Alliance,Toltec Warrior-Poet State,comparator
+Mycenaean Wanax System,Toltec Warrior-Poet State,comparator
+Frisian Sea-Law Republics,Pomeranian Veleti Tribal Republic,comparator
+Pomeranian Veleti Tribal Republic,Rhenish Hanseatic Cities,contrast
+Venetian Republic,Volga Bulgar Islamic Merchants,comparator
+Swahili Waungwana Councils,Volga Bulgar Islamic Merchants,contrast
+Hanseatic League,Volga Bulgar Islamic Merchants,parallel
+Faroe Islands Løgting,Icelandic Althing,comparator
+Faroe Islands Løgting,Manx Tynwald,comparator
+Faroe Islands Løgting,Scottish Tacksmen,parallel
+Athenian Democracy,Icelandic Commonwealth,comparator
+Icelandic Commonwealth,Iroquois Confederacy / Haudenosaunee,comparator
+Icelandic Commonwealth,Swiss Cantonal Democracy,parallel
+Icelandic Althing,Iroquois Confederacy / Haudenosaunee,comparator
+Icelandic Althing,Swiss Cantonal Democracy,comparator
+Icelandic Althing,Viking Law Speakers,parallel
+Athenian Democracy,Icelandic Althing,contrast
+Althingi Carbon-Neutral Parliament,Swiss Cantonal Democracy,comparator
+Althingi Carbon-Neutral Parliament,Athenian Democracy,comparator
+Althingi Carbon-Neutral Parliament,Bhutanese Gross National Happiness,parallel
+Frisian Sea-Law Republics,Nri Kingdom Pacifist Theocracy,comparator
+Khotanese Buddhist Monarchy,Nri Kingdom Pacifist Theocracy,comparator
+Maroon Communities (Jamaica/Suriname),Nri Kingdom Pacifist Theocracy,parallel
+Hawaiian Kapu System,Tongan Maritime Empire,comparator
+Tongan Maritime Empire,Viking Law Speakers,comparator
+Khmer Devaraja,Tongan Maritime Empire,parallel
+Majapahit Mandala,Tongan Maritime Empire,contrast
+Icelandic Althing,Manx Tynwald,comparator
+Manx Tynwald,Swiss Cantonal Democracy,comparator
+Faroese Sheep Court,Manx Tynwald,parallel
+Jomsviking Warrior Commune,Teutonic Ordensstaat,comparator
+Jomsviking Warrior Commune,Tang Fanzhen Clans,parallel
+Greenland Norse Althing,Icelandic Althing,comparator
+Greenland Norse Althing,Inuit Qaggiq Assemblies,contrast
+Alpine Pastoral Communes,Greenland Norse Althing,parallel
+Gotlandic Sea-Farmer Althing,Venetian Republic,comparator
+Gotlandic Sea-Farmer Althing,Viking Law Speakers,comparator
+Genoese Black Sea Colonies,Gotlandic Sea-Farmer Althing,parallel
+Icelandic Althing,Ruthenian Viche,comparator
+Novgorod Veche Republic,Ruthenian Viche,comparator
+Rhenish Hanseatic Cities,Ruthenian Viche,contrast
+Swahili Waungwana Councils,Venetian Arsenal Guilds,comparator
+Phoenician Merchant Oligarchies,Swahili Waungwana Councils,comparator
+Hanseatic League,Swahili Waungwana Councils,parallel
+Nan Madol Coral Kingdoms,Venetian Arsenal Guilds,comparator
+Khmer Devaraja,Nan Madol Coral Kingdoms,comparator
+Nan Madol Coral Kingdoms,Rhenish Hanseatic Cities,parallel
+Tanzanian Ujamaa Villages,Timucua Waterborne Councils,parallel
+Calusa Shell Mound Kingdom,Timucua Waterborne Councils,contrast
+Finnish Kalevala Singing Governors,Vedic Sabha Assemblies,comparator
+Celtic Druidic Synods,Finnish Kalevala Singing Governors,parallel
+Sami Noaide Shamanic Bands,Siberian Yukaghir Moon Calendar,comparator
+Inuit Qaggiq Assemblies,Sami Noaide Shamanic Bands,comparator
+Norse Thing System,Sami Noaide Shamanic Bands,contrast
+Celtic Tribal Assemblies,Tahitian Arioi Cult Society,comparator
+Greek Democracy,Tahitian Arioi Cult Society,parallel
+Inuit Qaggiq Assemblies,Siberian Yukaghir Moon Calendar,comparator
+Siberian Yukaghir Moon Calendar,Tang Fanzhen Clans,comparator
+Natufian Communities,Siberian Yukaghir Moon Calendar,parallel
+Göbekli Tepe (ritual complex),Siberian Yukaghir Moon Calendar,contrast
+Andean Ayllu Systems,Hawaiian Ahupuaʻa System,parallel
+Saho-Irob Mountain Democracies,Swiss Cantonal Democracy,comparator
+Berber Amazigh Councils,Saho-Irob Mountain Democracies,parallel
+Iroquois Confederacy / Haudenosaunee,Yoruba Ogboni Earth Justice,comparator
+Celtic Druidic Synods,Yoruba Ogboni Earth Justice,parallel
+Benin Oba Eweka Dynasty,Yoruba Ogboni Earth Justice,contrast
+Igbo Umunna Councils,Swiss Cantonal Democracy,comparator
+Athenian Democracy,Igbo Umunna Councils,comparator
+Greek Democracy,Igbo Umunna Councils,parallel
+Benin Oba Eweka Dynasty,Igbo Umunna Councils,contrast
+Inuit Qaggiq Assemblies,Yupik Bladder Festival Rule,comparator
+Jomon Shellfish Consensus,Yupik Bladder Festival Rule,parallel
+Haida Potlatch Governance,Yupik Bladder Festival Rule,contrast
+Marshallese Stick Chart Navigators,Venetian Arsenal Guilds,comparator
+Marshallese Stick Chart Navigators,Norse Thing System,parallel
+Majapahit Mandala,Marshallese Stick Chart Navigators,contrast
+Iroquois Confederacy / Haudenosaunee,Samoan Matai Talking Chiefs,comparator
+Greek Democracy,Samoan Matai Talking Chiefs,comparator
+Samoan Matai Talking Chiefs,Swiss Cantonal Democracy,parallel
+Kurultai,Nenets Yamal Clan Councils,comparator
+Faroese Sheep Court,Icelandic Althing,comparator
+Faroese Sheep Court,Swiss Consensus Democracy,comparator
+Ottoman Millet System,Seljuk Iqta System,comparator
+European Union Governance,Seljuk Iqta System,comparator
+Almoravid Lamtuna Councils,Berber Jemaa,comparator
+Cahokia Birdman Dynasty,Teotihuacan,comparator
+Cahokia Birdman Dynasty,Egyptian Old Kingdom,parallel
+Cahokia Birdman Dynasty,Taino Cacique Matrilineage,contrast
+Norman Feudal Domesday,Qin Legalism,comparator
+Inca Empire (Tawantinsuyu),Norman Feudal Domesday,comparator
+Norman Feudal Domesday,Ottoman Millet System,parallel
+Cuman Tribal Federations,Iroquois Confederacy / Haudenosaunee,comparator
+Cuman Tribal Federations,Kurultai,comparator
+Cuman Tribal Federations,Sami Noaide Shamanic Bands,parallel
+Classic Maya City-States,Great Zimbabwe Rain Priests,comparator
+Egyptian Nomarchies,Great Zimbabwe Rain Priests,parallel
+Great Zimbabwe Rain Priests,Swahili Waungwana Councils,contrast
+Frisian Sea-Law Tribunals,Icelandic Crowdsourced Constitution,comparator
+Frisian Sea-Law Tribunals,Phoenician Merchant Oligarchies,comparator
+Frisian Sea-Law Tribunals,Venetian Arsenal Guilds,parallel
+Frisian Sea-Law Tribunals,Rhenish Hanseatic Cities,contrast
+Kanem-Bornu Sufi Knights,Teutonic Ordensstaat,comparator
+Kanem-Bornu Sufi Knights,Timbuktu Qadi Scholar-Judges,contrast
+Dahomey Mino Amazon State,Mossi Naam Militias,contrast
+Maldivian Furya Coral Councils,Swahili Waungwana Councils,comparator
+Maldivian Furya Coral Councils,Venetian Arsenal Guilds,comparator
+Dalriada Gaelic Law Schools,Maldivian Furya Coral Councils,parallel
+Iroquois Confederacy / Haudenosaunee,Pueblo Kiva Councils,comparator
+Aboriginal Elders Councils,Pueblo Kiva Councils,comparator
+Pueblo Kiva Councils,Swiss Consensus Democracy,parallel
+Aztec Triple Alliance,Pueblo Kiva Councils,contrast
+Khazar Jewish Khaganate,Romani Kris Councils,comparator
+Iroquois Confederacy / Haudenosaunee,Romani Kris Councils,comparator
+Soviet Republics System,Venetian Arsenal Guilds,comparator
+Rhenish Hanseatic Cities,Venetian Arsenal Guilds,comparator
+Dutch Republic States-General,Venetian Arsenal Guilds,contrast
+Holy Roman Empire,Khmer Water Mandala,parallel
+Dutch Republic States-General,Khmer Water Mandala,contrast
+Icelandic Althing,Novgorod Veche Republic,comparator
+Athenian Democracy,Novgorod Veche Republic,comparator
+Novgorod Veche Republic,Rhenish Hanseatic Cities,parallel
+Novgorod Veche Republic,Rhodes Naval Oligarchy,contrast
+Iroquois Confederacy / Haudenosaunee,Tokelau Village Atoll Consensus,comparator
+Iroquois Confederacy / Haudenosaunee,Swiss Cantonal Democracy,comparator
+Iroquois Confederacy / Haudenosaunee,Nordic Sami Parliaments,parallel
+Cathar Perfecti Councils,Khotanese Buddhist Monarchy,parallel
+Hanseatic Kontor,Venetian Arsenal Guilds,comparator
+Hanseatic Kontor,Phoenician Merchant Oligarchies,comparator
+Hanseatic Kontor,Sinti Musical Guilds,contrast
+Bavarian Beer Hall Communes,Rhenish Hanseatic Cities,comparator
+Bavarian Beer Hall Communes,Swiss Cantonal Democracy,comparator
+Bavarian Beer Hall Communes,Venetian Arsenal Guilds,parallel
+Bavarian Beer Hall Communes,Dutch Republic States-General,contrast
+Javanese Kabuyutan Councils,Tibetan Ganden Phodrang,comparator
+European Union Governance,Javanese Kabuyutan Councils,parallel
+Javanese Kabuyutan Councils,Timbuktu Qadi Scholar-Judges,contrast
+Inuit Qaggiq Assemblies,Kven Arctic Trader Networks,comparator
+Kven Arctic Trader Networks,Rhenish Hanseatic Cities,comparator
+Kven Arctic Trader Networks,Metis Buffalo Councils,parallel
+Irish Traveller Cant Systems,Rapa Iti Tūtae Councils,parallel
+Göbekli Tepe (ritual complex),Rapa Iti Tūtae Councils,contrast
+Mayan Ajaw System,Rapa Nui Tangata Manu Trials,comparator
+Mayan Ajaw System,Rapa Nui Birdman Cult,comparator
+Benin Oba Eweka Dynasty,Khmer Devaraja,comparator
+Ashanti Confederacy,Benin Oba Eweka Dynasty,comparator
+Benin Oba Divine Kingship,Khmer Devaraja,comparator
+Benin Oba Divine Kingship,Egyptian Old Kingdom,comparator
+Benin Oba Divine Kingship,Kongo Mbanza Council,parallel
+Evenk Tungus Clan Federations,Iroquois Confederacy / Haudenosaunee,parallel
+Alpine Pastoral Communes,Andean Ayllu Systems,comparator
+Alpine Pastoral Communes,Norse Thing System,comparator
+Alpine Pastoral Communes,Swiss Consensus Democracy,contrast
+Hawaiian Kapu System,Maluku Sasi Harvest Bans,comparator
+Maluku Sasi Harvest Bans,Swiss Consensus Democracy,comparator
+Inuit Qaggiq Assemblies,Iroquois Confederacy / Haudenosaunee,comparator
+Inuit Qaggiq Assemblies,Swiss Cantonal Democracy,comparator
+Alpine Pastoral Communes,Inuit Qaggiq Assemblies,parallel
+Inuit Qaggiq Assemblies,Pueblo Kiva Councils,contrast
+Cornish Stannary,Swiss Cantonal Democracy,comparator
+Cornish Stannary,Iroquois Confederacy / Haudenosaunee,comparator
+Blemmyes Desert Assemblies,Kurultai,comparator
+Göktürk Orkhon Script Khans,Kurultai,comparator
+Holy Roman Empire,Kurultai,parallel
+Delhi Sultanate Slave Kings,Ottoman Millet System,comparator
+Delhi Sultanate Slave Kings,Holy Roman Empire,parallel
+Delhi Sultanate Slave Kings,Volga Bulgar Islamic Merchants,contrast
+Golden Horde Yam System,Magna Carta Baronage,comparator
+Icelandic Crowdsourced Constitution,Magna Carta Baronage,comparator
+Icelandic Althing,Magna Carta Baronage,parallel
+Teutonic Ordensstaat,Transylvanian Saxon Seats,comparator
+Rhenish Hanseatic Cities,Transylvanian Saxon Seats,comparator
+Tongan Maritime Empire,Transylvanian Saxon Seats,contrast
+Teutonic Ordensstaat,Tibetan Ganden Phodrang,comparator
+Ghana Empire,Mali Mansa Rule,comparator
+Mali Mansa Rule,Sumerian Temple States,comparator
+Byzantine Theme System,Mali Mansa Rule,parallel
+Golden Horde Yam System,Persian Satrapy System,comparator
+Golden Horde Yam System,Holy Roman Empire,parallel
+Aztec Triple Alliance,Lithuanian Pagan Kings,comparator
+Lithuanian Pagan Kings,Norse Thing System,comparator
+Lithuanian Pagan Kings,Teutonic Ordensstaat,contrast
+Hanseatic League,Rhenish City Leagues,comparator
+Iroquois Confederacy / Haudenosaunee,Rhenish City Leagues,comparator
+Rhenish City Leagues,Ryukyu Gusuku Trade Kingdom,parallel
+Genoese Black Sea Colonies,Venetian Republic,comparator
+Genoese Black Sea Colonies,Phoenician Merchant Oligarchies,comparator
+Dutch Republic States-General,Genoese Black Sea Colonies,parallel
+Genoese Black Sea Colonies,Rhenish Hanseatic Cities,contrast
+Indian Panchayati Raj,Yuan Semu Caste System,comparator
+Ottoman Millet System,Yuan Semu Caste System,parallel
+Andorran Co-Principality,Shilluk Divine Kingship,comparator
+Andorran Co-Principality,Holy Roman Empire,comparator
+Pirate Articles,Swiss Cantonal Democracy,contrast
+Majapahit Terracotta Bureaucracy,Qin Legalism,comparator
+Majapahit Terracotta Bureaucracy,Ottoman Millet System,parallel
+Dutch Republic States-General,Venetian Merchant Oligarchy,comparator
+Phoenician Merchant Oligarchies,Venetian Merchant Oligarchy,comparator
+Māori Umu Tī Earth Oven Parleys,Pacific Potlatch,comparator
+Greek Democracy,Māori Umu Tī Earth Oven Parleys,parallel
+Māori Umu Tī Earth Oven Parleys,Tongan Maritime Empire,contrast
+Iroquois Confederacy / Haudenosaunee,Māori Iwi River Federations,comparator
+Mississippian Chiefdoms,Māori Iwi River Federations,parallel
+Buganda Clan-Based Monarchy,Holy Roman Empire,comparator
+Paris Commune,Timbuktu Qadi Scholar-Judges,comparator
+Tibetan Ganden Phodrang,Timbuktu Qadi Scholar-Judges,parallel
+Ottoman Millet System,Wolof Garmi Anti-Corruption,comparator
+Persian Satrapy System,Wolof Garmi Anti-Corruption,parallel
+Ottoman Millet System,Wolof Ceddo Slave Armies,comparator
+Ayutthaya Elephant Bureaucracy,Khmer Water Mandala,comparator
+Ayutthaya Elephant Bureaucracy,Mughal Mansabdari System,comparator
+Ayutthaya Elephant Bureaucracy,Persian Satrapy System,parallel
+Khmer Water Mandala,Lan Xang Million Elephant Kings,comparator
+Lan Xang Million Elephant Kings,Rhodes Naval Oligarchy,contrast
+Hanseatic League,Venetian Republic,comparator
+Dutch Republic States-General,Hanseatic League,contrast
+Rhenish Hanseatic Cities,Venetian Republic,comparator
+Rhenish Hanseatic Cities,Swahili Waungwana Councils,comparator
+Ragusan Aristocratic Republic,Venetian Republic,comparator
+Inca Empire (Tawantinsuyu),Ming Yellow Register Census,comparator
+Ming Yellow Register Census,Ottoman Millet System,comparator
+Ming Yellow Register Census,Qin Legalism,parallel
+Benin Oba Eweka Dynasty,Kongo Mbanza Council,comparator
+Holy Roman Empire,Kongo Mbanza Council,comparator
+Bamum Script Bureaucracy,Cherokee Constitutional Republic,comparator
+Bamum Script Bureaucracy,Egyptian Nomarchies,parallel
+British Parliamentary System,Joseon Confucian Bureaucracy,comparator
+Joseon Confucian Bureaucracy,Tokugawa Shogunate,contrast
+Majapahit Mandala,Malacca Straits Mandala,comparator
+Malacca Straits Mandala,Swahili Waungwana Councils,comparator
+Malacca Straits Mandala,Phoenician Merchant Oligarchies,parallel
+Iroquois Confederacy / Haudenosaunee,Scottish Tacksmen,comparator
+Circassian Xabze Councils,Iroquois Confederacy / Haudenosaunee,comparator
+Circassian Xabze Councils,Swiss Cantonal Democracy,comparator
+Akan Amanhene Gold States,Ashanti Confederacy,comparator
+Akan Amanhene Gold States,Byzantine Theme System,parallel
+Jukun Aku Oracle Kings,Shang Dynasty,comparator
+Jukun Aku Oracle Kings,Olmec,comparator
+Jukun Aku Oracle Kings,Tongan Maritime Empire,contrast
+Iroquois Confederacy / Haudenosaunee,Kiribati Maneaba Councils,comparator
+Greek Democracy,Kiribati Maneaba Councils,comparator
+Kiribati Maneaba Councils,Maldivian Furya Coral Councils,parallel
+Fijian Bati Warrior Guilds,Kiribati Maneaba Councils,contrast
+Tang Fanzhen Clans,Vlax Rom Baro Systems,comparator
+Pomeranian Veleti Tribal Republic,Vlax Rom Baro Systems,parallel
+Akan Amanhene Gold States,Vlax Rom Baro Systems,contrast
+Aztec Triple Alliance,Hanseatic League,comparator
+Aztec Triple Alliance,Iroquois Confederacy / Haudenosaunee,comparator
+Aztec Triple Alliance,Holy Roman Empire,parallel
+Aztec Triple Alliance,Teotihuacan Theocratic Oligarchy,contrast
+Ryukyu Gusuku Trade Kingdom,Venetian Republic,comparator
+Malacca Straits Mandala,Ryukyu Gusuku Trade Kingdom,comparator
+Joseon Confucian Bureaucracy,Ryukyu Gusuku Trade Kingdom,parallel
+Ryukyu Maritime Tributary,Venetian Republic,comparator
+Malacca Straits Mandala,Ryukyu Maritime Tributary,comparator
+Hawaiian Kapu System,Ryukyu Maritime Tributary,parallel
+Joseon Confucian Bureaucracy,Ryukyu Maritime Tributary,contrast
+Inca Empire (Tawantinsuyu),Soviet Republics System,comparator
+Egyptian Nomarchies,Inca Empire (Tawantinsuyu),comparator
+Habsburg Composite Monarchy,Ottoman Millet System,comparator
+Mughal Mansabdari System,Ottoman Millet System,comparator
+Pampas Querandí Nomadism,Sami Reindeer Herding Units,parallel
+Mapuche Parlamento Confederacy,Pampas Querandí Nomadism,contrast
+Breton Parish Closes,Irish Traveller Cant Systems,comparator
+Mongolian Kurultai,Sami Reindeer Herding Units,comparator
+Sami Reindeer Herding Units,Swiss Consensus Democracy,comparator
+Irish Traveller Cant Systems,Sami Reindeer Herding Units,parallel
+Sami Reindeer Herding Units,Tanzanian Ujamaa Villages,contrast
+Egyptian Old Kingdom,Shilluk Divine Kingship,comparator
+Jukun Aku Oracle Kings,Shilluk Divine Kingship,comparator
+Lozi Litunga Flood Kings,Shilluk Divine Kingship,parallel
+Buganda Clan-Based Monarchy,Shilluk Divine Kingship,contrast
+Indian Panchayati Raj,Sinti Musical Guilds,comparator
+Kalderash Gold-Smithing Dynasties,Venetian Arsenal Guilds,comparator
+Ottoman Millet System,Sennar Funj Sultanate,parallel
+Mughal Mansabdari System,Napoleonic Meritocracy,parallel
+British Parliamentary System,Habsburg Composite Monarchy,comparator
+Habsburg Composite Monarchy,Soviet Republics System,parallel
+Cossack Sich Republic,Swiss Cantonal Democracy,comparator
+Cossack Sich Republic,Pirate Articles,comparator
+Cossack Sich Republic,Viking Law Speakers,parallel
+Cossack Sich Republic,Rhodes Naval Oligarchy,contrast
+Iroquois Confederacy / Haudenosaunee,Mapuche Parlamento Confederacy,comparator
+Mapuche Parlamento Confederacy,Swiss Cantonal Democracy,comparator
+Mapuche Parlamento Confederacy,Samoan Matai Talking Chiefs,parallel
+Holy Roman Empire,Polish-Lithuanian Elective Monarchy,comparator
+Hawaiian Kapu System,Powhatan Paramount Chiefdom,comparator
+Manush Circus Kingdoms,Powhatan Paramount Chiefdom,comparator
+Dutch Republic States-General,Swiss Cantonal Democracy,comparator
+Inca Empire (Tawantinsuyu),Luba Bambudye Memory State,comparator
+Celtic Druidic Synods,Luba Bambudye Memory State,comparator
+Luba Bambudye Memory State,Timbuktu Qadi Scholar-Judges,contrast
+Celtic Tribal Assemblies,Tahitian Arioi Society,comparator
+Greek Democracy,Tahitian Arioi Society,parallel
+Haitian Revolutionary Councils,Maroon Palenque Republics,comparator
+Maroon Palenque Republics,Zapatista Caracoles,parallel
+Lunda Ruwej Matrilineacy,Tang Fanzhen Clans,comparator
+Dahomey Mino Amazon State,Lunda Ruwej Matrilineacy,contrast
+Byzantine Theme System,Dahomey Mino Amazon State,comparator
+Dahomey Mino Amazon State,Teutonic Ordensstaat,parallel
+Byzantine Theme System,Kuba Bushong Cloth Kings,comparator
+Inca Empire (Tawantinsuyu),Kuba Bushong Cloth Kings,comparator
+Benin Oba Eweka Dynasty,Kuba Bushong Cloth Kings,parallel
+Kuba Bushong Cloth Kings,Swahili Waungwana Councils,contrast
+Imbangala Kilombo,Ottoman Millet System,parallel
+Imbangala Kilombo,Kongo Mbanza Council,contrast
+Berber Amazigh Councils,Romanichal Wagon Republics,comparator
+Koryak Reindeer-Oracle System,Siberian Yukaghir Moon Calendar,comparator
+Koryak Reindeer-Oracle System,Shang Dynasty,parallel
+Jomon Shellfish Consensus,Ket Yenisei Fish-Taboo Councils,contrast
+Egyptian Old Kingdom,Lozi Litunga Flood Kings,comparator
+Khmer Devaraja,Lozi Litunga Flood Kings,comparator
+Dutch Republic States-General,Lozi Litunga Flood Kings,parallel
+Greek Diarchy,Tokugawa Shogunate,comparator
+Ottoman Millet System,Tokugawa Shogunate,parallel
+Qin Legalism,Tokugawa Shogunate,comparator
+Persian Satrapy System,Tokugawa Shogunate,parallel
+Bermudian Parliamentary Hybrid,Kalmyk Khanate Nomadic Parliament,comparator
+Bermudian Parliamentary Hybrid,Åland Islands Neutrality,parallel
+Kalmyk Khanate Nomadic Parliament,Tibetan Ganden Phodrang,comparator
+Kalmyk Khanate Nomadic Parliament,Kurultai,comparator
+Bhutanese Gross National Happiness,Kalmyk Khanate Nomadic Parliament,parallel
+British Parliamentary System,Qing Lifan Yuan Tributaries,comparator
+Holy Roman Empire,Qing Lifan Yuan Tributaries,comparator
+Habsburg Composite Monarchy,Qing Lifan Yuan Tributaries,parallel
+Qing Lifan Yuan Tributaries,Rhodes Naval Oligarchy,contrast
+Akan Amanhene Gold States,Tibetan Ganden Phodrang,comparator
+Khmer Devaraja,Tibetan Ganden Phodrang,comparator
+Ottoman Millet System,Qing Dynasty Banner System,comparator
+Qing Dynasty Banner System,Soviet Republics System,comparator
+British Parliamentary System,Qing Dynasty Banner System,parallel
+Athenian Democracy,Leveller Agitators,comparator
+Leveller Agitators,Paris Commune,comparator
+Leveller Agitators,Zapatista Caracoles,parallel
+Digger Communes,Zapatista Caracoles,comparator
+Digger Communes,Maroon Communities (Jamaica/Suriname),parallel
+Pirate Articles,Viking Law Speakers,comparator
+Barbuda Communal Land System,Kibbutz Movement,comparator
+Andean Ayllu Systems,Barbuda Communal Land System,comparator
+Barbuda Communal Land System,Scottish Tacksmen,parallel
+British Parliamentary System,Liechtenstein Direct Democracy,contrast
+Blackfoot Confederacy,Iroquois Confederacy / Haudenosaunee,comparator
+Blackfoot Confederacy,Kurultai,comparator
+Blackfoot Confederacy,Sami Noaide Shamanic Bands,parallel
+Aztec Triple Alliance,Blackfoot Confederacy,contrast
+Haida Potlatch Governance,Pacific Potlatch,parallel
+Haida Potlatch Governance,Phoenician Merchant Oligarchies,contrast
+Haida Potlatch Governance,Tlingit Potlatch Confederacy,comparator
+Balinese Negara,Merina Andriana Castes,parallel
+Merina Andriana Castes,Swahili Waungwana Councils,contrast
+Chukchi Whalebone Assemblies,Inuit Qaggiq Assemblies,comparator
+Chukchi Whalebone Assemblies,Koryak Reindeer-Oracle System,comparator
+Chukchi Whalebone Assemblies,Norse Thing System,parallel
+Aleut Unangan Whalebone Chiefs,Chukchi Whalebone Assemblies,contrast
+Igbo Assemblies,Tswana Kgotla,comparator
+Athenian Democracy,Tswana Kgotla,comparator
+Greek Democracy,Tswana Kgotla,contrast
+Balinese Negara,Malagasy Fokonolona,comparator
+Malagasy Fokonolona,Merina Andriana Castes,contrast
+Fante Asafo Companies,Venetian Arsenal Guilds,comparator
+Ashanti Confederacy,Fante Asafo Companies,contrast
+Pacific Potlatch,Vanuatu Nimangki Grade-taking,comparator
+Phoenician Merchant Oligarchies,Vanuatu Nimangki Grade-taking,contrast
+Arctic Nenets Yamal Councils,Inuit Qaggiq Assemblies,comparator
+Arctic Nenets Yamal Councils,Sámi Siida Councils,comparator
+Ashanti Confederacy,Holy Roman Empire,comparator
+Ashanti Confederacy,Iroquois Confederacy / Haudenosaunee,comparator
+Ashanti Confederacy,Holy Roman Imperial Diarchy,parallel
+Iroquois Confederacy / Haudenosaunee,Sikh Misldar Confederacy,comparator
+Cossack Hetmanate,Sikh Misldar Confederacy,comparator
+Sikh Misldar Confederacy,Swiss Cantonal Democracy,parallel
+Liechtenstein Direct Monarchy,Swiss Cantonal Democracy,comparator
+Liechtenstein Direct Monarchy,Venetian Republic,comparator
+Aleut Unangan Whalebone Chiefs,Tlingit Potlatch Confederacy,comparator
+Aleut Unangan Whalebone Chiefs,Haida Potlatch Governance,comparator
+Aleut Unangan Whalebone Chiefs,Norse Thing System,parallel
+Konbaung Hluttaw,Persian Satrapy System,comparator
+Cossack Hetmanate,Metis Buffalo Councils,comparator
+Haitian Revolutionary Councils,Soviet Republics System,comparator
+Haitian Revolutionary Councils,Paris Commune,comparator
+Cuban Revolutionary Committees,Haitian Revolutionary Councils,parallel
+Freetown Settler Democracy,Haitian Revolutionary Councils,comparator
+Freetown Settler Democracy,Maroon Palenque Republics,parallel
+Batavian Republic,Roman Republic,comparator
+Batavian Republic,Swiss Consensus Democracy,contrast
+Joseon Confucian Bureaucracy,Napoleonic Meritocracy,comparator
+Napoleonic Meritocracy,Singaporean Technocracy,parallel
+Cheyenne Council of 44,Iroquois Confederacy / Haudenosaunee,comparator
+Cheyenne Council of 44,Greek Democracy,comparator
+Cheyenne Council of 44,United Nations Security Council,parallel
+Bitcoin Decentralized Governance,Palauan Stone Money Yap,comparator
+Sámi Siida Councils,Yenish Horse-Tribes,comparator
+Romani Kris Councils,Yenish Horse-Tribes,parallel
+Scythian Nomadic Confederacy,Yenish Horse-Tribes,contrast
+Inuit Qaggiq Assemblies,Scottish Traveller Peat Laws,comparator
+Aboriginal Elders Councils,Scottish Traveller Peat Laws,comparator
+Liechtenstein Direct Democracy,Åland Islands Neutrality,comparator
+Norwegian Sovereign Wealth Democracy,Åland Islands Neutrality,contrast
+Sámi Siida Councils,Zanzibar Clove Plantation Councils,comparator
+Venetian Arsenal Guilds,Zanzibar Clove Plantation Councils,comparator
+Hawaiian Kapu System,Zanzibar Clove Plantation Councils,parallel
+Ottoman Millet System,Zulu Impi Regiments,comparator
+Holy Roman Empire,Zulu Impi Regiments,parallel
+Kibbutz Movement,Utopian Socialist Colonies,parallel
+Akan Amanhene Gold States,Utopian Socialist Colonies,contrast
+Cherokee Constitutional Republic,Rwandan Unity Government,comparator
+Cherokee Constitutional Republic,Iroquois Confederacy / Haudenosaunee,comparator
+Cherokee Constitutional Republic,Kalmyk Khanate Nomadic Parliament,parallel
+Hawaiian Kapu System,Maohi Tapu System,comparator
+Maohi Tapu System,Theban Sacred Band Oligarchy,parallel
+Sorbian Serbski Sejm,Welsh Cantrefi,comparator
+Blemmyes Desert Assemblies,Sorbian Serbski Sejm,comparator
+Breton Parish Closes,Sorbian Serbski Sejm,parallel
+Iroquois Confederacy / Haudenosaunee,Swiss Consensus Democracy,comparator
+Athenian Democracy,Swiss Consensus Democracy,comparator
+Indian Panchayati Raj,Manush Circus Kingdoms,comparator
+Paris Commune,Taiping Heavenly Kingdom,comparator
+Taiping Heavenly Kingdom,Zapatista Caracoles,parallel
+Meiji Oligarchy,Taiping Heavenly Kingdom,contrast
+Liechtenstein Direct Democracy,Swiss Cantonal Democracy,comparator
+Athenian Democracy,Liechtenstein Direct Democracy,comparator
+Paris Commune,Soviet Republics System,comparator
+Paris Commune,Rojava Democratic Confederalism,parallel
+Jomsviking Warrior Commune,Paris Commune,parallel
+Bamum Scriptocracy,Cherokee Constitutional Republic,comparator
+Bamum Scriptocracy,Egyptian Nomarchies,parallel
+Bamum Scriptocracy,Tswana Kgotla,contrast
+Genoese Black Sea Colonies,Kibbutz Movement,comparator
+Mongolian Kurultai,Tuvan People's Republic,comparator
+Tibetan Ganden Phodrang,Tuvan People's Republic,comparator
+Kalmyk Khanate Nomadic Parliament,Tuvan People's Republic,parallel
+Hanseatic League,UN Trusteeship Councils,comparator
+Cuban Revolutionary Committees,UN Trusteeship Councils,comparator
+Norwegian Sovereign Wealth Democracy,UN Trusteeship Councils,contrast
+Holy Roman Imperial Diarchy,United Nations Security Council,comparator
+Apartheid Bantustans,Indian Panchayati Raj,contrast
+Swiss Cantonal Democracy,Tokelau Village Atoll Consensus,comparator
+Faroese Sheep Court,Tokelau Village Atoll Consensus,parallel
+Cuban Revolutionary Committees,Soviet Republics System,comparator
+Cuban Revolutionary Committees,Taiwanese Digital Democracy,contrast
+Qin Legalism,Singaporean Technocracy,comparator
+Botswana Tribal Democracy,Norwegian Sovereign Wealth Democracy,comparator
+Ashanti Confederacy,Botswana Tribal Democracy,comparator
+Botswana Tribal Democracy,Pomeranian Veleti Tribal Republic,parallel
+Soviet Republics System,Tanzanian Ujamaa Villages,comparator
+Jomsviking Warrior Commune,Tanzanian Ujamaa Villages,parallel
+Khmer Water Mandala,Tanzanian Ujamaa Villages,contrast
+United Arab Emirates Tribal Technocracy,Venetian Arsenal Guilds,comparator
+Singaporean Technocracy,United Arab Emirates Tribal Technocracy,comparator
+Athenian Democracy,Libyan Jamahiriya,comparator
+Libyan Jamahiriya,Soviet Republics System,comparator
+Barbuda Communal Land System,Libyan Jamahiriya,parallel
+Libyan Jamahiriya,Swiss Consensus Democracy,contrast
+Inuit Qaggiq Assemblies,Nordic Sami Parliaments,comparator
+Nordic Sami Parliaments,Transylvanian Saxon Seats,parallel
+Indian Panchayati Raj,Swiss Cantonal Democracy,comparator
+Indian Panchayati Raj,Iroquois Confederacy / Haudenosaunee,comparator
+European Union Governance,Holy Roman Empire,comparator
+European Union Governance,Swiss Cantonal Democracy,comparator
+European Union Governance,Irish Traveller Cant Systems,parallel
+Iroquois Confederacy / Haudenosaunee,Post-Apartheid Ubuntu Democracy,comparator
+Post-Apartheid Ubuntu Democracy,Rwandan Unity Government,parallel
+Rojava Democratic Confederalism,Zapatista Caracoles,comparator
+Paris Commune,Zapatista Caracoles,comparator
+Rwandan Unity Government,Singaporean Technocracy,comparator
+Pomeranian Veleti Tribal Republic,Rwandan Unity Government,parallel
+Botswana Tribal Democracy,Rwandan Unity Government,contrast
+Rwandan Unity Government,Ubuntu Councils,comparator
+Ubuntu Councils,Zapatista Caracoles,comparator
+Kerala People’s Planning,Rojava Democratic Confederalism,comparator
+Estonian Digital Democracy,Singaporean Technocracy,comparator
+Athenian Democracy,Estonian Digital Democracy,comparator
+Estonian Digital Democracy,Taiwanese Digital Democracy,parallel
+Bhutanese Gross National Happiness,Swiss Cantonal Democracy,comparator
+Bitcoin Decentralized Governance,Phoenician Merchant Oligarchies,comparator
+Bitcoin Decentralized Governance,Swiss Cantonal Democracy,comparator
+Bitcoin Decentralized Governance,Iroquois Confederacy / Haudenosaunee,parallel
+Akan Amanhene Gold States,Bitcoin Decentralized Governance,contrast
+Bolivian Plurinational State,Zapatista Caracoles,comparator
+Bolivian Plurinational State,United Nations Security Council,comparator
+Bolivian Plurinational State,Maroon Communities (Jamaica/Suriname),parallel
+Chilean Constitutional Experiment,Icelandic Crowdsourced Constitution,comparator
+Athenian Democracy,Icelandic Crowdsourced Constitution,comparator
+Swiss Consensus Democracy,Taiwanese Digital Democracy,comparator
+Bitcoin Decentralized Governance,Taiwanese Digital Democracy,contrast
