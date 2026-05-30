@@ -14,7 +14,7 @@ THRESHOLD = 0.45
 
 def load():
     rows = []
-    with open(DATA_PATH) as f:
+    with open(DATA_PATH, encoding='utf-8') as f:
         for r in csv.DictReader(f):
             try:
                 r['_E'] = float(r['exit_freedom'])

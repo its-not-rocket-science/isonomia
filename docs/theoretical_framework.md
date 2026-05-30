@@ -63,7 +63,7 @@ The **EDR composite** is defined as (E + D + R) / 3.
 
 The mechanism is as follows. High EDR provides error-correction: bad leadership is abandoned (E), bad decisions are refused (D), failing institutions are replaced (R). When EDR drops below θ — through rising surplus legibility (L) enabling taxation, rising information infrastructure (I) enabling persistent obligation-tracking, and the consequent rise in A and suppression of E and D — this error-correction mechanism is dismantled. The system can no longer self-correct through internal reorganisation and becomes dependent on external perturbation (invasion, climate shock, elite civil war) to reset.
 
-Preliminary analysis of the 398-society dataset (hand-coded n=73, auto-coded n=325) finds EDR-SAP correlation r = –0.763 (hand-coded subset: r = –0.844), consistent with the hypothesis that SAP elevation systematically suppresses the three freedoms.
+Preliminary analysis of the 398-society dataset (hand-coded n=73, auto-coded n=325) finds EDR-SAP correlation r = –0.844 (hand-coded subset, n=73); r = –0.763 (full dataset, n=398), consistent with the hypothesis that SAP elevation systematically suppresses the three freedoms. The EDR distribution is notably bimodal, with a trough at θ ≈ 0.45 — systems cluster either clearly above or below the threshold with few in between, consistent with a genuine phase boundary rather than a smooth gradient.
 
 ### The Lock-In Sequence
 
