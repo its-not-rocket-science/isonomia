@@ -199,7 +199,7 @@ def plot_edr_distribution(rows):
     ax.fill_betweenx([0, ymax], 0, THRESHOLD, alpha=0.04, color='crimson')
     ax.text(THRESHOLD/2, ymax*0.88, f'Fragile regime\n({fragile} systems, {100*fragile//len(all_edr)}%)',
             ha='center', color='crimson', fontsize=9)
-    ax.text((THRESHOLD+1)/2, ymax*0.88, f'Resilient regime\n({len(all_edr)-fragile} systems)',
+    ax.text((THRESHOLD+1)/2, ymax*0.72, f'Resilient regime\n({len(all_edr)-fragile} systems)',
             ha='center', color='#2d7a2d', fontsize=9)
 
     ax.set_xlabel('EDR Composite', fontsize=11)
@@ -368,7 +368,7 @@ def plot_timeline_edr(rows):
     ax.set_xlabel('Start date (CE/BCE)', fontsize=11)
     ax.set_ylabel('EDR Composite', fontsize=11)
     ax.set_title('EDR resilience over time — hand-coded systems\n'
-                 'No systematic decline: high-EDR societies appear at every period',
+                 'EDR declines at state emergence (~4000 BCE) but high-EDR societies persist at every period',
                  fontsize=12)
     ax.set_ylim(0, 1.02)
     ax.legend(fontsize=9, loc='lower right')
