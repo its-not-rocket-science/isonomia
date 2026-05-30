@@ -204,7 +204,7 @@ def plot_edr_distribution(rows):
 
     ax.set_xlabel('EDR Composite', fontsize=11)
     ax.set_ylabel('Count', fontsize=11)
-    ax.set_title('Distribution of EDR Resilience Composite\nacross 398 governance systems', fontsize=12)
+    ax.set_title(f'Distribution of EDR Resilience Composite\nacross {len(all_edr)} governance systems', fontsize=12)
     ax.legend(fontsize=9)
     ax.set_xlim(0, 1)
 
