@@ -1,0 +1,274 @@
+# Isonomia II: The Lock-In Sequence — How Surplus Legibility Suppresses the Three Freedoms
+
+**Working paper, isonomia series, Paper 2**
+
+*[Author details removed for blind review]*
+
+**Data availability:** The full dataset, coding scheme, and analysis scripts are publicly available at [URL removed for blind review] under MIT licence.
+
+---
+
+**Abstract**
+
+Paper 1 of this series proposed that governance systems can be positioned in a continuous phase space defined by three domination dimensions (SAP) and three freedom dimensions (EDR), and that the EDR composite functions as a resilience indicator with a threshold at approximately 0.45. This paper develops the mechanism by which the EDR composite is suppressed: the lock-in sequence. Surplus legibility (L), defined as the extractability of a society's primary productive output, drives rising administrative apparatus (A), which in turn suppresses exit freedom (E), weakening disobedience (D) and eliminating arrangement (R). The sequence L→I→A→(suppress E, D, R) is traced through four case studies spanning 10,000 years: the Natufian-to-Uruk transition in the Levant and Mesopotamia (the primary sequence); Qin Legalism (the extreme case); the Inca Empire (high legibility without writing); and the Zomia highland communities (deliberate legibility suppression as state-avoidance). Against these, seven counter-cases — societies with high surplus legibility that preserved EDR — are analysed. All seven share a common feature: institutionally robust disobedience freedom (D ≥ 0.55) established before legibility reached its current level. The paper argues that the lock-in sequence is not mechanically inevitable. Where D is structurally encoded before L rises, the feedback loop connecting legibility to freedom suppression is interrupted. This finding has direct implications for contemporary governance in contexts of rising administrative legibility through digital infrastructure.
+
+---
+
+## 1. Introduction
+
+Paper 1 of this series established a correlation between governance domination (SAP composite) and the suppression of the three freedoms (EDR composite): r = −0.844 across the hand-coded dataset. That correlation is the pattern. This paper asks about the mechanism. How, specifically, does a society move from high-EDR to low-EDR? What are the intervening variables, and in what sequence do they operate?
+
+The answer proposed here is the lock-in sequence: a chain of causation running from rising surplus legibility through rising administrative apparatus to the progressive suppression of exit, disobedience, and arrangement freedom. The sequence is not rapid. It operates over decades and centuries, through the accumulation of infrastructure (grain stores, roads, records) and the institutionalisation of obligation (taxation, conscription, debt). By the time the three freedoms are fully suppressed, the mechanisms of suppression have become the furniture of daily life: they appear natural rather than constructed, permanent rather than contingent.
+
+This appearance of naturalness is precisely what Graeber and Wengrow (2021) argue against. The historical record shows that many societies lived for extended periods with high surplus legibility and high EDR simultaneously. The lock-in sequence is a tendency, not a law. Identifying the conditions under which it is interrupted is the paper's second contribution.
+
+The paper proceeds as follows. Section 2 defines surplus legibility and information infrastructure as the sequence's primary drivers. Section 3 traces the sequence through the Natufian-to-Uruk case, which is the best-documented instance in the archaeological record. Section 4 presents the Qin and Inca cases as extreme points on the legibility-suppression continuum. Section 5 analyses Zomia as a deliberate counter-strategy. Section 6 examines the seven counter-cases and identifies the conditions under which high L coexists with high EDR. Section 7 discusses the contemporary implications. Section 8 concludes.
+
+---
+
+## 2. Surplus Legibility and Information Infrastructure
+
+Two variables drive the lock-in sequence. Both are continuous indices in the isonomia dataset; both deserve precise definition before the case studies.
+
+### 2.1 Surplus legibility (L)
+
+Surplus legibility, following Scott (2017), measures how measurable, countable, and extractable a society's primary productive output is to external agents. The key insight is that legibility is not an intrinsic property of a resource but a relational one: it describes how a resource appears to someone who wants to extract it from a distance.
+
+Hunter-gatherer subsistence is inherently illegible (L ≈ 0.05–0.15). Forest products, root crops, and hunted game are dispersed, perishable, and uncountable from above. The San Xaro Networks (L = 0.10) illustrate this: their hxaro exchange economy is deliberately structured around resources that resist external accounting. Pastoral economies are somewhat more legible (L ≈ 0.20–0.35): herds can be counted, but they move, they die, and their productive yield varies. Swidden agriculture is specifically designed for illegibility — the landscape is deliberately kept complex, mixed, and difficult to survey (Scott 2009).
+
+Cereal grain agriculture crosses a legibility threshold. Grain is storable, measurable, transportable, and — critically — it ripens in a single annual event that is easy to observe and time. A granary can be counted. A harvest can be taxed before it is consumed. Surplus grain, unlike surplus venison or surplus roots, can be accumulated by an agent who did not produce it. The Ubaid culture entry (L = 0.50) sits at the threshold; Early Uruk (L = 0.70) is past it; Qin Legalism (L = 0.90) is near its practical maximum.
+
+The Inca case demonstrates that L can approach its maximum without writing. The quipu knotted-cord system (L = 0.90, I = 0.60) achieved near-total surplus legibility through a non-literate administrative apparatus that tracked every household's labour obligations across the entire empire. Legibility is not literacy. It is the organisational capacity to render surplus countable and extractable.
+
+### 2.2 Information infrastructure (I)
+
+Information infrastructure measures the existence and administrative deployment of systems for recording obligations, debts, ownership, and persons across time. The emphasis is on *administrative deployment*: a writing system used for religious inscription or poetry does not generate high I. A writing system used to record who owes how much grain to which temple does.
+
+The sequence from oral tradition (I ≈ 0.10) through tokens and tallies (I ≈ 0.30) to proto-writing (I ≈ 0.45) to full administrative literacy (I ≈ 0.80) corresponds directly to the sequence from low to high capacity to enforce obligations across time and distance. The Ubaid clay tokens (I = 0.20) could record a single transaction. Early Uruk proto-cuneiform (I = 0.55) could record institutional accounts. Late Uruk cuneiform (I = 0.75) could record debts, property, and legal obligations — the full administrative apparatus of the early state.
+
+The distinction between L and I matters. L creates the *possibility* of extraction; I creates the *durability* of extracted obligations. High L without high I produces seizure: a king can take this year's harvest, but he cannot enforce next year's tax if he cannot record who owes it. High I without high L produces sophisticated record-keeping with little to record: some early administrative systems developed more sophisticated bureaucratic procedures than the economic base they managed could support. The lock-in sequence operates through both variables together.
+
+### 2.3 The sequence formalised
+
+The lock-in sequence operates in six stages:
+
+**Stage 1 (L rises):** Agricultural intensification, territorial fixation, or resource concentration raises the legibility of the primary surplus. Exit freedom begins to decline — mobile subsistence strategies become less viable as people become invested in fixed plots.
+
+**Stage 2 (I rises, driven by L):** The administrative apparatus required to manage high-L extraction creates demand for information systems. Tokens, tallies, and eventually writing develop in response to the problem of tracking what has been extracted and from whom.
+
+**Stage 3 (A rises, driven by I):** High I enables the accumulation of administrative capacity — the ability to track individuals, record obligations, and enforce claims across time. A rises.
+
+**Stage 4 (E suppressed by A):** Administrative systems require stable, trackable populations. Legal and economic mechanisms bind people to place: land tenure makes departure economically catastrophic; debt makes departure legally impossible; conscription makes departure treasonous.
+
+**Stage 5 (D weakens, driven by E suppression):** The threat of exit was the primary structural leverage for refusing authority. Without the credible option of leaving, disobedience becomes individually costly without collective support. D declines.
+
+**Stage 6 (R eliminated):** Social arrangements previously understood as choices are redefined as natural necessities or sacred orders. The administrative infrastructure that now organises daily life — taxation calendars, registration systems, legal codes — makes institutional experimentation appear as disorder. R approaches zero.
+
+The EDR composite falls below θ. The system enters the fragile regime.
+
+---
+
+## 3. The Primary Sequence: Natufian to Uruk
+
+The Levant and Mesopotamia between approximately 12,500 and 2,700 BCE provides the world's best-documented instance of the lock-in sequence. The dataset contains eight entries spanning this period, each hand-coded at confidence level 2 or 3.
+
+### 3.1 The Natufian baseline
+
+The Natufian communities (12,500–9,500 BCE, L = 0.10, I = 0.05, EDR = 0.93) represent a high point in the dataset's pre-state record. Semi-sedentary hunter-gatherers living along the Levantine corridor, the Natufians show evidence of feasting, prestige burial, and seasonal aggregation — but no fixed hierarchy, no administrative apparatus, and no mechanisms binding individuals to place. The Natufian data point is not, as stadial models would have it, a point on the way toward complexity. It is a stable configuration in its own right, well-documented for over three thousand years.
+
+The Natufians are also the source of the crucial observation that Graeber and Wengrow make about deliberate oscillation. The archaeological evidence shows alternation between hierarchical aggregation (winter feasting, ceremonial burial, prestige display) and egalitarian dispersal (summer foraging, high mobility). This is not instability. It is institutional design — the Natufian equivalent of a constitutional check.
+
+### 3.2 The PPNA–PPNB transition: Stage 1
+
+The Pre-Pottery Neolithic A (9,500–8,700 BCE, L = 0.25, I = 0.05, EDR = 0.75) marks the first rise in L. Full cereal agriculture is established. Communal storage appears. But hierarchy has not yet emerged: dwellings remain roughly equal in size, no palaces or administrative buildings are present, and the evidence of unequal storage is limited to a few sites. EDR is still above θ.
+
+The PPNB transition (8,700–6,500 BCE, L = 0.35, I = 0.10, EDR = 0.65) shows the first rise in I: plastered ancestor skulls, long-distance obsidian trade, and possible ritual specialists suggest the emergence of persons who manage information — who know, and are known to know, who owes what to whom in the ritual economy. EDR falls but remains above θ.
+
+Çatalhöyük (7,500–5,700 BCE, L = 0.30, I = 0.05, EDR = 0.78) is the PPNB's most studied site: a city of approximately 8,000 people with no streets, no public buildings, no palaces, and equal-sized dwellings entered through roof hatches. At this scale — equivalent to a small modern town — the community maintained near-zero S and A. The Çatalhöyük data point is among the strongest empirical arguments in the dataset against the inevitability of the lock-in sequence: 8,000 people, full agriculture, and EDR = 0.78.
+
+### 3.3 Ubaid and Early Uruk: Stages 2–3
+
+The Ubaid culture (6,500–3,800 BCE, L = 0.50, I = 0.20, A = 0.25, EDR = 0.58) crosses the first significant L threshold. Clay tokens — the earliest information infrastructure in the archaeological record — appear in this period. The temple as redistribution centre emerges: a building that collects surplus, records it (tokens), and redistributes it. A begins to rise.
+
+Early Uruk (4,000–3,100 BCE, L = 0.70, I = 0.55, A = 0.55, EDR = 0.48) is the inflection point. The first city — Uruk itself at approximately 40,000 inhabitants — appears. Proto-cuneiform accounting develops: writing used specifically for tracking institutional debts and obligations. No evidence of hereditary kingship, no palace separate from the temple, no royal burials. But EDR has dropped to 0.48: just above θ. The city is at the threshold.
+
+The Early Uruk entry is the lock-in sequence's most important data point precisely because it is *not yet locked in*. It represents the conditions under which hierarchy is possible but not yet established. L and I are both high; A is rising. The system is, in the language of the sequence, at Stage 3.
+
+### 3.4 Late Uruk and the transition below θ: Stages 4–6
+
+The Late Uruk / Early Dynastic transition (3,100–2,700 BCE, L = 0.85, I = 0.75, A = 0.70, EDR = 0.28) is the lock-in event. Within roughly 400 years:
+
+The palace emerges as distinct from the temple. This is Stage 4 in the sequence: sovereignty becomes concentrated in a person rather than an institution, and the institutional S provides the coercive backing for administrative extraction.
+
+Royal burials appear at Ur. These are not merely symbolic. They represent the institutionalisation of hereditary hierarchy — the conversion of personal charisma into structural position across generations, which is the mechanism by which P-based competition is eliminated.
+
+The cuneiform script expands from accounting to royal propaganda, legal codes, and correspondence. I completes Stage 3, enabling enforcement of obligations across the full territory.
+
+EDR drops from 0.48 to 0.28. The system crosses θ. Both the exit and disobedience mechanisms are now operationally suppressed: land tenure binds the agricultural population; debt-slavery begins to appear in the cuneiform record; military conscription is documented. Stage 5 and 6 are complete.
+
+The Egyptian sequence follows a similar trajectory on a longer timescale. The Egyptian Nomarchies (L = 0.75, I = 0.50, EDR = 0.22) show the nome administrative system emerging before full Old Kingdom centralisation. The Old Kingdom (L = 0.75, I = 0.40, EDR = 0.12) achieves near-maximum S alongside the first significant A apparatus. The first Intermediate Period — collapse following the Old Kingdom's overextraction — briefly restores EDR before the Middle Kingdom (L = 0.80, I = 0.60, EDR = 0.18) rebuilds administrative capacity. The Middle Kingdom is structurally interesting: A is *higher* than in the Old Kingdom (0.65 vs 0.45) while S is *lower* (0.70 vs 0.90). The bureaucratic class gained ground during the fragmentation period, producing a more administration-dominant configuration.
+
+---
+
+## 4. Extreme Cases: Qin Legalism and the Inca Empire
+
+### 4.1 Qin Legalism: maximum legibility, minimum EDR
+
+Qin Legalism (221–206 BCE, L = 0.90, I = 0.80, A = 0.90, EDR = 0.02) represents the practical maximum of the lock-in sequence in the dataset. The Qin administrative reforms systematically addressed every dimension of the sequence simultaneously.
+
+Standardisation of weights, measures, script, and axle widths constitutes a deliberate legibility programme: every aspect of productive and commercial life is rendered measurable and commensurable by the state. This is not a side effect of governance but its explicit purpose. The Legalist administrative manual, Shang Yang's *Book of Lord Shang*, treats legibility as the foundation of state power: the ruler who cannot measure his subjects cannot govern them.
+
+Collective household punishment eliminates D at its structural root. If the unit of punishment is the household rather than the individual, then any act of disobedience implicates all household members. The credible threat this creates operates without continuous surveillance: individuals self-police because the consequences of detection fall on those they cannot abandon. E is near-zero not through physical restriction but through the web of mutual accountability that makes departure a form of betrayal.
+
+The Qin state lasted fifteen years after unification. This is the fragile-regime prediction confirmed in miniature: at near-maximum SAP and near-zero EDR, the system has no internal error-correction mechanism. The peasant revolts that destroyed it within a generation of unification were not an anomaly — they were the predicted reset event. The Han dynasty that followed immediately began relaxing Legalist rigour, reducing the tax burden, and allowing more local autonomy: a partial EDR restoration driven by the experience of collapse.
+
+### 4.2 The Inca Empire: administrative maximum without writing
+
+The Inca Empire (1438–1533 CE, L = 0.90, I = 0.60, A = 0.80, EDR = 0.10) presents a theoretically important variant: high-L lock-in achieved without writing.
+
+The quipu knotted-cord system is the most sophisticated non-literate administrative apparatus in the dataset. Quipus could encode numerical data across a positional decimal system; specialist khipukamayuq (quipu-keepers) maintained household labour records, census data, and tribute accounts across the empire. The mit'a labour tax obligated every household to contribute specified periods of labour to state projects: roads, terracing, storage construction, military service. Exit freedom is near-zero (E = 0.05): the mit'a system binds the productive population to the state through labour obligation in a way that is literally inscribed — the quipu record cannot be escaped by moving, because the obligation follows the household's identity in the administrative record.
+
+The Inca case has two theoretical implications. First, it confirms that I (information infrastructure) is the critical driver of A, not literacy per se. The quipu achieves I = 0.60 — sufficient to suppress EDR substantially — without writing. Second, it shows that the lock-in sequence can operate through non-coercive mechanisms. The mit'a is not enforced primarily through violence: it is enforced through administrative record-keeping, community obligation, and the social stigma of non-compliance in a society where the quipu-keeper's record is the authoritative account of who you are. This is the administrative suppression of D through information rather than through force.
+
+---
+
+## 5. The Counter-Strategy: Zomia and Deliberate Illegibility
+
+The Zomia highland communities (500–1950 CE, L = 0.05, I = 0.05, A = 0.05, EDR = 0.92) represent the inverse of the lock-in sequence — a deliberate strategy of maintaining illegibility as state-avoidance.
+
+Scott (2009) documents how the highland peoples of mainland Southeast Asia — occupying the massif that crosses modern Burma, Thailand, Laos, Vietnam, Cambodia, and parts of China — maintained illegible subsistence strategies for at least fifteen centuries while lowland states rose and fell around them. Swidden agriculture, root-crop cultivation, oral tradition, and deliberate residential mobility are not pre-modern defaults. They are rational responses to the administrative predation of lowland states. Each specific practice is anti-legible: swidden agriculture produces no storable grain surplus; root crops ripen underground and cannot be assessed from above; oral tradition maintains no records that an administrative apparatus can seize; mobility means that a household taxed this year may be elsewhere next year.
+
+Zomia communities understood the stakes. The oral traditions of many groups contain explicit accounts of descent from lowland populations who fled state incorporation. Their governance forms were designed for reversibility: institutions that could be assembled and disassembled seasonally, leadership that could be refused, property forms that could not be registered. In the terms of the isonomia framework, they maintained R at near-maximum by ensuring that no arrangement became permanent enough to be administratively captured.
+
+The Zomia case is theoretically important for what it reveals about the direction of causality in the lock-in sequence. It is often assumed that pre-modern highland peoples were illegible because they lacked the capacity for legible production — that they were primitive rather than strategic. The Zomia evidence inverts this: these communities were in contact with sophisticated lowland agricultural systems for centuries. Many of them practised partial agriculture when it was safe to do so. Their illegibility was a choice, maintained at significant economic cost, because the alternative — becoming legible to the state — cost more.
+
+This framing makes Zomia the most important counter-factual in the dataset. High EDR is not merely a feature of pre-state societies that had not yet encountered the lock-in sequence. It can be actively maintained by societies that have observed the sequence, understood its consequences, and organised themselves to resist it.
+
+---
+
+## 6. Counter-Cases: High L with High EDR
+
+The dataset contains seventeen systems with surplus legibility L ≥ 0.60 and EDR above the resilience threshold θ = 0.45. These are not anomalies: they are the primary evidence that the lock-in sequence is interruptible. Seven are hand-coded at confidence 2–3 and form the basis of this analysis.
+
+The seven counter-cases and their key values are shown in Table 1.
+
+| System | L | I | A | D | EDR | Start | Succession |
+|---|---|---|---|---|---|---|---|
+| Phoenician Merchant Oligarchies | 0.70 | 0.65 | 0.60 | 0.55 | 0.57 | −1000 | Elective |
+| Venetian Republic | 0.75 | 0.75 | 0.70 | 0.60 | 0.55 | 697 | Sortition |
+| Hanseatic League | 0.70 | 0.60 | 0.50 | 0.65 | 0.67 | 1356 | Election |
+| Dutch Republic States-General | 0.75 | 0.75 | 0.70 | 0.60 | 0.58 | 1581 | Appointment/consent |
+| British Parliamentary System | 0.75 | 0.90 | 0.75 | 0.85 | 0.78 | 1689 | Elections |
+| Swiss Consensus Democracy | 0.65 | 0.80 | 0.65 | 0.90 | 0.85 | 1848 | Rotation |
+| Norwegian Sovereign Wealth Democracy | 0.75 | 0.90 | 0.75 | 0.90 | 0.87 | 1990 | Elections |
+
+*Table 1. Counter-cases: high surplus legibility with EDR above threshold.*
+
+Several observations follow from this table.
+
+**The D pattern is the most consistent feature.** All seven systems have D ≥ 0.55 — substantially above the dataset mean (D = 0.42 for hand-coded systems). The three highest-EDR counter-cases (British Parliamentary, Swiss Consensus, Norwegian) all have D ≥ 0.85. Disobedience freedom is the variable most strongly associated with EDR preservation under high legibility.
+
+**The D mechanisms are institutionally diverse.** The Phoenician system used oligarchic council competition; Venice used sortition (random selection) for key offices combined with elaborate ballot procedures that prevented any family from monopolising power; the Hanseatic League operated through member-city veto rights; the Dutch Republic required provincial consensus; the British Parliament established judicial review and press freedom; Switzerland uses mandatory referendums and citizen initiatives; Norway combines constitutional rights with strong trade union representation. These are not the same mechanism. They share only the structural feature of encoding D in a way that is independent of the S dimension.
+
+**The temporal pattern supports the pre-existing D hypothesis.** In each counter-case, the D mechanism was established before the current level of L was reached. The Venetian sortition system developed between the 10th and 13th centuries; the Republic's L reached its current level through commercial expansion in the 14th–15th centuries. The Dutch provincial veto system predates the Dutch commercial revolution. Parliamentary sovereignty in Britain was established through the Glorious Revolution of 1688 — before the Industrial Revolution raised L through factory production and national census infrastructure. Swiss direct democracy developed through 19th century constitutional reform; Norwegian oil wealth (the specific mechanism raising L in that case) arrived only in the 1970s, when constitutional D was already robust.
+
+The implication is a refinement of the lock-in sequence: it operates when D has not been institutionally secured before L rises. Where D is embedded in constitutional structures, property rights, or collective bargaining arrangements that predate the administrative expansion, the feedback loop connecting legibility to freedom suppression is interrupted. A can rise without driving E and D below the resilience threshold, because the D mechanism provides a check on the administrative apparatus's ability to convert legibility into coercive extraction.
+
+This refinement suggests a specific causal test: does the chronological order of D-institutionalisation and L-rise predict EDR preservation? For the seven counter-cases examined here, the answer is yes. For the lock-in sequence cases — Uruk, Qin, Inca — D was never institutionalised before L rose. The test is necessarily retrospective with this dataset, but it points toward a cross-validation exercise using modern political economy data (Polity IV, V-Dem) that is planned for Paper 4 of this series.
+
+---
+
+## 7. Contemporary Implications
+
+The lock-in sequence has direct relevance to contemporary governance. Digital administrative infrastructure represents a qualitatively new development in information infrastructure: I values for states with advanced digital governance (Estonia: I = 0.95, Singapore: I = 0.90) exceed those of any pre-modern state in the dataset. The X-Road system in Estonia links all government databases; facial recognition surveillance in some states approaches continuous population monitoring; financial transaction records provide near-complete legibility of economic life.
+
+These developments raise L and I simultaneously and at a pace that may outstrip the development of institutional D mechanisms. The historical pattern suggests this is the relevant risk: not that digital governance states will immediately become coercive, but that the administrative conditions enabling coercion are being built faster than the constitutional conditions constraining it.
+
+The counter-case analysis provides a more specific warning. The societies that maintained high EDR under high legibility did so not through general liberal values but through specific institutional D mechanisms that were in place before administrative expansion. The relevant question for contemporary digital governance is not whether states respect freedom in principle, but whether the specific mechanisms that encode D — judicial review, press freedom, data protection rights, algorithmic accountability, civic override mechanisms — are being established at the same pace as the administrative infrastructure.
+
+Estonia (L = 0.55, I = 0.95, D = 0.85, EDR = 0.82) is the dataset's current best case: high I, pre-existing D mechanisms (NATO membership, EU legal framework, strong civil society), and EDR above θ. Singaporean Technocracy (L = 0.80, I = 0.90, A = 0.85, D = 0.20, EDR = 0.23) is the counter-example: equivalent I infrastructure, but D has not been institutionally embedded. The two cases sit on opposite sides of θ.
+
+The pre-existing D hypothesis is not a prediction that Estonia will remain resilient. It is a prediction about which specific developments would move it below θ: erosion of judicial independence, concentration of information infrastructure in single-party hands, removal of override mechanisms from algorithmic decisions. These are the same structural conditions that marked the Late Uruk transition — not the existence of administrative capacity, but the removal of the institutional checks that constrained it.
+
+---
+
+## 8. Discussion
+
+### 8.1 The sequence is probabilistic, not deterministic
+
+The lock-in sequence is a tendency, not a law. The data show seventeen counter-cases with high L and EDR above θ. Any adequate account must explain why the sequence runs to completion in some cases (Qin, Inca, Late Uruk) and is interrupted in others (Venetian Republic, Hanseatic League). The pre-existing D hypothesis is the answer proposed here, but it requires qualification.
+
+First, D can be eroded after L rises. The Roman Republic is the most instructive case: it had meaningful D mechanisms (tribunes, Senate vetoes, assemblies) and moderate L when those mechanisms were established. L rose through conquest and slave-plantation agriculture; D eroded progressively through the late Republic as military commanders accumulated personal armies. The Republic did not fail because D was never institutionalised; it failed because D was dismantled by actors whose private power exceeded the institutional constraints. The lock-in sequence can operate retrospectively through the erosion of existing D, not only through the failure to establish D before L rises.
+
+Second, the seven counter-cases are all Western and Northern European or derived from European institutional traditions. This geographical concentration is partly a data quality issue — these systems have richer secondary literature and therefore better coding — but it may also reflect a historical contingency. The specific D mechanisms that proved durable under rising L (sortition, parliamentary sovereignty, mandatory referendum) developed in a particular cultural and institutional context. Whether equivalent mechanisms in other traditions would produce comparable EDR preservation under high L is an open empirical question.
+
+### 8.2 Collapse as sequence reset
+
+The lock-in sequence has a natural endpoint: collapse. When EDR falls below θ, the self-correcting mechanism is dismantled, and the system becomes dependent on external perturbation to reset. The collapse, in this framing, is not the failure of the sequence but its completion: the administrative apparatus overextracts, the population cannot resist, the infrastructure degrades or is destroyed, and EDR rises again as the mechanisms of suppression dissolve.
+
+The EDR values in the post-collapse periods are consistent with this prediction. The Egyptian Middle Kingdom, following the First Intermediate Period collapse of the Old Kingdom, shows EDR = 0.18 — still low, but higher than the Old Kingdom's 0.12, with A having risen (0.65 vs 0.45) and S having fallen (0.70 vs 0.90). The bureaucratic class gained ground during the fragmentation period, which produced a more administratively constrained form of sovereignty. This is not a restoration of Çatalhöyük-level freedom: it is a partial reset, driven by the collapse of the specific mechanisms of sovereignty that had suppressed D.
+
+### 8.3 Irreversibility and reform
+
+The most open question in the lock-in sequence framework concerns endogenous reform: can a society below θ return above it through internal reorganisation, without the external perturbation of collapse? The historical record offers a small number of possible cases — the Roman Gracchi reforms, various constitutional revolutions, post-colonial democratic transitions — but the evidence is ambiguous. All of these required either elite fracture (different factions of the administrative class competing, creating a temporary opening for D institutionalisation) or external pressure (colonial withdrawal, military defeat) that acted as a partial perturbation.
+
+The cleanest case for endogenous reform is the British trajectory between the Glorious Revolution (1688) and the Great Reform Act (1832): a series of incremental expansions of parliamentary authority and press freedom that gradually raised D without collapse. But this reform trajectory occurred at a point when L was rising through commercial expansion and early industrialisation, making the pre-existing D hypothesis directly applicable: D was being expanded at the same time as L was rising, maintaining EDR above θ throughout.
+
+The question of whether a fully locked-in system — Qin-level, with D near zero — can reform endogenously remains open. The dataset contains no confirmed cases of this transition. It is the empirical question most directly relevant to the contemporary governance applications discussed in Section 7.
+
+---
+
+## 9. Conclusion
+
+The lock-in sequence — L→I→A→(suppress E, D, R) — provides a mechanism for the EDR suppression observed in Paper 1. Traced through the Natufian-to-Uruk transition, the Qin and Inca extreme cases, and the Zomia counter-strategy, the sequence is consistent across 10,000 years of governance history.
+
+The sequence is not mechanically inevitable. Seven counter-cases in the dataset show high surplus legibility coexisting with EDR above the resilience threshold. All seven share pre-existing institutional D: disobedience freedom established in constitutional structures before the current level of administrative legibility was reached. This is the condition that interrupts the sequence.
+
+The contemporary implications are direct. Digital administrative infrastructure is raising L and I for all states that adopt it, at a pace that may outstrip the development of institutional D mechanisms. The historical pattern suggests the relevant risk: not immediate coercion, but the construction of administrative conditions that enable coercion at the same time as the constitutional conditions constraining it are eroded or simply never established. The difference between Estonia and Singapore in the dataset is not a difference in values: it is a difference in the chronological order of D-institutionalisation and I-rise.
+
+The pre-existing D hypothesis is tested in this paper against seven counter-cases. Paper 4 of this series will cross-validate it against modern political economy datasets — Polity IV, V-Dem, and the Seshat global history database — to establish its robustness across a larger and independently coded sample.
+
+---
+
+## References
+
+Graeber, David and David Wengrow. 2021. *The Dawn of Everything: A New History of Humanity*. London: Allen Lane.
+
+Scott, James C. 2009. *The Art of Not Being Governed: An Anarchist History of Upland Southeast Asia*. New Haven, CT: Yale University Press.
+
+Scott, James C. 2017. *Against the Grain: A Deep History of the Earliest States*. New Haven, CT: Yale University Press.
+
+Tainter, Joseph. 1988. *The Collapse of Complex Societies*. Cambridge: Cambridge University Press.
+
+Turchin, Peter. 2003. *Historical Dynamics: Why States Rise and Fall*. Princeton, NJ: Princeton University Press.
+
+*For full reference list including archaeological sources for the case studies, see the companion dataset documentation at [URL removed for blind review].*
+
+---
+
+## Figure Captions
+
+**Figure 1. The Lock-In Sequence.** L, I, A, E, D, and R values plotted across time for the eight Natufian-to-Uruk dataset entries, showing the sequence of variable changes. EDR threshold (θ = 0.45) shown as horizontal dashed line.
+
+**Figure 2. Counter-Case Comparison.** L vs EDR for all hand-coded systems, with counter-cases labelled. Regression line for the full dataset. Counter-cases cluster above the regression line — higher EDR than L alone predicts.
+
+**Figure 3. D as Moderator.** Scatter of L against EDR, with points coloured by D value. High-D systems (green) cluster in the upper right (high L, high EDR); low-D systems (red) cluster in the lower right (high L, low EDR).
+
+---
+
+## Appendix: Case Study Data
+
+| System | Period | L | I | A | E | D | R | EDR | Conf |
+|---|---|---|---|---|---|---|---|---|---|
+| Natufian Communities | −12500 to −9500 | 0.10 | 0.05 | 0.05 | 0.95 | 0.90 | 0.95 | 0.93 | 2 |
+| Göbekli Tepe | −9600 to −8000 | 0.10 | 0.05 | 0.05 | 0.90 | 0.85 | 0.80 | 0.85 | 2 |
+| PPNA | −9500 to −8700 | 0.25 | 0.05 | 0.10 | 0.75 | 0.80 | 0.70 | 0.75 | 2 |
+| PPNB | −8700 to −6500 | 0.35 | 0.10 | 0.20 | 0.65 | 0.70 | 0.60 | 0.65 | 2 |
+| Çatalhöyük | −7500 to −5700 | 0.30 | 0.05 | 0.05 | 0.70 | 0.90 | 0.75 | 0.78 | 3 |
+| Ubaid Culture | −6500 to −3800 | 0.50 | 0.20 | 0.25 | 0.55 | 0.65 | 0.55 | 0.58 | 2 |
+| Early Uruk | −4000 to −3100 | 0.70 | 0.55 | 0.55 | 0.45 | 0.55 | 0.45 | 0.48 | 3 |
+| Late Uruk / Early Dynastic | −3100 to −2700 | 0.85 | 0.75 | 0.70 | 0.25 | 0.30 | 0.30 | 0.28 | 3 |
+| Egyptian Old Kingdom | −2686 to −2181 | 0.75 | 0.40 | 0.45 | 0.15 | 0.10 | 0.10 | 0.12 | 3 |
+| Qin Legalism | −221 to −206 | 0.90 | 0.80 | 0.90 | 0.05 | 0.00 | 0.00 | 0.02 | 2 |
+| Inca Empire (Tawantinsuyu) | 1438 to 1533 | 0.90 | 0.60 | 0.80 | 0.10 | 0.10 | 0.10 | 0.10 | 3 |
+| Zomia Highland Communities | 500 to 1950 | 0.05 | 0.05 | 0.05 | 0.95 | 0.90 | 0.90 | 0.92 | 3 |
