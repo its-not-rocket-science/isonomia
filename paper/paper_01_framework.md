@@ -2,15 +2,18 @@
 
 **Working paper — isonomia series, Paper 1**
 
-*Corresponding author: [Author], Schleiferdyne Systems*
+*Corresponding author: [Author]*
+*Independent researcher*
 *Repository: https://github.com/its-not-rocket-science/isonomia*
 *Dataset: https://github.com/its-not-rocket-science/global-governance-models*
+
+**Data availability:** The full dataset (`governance_extended.csv`, n = 389), coding scheme, analysis scripts, and all figures are publicly available at https://github.com/its-not-rocket-science/isonomia under MIT licence. Data will additionally be deposited in the JWSR Dataverse upon acceptance.
 
 ---
 
 > **Abstract**
 >
-> The study of governance in deep history is divided between two literatures that address opposite ends of the same causal loop: emergence models ask why hierarchy arises from egalitarian baselines, while collapse models ask why it fails. We propose a unified phase-space framework that bridges both. Drawing on Graeber and Wengrow's (2021) identification of three elementary forms of domination — sovereignty (S), administration (A), and competitive politics (P) — we construct a continuous SAP phase space in which each governance system occupies a position rather than a categorical type. Against this we operationalise the three freedoms Graeber and Wengrow identify as historically fundamental — exit (E), disobedience (D), and arrangement (R) — as a composite resilience indicator, the EDR composite. We propose that societies above a threshold θ in the EDR composite retain self-correcting capacity, while those below θ enter a fragile regime in which Turchin-Tainter collapse dynamics become operative. Analysis of a dataset of 389 governance systems spanning 12,000 years finds: an EDR-SAP correlation of r = −0.775 (hand-coded subset n = 125, r = −0.844); a bimodal EDR distribution with a trough at θ ≈ 0.45; a weighted trend showing EDR decline at state emergence (~4000 BCE) with high-EDR societies persisting at every subsequent period; and a network analysis of 760 citation edges showing that contrast-cited systems show significantly larger EDR divergence than general comparators (Mann-Whitney U, p = 0.0004), with EDR similarity propagating three network hops before reversing sign at degree-4. These findings are consistent with the hypothesis that governance forms are not stadial inevitabilities but contingent configurations subject to both internal lock-in dynamics and inter-civilisational schismogenesis. This paper establishes the framework; subsequent papers in the series address the lock-in sequence in detail (Paper 2), the schismogenesis network model (Paper 3), and cross-validation against independent datasets (Paper 4).
+> The study of governance in deep history is divided between two literatures that address opposite ends of the same causal loop: emergence models ask why hierarchy arises from egalitarian baselines, while collapse models ask why it fails. We propose a unified phase-space framework bridging governance emergence and collapse. Drawing on Graeber and Wengrow's (2021) three elementary forms of domination — sovereignty (S), administration (A), and competitive politics (P) — we construct a continuous SAP phase space in which each governance system occupies a position rather than a categorical type. Against this we operationalise the three freedoms Graeber and Wengrow identify as historically fundamental — exit (E), disobedience (D), and arrangement (R) — as a composite resilience indicator (EDR). We propose that societies above a threshold θ in the EDR composite retain self-correcting capacity, while those below θ enter a fragile regime in which Turchin and Tainter collapse dynamics operate. Analysis of 389 governance systems spanning 12,000 years finds: EDR-SAP correlation r = −0.844 (hand-coded n = 125); a bimodal EDR distribution with trough at θ ≈ 0.45; no secular decline in high-EDR societies across the full timeline; and a citation network of 760 edges showing contrast-cited systems have significantly larger EDR divergence than general comparators (Mann-Whitney U, p = 0.0004), with EDR similarity propagating three network hops before reversing sign. These findings are consistent with governance forms being contingent configurations subject to internal lock-in dynamics and inter-civilisational schismogenesis rather than stadial inevitabilities. This is Paper 1 of a series; Papers 2–4 address the lock-in sequence, schismogenesis dynamics, and cross-validation against independent datasets.
 
 ---
 
@@ -24,7 +27,9 @@ These two traditions are not in conflict. They address opposite ends of the same
 
 This paper proposes such a framework. We draw primarily on Graeber and Wengrow's *The Dawn of Everything* (2021), which provides the most systematic recent challenge to the evolutionary staging models implicit in most comparative work, and which identifies both the mechanisms by which hierarchy arises and the freedoms whose suppression is its precondition. We construct a continuous phase space from their three elementary forms of domination, operationalise their three freedoms as a composite resilience indicator, and show that this indicator bridges the emergence and collapse literatures through a single threshold mechanism.
 
-The paper is structured as follows. Section 2 reviews the Graeber-Wengrow argument and its implications for model construction. Section 3 presents the SAP phase space. Section 4 introduces the EDR resilience composite and the central threshold hypothesis. Section 5 develops the lock-in sequence connecting surplus legibility to freedom suppression. Section 6 presents the schismogenesis network component. Section 7 integrates the framework with Turchin-Tainter collapse models. Section 8 describes the dataset and empirical analysis. Section 9 presents results. Section 10 discusses implications and limitations. Section 11 concludes and maps the subsequent paper series.
+The framework has a second theoretical motivation beyond disciplinary integration. Both the collapse and emergence traditions tend to treat governance forms as products of structural conditions — ecological, demographic, economic. Graeber and Wengrow's contribution is to insist that human beings have historically understood their governance arrangements as choices, and have made those choices in explicit dialogue with the arrangements of their neighbours and predecessors. Schismogenesis — the dynamic by which societies define themselves in deliberate contrast to adjacent models — is not a peripheral ethnographic observation but a structural feature of how governance diversity is produced and maintained. A model that ignores this network dimension cannot explain why neighbouring societies with similar ecological and demographic conditions so frequently develop radically different governance forms, or why the most influential governance systems in the historical record are often not the largest or most powerful but the most explicitly counter-modelled.
+
+The paper is structured as follows. Section 2 reviews the Graeber-Wengrow argument and its implications for model construction. Section 3 presents the SAP phase space. Section 4 introduces the EDR resilience composite and the central threshold hypothesis. Section 5 develops the lock-in sequence connecting surplus legibility to freedom suppression. Section 6 presents the schismogenesis network component. Section 7 integrates the framework with Turchin and Tainter collapse models. Section 8 describes the dataset and empirical analysis. Section 9 presents results. Section 10 discusses implications and limitations. Section 11 concludes and maps the subsequent paper series.
 
 ---
 
@@ -82,7 +87,7 @@ The EDR composite is defined as the unweighted mean of the three freedom indices
 
 We propose the following central hypothesis:
 
-*H1: Societies where EDR exceeds a threshold θ retain self-correcting capacity through the three-freedom mechanism. Societies where EDR falls below θ enter a fragile regime in which Turchin-Tainter collapse dynamics become operative.*
+*H1: Societies where EDR exceeds a threshold θ retain self-correcting capacity through the three-freedom mechanism. Societies where EDR falls below θ enter a fragile regime in which Turchin and Tainter collapse dynamics become operative.*
 
 The mechanism connecting EDR to resilience is as follows. High EDR provides distributed error-correction: bad leadership is abandoned through exit (E), bad decisions are refused through disobedience (D), and failing institutions are replaced through reorganisation (R). This is not merely a normative claim about freedom — it is a functional claim about information processing and feedback. A governance system with high EDR receives accurate signals about its own failures and has the structural capacity to respond. A system with low EDR has severed the feedback loops: members cannot leave, cannot refuse, and cannot reorganise. The system is blind to its own dysfunction until external perturbation forces a reset.
 
@@ -205,6 +210,10 @@ The governance citation network was constructed from the Comparators and Compara
 
 EDR-SAP correlation: Pearson r on hand-coded subset. Network neighbourhood correlations: Pearson r with bootstrap confidence intervals (2,000 resamples). Schismogenesis significance: Mann-Whitney U (non-parametric, appropriate for these distributions), one-tailed. Geographic analysis: Spearman rank correlation of distance vs. ΔEDR; Mann-Whitney U for near/distant comparison. Contagion decay confidence intervals: bootstrap (2,000 resamples). All analyses conducted in Python using NumPy, SciPy, and NetworkX.
 
+### 8.5 Reproducibility
+
+All data, code, and figures are publicly available at https://github.com/its-not-rocket-science/isonomia under MIT licence. The repository contains four analysis scripts: `phase_space.py` (SAP ternary and EDR visualisations), `edr_resilience.py` (resilience threshold analysis and collapse mode breakdown), `schismogenesis.py` (network construction, schismogenesis analysis, and statistical tests), and `geo_contagion_analysis.py` (geographic schismogenesis and contagion decay). All figures in this paper can be regenerated from the dataset by running these scripts in order. The coding scheme (`data/coding_scheme.md`) documents the operationalisation criteria for all variables, including the inter-rater reliability exercise results and the clarifications to the P and A variable definitions that emerged from that exercise.
+
 ---
 
 ## 9. Results
@@ -235,7 +244,13 @@ Contrast edges show significantly larger EDR divergence than comparator edges (M
 
 ### 9.6 Contagion decay
 
-EDR similarity propagates through the citation network with significant decay across three hops: r = 0.72 (degree-1), r = 0.61 (degree-2), r = 0.32 (degree-3). All three are statistically significant (p < 0.001, p < 0.001, p < 0.01 respectively). At degree-4, the correlation reverses sign (r = −0.34, p = 0.0008), indicating a bipolar network structure consistent with the bimodal EDR distribution. The contrast-only subgraph shows a more compressed decay, with positive correlation at degree-1 (r = 0.65, p < 0.001) dropping to non-significant negative correlation at degree-2, confirming that schismogenesis-based differentiation is structurally local even when geographically distant.
+EDR similarity propagates through the citation network with significant decay across three hops: r = 0.72 (degree-1, 95% CI: 0.60–0.81), r = 0.61 (degree-2, 95% CI: 0.45–0.76), r = 0.32 (degree-3, 95% CI: 0.11–0.54). All three are statistically significant (all p < 0.01). At degree-4, the correlation reverses sign (r = −0.34, 95% CI: −0.51 to −0.14, p = 0.0008), indicating a bipolar network structure consistent with the bimodal EDR distribution: at four network hops, a system has traversed from one cluster to the other. The sign reversal is the strongest single piece of evidence for the framework's claim that the citation network has a genuine two-regime structure rather than a smooth gradient.
+
+The contrast-only subgraph shows a more compressed decay, with positive correlation at degree-1 (r = 0.65, p < 0.001, n = 41) dropping to non-significant negative correlation at degree-2 (r = −0.45, ns, n = 19), confirming that schismogenesis-based differentiation is structurally local: one hop away from a contrast relationship, the positive EDR correlation inverts. This is consistent with the geographic null result in Section 9.5 — schismogenesis operates at civilisational scale but is network-local, not spatially diffuse.
+
+### 9.7 Inter-rater reliability
+
+A blind re-coding of 25 systems by the primary coder produced MAD = 0.072 on SAP composites and MAD = 0.089 on EDR composites, both meeting the pre-specified targets. All eight continuous dimensions individually met MAD < 0.15. Categorical agreement on collapse mode was 84%; binding mechanism and seasonality showed lower agreement due to multi-value structure and vocabulary inconsistency. Three dataset revisions followed the exercise (see Section 10.2).
 
 ---
 
@@ -271,7 +286,7 @@ The lock-in sequence (Section 5) is the most empirically tractable component and
 
 The schismogenesis network model (Section 6) is the most theoretically novel component. The current analysis establishes the signal (contrast edges show larger ΔEDR, p = 0.0004) and the geographic null, but does not model the dynamics by which schismogenesis propagates through the network or how the degree-4 sign reversal is maintained. A dedicated agent-based model of schismogenesis dynamics is the subject of Paper 3.
 
-The irreversibility question — under what conditions can a society below θ return above it through endogenous reform — is addressed empirically only in passing in the current paper. It is theoretically significant because it distinguishes between collapse-and-reset (the Turchin-Tainter prediction) and reform-in-place (the democratic transition literature). Paper 4 addresses this through cross-validation with the Polity IV and V-Dem datasets.
+The irreversibility question — under what conditions can a society below θ return above it through endogenous reform — is addressed empirically only in passing in the current paper. It is theoretically significant because it distinguishes between collapse-and-reset (the Turchin and Tainter prediction) and reform-in-place (the democratic transition literature). Paper 4 addresses this through cross-validation with the Polity IV and V-Dem datasets.
 
 ---
 
@@ -283,23 +298,35 @@ Empirical analysis of 389 governance systems spanning 12,000 years finds results
 
 The framework's primary contribution is not the identification of specific empirical regularities but the integration of two previously disconnected literatures through a single mechanism: the three-freedom error-correction system that high-EDR societies maintain and low-EDR societies progressively dismantle. This integration generates predictions that neither the emergence tradition nor the collapse tradition produces independently — in particular, the prediction that collapse restores freedom, that schismogenesis is civilisational in scale rather than geographic, and that the L→I→A→EDR suppression sequence can be interrupted by pre-existing institutional D.
 
+The framework also has implications for how we read the present. Several of the high-L, high-EDR counter-cases identified in Section 5 — Norway, the Swiss Consensus Democracy, the Hanseatic League — suggest that the lock-in sequence is not mechanically inevitable. They share a common feature: strong pre-existing institutional D established before legibility increased to its current level. If that pattern holds under further analysis (the subject of Paper 2), it implies that the sequence can be interrupted — that societies can accumulate administrative capacity and surplus legibility without sacrificing the three freedoms, if those freedoms are institutionally robust beforehand. That finding, if confirmed, has direct relevance to contemporary debates about digital surveillance, platform-mediated economic legibility, and the governance of AI systems as novel administrative infrastructures.
+
 These predictions are falsifiable, and the dataset and code to test them are publicly available.
 
 ---
 
 ## References
 
-- Bateson, G. (1935). Culture contact and schismogenesis. *Man*, 35, 178–183.
-- Fukuyama, F. (2011). *The Origins of Political Order*. Farrar, Straus and Giroux.
-- Geertz, C. (1980). *Negara: The Theatre State in Nineteenth-Century Bali*. Princeton University Press.
-- Graeber, D. & Wengrow, D. (2021). *The Dawn of Everything: A New History of Humanity*. Allen Lane.
-- Mann, M. (1986). *The Sources of Social Power, Vol. 1*. Cambridge University Press.
-- Motesharrei, S., Rivas, J., & Kalnay, E. (2014). Human and nature dynamics (HANDY): Modeling inequality and use of resources in the collapse or sustainability of societies. *Ecological Economics*, 101, 90–102.
-- Scott, J. C. (2009). *The Art of Not Being Governed: An Anarchist History of Upland Southeast Asia*. Yale University Press.
-- Scott, J. C. (2017). *Against the Grain: A Deep History of the Earliest States*. Yale University Press.
-- Tainter, J. (1988). *The Collapse of Complex Societies*. Cambridge University Press.
-- Turchin, P. (2003). *Historical Dynamics: Why States Rise and Fall*. Princeton University Press.
-- Turchin, P. (2016). *Ages of Discord: A Structural-Demographic Analysis of American History*. Beresta Books.
+Bateson, Gregory. 1935. "Culture Contact and Schismogenesis." *Man* 35:178–183.
+
+Fukuyama, Francis. 2011. *The Origins of Political Order*. New York: Farrar, Straus and Giroux.
+
+Geertz, Clifford. 1980. *Negara: The Theatre State in Nineteenth-Century Bali*. Princeton, NJ: Princeton University Press.
+
+Graeber, David and David Wengrow. 2021. *The Dawn of Everything: A New History of Humanity*. London: Allen Lane.
+
+Mann, Michael. 1986. *The Sources of Social Power, Vol. 1: A History of Power from the Beginning to AD 1760*. Cambridge: Cambridge University Press.
+
+Motesharrei, Safa, Jorge Rivas, and Eugenia Kalnay. 2014. "Human and Nature Dynamics (HANDY): Modeling Inequality and Use of Resources in the Collapse or Sustainability of Societies." *Ecological Economics* 101:90–102.
+
+Scott, James C. 2009. *The Art of Not Being Governed: An Anarchist History of Upland Southeast Asia*. New Haven, CT: Yale University Press.
+
+Scott, James C. 2017. *Against the Grain: A Deep History of the Earliest States*. New Haven, CT: Yale University Press.
+
+Tainter, Joseph. 1988. *The Collapse of Complex Societies*. Cambridge: Cambridge University Press.
+
+Turchin, Peter. 2003. *Historical Dynamics: Why States Rise and Fall*. Princeton, NJ: Princeton University Press.
+
+Turchin, Peter. 2016. *Ages of Discord: A Structural-Demographic Analysis of American History*. Chaplin, CT: Beresta Books.
 
 ---
 
@@ -318,6 +345,10 @@ These predictions are falsifiable, and the dataset and code to test them are pub
 **Figure 6. Contagion Decay.** Left panel: EDR correlation by network distance (full citation network), with 95% bootstrap CI ribbon. Degree-0 anchor: r = 1.0 (self-correlation). Sign reversal at degree-4 highlighted. Right panel: Decay by edge type (full network, contrast-only, parallel-only).
 
 ---
+
+## Acknowledgements
+
+The global-governance-models dataset that forms the upstream source for this analysis is maintained at https://github.com/its-not-rocket-science/global-governance-models. The author thanks the anonymous reviewers and the editorial board for their engagement with the framework and its methods. All errors remain the author's own.
 
 ## Appendix A: The isonomia Paper Series
 
