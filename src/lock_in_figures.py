@@ -427,6 +427,208 @@ def plot_d_moderator(rows):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+
+# ── Figure 4: Bifurcation model ───────────────────────────────────────────────
+# Model parameters estimated from the Natufian-to-Uruk time series (R²=0.989)
+# A*(L) ≈ 0.706·L  (from α=0.193, β=0.923, δ=0.75, γ=0.239)
+# E*(L) = max(0, 0.856 − 0.693·L)
+# D_eff  = D₀·max(0, 1 − max(0, A*(L) − 0.3))
+# R*(D_eff) = max(0, 0.918·D_eff)
+# EDR*(L,D₀) = [E* + D_eff + R*] / 3
+# Bifurcation curve D*(L): minimum D₀ to maintain EDR* ≥ θ
+
+from scipy import optimize as _opt
+
+def _A(L):
+    return np.clip(0.706 * L, 0, 1)
+
+def _E(L):
+    return np.clip(0.856 - 0.693 * L, 0, 1)
+
+def _EDR_eq(L, D0):
+    A      = _A(L)
+    E      = _E(L)
+    supp   = np.maximum(0, A - 0.3)
+    D_eff  = np.clip(D0 * (1 - supp), 0, 1)
+    R      = np.clip(0.918 * D_eff, 0, 1)
+    return (E + D_eff + R) / 3
+
+def _D_star(L, theta=THETA):
+    """Minimum D₀ to maintain EDR*(L,D₀) ≥ theta. Returns None if infeasible."""
+    if _EDR_eq(L, 1.0) < theta:
+        return None      # even D₀=1 insufficient at this L
+    if _EDR_eq(L, 0.0) >= theta:
+        return 0.0       # D₀=0 sufficient (very low L)
+    try:
+        return _opt.brentq(lambda d: _EDR_eq(L, d) - theta, 0.0, 1.0)
+    except ValueError:
+        return None
+
+
+def plot_bifurcation(rows):
+    """
+    Two-panel bifurcation figure:
+      Left:  EDR*(L, D₀) contour surface with bifurcation curve
+      Right: D*(L) curve with empirical systems plotted in (L, D₀) space
+    Saved to visuals/lock_in_bifurcation.png
+    """
+    COUNTER = {
+        'Venetian Republic', 'Hanseatic League', 'Dutch Republic States-General',
+        'British Parliamentary System', 'Swiss Consensus Democracy',
+        'Norwegian Sovereign Wealth Democracy', 'Phoenician Merchant Oligarchies',
+    }
+    COUNTER_LABELS = {
+        'Venetian Republic':               'Venice',
+        'Hanseatic League':                'Hanseatic',
+        'Dutch Republic States-General':   'Dutch Republic',
+        'British Parliamentary System':    'Britain',
+        'Swiss Consensus Democracy':       'Switzerland',
+        'Norwegian Sovereign Wealth Democracy': 'Norway',
+        'Phoenician Merchant Oligarchies': 'Phoenician',
+    }
+    LOCKIN = {
+        'Early Uruk', 'Late Uruk / Early Dynastic', 'Egyptian Old Kingdom',
+        'Qin Legalism', 'Inca Empire (Tawantinsuyu)',
+    }
+    LOCKIN_LABELS = {
+        'Early Uruk':                  'Early Uruk',
+        'Late Uruk / Early Dynastic':  'Late Uruk',
+        'Egyptian Old Kingdom':        'Old Kingdom',
+        'Qin Legalism':                'Qin',
+        'Inca Empire (Tawantinsuyu)':  'Inca',
+    }
+    AVOID = {'Zomia Highland Communities'}
+
+    hc = [r for r in rows if r['conf'] >= 2]
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    L_grid = np.linspace(0, 1, 300)
+    D_grid = np.linspace(0, 1, 300)
+    LL, DD = np.meshgrid(L_grid, D_grid)
+    EDR_surf = np.vectorize(_EDR_eq)(LL, DD)
+
+    # ── Left panel: EDR surface ──────────────────────────────────────────────
+    ax = axes[0]
+    cf = ax.contourf(LL, DD, EDR_surf, levels=50, cmap='RdYlGn',
+                     alpha=0.85, vmin=0, vmax=1)
+    plt.colorbar(cf, ax=ax, label='Equilibrium EDR*')
+    ax.contour(LL, DD, EDR_surf, levels=[THETA], colors='crimson',
+               linewidths=2.5, linestyles='--')
+    ax.text(0.53, 0.63, f'Bifurcation curve\nEDR* = θ = {THETA}',
+            color='crimson', fontsize=8.5, ha='left',
+            bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.85))
+    ax.text(0.15, 0.12, 'Fragile regime\n(EDR* < θ)',
+            color='darkred', fontsize=8, ha='center', style='italic', alpha=0.8)
+    ax.text(0.20, 0.88, 'Resilient regime\n(EDR* > θ)',
+            color='darkgreen', fontsize=8, ha='center', style='italic', alpha=0.8)
+
+    for r in hc:
+        s = r['system']
+        if s in COUNTER:
+            ax.scatter(r['L'], r['D'], c='#1b9e77', s=70, zorder=6,
+                       edgecolors='white', linewidths=0.7, marker='D')
+            ax.annotate(COUNTER_LABELS[s], (r['L'], r['D']),
+                        xytext=(5, 3), textcoords='offset points',
+                        fontsize=7.5, color='#1b9e77', fontweight='bold')
+        elif s in LOCKIN:
+            ax.scatter(r['L'], r['D'], c='#d62728', s=55, zorder=6,
+                       edgecolors='white', linewidths=0.5)
+            ax.annotate(LOCKIN_LABELS[s], (r['L'], r['D']),
+                        xytext=(5, -10), textcoords='offset points',
+                        fontsize=7.5, color='#d62728')
+        elif s in AVOID:
+            ax.scatter(r['L'], r['D'], c='#2166ac', s=70, zorder=6,
+                       edgecolors='white', linewidths=0.7, marker='^')
+            ax.annotate('Zomia', (r['L'], r['D']),
+                        xytext=(5, 3), textcoords='offset points',
+                        fontsize=7.5, color='#2166ac', fontweight='bold')
+        else:
+            ax.scatter(r['L'], r['D'], c='#cccccc', s=12, alpha=0.5,
+                       edgecolors='none', zorder=2)
+
+    ax.set_xlabel('Surplus Legibility (L)', fontsize=11)
+    ax.set_ylabel('Institutional Disobedience Freedom (D₀)', fontsize=11)
+    ax.set_title('Equilibrium EDR* in (L, D₀) space\n'
+                 'Crimson dashed line: bifurcation curve (EDR* = θ)', fontsize=10)
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+
+    import matplotlib.patches as _mp
+    handles = [
+        _mp.Patch(color='#1b9e77', label='Counter-cases'),
+        _mp.Patch(color='#d62728', label='Lock-in sequence cases'),
+        plt.scatter([], [], marker='^', c='#2166ac', s=60,
+                    label='Deliberate illegibility'),
+    ]
+    ax.legend(handles=handles, fontsize=8, loc='lower right')
+
+    # ── Right panel: D*(L) bifurcation curve ────────────────────────────────
+    ax2 = axes[1]
+    D_crit = np.array([_D_star(l) for l in L_grid])
+    valid  = np.array([d is not None for d in D_crit])
+    Lv     = L_grid[valid]
+    Dv     = np.array([d for d in D_crit if d is not None])
+
+    ax2.fill_between(Lv, Dv, 1.0, alpha=0.15, color='#1b9e77',
+                     label='Resilient (EDR* > θ)')
+    ax2.fill_between(Lv, 0,  Dv, alpha=0.12, color='#d62728',
+                     label='Fragile (EDR* < θ)')
+    ax2.plot(Lv, Dv, 'crimson', lw=2.5, label='D*(L): critical institutional D')
+
+    for r in hc:
+        s = r['system']
+        if s in COUNTER:
+            ax2.scatter(r['L'], r['D'], c='#1b9e77', s=70, zorder=6,
+                        edgecolors='white', linewidths=0.7, marker='D')
+            ax2.annotate(COUNTER_LABELS[s], (r['L'], r['D']),
+                         xytext=(5, 3), textcoords='offset points',
+                         fontsize=7.5, color='#1b9e77', fontweight='bold')
+        elif s in LOCKIN:
+            ax2.scatter(r['L'], r['D'], c='#d62728', s=55, zorder=6,
+                        edgecolors='white', linewidths=0.5)
+            ax2.annotate(LOCKIN_LABELS[s], (r['L'], r['D']),
+                         xytext=(5, -10), textcoords='offset points',
+                         fontsize=7.5, color='#d62728')
+        elif s in AVOID:
+            ax2.scatter(r['L'], r['D'], c='#2166ac', s=70, zorder=6,
+                        edgecolors='white', linewidths=0.7, marker='^')
+        else:
+            ax2.scatter(r['L'], r['D'], c='#cccccc', s=12, alpha=0.5,
+                        edgecolors='none', zorder=2)
+
+    # Annotate D* at key L values
+    for l_val, label in [(0.10, 'Natufian'), (0.50, 'Ubaid'),
+                          (0.70, 'Early Uruk'), (0.90, 'Qin/Inca')]:
+        dc = _D_star(l_val)
+        if dc is not None:
+            ax2.axvline(l_val, color='grey', lw=0.8, linestyle=':', alpha=0.4)
+            ax2.text(l_val + 0.01, 0.97, label, fontsize=7, color='grey',
+                     va='top', style='italic')
+            ax2.annotate(f'D*={dc:.2f}', (l_val, dc),
+                         xytext=(8, 5), textcoords='offset points',
+                         fontsize=7.5, color='crimson')
+
+    ax2.set_xlabel('Surplus Legibility (L)', fontsize=11)
+    ax2.set_ylabel('Institutional Disobedience Freedom (D₀)', fontsize=11)
+    ax2.set_title('Bifurcation curve D*(L)\n'
+                  'Minimum institutional D to maintain EDR* ≥ θ', fontsize=10)
+    ax2.set_xlim(0, 1); ax2.set_ylim(0, 1)
+    ax2.legend(fontsize=8.5, loc='upper left')
+
+    fig.suptitle(
+        'Cusp bifurcation model of the lock-in sequence\n'
+        'D*(L) = (3θ − E*(L)) / [(1+K₃)·(1 − max(0, A*(L) − 0.3))]  '
+        '·  dD*/dL > 0 always',
+        fontsize=11, fontweight='bold'
+    )
+    plt.tight_layout()
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    plt.savefig(os.path.join(OUTPUT_DIR, 'lock_in_bifurcation.png'),
+                dpi=150, bbox_inches='tight')
+    plt.close()
+    print("Saved: lock_in_bifurcation.png")
+
+
 if __name__ == '__main__':
     rows = load()
     print(f"Loaded {len(rows)} rows, "
@@ -434,4 +636,10 @@ if __name__ == '__main__':
     plot_sequence_timeline(rows)
     plot_counter_scatter(rows)
     plot_d_moderator(rows)
+    # Reformat rows for bifurcation plot (needs 'system','L','D','conf' keys)
+    hc_fmt = [{'system': r['System'],
+               'L': r['_L'], 'I': r['_I'], 'D': r['_D'],
+               'EDR': r['_EDR'], 'conf': r['_conf']}
+              for r in rows if r.get('_conf', 0) >= 2]
+    plot_bifurcation(hc_fmt)
     print("Done. Outputs in visuals/lock_in_*.png")
