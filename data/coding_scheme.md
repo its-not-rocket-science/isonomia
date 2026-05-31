@@ -54,6 +54,10 @@ This document defines the coding criteria for all quantitative variables in `gov
 
 **Key question:** Can the state track, record, and enforce obligations on individual persons?
 
+**Institutional complexity vs administrative apparatus:** A measures specifically the *administrative deployment of information systems* — census, taxation records, legal codes, correspondence, population registers. High institutional complexity (elaborate assemblies, age-set rotations, ceremonial procedures) does not imply high A unless that complexity is used to track and manage populations. The Gadaa System has high institutional complexity but very low A (oral tradition, no population records, no taxation apparatus). The Inca Empire has high A despite no writing (quipu knotted-cord system tracks every household's labour obligations). Score A on administrative capacity, not organisational sophistication.
+
+**Partial writing systems:** When a society has a writing system used for religion or trade but not yet for census, taxation, or legal enforcement, score A at 0.4–0.5 rather than 0.7+. The administrative deployment of literacy is what matters, not literacy itself.
+
 ---
 
 ## Competitive Politics Index (P) — 0.0 to 1.0
@@ -70,6 +74,10 @@ This document defines the coding criteria for all quantitative variables in `gov
 | 0.9–1.0 | Governance IS performance; spectacle is the mechanism of authority | Balinese Negara, Theatrocracy at peak |
 
 **Key question:** Is authority achieved through competitive display rather than ascription or administrative position?
+
+**Critical distinction — competitive display vs performance of held power:** P measures competition *for* positions or authority, not the theatrical exercise of authority already held. Military campaigns, public executions, elaborate court ceremonies, and ideological spectacle in absolute monarchies are expressions of S, not P. High P requires that the political order creates genuine competition — where multiple actors vie for influence, position, or legitimacy through display. An absolute ruler who holds pageants is low-P; a system where daimyo compete for rank through attendance, gifts, and conspicuous display is moderate-P even within a hierarchical order; a system where political authority is literally constituted by ritual performance (Balinese Negara) is high-P.
+
+**Common miscoding:** Totalitarian states (Qin, Soviet) are often overcoded on P because their propaganda and ideological apparatus looks like competitive display. These are S mechanisms deployed administratively, not P. The test is: does the display *determine* who holds authority, or does it *confirm* authority already held by other means?
 
 ---
 
@@ -246,6 +254,27 @@ Multiple values may apply.
 | 5 | > 5,000,000 km² (large empire, continental scale) |
 
 ---
+
+## Reliability Exercise Results
+
+A blind re-coding of 25 systems spanning the full EDR and SAP range was conducted by the primary coder. Results after P and A clarifications:
+
+| Dimension | MAD | Target | Status |
+|---|---|---|---|
+| S | 0.078 | < 0.15 | ✓ |
+| A | 0.096 | < 0.15 | ✓ |
+| P | 0.086 | < 0.15 | ✓ |
+| E | 0.086 | < 0.15 | ✓ |
+| D | 0.120 | < 0.15 | ✓ |
+| R | 0.132 | < 0.15 | ✓ |
+| L | 0.088 | < 0.15 | ✓ |
+| I | 0.129 | < 0.15 | ✓ |
+| **SAP composite** | **0.072** | < 0.15 | **✓** |
+| **EDR composite** | **0.089** | < 0.15 | **✓** |
+
+Categorical agreement: collapse mode 84% ✓, binding mechanism 36% (multi-value matching), seasonality 8% (vocabulary inconsistency). Categorical variables do not contribute to the paper's main quantitative findings.
+
+Remaining substantive disagreements (dEDR ≥ 0.15): Napoleon R (original conservative reading retained), Cucuteni D (original retained), Gadaa D (original retained). Gupta EDR, Ottoman R, and Soviet R revised based on exercise findings.
 
 ## Inter-rater Reliability Targets
 
