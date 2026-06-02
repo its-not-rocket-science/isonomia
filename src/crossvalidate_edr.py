@@ -85,7 +85,10 @@ ISONOMIA_TO_MODERN = {
     'Swiss Consensus Democracy':             ('Switzerland',          'CHE', 2000),
     'European Union Governance':             ('Germany',              'DEU', 2010),
     'British Parliamentary System':          ('United Kingdom',       'GBR', 1990),
-    'Dutch Republic States-General':         ('Netherlands',          'NLD', 1800),
+    # NLD 1789: last years of the actual Dutch Republic before French annexation 1795;
+    # V-Dem Netherlands coverage begins 1789. Using 1800 (Batavian/Kingdom of Holland)
+    # was a temporal mismatch — corrected here.
+    'Dutch Republic States-General':         ('Netherlands',          'NLD', 1789),
     'French Fifth Republic':                 ('France',               'FRA', 1990),
     'American Federal Republic':             ('United States',        'USA', 1990),
     'Soviet Republics System':               ('Russia',               'RUS', 1980),
@@ -95,8 +98,14 @@ ISONOMIA_TO_MODERN = {
     'Napoleonic Meritocracy':                ('France',               'FRA', 1810),
     'Ottoman Empire':                        ('Turkey',               'TUR', 1900),
     'Habsburg Composite Monarchy':           ('Austria',              'AUT', 1900),
-    'Qin Legalism':                          ('China',                'CHN', 1949),
-    'Confucian Bureaucracy':                 ('China',                'CHN', 1850),
+    # Qin Legalism (221-206 BCE): removed from V-Dem matched set.
+    # CHN 1949 (PRC founding) was used as proxy but is a structural mismatch —
+    # the near-zero EDR correlation with PRC is coincidental, not meaningful.
+    # Qin is only valid for Seshat cross-validation.
+    # 'Qin Legalism':                        ('China',                'CHN', 1949),
+    # Confucian Bureaucracy: CHN 1900 (late Qing) is still a genuine Confucian
+    # bureaucracy (Qing ended 1912) and is within V-Dem coverage, unlike 1850.
+    'Confucian Bureaucracy':                 ('China',                'CHN', 1900),
     'Indian Panchayati Raj':                 ('India',                'IND', 1995),
     'Apartheid Bantustans':                  ('South Africa',         'ZAF', 1975),
     'Post-Apartheid South Africa':           ('South Africa',         'ZAF', 2000),
@@ -105,9 +114,14 @@ ISONOMIA_TO_MODERN = {
     'Brazilian Military Junta':              ('Brazil',               'BRA', 1970),
     'Weimar Republic':                       ('Germany',              'DEU', 1928),
     'Nazi Germany':                          ('Germany',              'DEU', 1938),
-    'Roman Republic':                        ('Italy',                'ITA', 1870),
+    # Roman Republic (509-27 BCE): removed from V-Dem matched set.
+    # ITA 1870 (post-Risorgimento Kingdom of Italy) is not a meaningful proxy —
+    # temporal gap of ~1900 years. Roman Republic is only valid for Seshat.
+    # 'Roman Republic':                      ('Italy',                'ITA', 1870),
     'Althingi Carbon-Neutral Parliament':    ('Iceland',              'ISL', 2015),
-    'Joseon Confucian Bureaucracy':          ('South Korea',          'KOR', 1870),
+    # Joseon: KOR 1895 is within Joseon (ended 1897), after the 1894 Gabo Reforms
+    # but before Japanese annexation. Using 1870 fell back to 1900 (Protectorate).
+    'Joseon Confucian Bureaucracy':          ('South Korea',          'KOR', 1895),
     'Cossack Hetmanate':                     ('Ukraine',              'UKR', 2010),
 }
 
@@ -173,11 +187,23 @@ def load_vdem(vdem_path):
 
 def match_vdem(iso_systems, vdem):
     """Match isonomia systems to V-Dem entries."""
+    # Systems known to be structurally unmatchable to V-Dem — ancient polities
+    # whose only available proxy is a wrong-era modern state. These are excluded
+    # from correlation calculations but flagged in the CSV for transparency.
+    EXCLUDED_FROM_VDEM = {
+        'Roman Republic',      # 509-27 BCE; ITA 1870 is post-Risorgimento Italy
+        'Qin Legalism',        # 221-206 BCE; CHN 1949 is PRC — spurious match
+    }
+
     matched = []
     for sys_name, (country, iso3, year) in ISONOMIA_TO_MODERN.items():
         if sys_name not in iso_systems:
             continue
+        if sys_name in EXCLUDED_FROM_VDEM:
+            print(f"  Excluded (structural mismatch): {sys_name}")
+            continue
         key = (iso3, year)
+        year_requested = year
         if key not in vdem:
             # Try adjacent years
             for dy in range(1, 6):
@@ -192,8 +218,12 @@ def match_vdem(iso_systems, vdem):
                 continue
         iso = iso_systems[sys_name]
         vd  = vdem[key]
+        # Flag if V-Dem fell back to a different year than requested
+        year_gap = abs(key[1] - year_requested)
+        mismatch = 'year_gap' if year_gap > 2 else ''
         row = {'system': sys_name, 'country': country, 'iso3': iso3,
-               'year': key[1]}
+               'year': key[1], 'year_requested': year_requested,
+               'mismatch_flag': mismatch}
         # isonomia variables
         for k in ['E', 'D', 'R', 'S', 'A', 'P', 'L', 'I', 'EDR', 'SAP']:
             row[f'iso_{k}'] = iso[k]
@@ -209,6 +239,9 @@ def match_vdem(iso_systems, vdem):
                 elif vdem_var.startswith('v2'):
                     val = (val + 4) / 8  # interval → approximate 0-1
                 row[f'vdem_{vdem_var}'] = val
+        if mismatch:
+            print(f"  Year gap ({year_gap}y): {sys_name} requested {year_requested}, "
+                  f"matched {key[1]}")
         matched.append(row)
     print(f"  Matched {len(matched)} isonomia ↔ V-Dem pairs")
     return matched
@@ -429,17 +462,39 @@ def run_polity_validation(iso_systems, polity):
 
 
 def save_matched_csv(vdem_matched, polity_matched):
-    """Save the matched dataset for reproducibility."""
+    """Save the matched dataset for reproducibility.
+
+    Writes both V-Dem and Polity5 matched rows, tagged with a 'source' column
+    ('vdem' or 'polity5'). This makes the CSV usable for residual analysis
+    across both external datasets without needing to re-run the full script.
+    """
+    # Tag each row with its source before merging
+    for r in vdem_matched:
+        r.setdefault('source', 'vdem')
+    for r in polity_matched:
+        r.setdefault('source', 'polity5')
+
+    all_rows = vdem_matched + polity_matched
     all_keys = set()
-    for r in vdem_matched + polity_matched:
+    for r in all_rows:
         all_keys.update(r.keys())
-    all_keys = sorted(all_keys)
+    # Put the most useful identifier columns first, rest alphabetical
+    priority = ['source', 'system', 'country', 'iso3', 'year',
+                'year_requested', 'mismatch_flag',
+                'iso_EDR', 'iso_SAP', 'iso_E', 'iso_D', 'iso_R',
+                'iso_S', 'iso_A', 'iso_P', 'iso_L', 'iso_I']
+    remaining = sorted(k for k in all_keys if k not in priority)
+    fieldnames = [k for k in priority if k in all_keys] + remaining
+
     with open(MATCHED_PATH, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=all_keys)
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        for r in vdem_matched:
-            writer.writerow({k: r.get(k, '') for k in all_keys})
-    print(f"\nMatched dataset saved to {MATCHED_PATH}")
+        for r in all_rows:
+            writer.writerow({k: r.get(k, '') for k in fieldnames})
+    n_vdem = len(vdem_matched)
+    n_pol  = len(polity_matched)
+    print(f"\nMatched dataset saved to {MATCHED_PATH} "
+          f"({n_vdem} V-Dem rows + {n_pol} Polity5 rows)")
 
 
 # ── Dry-run mode: show expected matches without external data ─────────────────
@@ -726,6 +781,23 @@ def run_seshat_validation(iso_systems, seshat_path):
                          fontsize=9.5, color=title_col)
             ax.set_xlabel(xl, fontsize=9)
             ax.set_ylabel(yl, fontsize=9)
+
+            # Inca annotation on the I vs ses_I panel: khipu-based administration
+            # scores 0 on Seshat's writing composite but iso_I reflects information
+            # infrastructure more broadly. This is not a coding error.
+            if xk == 'iso_I' and yk == 'ses_I':
+                inca_rows = [(x, y) for x, y, l in zip(xv, yv, lv)
+                             if 'Inca' in l]
+                if inca_rows:
+                    ix, iy = inca_rows[0]
+                    ax.annotate('Inca: khipu\n(non-script I)',
+                                xy=(ix, iy), xytext=(ix + 0.05, iy + 0.12),
+                                fontsize=7, color='#555555', style='italic',
+                                arrowprops=dict(arrowstyle='->', color='#aaaaaa',
+                                                lw=0.8),
+                                bbox=dict(boxstyle='round,pad=0.2',
+                                          fc='#fffbe6', ec='#ccccaa',
+                                          alpha=0.85, lw=0.6))
 
         # Legend panel — ordered by SESHAT_MAPPING for stability
         ax_leg = fig.add_subplot(gs[0, 3])
