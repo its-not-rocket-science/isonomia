@@ -178,7 +178,7 @@ This framing makes Zomia the most important counter-factual in the dataset. High
 
 The dataset contains seventeen systems with surplus legibility L ≥ 0.60 and EDR above the resilience threshold θ = 0.45. These are not anomalies: they are the primary evidence that the lock-in sequence is interruptible. Seven are hand-coded at confidence 2–3 and form the basis of this analysis.
 
-The seven counter-cases and their key values are shown in Table 1. All seven are hand-coded at confidence level 2 or above, based on primary or well-documented secondary sources. The D values in particular have been reviewed against the coding scheme's clarified P and A definitions from the Paper 1 inter-rater reliability exercise. The Venetian Republic's D value (0.60) reflects the sortition and ballotta procedures documented in Lane (1973) and Norwich (1982). The Hanseatic League's D value (0.65) reflects the documented member-city veto rights in Dollinger (1970). The Norwegian value (0.90) reflects the combination of mandatory referendum provisions, judicial independence scores in the V-Dem dataset, and trade union density data from the OECD. These codings carry confidence level 2 (reasonable inference from known structural features) rather than 3, because the specific operationalisation of D for modern democratic systems involves judgements about the effective exercise of formal rights that the coding scheme acknowledges as contested.
+The seven counter-cases and their key values are shown in Table 1. All seven are hand-coded at confidence level 2 or above, based on primary or well-documented secondary sources. The D values in particular have been reviewed against the coding scheme's clarified P and A definitions from the Paper 1 inter-rater reliability exercise. The EDR composite's construct validity has been confirmed against V-Dem v16 (r = 0.869–0.903 against three independent democracy indices, n = 18) and Polity5 (r = 0.839 against DEMOC, n = 13); see Paper 1 Section 10.2 for full cross-validation results. The Venetian Republic's D value (0.60) reflects the sortition and ballotta procedures documented in Lane (1973) and Norwich (1982). The Hanseatic League's D value (0.65) reflects the documented member-city veto rights in Dollinger (1970). The Norwegian value (0.90) reflects the combination of mandatory referendum provisions, judicial independence scores in the V-Dem dataset, and trade union density data from the OECD. These codings carry confidence level 2 (reasonable inference from known structural features) rather than 3, because the specific operationalisation of D for modern democratic systems involves judgements about the effective exercise of formal rights that the coding scheme acknowledges as contested.
 
 | System | L | I | A | D | EDR | Start | Succession |
 |---|---|---|---|---|---|---|---|
@@ -278,6 +278,8 @@ Third, the Zomia case shows that deliberate illegibility is a viable long-run st
 
 ## References
 
+Coppedge, Michael, John Gerring, Carl Henrik Knutsen, et al. 2026. *V-Dem Codebook v16*. Varieties of Democracy Project. https://www.v-dem.net/data/the-v-dem-dataset/
+
 Graeber, David and David Wengrow. 2021. *The Dawn of Everything: A New History of Humanity*. London: Allen Lane.
 
 Scott, James C. 2009. *The Art of Not Being Governed: An Anarchist History of Upland Southeast Asia*. New Haven, CT: Yale University Press.
@@ -287,6 +289,8 @@ Scott, James C. 2017. *Against the Grain: A Deep History of the Earliest States*
 Tainter, Joseph. 1988. *The Collapse of Complex Societies*. Cambridge: Cambridge University Press.
 
 Turchin, Peter. 2003. *Historical Dynamics: Why States Rise and Fall*. Princeton, NJ: Princeton University Press.
+
+Marshall, Monty G. and Ted Robert Gurr. 2020. *Polity5: Political Regime Characteristics and Transitions, 1800–2018*. Center for Systemic Peace. https://www.systemicpeace.org/inscrdata.html
 
 *For full reference list including archaeological sources for the case studies, see the companion dataset documentation at [URL removed for blind review].*
 

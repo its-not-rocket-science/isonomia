@@ -1,0 +1,32 @@
+# External validation datasets — download separately, do not commit
+# V-Dem: https://www.v-dem.net/data/the-v-dem-dataset/
+# Polity5: https://www.systemicpeace.org/inscrdata.html
+downloads/
+*.xls
+*.xlsx
+*.sav
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Large intermediates
+*.pkl
+*.parquet
+
+# Output artefacts that regenerate from scripts
+# (visuals/ is committed because figures are the paper's primary deliverables)

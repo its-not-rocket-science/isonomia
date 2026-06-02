@@ -255,6 +255,35 @@ Multiple values may apply.
 
 ---
 
+## External Construct Validity
+
+The EDR composite and SAP variables have been cross-validated against two independent datasets covering 18 matched governance systems spanning 1810–2015.
+
+**V-Dem v16** (https://www.v-dem.net/data/the-v-dem-dataset/):
+
+| Isonomia variable | V-Dem variable | r | p | n |
+|---|---|---|---|---|
+| EDR composite | Liberal democracy index (v2x_libdem) | 0.869 | <0.001 | 18 |
+| EDR composite | Egalitarian democracy (v2x_egaldem) | 0.896 | <0.001 | 12 |
+| EDR composite | Deliberative democracy (v2x_delibdem) | 0.903 | <0.001 | 12 |
+| E (exit freedom) | Freedom of movement (v2clfmove) | 0.837 | <0.001 | 18 |
+| R (arrangement) | Civil society organisations (v2cseeorgs) | 0.748 | <0.001 | 18 |
+| D (disobedience) | Judicial compliance (v2jucomp) | 0.671 | 0.002 | 18 |
+
+**Polity5** (https://www.systemicpeace.org/inscrdata.html):
+
+| Isonomia variable | Polity5 variable | r | p | n |
+|---|---|---|---|---|
+| EDR composite | DEMOC (0–10) | 0.839 | <0.001 | 13 |
+| SAP composite | AUTOC (0–10) | 0.860 | <0.001 | 13 |
+| S (sovereignty) | AUTOC | 0.867 | <0.001 | 13 |
+| D (disobedience) | XCONST (executive constraints) | 0.748 | 0.003 | 13 |
+| P (competitive politics) | PARCOMP | 0.592 | 0.033 | 13 |
+
+Note on P: the lower Polity PARCOMP correlation (r = 0.592) is expected. Our P captures prestige competition, ritual display, and non-electoral competitive politics that Polity's electoral-focused PARCOMP does not measure. See coding scheme P section for the critical distinction between competitive display *for* positions and performance of *held* power.
+
+Run `src/crossvalidate_edr.py` to reproduce. See `.gitignore` and README for dataset download instructions.
+
 ## Reliability Exercise Results
 
 A blind re-coding of 25 systems spanning the full EDR and SAP range was conducted by the primary coder. Results after P and A clarifications:
