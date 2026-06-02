@@ -282,7 +282,19 @@ The EDR composite and SAP variables have been cross-validated against two indepe
 
 Note on P: the lower Polity PARCOMP correlation (r = 0.592) is expected. Our P captures prestige competition, ritual display, and non-electoral competitive politics that Polity's electoral-focused PARCOMP does not measure. See coding scheme P section for the critical distinction between competitive display *for* positions and performance of *held* power.
 
-Run `src/crossvalidate_edr.py` to reproduce. See `.gitignore` and README for dataset download instructions.
+**Seshat: Global History Databank — Equinox-2020** (https://seshat-db.com/downloads_page/, free registration required):
+
+| Isonomia variable | Seshat variable | r | p | n |
+|---|---|---|---|---|
+| A (admin index) | Admin composite (admin levels, bureaucrats, merit promotion) | 0.604 | 0.022 | 14 |
+| I (info infrastructure) | Writing composite (written records, script) | 0.672 | 0.008 | 14 |
+| S (sovereignty) | Military composite (professional soldiers, military levels) | 0.798 | 0.002 | 12 |
+| SAP composite | Admin composite | 0.710 | 0.004 | 14 |
+| D (disobedience) | Legal composite (formal legal code, executive constraints) | 0.066 | ns | 11 |
+
+Coverage: 14 pre-modern systems, 3000 BCE–1600 CE. The D non-result is expected: Seshat was built to measure social complexity, not freedom. No Seshat variable captures exit, disobedience, or arrangement freedom directly. The D result confirms that our D dimension measures something outside Seshat's scope, consistent with its theoretical grounding in Graeber and Wengrow rather than in complexity science.
+
+Run `src/crossvalidate_edr.py --seshat path/to/Equinox2020.csv` to reproduce. See `.gitignore` and README for dataset download instructions.
 
 ## Reliability Exercise Results
 

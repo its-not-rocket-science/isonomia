@@ -469,10 +469,224 @@ def dry_run(iso_systems):
     print("     → 'Country-Year: V-Dem Full+Others version 16' → unzip → find .csv")
     print("  2. Download Polity5 from https://www.systemicpeace.org/inscrdata.html")
     print("     → 'Polity5 Annual Time-Series' → open in Excel → Save As CSV")
-    print("  3. Run:")
+    print("  3. (Optional) Download Seshat Equinox-2020 from https://seshat-db.com/downloads_page/")
+    print("     (free registration required)")
+    print("  4. Run:")
     print("     python src/crossvalidate_edr.py \\")
-    print("         --vdem  path/to/V-Dem-CY-Full+Others-v16.csv \\")
-    print("         --polity path/to/p5v2018.csv")
+    print("         --vdem   path/to/V-Dem-CY-Full+Others-v16.csv \\")
+    print("         --polity path/to/p5v2018d.csv \\")
+    print("         --seshat path/to/Equinox2020_05_2023.csv  # optional")
+
+
+
+# ── Seshat Equinox-2020 cross-validation ──────────────────────────────────────
+
+SESHAT_MAPPING = [
+    ('Early Uruk',                          'IqUruk*', 'Mesopotamia c.4000 BCE'),
+    ('Ubaid Culture',                       'IqUbaid', 'Mesopotamia c.5500 BCE'),
+    ('Egyptian Old Kingdom',                'EgOldK1', 'Egypt c.2650 BCE'),
+    ('Egyptian Middle Kingdom',             'EgMidKg', 'Egypt c.2000 BCE'),
+    ('Egyptian Nomarchies',                 'EgRegns', 'Egypt c.2150 BCE'),
+    ('Tang Dynasty',                        'CnTangE', 'China c.650 CE'),
+    ('Inca Empire (Tawantinsuyu)',           'PeInca*', 'Andes c.1450 CE'),
+    ('Aztec Triple Alliance',               'MxAztec', 'Mexico c.1480 CE'),
+    ('Iroquois Confederacy / Haudenosaunee','UsIroqE',  'NE America c.1600 CE'),
+    ('Althingi Carbon-Neutral Parliament',  'IsCommw',  'Iceland c.1000 CE'),
+    ('Mauryan Empire',                      'InMaury',  'India c.250 BCE'),
+    ('Ottoman Empire',                      'TrOttm2',  'Anatolia c.1600 CE'),
+    ('\u00c7atalh\u00f6y\u00fck',        'TrNeoLT',  'Konya Plain c.7000 BCE'),
+    ('Roman Republic',                      'ItRomMR',  'Latium c.200 BCE'),
+]
+
+# Seshat variables → isonomia dimension
+SESHAT_VARS = [
+    'Administrative levels', 'Full-time bureaucrats', 'Merit promotion',
+    'Formal legal code', 'Examination system', 'Professional soldiers',
+    'Military levels', 'Settlement hierarchy', 'Written records', 'Script',
+    'Constraint on executive by government',
+    'Constraint on executive by non-government', 'elite status is hereditary',
+]
+
+# Download:
+#   Seshat Equinox-2020: https://seshat-db.com/downloads_page/
+#   (requires free registration)
+#   File: Equinox2020_05_2023.xlsx or .csv (both accepted)
+
+def load_seshat(seshat_path):
+    """Load Seshat Equinox-2020 XLSX or CSV and return per-polity variable means."""
+    import pathlib
+    print(f"Loading Seshat from {seshat_path}...")
+    suffix = pathlib.Path(seshat_path).suffix.lower()
+    try:
+        import pandas as _pd
+        if suffix in ('.xlsx', '.xlsm'):
+            df = _pd.read_excel(seshat_path, engine='openpyxl')
+        elif suffix == '.xls':
+            df = _pd.read_excel(seshat_path, engine='xlrd')
+        else:
+            # CSV — try utf-8 then latin-1
+            for enc in ('utf-8', 'utf-8-sig', 'latin-1', 'cp1252'):
+                try:
+                    df = _pd.read_csv(seshat_path, encoding=enc, low_memory=False)
+                    break
+                except UnicodeDecodeError:
+                    continue
+            else:
+                raise RuntimeError(f"Cannot decode {seshat_path}")
+    except Exception as e:
+        raise RuntimeError(f"Could not load Seshat file: {e}")
+
+    def _encode(v):
+        if _pd.isna(v): return None
+        s = str(v).strip().lower()
+        if s in ('present', 'yes', '1', 'true', 'inferred present'): return 1.0
+        if s in ('absent', 'no', '0', 'false', 'inferred absent'): return 0.0
+        if s in ('unknown', 'suspected unknown'): return None
+        try: return float(s)
+        except: return None
+
+    polity_data = {}
+    for var in SESHAT_VARS:
+        sub = df[df['Variable'] == var][['Polity', 'Value.From']].copy()
+        sub['val'] = sub['Value.From'].apply(_encode)
+        sub = sub.dropna(subset=['val'])
+        for polity, val in sub.groupby('Polity')['val'].mean().items():
+            if polity not in polity_data: polity_data[polity] = {}
+            polity_data[polity][var] = val
+
+    print(f"  Loaded {len(polity_data):,} Seshat polities with variable data")
+    return polity_data
+
+
+def run_seshat_validation(iso_systems, seshat_path):
+    """Cross-validate isonomia SAP dimensions against Seshat social complexity."""
+    import numpy as np
+
+    seshat = load_seshat(seshat_path)
+
+    matched = []
+    for iso_name, ses_code, desc in SESHAT_MAPPING:
+        if iso_name not in iso_systems or ses_code not in seshat:
+            continue
+        iso = iso_systems[iso_name]
+        sd  = seshat[ses_code]
+
+        # Normalise Seshat ordinals to 0-1 before storing
+        adm_raw = sd.get('Administrative levels')
+        mil_raw = sd.get('Military levels')
+        adm_n = min(adm_raw / 8.0, 1.0) if adm_raw is not None else None
+        mil_n = min(mil_raw / 6.0, 1.0) if mil_raw is not None else None
+
+        # Build composites
+        def _mean(*vals):
+            clean = [v for v in vals if v is not None]
+            return float(np.mean(clean)) if clean else None
+
+        row = {
+            'system': iso_name, 'seshat_id': ses_code, 'period': desc,
+            'iso_A':   iso['A'], 'iso_I': iso['I'],
+            'iso_S':   iso['S'], 'iso_D': iso['D'],
+            'iso_SAP': iso['SAP'], 'iso_EDR': iso['EDR'],
+            # Store normalised individual variables
+            'ses_admin_levels_n':   adm_n,
+            'ses_military_levels_n': mil_n,
+            'ses_bureaucrats':      sd.get('Full-time bureaucrats'),
+            'ses_merit':            sd.get('Merit promotion'),
+            'ses_writing':          sd.get('Written records'),
+            'ses_script':           sd.get('Script'),
+            'ses_profsoldiers':     sd.get('Professional soldiers'),
+            'ses_legal':            sd.get('Formal legal code'),
+            'ses_constr_gov':       sd.get('Constraint on executive by government'),
+            'ses_constr_nongov':    sd.get('Constraint on executive by non-government'),
+            # Composites (all on 0-1 scale)
+            'ses_A': _mean(adm_n,
+                           sd.get('Full-time bureaucrats'),
+                           sd.get('Merit promotion')),
+            'ses_I': _mean(sd.get('Written records'),
+                           sd.get('Script')),
+            'ses_S': _mean(sd.get('Professional soldiers'), mil_n),
+            'ses_D': _mean(sd.get('Formal legal code'),
+                           sd.get('Constraint on executive by government'),
+                           sd.get('Constraint on executive by non-government')),
+        }
+        matched.append(row)
+        a_str = f"{row['ses_A']:.2f}" if row['ses_A'] is not None else '—'
+        i_str = f"{row['ses_I']:.2f}" if row['ses_I'] is not None else '—'
+        print(f"  ✓ {iso_name[:38]:38s}  A={a_str}  I={i_str}")
+
+    print(f"\n  Matched {len(matched)} isonomia ↔ Seshat pairs")
+    if len(matched) < 4:
+        print("  Insufficient matches for Seshat cross-validation")
+        return
+
+    # Correlations
+    print(f"\n{'Isonomia':22s}  {'Seshat proxy':30s}  r       p      n")
+    print("-" * 70)
+    comparisons = [
+        ('iso_A',   'ses_A', 'A (admin index)',         'Seshat admin composite'),
+        ('iso_I',   'ses_I', 'I (info infrastructure)', 'Seshat writing composite'),
+        ('iso_S',   'ses_S', 'S (sovereignty)',         'Seshat military composite'),
+        ('iso_D',   'ses_D', 'D (disobedience)',        'Seshat legal composite'),
+        ('iso_SAP', 'ses_A', 'SAP composite',           'Seshat admin composite'),
+    ]
+    for xk, yk, xl, yl in comparisons:
+        pairs = [(r[xk], r[yk]) for r in matched
+                 if r.get(xk) is not None and r.get(yk) is not None]
+        if len(pairs) < 4:
+            print(f"  {xl:22s}  {yl:28s}  insufficient data (n={len(pairs)})")
+            continue
+        from scipy import stats as _stats
+        x, y = zip(*pairs)
+        r_val, p_val = _stats.pearsonr(x, y)
+        print(f"  {xl:22s}  {yl:28s}  {r_val:.3f}   {p_val:.4f} {sig(p_val)}  n={len(pairs)}")
+
+    # Save figure
+    try:
+        import matplotlib.pyplot as _plt
+        import matplotlib.patches as _mp
+        _plt.rcParams.update({'font.family': 'serif', 'font.size': 10})
+        fig, axes = _plt.subplots(1, 3, figsize=(14, 5))
+        SHORT = {m[0]: m[0].replace('Iroquois Confederacy / Haudenosaunee','Iroquois')
+                              .replace('Althingi Carbon-Neutral Parliament','Iceland')
+                              .replace('Inca Empire (Tawantinsuyu)','Inca')
+                              .replace('Aztec Triple Alliance','Aztec')
+                              .replace('Egyptian Old Kingdom','Old Kingdom')
+                              .replace('Egyptian Middle Kingdom','Mid Kingdom')
+                              .replace('Egyptian Nomarchies','Egypt Regions')
+                 for m in SESHAT_MAPPING}
+        for ax, (xk, yk, xl, yl) in zip(axes, comparisons[:3]):
+            pairs = [(r[xk], r[yk], r['system']) for r in matched
+                     if r.get(xk) is not None and r.get(yk) is not None]
+            if len(pairs) < 4: continue
+            xv, yv, lv = zip(*pairs)
+            xv, yv = [float(x) for x in xv], [float(y) for y in yv]
+            import numpy as _np
+            ax.scatter(xv, yv, c='#2166ac', s=55, alpha=0.85,
+                       edgecolors='white', linewidths=0.5, zorder=4)
+            for x, y, l in zip(xv, yv, lv):
+                ax.annotate(SHORT.get(l,l[:12]), (x,y), xytext=(5,3),
+                             textcoords='offset points', fontsize=7.5,
+                             color='#333333')
+            from scipy import stats as _stats
+            r_val, p_val = _stats.pearsonr(xv, yv)
+            m, b = _np.polyfit(xv, yv, 1)
+            xr = _np.linspace(min(xv), max(xv), 100)
+            ax.plot(xr, m*xr+b, 'k--', lw=1.2, alpha=0.4)
+            col = 'darkgreen' if abs(r_val)>=0.7 else '#b8860b' if abs(r_val)>=0.5 else 'darkred'
+            ax.set_title(f'r={r_val:.3f} {sig(p_val)}  n={len(xv)}',
+                         fontsize=9.5, color=col)
+            ax.set_xlabel(xl, fontsize=9); ax.set_ylabel(yl, fontsize=9)
+        fig.suptitle('Seshat Equinox-2020 cross-validation (pre-modern, n=14)\n'
+                     'SAP dimensions vs Seshat social complexity variables',
+                     fontsize=11, fontweight='bold')
+        _plt.tight_layout()
+        _plt.savefig(os.path.join(OUTPUT_DIR, 'crossval_seshat.png'),
+                     dpi=150, bbox_inches='tight')
+        _plt.close()
+        print("Saved: crossval_seshat.png")
+    except Exception as e:
+        print(f"  Figure not saved: {e}")
+
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -481,17 +695,21 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Cross-validate EDR against V-Dem and Polity5')
     parser.add_argument('--vdem',   help='Path to V-Dem CSV (Full+Others)')
     parser.add_argument('--polity', help='Path to Polity5 CSV')
+    parser.add_argument('--seshat', help='Path to Seshat Equinox-2020 XLSX')
     args = parser.parse_args()
 
     iso_systems = load_isonomia()
     print(f"Loaded {len(iso_systems)} hand-coded isonomia systems")
 
-    if not args.vdem and not args.polity:
+    if not args.vdem and not args.polity and not args.seshat:
         dry_run(iso_systems)
         sys.exit(0)
 
     vdem_matched  = []
     polity_matched = []
+
+    if args.seshat:
+        run_seshat_validation(iso_systems, args.seshat)
 
     if args.vdem:
         vdem = load_vdem(args.vdem)

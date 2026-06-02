@@ -1,6 +1,7 @@
 # External validation datasets — download separately, do not commit
 # V-Dem: https://www.v-dem.net/data/the-v-dem-dataset/
 # Polity5: https://www.systemicpeace.org/inscrdata.html
+# Seshat Equinox-2020: https://seshat-db.com/downloads_page/ (requires free registration)
 downloads/
 *.xls
 *.xlsx
