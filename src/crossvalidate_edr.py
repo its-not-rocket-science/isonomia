@@ -461,24 +461,34 @@ def run_polity_validation(iso_systems, polity):
     return matched_pol
 
 
-def save_matched_csv(vdem_matched, polity_matched):
+def save_matched_csv(vdem_matched, polity_matched,
+                     wjp_matched=None, fiw_matched=None, ccp_matched=None):
     """Save the matched dataset for reproducibility.
 
-    Writes both V-Dem and Polity5 matched rows, tagged with a 'source' column
-    ('vdem' or 'polity5'). This makes the CSV usable for residual analysis
-    across both external datasets without needing to re-run the full script.
+    Writes V-Dem, Polity5, WJP, FIW, and CCP matched rows, each tagged
+    with a 'source' column.  Column order puts identifier and iso_ variables
+    first, then external variables grouped by source.
     """
-    # Tag each row with its source before merging
+    wjp_matched = wjp_matched or []
+    fiw_matched = fiw_matched or []
+    ccp_matched = ccp_matched or []
+
     for r in vdem_matched:
         r.setdefault('source', 'vdem')
     for r in polity_matched:
         r.setdefault('source', 'polity5')
+    for r in wjp_matched:
+        r.setdefault('source', 'wjp')
+    for r in fiw_matched:
+        r.setdefault('source', 'fiw')
+    for r in ccp_matched:
+        r.setdefault('source', 'ccp')
 
-    all_rows = vdem_matched + polity_matched
+    all_rows = vdem_matched + polity_matched + wjp_matched + fiw_matched + ccp_matched
     all_keys = set()
     for r in all_rows:
         all_keys.update(r.keys())
-    # Put the most useful identifier columns first, rest alphabetical
+
     priority = ['source', 'system', 'country', 'iso3', 'year',
                 'year_requested', 'mismatch_flag',
                 'iso_EDR', 'iso_SAP', 'iso_E', 'iso_D', 'iso_R',
@@ -491,10 +501,11 @@ def save_matched_csv(vdem_matched, polity_matched):
         writer.writeheader()
         for r in all_rows:
             writer.writerow({k: r.get(k, '') for k in fieldnames})
-    n_vdem = len(vdem_matched)
-    n_pol  = len(polity_matched)
-    print(f"\nMatched dataset saved to {MATCHED_PATH} "
-          f"({n_vdem} V-Dem rows + {n_pol} Polity5 rows)")
+
+    counts = (f"{len(vdem_matched)} V-Dem + {len(polity_matched)} Polity5"
+              f" + {len(wjp_matched)} WJP + {len(fiw_matched)} FIW"
+              f" + {len(ccp_matched)} CCP rows")
+    print(f"\nMatched dataset saved to {MATCHED_PATH} ({counts})")
 
 
 # ── Dry-run mode: show expected matches without external data ─────────────────
@@ -822,24 +833,852 @@ def run_seshat_validation(iso_systems, seshat_path):
 
 
 
+# ── WJP Rule of Law Index validation ─────────────────────────────────────────
+#
+# WJP coverage: 2012–2025, 142 countries.  For isonomia systems with a modern
+# target year (≥ 2010) we match to the nearest available WJP year.  For
+# systems with a pre-2012 target year we match to the most recent available
+# year for that country and set mismatch_flag = 'wjp_proxy'.
+#
+# Key sub-factor mapping (all 0–1 in WJP):
+#   Factor 1 / 1.2 / 1.5 / 4.3  →  iso_D  (constraints + due process)
+#   4.4 / 4.6                    →  iso_E  (expression + privacy)
+#   4.7 / 3.3                    →  iso_R  (assembly + civic participation)
+#
+# Switzerland (CHE) and Iceland (ISL) are absent from WJP entirely.
+
+def load_wjp(wjp_path):
+    """Load WJP Historical Data sheet.  Returns dict (iso3, year) → row dict."""
+    import pathlib
+    ext = pathlib.Path(wjp_path).suffix.lower()
+    if ext in ('.xlsx', '.xls'):
+        from openpyxl import load_workbook
+        wb = load_workbook(wjp_path, read_only=True, data_only=True)
+        ws = wb['Historical Data']
+        rows = list(ws.iter_rows(values_only=True))
+        headers = rows[0]
+        import pandas as _pd
+        df = _pd.DataFrame(rows[1:], columns=headers)
+    else:
+        import pandas as _pd
+        df = _pd.read_csv(wjp_path, low_memory=False)
+
+    # Normalise year: '2012-2013' → 2012, integers stay
+    def _norm_year(y):
+        if isinstance(y, str) and '-' in y:
+            return int(y.split('-')[0])
+        try:
+            return int(y)
+        except (TypeError, ValueError):
+            return None
+
+    df['_year'] = df['Year'].apply(_norm_year)
+    df = df.dropna(subset=['Country Code', '_year'])
+    df['_year'] = df['_year'].astype(int)
+
+    wjp = {}
+    for _, row in df.iterrows():
+        wjp[(str(row['Country Code']), int(row['_year']))] = row.to_dict()
+    print(f"  Loaded {len(wjp)} WJP country-year observations")
+    return wjp
+
+
+def match_wjp(iso_systems, wjp):
+    """Match isonomia systems to WJP entries."""
+    # WJP coverage starts 2012.  Two cases:
+    # 1. Modern system (target_year >= 1970): WJP measures the same political
+    #    entity at a slightly different year — legitimate match, flag year_gap
+    #    if the gap exceeds 5 years but include in direct correlations.
+    # 2. Pre-modern system (target_year < 1970): WJP measures a successor state
+    #    in a completely different era — genuine proxy, excluded from primary r.
+    #    Soviet Russia (target 1980) is borderline but genuinely different from
+    #    modern Russia, so threshold is set at 1980 (exclusive).
+    WJP_PROXY_THRESHOLD = 1979   # target_year <= this → proxy
+    WJP_START = 2012
+    WJP_YEARS = sorted({y for (_, y) in wjp})
+
+    matched = []
+    for sys_name, (country, iso3, target_year) in ISONOMIA_TO_MODERN.items():
+        if sys_name not in iso_systems:
+            continue
+        # Find best WJP year: nearest available
+        available = sorted(y for (c, y) in wjp if c == iso3)
+        if not available:
+            print(f"  No WJP data: {sys_name} ({iso3}) — country absent from WJP")
+            continue
+
+        best = min(available, key=lambda y: abs(y - target_year))
+        year_gap = abs(best - target_year)
+
+        if target_year <= WJP_PROXY_THRESHOLD:
+            # Pre-modern or Cold War-era system: WJP measures successor state
+            flag = 'wjp_proxy'
+        elif year_gap > 5:
+            flag = 'year_gap'
+        else:
+            flag = ''
+
+        if flag == 'wjp_proxy':
+            # Use most recent year for proxy (closest to what WJP covers)
+            best = max(available)
+
+        row = wjp[(iso3, best)]
+        iso = iso_systems[sys_name]
+
+        def gv(col):
+            v = row.get(col)
+            try:
+                return float(v) if v is not None else None
+            except (TypeError, ValueError):
+                return None
+
+        # Sub-factor composites (all already 0–1 in WJP)
+        # D: government constraints + due process
+        d_vals = [gv('Factor 1: Constraints on Government Powers'),
+                  gv('1.2 Government powers are effectively limited by the judiciary'),
+                  gv('1.5 Government powers are subject to non-governmental checks'),
+                  gv('4.3 Due process of the law and rights of the accused')]
+        # E: expression + privacy
+        e_vals = [gv('4.4 Freedom of opinion and expression is effectively guaranteed'),
+                  gv('4.6 Freedom from arbitrary interference with privacy is effectively guaranteed')]
+        # R: assembly + civic participation
+        r_vals = [gv('4.7 Freedom of assembly and association is effectively guaranteed'),
+                  gv('3.3 Civic participation')]
+
+        def mean_nonnull(vals):
+            v = [x for x in vals if x is not None]
+            return sum(v) / len(v) if v else None
+
+        matched.append({
+            'system': sys_name, 'country': country, 'iso3': iso3,
+            'year': best, 'year_requested': target_year,
+            'mismatch_flag': flag,
+            'iso_E': iso['E'], 'iso_D': iso['D'], 'iso_R': iso['R'],
+            'iso_EDR': iso['EDR'], 'iso_SAP': iso['SAP'],
+            'iso_S': iso['S'], 'iso_A': iso['A'], 'iso_P': iso['P'],
+            'wjp_overall': gv('WJP Rule of Law Index: Overall Score'),
+            'wjp_constraints': gv('Factor 1: Constraints on Government Powers'),
+            'wjp_jud_limit':   gv('1.2 Government powers are effectively limited by the judiciary'),
+            'wjp_ngo_checks':  gv('1.5 Government powers are subject to non-governmental checks'),
+            'wjp_due_process': gv('4.3 Due process of the law and rights of the accused'),
+            'wjp_expression':  gv('4.4 Freedom of opinion and expression is effectively guaranteed'),
+            'wjp_privacy':     gv('4.6 Freedom from arbitrary interference with privacy is effectively guaranteed'),
+            'wjp_assembly':    gv('4.7 Freedom of assembly and association is effectively guaranteed'),
+            'wjp_civic_part':  gv('3.3 Civic participation'),
+            'wjp_D_composite': mean_nonnull(d_vals),
+            'wjp_E_composite': mean_nonnull(e_vals),
+            'wjp_R_composite': mean_nonnull(r_vals),
+        })
+
+    # Separate direct matches from proxies for reporting
+    direct  = [r for r in matched if r['mismatch_flag'] != 'wjp_proxy']
+    proxies = [r for r in matched if r['mismatch_flag'] == 'wjp_proxy']
+    print(f"  Matched {len(direct)} direct WJP pairs + {len(proxies)} proxy pairs")
+    return matched
+
+
+def run_wjp_validation(matched):
+    """Print WJP correlation table and save figure."""
+    from scipy import stats as _stats
+    import numpy as _np
+
+    # Use only direct matches for primary correlations; note n for proxies
+    direct = [r for r in matched if r['mismatch_flag'] != 'wjp_proxy']
+
+    comparisons = [
+        # (iso_var, wjp_var, label)
+        ('iso_D', 'wjp_D_composite', 'D (disobedience)',     'WJP constraints+due process'),
+        ('iso_D', 'wjp_constraints',  'D (disobedience)',     'WJP Factor 1 (constraints)'),
+        ('iso_E', 'wjp_E_composite',  'E (exit freedom)',     'WJP expression+privacy'),
+        ('iso_R', 'wjp_R_composite',  'R (arrangement)',      'WJP assembly+civic part.'),
+        ('iso_EDR','wjp_overall',     'EDR composite',        'WJP overall rule of law'),
+    ]
+
+    print("\n=== WJP RULE OF LAW CROSS-VALIDATION ===")
+    print(f"  Direct matches n={len(direct)}; proxy matches n={len(matched)-len(direct)} (flagged, excluded from r)")
+    print()
+    hdr = f"  {'Isonomia var':<22} {'WJP var':<35} {'r':>7} {'p':>10} {'n':>4}"
+    print(hdr)
+    print("  " + "-" * 80)
+
+    for iso_var, wjp_var, iso_label, wjp_label in comparisons:
+        pairs = [(r[iso_var], r[wjp_var]) for r in direct
+                 if r.get(iso_var) is not None and r.get(wjp_var) is not None]
+        if len(pairs) < 4:
+            print(f"  {iso_label:<22} {wjp_label:<35} {'—':>7}  n<4")
+            continue
+        xv, yv = zip(*pairs)
+        r_val, p_val = _stats.pearsonr(list(xv), list(yv))
+        print(f"  {iso_label:<22} {wjp_label:<35} {r_val:>7.3f} "
+              f"  {p_val:>8.4f} {sig(p_val):<3}  n={len(pairs)}")
+
+    # Save figure: 4-panel — D, E, R, EDR
+    try:
+        import matplotlib.pyplot as _plt
+        import matplotlib.lines as _ml
+
+        fig, axes = _plt.subplots(1, 4, figsize=(16, 4.5))
+        _plt.rcParams.update({'font.family': 'serif', 'font.size': 9})
+
+        panel_comparisons = [
+            ('iso_D', 'wjp_D_composite', 'iso_D (disobedience)', 'WJP constraints+due process'),
+            ('iso_E', 'wjp_E_composite', 'iso_E (exit freedom)',  'WJP expression+privacy'),
+            ('iso_R', 'wjp_R_composite', 'iso_R (arrangement)',   'WJP assembly+civic part.'),
+            ('iso_EDR', 'wjp_overall',   'iso_EDR composite',     'WJP overall rule of law'),
+        ]
+        # Colour by proxy status
+        colours = {'': '#2166ac', 'year_gap': '#f4a582', 'wjp_proxy': '#d9d9d9'}
+
+        for ax, (xk, yk, xl, yl) in zip(axes, panel_comparisons):
+            for r in matched:
+                x, y = r.get(xk), r.get(yk)
+                if x is None or y is None:
+                    continue
+                c = colours.get(r.get('mismatch_flag', ''), '#2166ac')
+                ax.scatter(float(x), float(y), c=c, s=50, alpha=0.85,
+                           edgecolors='white', linewidths=0.5, zorder=4)
+
+            # Trend line on direct matches only
+            pairs = [(r[xk], r[yk]) for r in direct
+                     if r.get(xk) is not None and r.get(yk) is not None]
+            if len(pairs) >= 4:
+                xv2, yv2 = zip(*pairs)
+                xv2 = [float(v) for v in xv2]
+                yv2 = [float(v) for v in yv2]
+                r_val, p_val = _stats.pearsonr(xv2, yv2)
+                m, b = _np.polyfit(xv2, yv2, 1)
+                xr = _np.linspace(min(xv2), max(xv2), 100)
+                ax.plot(xr, m * xr + b, 'k--', lw=1.2, alpha=0.4)
+                tc = ('darkgreen' if abs(r_val) >= 0.7
+                      else '#b8860b' if abs(r_val) >= 0.5 else 'darkred')
+                ax.set_title(f'r={r_val:.3f} {sig(p_val)}  n={len(pairs)}',
+                             fontsize=9, color=tc)
+            ax.set_xlabel(xl, fontsize=8.5)
+            ax.set_ylabel(yl, fontsize=8.5)
+
+        # Legend for point types
+        legend_els = [
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#2166ac',
+                       markersize=7, label='Direct match'),
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#f4a582',
+                       markersize=7, label='Year gap (>2y)'),
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#d9d9d9',
+                       markersize=7, label='WJP proxy (pre-2012 system)'),
+        ]
+        axes[-1].legend(handles=legend_els, loc='lower right', fontsize=7.5,
+                        frameon=True, framealpha=0.9)
+        fig.suptitle('WJP Rule of Law cross-validation\n'
+                     'EDR components vs WJP sub-factors',
+                     fontsize=11, fontweight='bold')
+        _plt.tight_layout()
+        _plt.savefig(os.path.join(OUTPUT_DIR, 'crossval_wjp.png'),
+                     dpi=150, bbox_inches='tight')
+        _plt.close()
+        print("Saved: crossval_wjp.png")
+    except Exception as e:
+        print(f"  WJP figure not saved: {e}")
+
+
+# ── Freedom House (FIW) validation ────────────────────────────────────────────
+#
+# FIW 2013–2021 sub-score mapping:
+#   B  (Political Pluralism and Participation) → iso_P  [key gap filler]
+#   D  (Freedom of Expression and Belief)      → iso_E
+#   E  (Associational and Organizational Rights) → iso_R
+#   F  (Rule of Law)                           → iso_D
+#   PR (Political Rights aggregate)            → iso_P / iso_S
+#   CL (Civil Liberties aggregate)             → iso_EDR proxy
+#
+# All raw scores are 0–max (vary by sub-category); normalised to 0–1.
+# Max values: A=12, B=16, C=12, D=16, E=12, F=16, G=16, PR=40, CL=60, Total=100
+# Edition = year of the FIW report (assesses prior calendar year).
+# Country names used (no ISO3), so matching is by name fuzzy-match.
+
+FIW_MAX = {'A': 12, 'B': 16, 'C': 12, 'D': 16, 'E': 12, 'F': 16, 'G': 16,
+           'PR': 40, 'CL': 60, 'Total': 100}
+
+# Name mapping from FIW country names to our iso3 codes (add as needed)
+FIW_NAME_TO_ISO3 = {
+    'Norway': 'NOR', 'Estonia': 'EST', 'Switzerland': 'CHE',
+    'Germany': 'DEU', 'United Kingdom': 'GBR', 'Netherlands': 'NLD',
+    'Russia': 'RUS', 'Singapore': 'SGP', 'Japan': 'JPN',
+    'France': 'FRA', 'Turkey': 'TUR', 'Austria': 'AUT',
+    'China': 'CHN', 'India': 'IND', 'South Africa': 'ZAF',
+    'Tanzania': 'TZA', 'Mexico': 'MEX', 'Brazil': 'BRA',
+    'Iceland': 'ISL', 'South Korea': 'KOR', 'Ukraine': 'UKR',
+    'Korea, South': 'KOR',
+}
+
+
+def load_fiw(fiw_path):
+    """Load Freedom in the World Excel.  Returns dict (iso3, edition) → row dict."""
+    import pathlib
+    from openpyxl import load_workbook
+    wb = load_workbook(fiw_path, read_only=True, data_only=True)
+    ws = wb['FIW13-21']
+    rows = list(ws.iter_rows(values_only=True))
+    headers = rows[1]   # row 0 is a title row
+    import pandas as _pd
+    df = _pd.DataFrame(rows[2:], columns=headers)
+
+    # Normalise sub-scores to 0–1 using known maxima
+    for col, mx in FIW_MAX.items():
+        if col in df.columns:
+            df[f'{col}_norm'] = _pd.to_numeric(df[col], errors='coerce') / mx
+
+    fiw = {}
+    for _, row in df.iterrows():
+        name = str(row.get('Country/Territory', '')).strip()
+        iso3 = FIW_NAME_TO_ISO3.get(name)
+        if iso3 is None:
+            continue
+        edition = row.get('Edition')
+        try:
+            edition = int(edition)
+        except (TypeError, ValueError):
+            continue
+        fiw[(iso3, edition)] = row.to_dict()
+
+    covered = len({iso3 for (iso3, _) in fiw})
+    print(f"  Loaded {len(fiw)} FIW country-edition observations ({covered} countries)")
+    return fiw
+
+
+def match_fiw(iso_systems, fiw):
+    """Match isonomia systems to FIW entries.
+
+    FIW covers 2013–2021.  For modern systems (target_year >= 1980) we match
+    to the nearest available edition — this measures the same political entity
+    at a slightly different time.  For pre-modern or Cold War-era systems
+    (target_year <= 1979) we use the most recent edition as a proxy of the
+    current successor state, and flag accordingly.
+    """
+    FIW_PROXY_THRESHOLD = 1979
+
+    matched = []
+    for sys_name, (country, iso3, target_year) in ISONOMIA_TO_MODERN.items():
+        if sys_name not in iso_systems:
+            continue
+        available = sorted(ed for (c, ed) in fiw if c == iso3)
+        if not available:
+            continue
+
+        if target_year <= FIW_PROXY_THRESHOLD:
+            best = max(available)
+            flag = 'fiw_proxy'
+        else:
+            best = min(available, key=lambda y: abs(y - target_year))
+            flag = 'year_gap' if abs(best - target_year) > 5 else ''
+
+        row = fiw[(iso3, best)]
+        iso = iso_systems[sys_name]
+
+        def gn(col):
+            v = row.get(f'{col}_norm')
+            try:
+                return float(v) if v is not None else None
+            except (TypeError, ValueError):
+                return None
+
+        matched.append({
+            'system': sys_name, 'country': country, 'iso3': iso3,
+            'year': best, 'year_requested': target_year,
+            'mismatch_flag': flag,
+            'iso_E': iso['E'], 'iso_D': iso['D'], 'iso_R': iso['R'],
+            'iso_P': iso['P'], 'iso_EDR': iso['EDR'], 'iso_SAP': iso['SAP'],
+            'fiw_B_pluralism':  gn('B'),    # Political Pluralism → iso_P
+            'fiw_D_expression': gn('D'),    # Expression → iso_E
+            'fiw_E_assoc':      gn('E'),    # Associational Rights → iso_R
+            'fiw_F_ruleoflaw':  gn('F'),    # Rule of Law → iso_D
+            'fiw_PR':           gn('PR'),   # Political Rights → iso_P / iso_S
+            'fiw_CL':           gn('CL'),   # Civil Liberties → iso_EDR
+            'fiw_total':        gn('Total'),
+        })
+
+    direct  = [r for r in matched if r['mismatch_flag'] != 'fiw_proxy']
+    proxies = [r for r in matched if r['mismatch_flag'] == 'fiw_proxy']
+    print(f"  Matched {len(direct)} direct FIW pairs + {len(proxies)} proxy pairs")
+    return matched
+
+
+def run_fiw_validation(matched):
+    """Print FIW correlation table and save figure."""
+    from scipy import stats as _stats
+    import numpy as _np
+
+    direct = [r for r in matched if r['mismatch_flag'] != 'fiw_proxy']
+
+    comparisons = [
+        ('iso_P',   'fiw_B_pluralism',  'P (competitive politics)', 'FIW-B Political Pluralism'),
+        ('iso_E',   'fiw_D_expression', 'E (exit freedom)',          'FIW-D Expression & Belief'),
+        ('iso_R',   'fiw_E_assoc',      'R (arrangement)',           'FIW-E Associational Rights'),
+        ('iso_D',   'fiw_F_ruleoflaw',  'D (disobedience)',          'FIW-F Rule of Law'),
+        ('iso_EDR', 'fiw_CL',           'EDR composite',             'FIW Civil Liberties'),
+        ('iso_EDR', 'fiw_total',        'EDR composite',             'FIW Total score'),
+    ]
+
+    print("\n=== FREEDOM HOUSE (FIW) CROSS-VALIDATION ===")
+    print(f"  Direct matches n={len(direct)}; proxy matches n={len(matched)-len(direct)} (flagged, excluded from r)")
+    print()
+    hdr = f"  {'Isonomia var':<26} {'FIW var':<32} {'r':>7} {'p':>10} {'n':>4}"
+    print(hdr)
+    print("  " + "-" * 80)
+
+    for iso_var, fiw_var, iso_label, fiw_label in comparisons:
+        pairs = [(r[iso_var], r[fiw_var]) for r in direct
+                 if r.get(iso_var) is not None and r.get(fiw_var) is not None]
+        if len(pairs) < 4:
+            print(f"  {iso_label:<26} {fiw_label:<32} {'—':>7}  n<4")
+            continue
+        xv, yv = zip(*pairs)
+        r_val, p_val = _stats.pearsonr(list(xv), list(yv))
+        print(f"  {iso_label:<26} {fiw_label:<32} {r_val:>7.3f} "
+              f"  {p_val:>8.4f} {sig(p_val):<3}  n={len(pairs)}")
+
+    # Save figure: 2×3 grid
+    try:
+        import matplotlib.pyplot as _plt
+        import matplotlib.lines as _ml
+
+        fig, axes = _plt.subplots(2, 3, figsize=(15, 9))
+        axes = axes.flatten()
+        _plt.rcParams.update({'font.family': 'serif', 'font.size': 9})
+        colours = {'': '#2166ac', 'year_gap': '#f4a582', 'fiw_proxy': '#d9d9d9'}
+
+        for ax, (xk, yk, xl, yl) in zip(axes, comparisons):
+            for r in matched:
+                x, y = r.get(xk), r.get(yk)
+                if x is None or y is None:
+                    continue
+                c = colours.get(r.get('mismatch_flag', ''), '#2166ac')
+                ax.scatter(float(x), float(y), c=c, s=50, alpha=0.85,
+                           edgecolors='white', linewidths=0.5, zorder=4)
+            pairs = [(r[xk], r[yk]) for r in direct
+                     if r.get(xk) is not None and r.get(yk) is not None]
+            if len(pairs) >= 4:
+                xv2 = [float(p[0]) for p in pairs]
+                yv2 = [float(p[1]) for p in pairs]
+                r_val, p_val = _stats.pearsonr(xv2, yv2)
+                m, b = _np.polyfit(xv2, yv2, 1)
+                xr = _np.linspace(min(xv2), max(xv2), 100)
+                ax.plot(xr, m * xr + b, 'k--', lw=1.2, alpha=0.4)
+                tc = ('darkgreen' if abs(r_val) >= 0.7
+                      else '#b8860b' if abs(r_val) >= 0.5 else 'darkred')
+                ax.set_title(f'r={r_val:.3f} {sig(p_val)}  n={len(pairs)}',
+                             fontsize=9, color=tc)
+            ax.set_xlabel(xl, fontsize=8.5)
+            ax.set_ylabel(yl, fontsize=8.5)
+            # P note: iso_P range restriction (0.3–0.75 in modern matched set)
+            # limits FIW-B correlation; see Polity PARCOMP for comparison
+            if xk == 'iso_P':
+                ax.annotate('iso_P range restricted\n(0.3–0.75 in modern set)',
+                            xy=(0.5, 0.04), xycoords='axes fraction',
+                            fontsize=6.5, color='#888888', ha='center', style='italic')
+
+        legend_els = [
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#2166ac',
+                       markersize=7, label='Direct match'),
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#f4a582',
+                       markersize=7, label='Year gap (>2y)'),
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#d9d9d9',
+                       markersize=7, label='FIW proxy (pre-2013 system)'),
+        ]
+        axes[-1].legend(handles=legend_els, loc='center', fontsize=7.5,
+                        frameon=True, framealpha=0.9)
+        axes[-1].axis('off')
+        fig.suptitle('Freedom House (FIW 2013–2021) cross-validation\n'
+                     'EDR/SAP components vs FIW sub-scores',
+                     fontsize=11, fontweight='bold')
+        _plt.tight_layout()
+        _plt.savefig(os.path.join(OUTPUT_DIR, 'crossval_fiw.png'),
+                     dpi=150, bbox_inches='tight')
+        _plt.close()
+        print("Saved: crossval_fiw.png")
+    except Exception as e:
+        print(f"  FIW figure not saved: {e}")
+
+
+# ── CCP Comparative Constitutions Project validation ─────────────────────────
+#
+# CCP codes constitutional provisions as binary: 1 = right enshrined,
+# 2 = right NOT enshrined, 96 = not applicable, 98 = not specified.
+# Recoded: 1 → 1.0, 2 → 0.0, anything else → NaN.
+#
+# intexec is ordinal 1–4 (degree of executive independence from legislature):
+#   1 = legislature appoints/removes exec (most constrained)
+#   4 = fully independent exec (least constrained)
+# Recoded to 0–1: (4 − intexec) / 3  (high = constrained = high D).
+#
+# CCP composite mapping:
+#   ccp_D = mean(judind, dueproc, habcorp, fairtri, intexec_recoded)
+#   ccp_E = mean(freemove, express, privacy, press)
+#   ccp_R = mean(assem, assoc, petition)
+#
+# CCP codes DE JURE constitutional text, not de facto implementation.
+# Systems flagged ccp_dejure=1 where iso and CCP strongly diverge are
+# candidates for the passive-revolution mechanism (Paper 2 Section 8.3).
+# Nazi Germany is the canonical case: CCP ccp_E=1.0, iso_E=0.05.
+#
+# Coverage notes:
+#   Netherlands 1789: NaN — CCP has no Dutch Republic constitution coded.
+#   Ottoman Empire / Confucian Bureaucracy / Habsburg: NaN — no constitution.
+#   South Korea: earliest entry 1948 — Joseon 1895 not covered.
+#   Austria: absent from CCP at 1900.
+
+CCP_COLS = ['cowcode', 'country', 'year', 'c_inforce', 'coding_available',
+            'freemove', 'opinion', 'express', 'assem', 'assoc', 'petition',
+            'judind', 'rulelaw', 'intexec', 'fairtri', 'dueproc', 'habcorp',
+            'privacy', 'press', 'tradeun', 'strike']
+
+# CCP uses its own country names; map to ISO3
+CCP_NAME_TO_ISO3 = {
+    'Norway': 'NOR', 'Estonia': 'EST', 'Switzerland': 'CHE',
+    'Germany': 'DEU', 'United Kingdom': 'GBR', 'Netherlands': 'NLD',
+    'Russia': 'RUS', 'Singapore': 'SGP', 'Japan': 'JPN',
+    'France': 'FRA', 'Turkey': 'TUR', 'Austria': 'AUT',
+    'China': 'CHN', 'India': 'IND', 'South Africa': 'ZAF',
+    'Tanzania': 'TZA', 'Mexico': 'MEX', 'Brazil': 'BRA',
+    'Iceland': 'ISL', 'South Korea': 'KOR', 'Ukraine': 'UKR',
+}
+
+
+def load_ccp(ccp_path):
+    """Load CCP small CSV.  Returns dict (iso3, year) → row dict."""
+    import pathlib
+    import pandas as _pd
+
+    path = pathlib.Path(ccp_path)
+    if path.suffix.lower() == '.zip':
+        import zipfile, io
+        with zipfile.ZipFile(path) as zf:
+            # Prefer the small CSV
+            candidates = [n for n in zf.namelist()
+                          if n.endswith('_small.csv') and not n.startswith('__')]
+            if not candidates:
+                candidates = [n for n in zf.namelist()
+                              if n.endswith('.csv') and not n.startswith('__')]
+            fname = candidates[0]
+            with zf.open(fname) as f:
+                df = _pd.read_csv(f, usecols=lambda c: c in CCP_COLS,
+                                  low_memory=False)
+    else:
+        df = _pd.read_csv(path, usecols=lambda c: c in CCP_COLS,
+                          low_memory=False)
+
+    ccp = {}
+    for _, row in df.iterrows():
+        name = str(row.get('country', '')).strip()
+        iso3 = CCP_NAME_TO_ISO3.get(name)
+        if iso3 is None:
+            continue
+        try:
+            year = int(row['year'])
+        except (TypeError, ValueError):
+            continue
+        ccp[(iso3, year)] = row.to_dict()
+
+    covered = len({iso3 for (iso3, _) in ccp})
+    years = sorted({y for (_, y) in ccp})
+    print(f"  Loaded {len(ccp)} CCP country-year observations "
+          f"({covered} countries, {years[0]}–{years[-1]})")
+    return ccp
+
+
+def _ccp_recode(v):
+    """Binary recode: 1→1.0, 2→0.0, else→NaN."""
+    if v == 1 or v == 1.0:
+        return 1.0
+    if v == 2 or v == 2.0:
+        return 0.0
+    return float('nan')
+
+
+def _ccp_intexec(v):
+    """Recode intexec 1–4 → 0–1 (high = constrained exec)."""
+    if v in (1, 2, 3, 4):
+        return (4 - v) / 3
+    try:
+        v = float(v)
+        if 1 <= v <= 4:
+            return (4 - v) / 3
+    except (TypeError, ValueError):
+        pass
+    return float('nan')
+
+
+def match_ccp(iso_systems, ccp):
+    """Match isonomia systems to CCP entries."""
+    def mean_nn(vals):
+        v = [x for x in vals if x == x]   # filter NaN
+        return sum(v) / len(v) if v else None
+
+    matched = []
+    for sys_name, (country, iso3, target_year) in ISONOMIA_TO_MODERN.items():
+        if sys_name not in iso_systems:
+            continue
+        available = sorted(y for (c, y) in ccp if c == iso3)
+        if not available:
+            print(f"  No CCP data: {sys_name} ({iso3})")
+            continue
+
+        best = min(available, key=lambda y: abs(y - target_year))
+        year_gap = abs(best - target_year)
+        if year_gap > 10:
+            print(f"  Large year gap ({year_gap}y): {sys_name} "
+                  f"({iso3}, {target_year}→{best}) — skipping")
+            continue
+        flag = 'year_gap' if year_gap > 2 else ''
+
+        row = ccp[(iso3, best)]
+        iso = iso_systems[sys_name]
+
+        e_vals = [_ccp_recode(row.get('freemove')),
+                  _ccp_recode(row.get('express')),
+                  _ccp_recode(row.get('privacy')),
+                  _ccp_recode(row.get('press'))]
+        d_vals = [_ccp_recode(row.get('judind')),
+                  _ccp_recode(row.get('dueproc')),
+                  _ccp_recode(row.get('habcorp')),
+                  _ccp_recode(row.get('fairtri')),
+                  _ccp_intexec(row.get('intexec'))]
+        r_vals = [_ccp_recode(row.get('assem')),
+                  _ccp_recode(row.get('assoc')),
+                  _ccp_recode(row.get('petition'))]
+
+        ccp_E = mean_nn(e_vals)
+        ccp_D = mean_nn(d_vals)
+        ccp_R = mean_nn(r_vals)
+
+        # De jure / de facto divergence flag: large gap between CCP and iso
+        # on any single dimension suggests passive revolution or constitutional gap
+        dejure_flag = 0
+        for iso_v, ccp_v in [('E', ccp_E), ('D', ccp_D), ('R', ccp_R)]:
+            if ccp_v is not None and abs(iso[iso_v] - ccp_v) > 0.4:
+                dejure_flag = 1
+
+        matched.append({
+            'system': sys_name, 'country': country, 'iso3': iso3,
+            'year': best, 'year_requested': target_year,
+            'mismatch_flag': flag,
+            'ccp_coding_available': int(row.get('coding_available', 0) or 0),
+            'ccp_dejure_gap': dejure_flag,
+            'iso_E': iso['E'], 'iso_D': iso['D'], 'iso_R': iso['R'],
+            'iso_EDR': iso['EDR'], 'iso_SAP': iso['SAP'],
+            'iso_S': iso['S'], 'iso_A': iso['A'], 'iso_P': iso['P'],
+            'ccp_E': ccp_E, 'ccp_D': ccp_D, 'ccp_R': ccp_R,
+            'ccp_freemove':  _ccp_recode(row.get('freemove')),
+            'ccp_express':   _ccp_recode(row.get('express')),
+            'ccp_assem':     _ccp_recode(row.get('assem')),
+            'ccp_assoc':     _ccp_recode(row.get('assoc')),
+            'ccp_judind':    _ccp_recode(row.get('judind')),
+            'ccp_intexec':   _ccp_intexec(row.get('intexec')),
+        })
+
+    print(f"  Matched {len(matched)} isonomia ↔ CCP pairs")
+    # Highlight de jure / de facto gaps
+    gaps = [r for r in matched if r['ccp_dejure_gap']]
+    if gaps:
+        def _fmt(v):
+            return f'{v:.2f}' if v is not None else 'n/a'
+        print(f"  De jure/de facto divergence (|iso − ccp| > 0.4 on any dimension):")
+        for r in gaps:
+            print(f"    {r['system']}: "
+                  f"E={r['iso_E']:.2f}/ccp={_fmt(r['ccp_E'])}  "
+                  f"D={r['iso_D']:.2f}/ccp={_fmt(r['ccp_D'])}  "
+                  f"R={r['iso_R']:.2f}/ccp={_fmt(r['ccp_R'])}")
+    return matched
+
+
+def run_ccp_validation(matched):
+    """Print CCP correlation table and save figure."""
+    from scipy import stats as _stats
+    import numpy as _np
+
+    # Exclude rows with large year gaps for primary r; note n separately
+    clean = [r for r in matched if r['mismatch_flag'] == '']
+
+    comparisons = [
+        ('iso_E', 'ccp_E', 'E (exit freedom)',  'CCP expression+move+privacy'),
+        ('iso_D', 'ccp_D', 'D (disobedience)',   'CCP judind+dueproc+intexec'),
+        ('iso_R', 'ccp_R', 'R (arrangement)',    'CCP assem+assoc+petition'),
+    ]
+
+    print("\n=== CCP COMPARATIVE CONSTITUTIONS CROSS-VALIDATION ===")
+    print(f"  Clean matches (gap ≤ 2y) n={len(clean)}; all matched n={len(matched)}")
+    print(f"  Note: CCP codes de jure constitutional text; divergences flag")
+    print(f"  possible passive-revolution or constitutional-gap cases.")
+    print(f"  Note: ccp_E and ccp_R use binary constitutional provisions — near-zero")
+    print(f"  variance (most constitutions claim these rights) suppresses r for E and R.")
+    print(f"  ccp_D includes the intexec ordinal variable which provides more variance.")
+    print()
+    hdr = f"  {'Isonomia var':<22} {'CCP composite':<35} {'r':>7} {'p':>10} {'n':>4}"
+    print(hdr)
+    print("  " + "-" * 80)
+
+    for iso_var, ccp_var, iso_label, ccp_label in comparisons:
+        pairs = [(r[iso_var], r[ccp_var]) for r in clean
+                 if r.get(iso_var) is not None and r.get(ccp_var) is not None]
+        if len(pairs) < 4:
+            # Try all matched
+            pairs = [(r[iso_var], r[ccp_var]) for r in matched
+                     if r.get(iso_var) is not None and r.get(ccp_var) is not None]
+            note = f'(all matches, n={len(pairs)})'
+        else:
+            note = ''
+        if len(pairs) < 4:
+            print(f"  {iso_label:<22} {ccp_label:<35} {'—':>7}  n<4")
+            continue
+        xv, yv = zip(*pairs)
+        r_val, p_val = _stats.pearsonr(list(xv), list(yv))
+        print(f"  {iso_label:<22} {ccp_label:<35} {r_val:>7.3f} "
+              f"  {p_val:>8.4f} {sig(p_val):<3}  n={len(pairs)} {note}")
+
+    # Save figure: 1×3 scatter + de jure/de facto gap table
+    try:
+        import matplotlib.pyplot as _plt
+        import matplotlib.lines as _ml
+
+        fig = _plt.figure(figsize=(18, 5))
+        gs = fig.add_gridspec(1, 4, width_ratios=[1, 1, 1, 1.1], wspace=0.35)
+        axes = [fig.add_subplot(gs[0, i]) for i in range(3)]
+        _plt.rcParams.update({'font.family': 'serif', 'font.size': 9})
+
+        colours_ccp = {'': '#2166ac', 'year_gap': '#f4a582'}
+
+        for ax, (xk, yk, xl, yl) in zip(axes, comparisons):
+            for r in matched:
+                x, y = r.get(xk), r.get(yk)
+                if x is None or y is None:
+                    continue
+                c = colours_ccp.get(r.get('mismatch_flag', ''), '#2166ac')
+                # De jure gap → open circle
+                if r.get('ccp_dejure_gap'):
+                    ax.scatter(float(x), float(y), c='none', s=70,
+                               edgecolors='#d73027', linewidths=1.5, zorder=5)
+                ax.scatter(float(x), float(y), c=c, s=50, alpha=0.85,
+                           edgecolors='white', linewidths=0.5, zorder=4)
+
+            pairs = [(r[xk], r[yk]) for r in matched
+                     if r.get(xk) is not None and r.get(yk) is not None]
+            if len(pairs) >= 4:
+                xv2 = [float(p[0]) for p in pairs]
+                yv2 = [float(p[1]) for p in pairs]
+                r_val, p_val = _stats.pearsonr(xv2, yv2)
+                m, b = _np.polyfit(xv2, yv2, 1)
+                xr = _np.linspace(min(xv2), max(xv2), 100)
+                ax.plot(xr, m * xr + b, 'k--', lw=1.2, alpha=0.4)
+                tc = ('darkgreen' if abs(r_val) >= 0.7
+                      else '#b8860b' if abs(r_val) >= 0.5 else 'darkred')
+                ax.set_title(f'r={r_val:.3f} {sig(p_val)}  n={len(pairs)}',
+                             fontsize=9, color=tc)
+            ax.set_xlabel(xl, fontsize=8.5)
+            ax.set_ylabel(yl, fontsize=8.5)
+            # Note binary ceiling on E and R: most constitutions claim these rights,
+            # so CCP cannot distinguish de facto freedom from de jure text.
+            if xk in ('iso_E', 'iso_R'):
+                ax.annotate('CCP binary: limited variance\n(most constitutions claim this right)',
+                            xy=(0.5, 0.03), xycoords='axes fraction',
+                            fontsize=6.5, color='#888888', ha='center', style='italic')
+
+        # Right panel: de jure / de facto gap table
+        ax_t = fig.add_subplot(gs[0, 3])
+        ax_t.axis('off')
+        gap_rows = [r for r in matched if r['ccp_dejure_gap']]
+        if gap_rows:
+            # Short names that fit in a narrow column
+            SHORT_SYS = {
+                'European Union Governance':            'EU Governance',
+                'British Parliamentary System':         'UK Parliament',
+                'Soviet Republics System':              'Soviet USSR',
+                'Singaporean Technocracy':              'Singapore',
+                'Meiji Oligarchy':                      'Meiji Japan',
+                'Althingi Carbon-Neutral Parliament':   'Iceland',
+                'Cossack Hetmanate':                    'Cossack Hetmanate',
+            }
+            def _f(v):
+                return f'{float(v):.2f}' if v is not None and str(v) != 'nan' else '—'
+
+            # Columns: System | E_iso | E_ccp | D_iso | D_ccp | R_iso | R_ccp
+            col_labels = ['System', 'E↑', 'E↓', 'D↑', 'D↓', 'R↑', 'R↓']
+            col_note   = '(↑=iso, ↓=ccp)'
+            table_data = []
+            for r in gap_rows:
+                name = SHORT_SYS.get(r['system'], r['system'][:16])
+                table_data.append([
+                    name,
+                    _f(r['iso_E']), _f(r['ccp_E']),
+                    _f(r['iso_D']), _f(r['ccp_D']),
+                    _f(r['iso_R']), _f(r['ccp_R']),
+                ])
+
+            tbl = ax_t.table(cellText=table_data, colLabels=col_labels,
+                             loc='center', cellLoc='center')
+            tbl.auto_set_font_size(False)
+            tbl.set_fontsize(7.0)
+            tbl.scale(1, 1.35)
+
+            # Widen System column, narrow numeric columns
+            col_widths = [0.34, 0.11, 0.11, 0.11, 0.11, 0.11, 0.11]
+            for (row_idx, col_idx), cell in tbl.get_celld().items():
+                w = col_widths[col_idx] if col_idx < len(col_widths) else 0.11
+                cell.set_width(w)
+                # Left-align system name column
+                if col_idx == 0:
+                    cell._loc = 'left'
+                    cell.PAD = 0.04
+
+            ax_t.set_title(f'De jure / de facto gaps\n(|iso − ccp| > 0.4)  {col_note}',
+                           fontsize=7.5, pad=4)
+
+        legend_els = [
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#2166ac',
+                       markersize=7, label='Direct match'),
+            _ml.Line2D([], [], marker='o', color='w', markerfacecolor='#f4a582',
+                       markersize=7, label='Year gap (>2y)'),
+            _ml.Line2D([], [], marker='o', color='none',
+                       markeredgecolor='#d73027', markeredgewidth=1.5,
+                       markersize=9, label='De jure/de facto gap'),
+        ]
+        axes[2].legend(handles=legend_els, loc='lower right', fontsize=7.5,
+                       frameon=True, framealpha=0.9)
+
+        fig.suptitle('CCP Comparative Constitutions cross-validation\n'
+                     'EDR components vs constitutional rights provisions (de jure)',
+                     fontsize=11, fontweight='bold')
+        _plt.savefig(os.path.join(OUTPUT_DIR, 'crossval_ccp.png'),
+                     dpi=150, bbox_inches='tight')
+        _plt.close()
+        print("Saved: crossval_ccp.png")
+    except Exception as e:
+        print(f"  CCP figure not saved: {e}")
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Cross-validate EDR against V-Dem and Polity5')
+    parser = argparse.ArgumentParser(
+        description='Cross-validate EDR against V-Dem, Polity5, WJP, FIW, and CCP')
     parser.add_argument('--vdem',   help='Path to V-Dem CSV (Full+Others)')
-    parser.add_argument('--polity', help='Path to Polity5 CSV')
-    parser.add_argument('--seshat', help='Path to Seshat Equinox-2020 XLSX')
+    parser.add_argument('--polity', help='Path to Polity5 XLS/CSV')
+    parser.add_argument('--seshat', help='Path to Seshat Equinox-2020 XLSX/CSV')
+    parser.add_argument('--wjp',    help='Path to WJP Historical Data XLSX')
+    parser.add_argument('--fiw',    help='Path to Freedom in the World XLSX (2013–2021)')
+    parser.add_argument('--ccp',    help='Path to CCP ccpcnc_v5_small.csv or .zip')
     args = parser.parse_args()
 
     iso_systems = load_isonomia()
     print(f"Loaded {len(iso_systems)} hand-coded isonomia systems")
 
-    if not args.vdem and not args.polity and not args.seshat:
+    if not any([args.vdem, args.polity, args.seshat,
+                args.wjp, args.fiw, args.ccp]):
         dry_run(iso_systems)
         sys.exit(0)
 
-    vdem_matched  = []
+    vdem_matched   = []
     polity_matched = []
+    wjp_matched    = []
+    fiw_matched    = []
+    ccp_matched    = []
 
     if args.seshat:
         run_seshat_validation(iso_systems, args.seshat)
@@ -853,7 +1692,26 @@ if __name__ == '__main__':
         polity = load_polity(args.polity)
         polity_matched = run_polity_validation(iso_systems, polity)
 
+    if args.wjp:
+        print(f"\nLoading WJP from {args.wjp}...")
+        wjp = load_wjp(args.wjp)
+        wjp_matched = match_wjp(iso_systems, wjp)
+        run_wjp_validation(wjp_matched)
+
+    if args.fiw:
+        print(f"\nLoading Freedom House FIW from {args.fiw}...")
+        fiw = load_fiw(args.fiw)
+        fiw_matched = match_fiw(iso_systems, fiw)
+        run_fiw_validation(fiw_matched)
+
+    if args.ccp:
+        print(f"\nLoading CCP from {args.ccp}...")
+        ccp = load_ccp(args.ccp)
+        ccp_matched = match_ccp(iso_systems, ccp)
+        run_ccp_validation(ccp_matched)
+
     if vdem_matched or polity_matched:
-        save_matched_csv(vdem_matched, polity_matched)
+        save_matched_csv(vdem_matched, polity_matched,
+                         wjp_matched, fiw_matched, ccp_matched)
 
     print("\nDone.")
