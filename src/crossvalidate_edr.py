@@ -640,46 +640,107 @@ def run_seshat_validation(iso_systems, seshat_path):
         r_val, p_val = _stats.pearsonr(x, y)
         print(f"  {xl:22s}  {yl:28s}  {r_val:.3f}   {p_val:.4f} {sig(p_val)}  n={len(pairs)}")
 
-    # Save figure
+    # Save figure — legend-based design: one colour+marker per civilisation,
+    # shared across all three panels; no inline text annotations.
     try:
         import matplotlib.pyplot as _plt
-        import matplotlib.patches as _mp
+        import matplotlib.lines as _ml
+        import numpy as _np
+        from scipy import stats as _stats
         _plt.rcParams.update({'font.family': 'serif', 'font.size': 10})
-        fig, axes = _plt.subplots(1, 3, figsize=(14, 5))
-        SHORT = {m[0]: m[0].replace('Iroquois Confederacy / Haudenosaunee','Iroquois')
-                              .replace('Althingi Carbon-Neutral Parliament','Iceland')
-                              .replace('Inca Empire (Tawantinsuyu)','Inca')
-                              .replace('Aztec Triple Alliance','Aztec')
-                              .replace('Egyptian Old Kingdom','Old Kingdom')
-                              .replace('Egyptian Middle Kingdom','Mid Kingdom')
-                              .replace('Egyptian Nomarchies','Egypt Regions')
-                 for m in SESHAT_MAPPING}
+
+        # Short display names for legend
+        SHORT = {
+            'Early Uruk':                           'Early Uruk',
+            'Ubaid Culture':                        'Ubaid Culture',
+            'Egyptian Old Kingdom':                 'Old Kingdom',
+            'Egyptian Middle Kingdom':              'Middle Kingdom',
+            'Egyptian Nomarchies':                  'Egypt (Nomarchies)',
+            'Tang Dynasty':                         'Tang Dynasty',
+            'Inca Empire (Tawantinsuyu)':           'Inca Empire',
+            'Aztec Triple Alliance':                'Aztec Empire',
+            'Iroquois Confederacy / Haudenosaunee': 'Iroquois Confederacy',
+            'Althingi Carbon-Neutral Parliament':   'Iceland (Althingi)',
+            'Mauryan Empire':                       'Mauryan Empire',
+            'Ottoman Empire':                       'Ottoman Empire',
+            '\u00c7atalh\u00f6y\u00fck':           '\u00c7atalh\u00f6y\u00fck',
+            'Roman Republic':                       'Roman Republic',
+        }
+
+        # Stable colour palette — 14 visually distinct colours
+        PALETTE = [
+            '#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00',
+            '#a65628', '#f781bf', '#999999', '#1b9e77', '#d95f02',
+            '#7570b3', '#e7298a', '#66a61e', '#e6ab02',
+        ]
+        # Marker cycle — helps distinguish points even in greyscale
+        MARKERS = ['o', 's', '^', 'D', 'v', 'P', 'X', 'h',
+                   'o', 's', '^', 'D', 'v', 'P']
+
+        # Build a stable index → (colour, marker, label) mapping across the
+        # full SESHAT_MAPPING list so the legend is consistent across panels.
+        system_style = {}
+        for i, (iso_name, _, _desc) in enumerate(SESHAT_MAPPING):
+            system_style[iso_name] = (PALETTE[i % len(PALETTE)],
+                                      MARKERS[i % len(MARKERS)],
+                                      SHORT.get(iso_name, iso_name))
+
+        # Layout: 3 scatter panels + legend panel on the right
+        fig = _plt.figure(figsize=(16, 5))
+        # Ratios: three equal scatter panels + one narrow legend column
+        gs = fig.add_gridspec(1, 4, width_ratios=[1, 1, 1, 0.55],
+                              wspace=0.35)
+        axes = [fig.add_subplot(gs[0, i]) for i in range(3)]
+
+        legend_handles = {}  # system → handle, built from first panel that plots it
+
         for ax, (xk, yk, xl, yl) in zip(axes, comparisons[:3]):
             pairs = [(r[xk], r[yk], r['system']) for r in matched
                      if r.get(xk) is not None and r.get(yk) is not None]
-            if len(pairs) < 4: continue
+            if len(pairs) < 4:
+                continue
             xv, yv, lv = zip(*pairs)
-            xv, yv = [float(x) for x in xv], [float(y) for y in yv]
-            import numpy as _np
-            ax.scatter(xv, yv, c='#2166ac', s=55, alpha=0.85,
-                       edgecolors='white', linewidths=0.5, zorder=4)
+            xv = [float(v) for v in xv]
+            yv = [float(v) for v in yv]
+
             for x, y, l in zip(xv, yv, lv):
-                ax.annotate(SHORT.get(l,l[:12]), (x,y), xytext=(5,3),
-                             textcoords='offset points', fontsize=7.5,
-                             color='#333333')
-            from scipy import stats as _stats
+                colour, marker, label = system_style.get(
+                    l, ('#555555', 'o', l[:18]))
+                sc = ax.scatter(x, y, c=colour, marker=marker,
+                                s=60, alpha=0.9, edgecolors='white',
+                                linewidths=0.5, zorder=4)
+                if l not in legend_handles:
+                    legend_handles[l] = _ml.Line2D(
+                        [], [], marker=marker, color='w',
+                        markerfacecolor=colour, markeredgecolor='white',
+                        markersize=7, label=label)
+
             r_val, p_val = _stats.pearsonr(xv, yv)
             m, b = _np.polyfit(xv, yv, 1)
             xr = _np.linspace(min(xv), max(xv), 100)
-            ax.plot(xr, m*xr+b, 'k--', lw=1.2, alpha=0.4)
-            col = 'darkgreen' if abs(r_val)>=0.7 else '#b8860b' if abs(r_val)>=0.5 else 'darkred'
+            ax.plot(xr, m * xr + b, 'k--', lw=1.2, alpha=0.4)
+            title_col = ('darkgreen' if abs(r_val) >= 0.7
+                         else '#b8860b' if abs(r_val) >= 0.5
+                         else 'darkred')
             ax.set_title(f'r={r_val:.3f} {sig(p_val)}  n={len(xv)}',
-                         fontsize=9.5, color=col)
-            ax.set_xlabel(xl, fontsize=9); ax.set_ylabel(yl, fontsize=9)
+                         fontsize=9.5, color=title_col)
+            ax.set_xlabel(xl, fontsize=9)
+            ax.set_ylabel(yl, fontsize=9)
+
+        # Legend panel — ordered by SESHAT_MAPPING for stability
+        ax_leg = fig.add_subplot(gs[0, 3])
+        ax_leg.axis('off')
+        ordered_handles = [legend_handles[m[0]]
+                           for m in SESHAT_MAPPING
+                           if m[0] in legend_handles]
+        ax_leg.legend(handles=ordered_handles, loc='center left',
+                      fontsize=8, frameon=True, framealpha=0.9,
+                      edgecolor='#cccccc', title='Polity', title_fontsize=8.5,
+                      handlelength=1.2, handletextpad=0.6, borderpad=0.8)
+
         fig.suptitle('Seshat Equinox-2020 cross-validation (pre-modern, n=14)\n'
                      'SAP dimensions vs Seshat social complexity variables',
                      fontsize=11, fontweight='bold')
-        _plt.tight_layout()
         _plt.savefig(os.path.join(OUTPUT_DIR, 'crossval_seshat.png'),
                      dpi=150, bbox_inches='tight')
         _plt.close()
