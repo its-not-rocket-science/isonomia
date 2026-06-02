@@ -1,3 +1,15 @@
+# Core analysis
 matplotlib>=3.5
 numpy>=1.22
 scipy>=1.9
+networkx>=2.8
+
+# Cross-validation script (crossvalidate_edr.py)
+# Required for reading Polity5 .xls and .xlsx files
+pandas>=1.4
+xlrd>=2.0       # for Polity5 .xls format
+openpyxl>=3.0   # for .xlsx format (optional)
+
+# External validation datasets (not included — download separately):
+#   V-Dem v16:  https://www.v-dem.net/data/the-v-dem-dataset/
+#   Polity5:    https://www.systemicpeace.org/inscrdata.html
