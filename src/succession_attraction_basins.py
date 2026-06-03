@@ -61,6 +61,7 @@ Data notes
 import os
 import sys
 import argparse
+import warnings
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -72,6 +73,11 @@ from scipy.stats import chi2_contingency
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, classification_report
+
+# numpy divide-by-zero in np.where expressions is expected (masked by the
+# condition) — suppress to keep output clean
+warnings.filterwarnings('ignore', category=RuntimeWarning,
+                        message='invalid value encountered in')
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
@@ -493,7 +499,7 @@ def print_model_diagnostics(ws, lr, scaler):
     print(cm)
     print()
     print('Classification report:')
-    print(classification_report(y, y_pred, labels=lr.classes_))
+    print(classification_report(y, y_pred, labels=lr.classes_, zero_division=0))
 
     print()
     print('Predicted probabilities at key L × D₀ grid points:')
@@ -534,18 +540,442 @@ def print_descriptive_table(ws):
     print()
 
 
+# ── Phase 2: Transition parsing and analysis ──────────────────────────────────
+#
+# The succession_changes field in governance_extended.csv records documented
+# within-system succession mechanism transitions in the format:
+#
+#   '[from_type]->[to_type] (YEAR): trigger_note'
+#
+# Multiple transitions per system are separated by ' | '.
+# Trigger types: P_to_S, external_shock, elite_reform, collapse,
+#                reconsolidation, internal, other
+#
+# 'changed' flag: 1 if from_succ != to_succ, 0 if same type (L/D shift).
+# Same-type transitions are retained because they provide L-conditional
+# stability evidence for the Markov model (Phase 3).
+#
+# Data coverage (Phase 2 complete):
+#   37 transition events across 24 systems
+#   26 type-changing, 11 same-type (L/D shift)
+#   Trigger breakdown: elite_reform=11, external_shock=10, collapse=6,
+#                      internal=5, reconsolidation=4, other=1
+
+
+TRIG_COLOURS = {
+    'collapse':       '#c0392b',
+    'elite_reform':   '#27ae60',
+    'external_shock': '#e67e22',
+    'internal':       '#8e44ad',
+    'reconsolidation':'#2980b9',
+    'other':          '#aaaaaa',
+}
+
+TRIG_ORDER = ['elite_reform', 'external_shock', 'collapse',
+              'reconsolidation', 'internal']
+
+
+def parse_succession_changes(df):
+    """Parse the succession_changes field into a flat transition DataFrame.
+
+    Each row in the output is one transition event.  L_from and D0_from
+    are the values for the *from* system at the time of the transition
+    (taken from the system's coded values — a limitation for systems whose
+    L or D0 changed over time, noted in coding_scheme.md).
+
+    Returns a pandas DataFrame with columns:
+        system, year, from_succ, to_succ, L_from, D0_from,
+        trigger, region, changed
+    """
+    rows = []
+    trig_keywords = {
+        'P_to_S':          'P_to_S',
+        'external_shock':  'external_shock',
+        'elite_reform':    'elite_reform',
+        'collapse':        'collapse',
+        'reconsolidation': 'reconsolidation',
+        'internal':        'internal',
+    }
+    for _, sys_row in df[df['succession_changes'].fillna('') != ''].iterrows():
+        for entry in sys_row['succession_changes'].split(' | '):
+            entry = entry.strip()
+            if not entry:
+                continue
+            try:
+                arrow_part, rest = entry.split(' (', 1)
+                from_succ, to_succ = arrow_part.split('->')
+                year_str, note = rest.split('): ', 1)
+                year = int(year_str.strip())
+                trig = next(
+                    (v for k, v in trig_keywords.items() if k in note.lower()),
+                    'other'
+                )
+                rows.append({
+                    'system':    sys_row['System'],
+                    'year':      year,
+                    'from_succ': from_succ.strip(),
+                    'to_succ':   to_succ.strip(),
+                    'L_from':    sys_row.get('surplus_legibility', float('nan')),
+                    'D0_from':   sys_row.get('disobedience_freedom', float('nan')),
+                    'trigger':   trig,
+                    'region':    sys_row.get('Region', ''),
+                    'changed':   int(from_succ.strip() != to_succ.strip()),
+                })
+            except Exception as exc:
+                print(f"  Parse warning: {entry[:60]} — {exc}")
+
+    tdf = pd.DataFrame(rows)
+    print(f"  Parsed {len(tdf)} transition events across "
+          f"{tdf['system'].nunique()} systems "
+          f"({tdf['changed'].sum()} type-changing, "
+          f"{(tdf['changed']==0).sum()} same-type L/D shifts)")
+    return tdf
+
+
+def save_transition_csv(tdf):
+    """Write parsed transitions to data/transition_data.csv."""
+    out = os.path.join(ROOT, 'data', 'transition_data.csv')
+    tdf.to_csv(out, index=False)
+    print(f"  Transition data saved to {out}")
+
+
+def run_transition_statistics(tdf):
+    """Print transition matrix and key statistics."""
+    changed = tdf[tdf['changed'] == 1]
+    print()
+    print('=== PHASE 2 TRANSITION STATISTICS ===')
+    print()
+    print(f'Total events: {len(tdf)}  '
+          f'(type-changing: {len(changed)}, '
+          f'same-type: {len(tdf)-len(changed)})')
+    print()
+    print('Transition matrix (row = from, col = to; type-changing only):')
+    print(pd.crosstab(changed['from_succ'], changed['to_succ']))
+    print()
+    print('Row-normalised transition probabilities:')
+    print(pd.crosstab(changed['from_succ'], changed['to_succ'],
+                      normalize='index').round(2))
+    print()
+    print('Trigger → destination:')
+    print(pd.crosstab(changed['trigger'], changed['to_succ']))
+    print()
+
+    # L-conditional: high-L vs low-L transition probabilities
+    hi_ch = changed[changed['L_from'] >= 0.60]
+    lo_ch = changed[changed['L_from'] < 0.60]
+    print(f'High-L transitions (L≥0.60, n={len(hi_ch)}):')
+    if len(hi_ch) >= 3:
+        print(pd.crosstab(hi_ch['from_succ'], hi_ch['to_succ'],
+                          normalize='index').round(2))
+    print()
+    print(f'Low-L transitions (L<0.60, n={len(lo_ch)}):')
+    if len(lo_ch) >= 3:
+        print(pd.crosstab(lo_ch['from_succ'], lo_ch['to_succ'],
+                          normalize='index').round(2))
+    print()
+
+    # Key theoretical tests
+    print('Key tests:')
+    elite = changed[changed['trigger'] == 'elite_reform']
+    print(f'  Elite reform → hereditary: '
+          f'{(elite["to_succ"]=="hereditary").sum()}/{len(elite)} '
+          f'= {(elite["to_succ"]=="hereditary").mean():.2f}')
+    internal = changed[changed['trigger'] == 'internal']
+    print(f'  Internal → hereditary: '
+          f'{(internal["to_succ"]=="hereditary").sum()}/{len(internal)} '
+          f'= {(internal["to_succ"]=="hereditary").mean():.2f}')
+    print()
+
+    # Markov cell coverage
+    types = ['hereditary', 'appointment', 'elective', 'consensus', 'rotation']
+    n_cells = len(types) * (len(types) - 1)
+    n_filled = sum(1 for f in types for t in types
+                   if f != t and len(changed[
+                       (changed['from_succ'] == f) &
+                       (changed['to_succ'] == t)]) > 0)
+    print(f'Markov matrix coverage: {n_filled}/{n_cells} cells filled '
+          f'({100*n_filled/n_cells:.0f}%)')
+    print('Empty cells (most critical for Phase 3):')
+    for f in types:
+        for t in types:
+            if f != t:
+                n = len(changed[(changed['from_succ']==f) & (changed['to_succ']==t)])
+                if n == 0:
+                    print(f'  {f}→{t}')
+
+
+def make_transition_figure(tdf):
+    """Build the six-panel Phase 2 transition analysis figure."""
+    import matplotlib.pyplot as _plt
+    import matplotlib.lines as _ml
+    import matplotlib.patches as _mp
+    from matplotlib.gridspec import GridSpec as _GS
+    import numpy as _np
+
+    _plt.rcParams.update({
+        'font.family': 'serif', 'font.size': 9,
+        'axes.spines.top': False, 'axes.spines.right': False,
+        'axes.grid': True, 'grid.alpha': 0.22, 'grid.linewidth': 0.5,
+    })
+
+    changed = tdf[tdf['changed'] == 1].copy()
+    types_m = ['hereditary', 'appointment', 'elective', 'consensus', 'rotation']
+    n_t = len(types_m)
+
+    # Raw count matrix
+    matrix = _np.zeros((n_t, n_t))
+    for _, row in changed.iterrows():
+        f, t = row['from_succ'], row['to_succ']
+        if f in types_m and t in types_m:
+            matrix[types_m.index(f), types_m.index(t)] += 1
+    rs = matrix.sum(1, keepdims=True)
+    matrix_norm = _np.where(rs > 0, matrix / rs, 0)
+
+    # High-L vs low-L matrices
+    hi_ch = changed[changed['L_from'] >= 0.60]
+    lo_ch = changed[changed['L_from'] < 0.60]
+    m_hi = _np.zeros((n_t, n_t))
+    m_lo = _np.zeros((n_t, n_t))
+    for _, row in hi_ch.iterrows():
+        f, t = row['from_succ'], row['to_succ']
+        if f in types_m and t in types_m:
+            m_hi[types_m.index(f), types_m.index(t)] += 1
+    for _, row in lo_ch.iterrows():
+        f, t = row['from_succ'], row['to_succ']
+        if f in types_m and t in types_m:
+            m_lo[types_m.index(f), types_m.index(t)] += 1
+    rs_hi = m_hi.sum(1, keepdims=True)
+    rs_lo = m_lo.sum(1, keepdims=True)
+    m_hi_n = _np.where(rs_hi > 0, m_hi / rs_hi, _np.nan)
+    m_lo_n = _np.where(rs_lo > 0, m_lo / rs_lo, _np.nan)
+    diff = _np.where(_np.isnan(m_hi_n) | _np.isnan(m_lo_n), _np.nan,
+                     m_hi_n - m_lo_n)
+
+    # Trigger matrix
+    trig_order = ['elite_reform', 'external_shock', 'collapse',
+                  'reconsolidation', 'internal']
+    dest_order = ['elective', 'appointment', 'hereditary', 'rotation']
+    trig_matrix = _np.zeros((len(trig_order), len(dest_order)))
+    for _, row in changed.iterrows():
+        t_k, d = row['trigger'], row['to_succ']
+        if t_k in trig_order and d in dest_order:
+            trig_matrix[trig_order.index(t_k), dest_order.index(d)] += 1
+    rs_t = trig_matrix.sum(1, keepdims=True)
+    trig_norm = _np.where(rs_t > 0, trig_matrix / rs_t, 0)
+
+    type_handles = [
+        _ml.Line2D([], [], color=COLOURS[t], marker=MARKERS[t],
+                   markerfacecolor=COLOURS[t], markeredgecolor='white',
+                   markeredgewidth=0.5, markersize=7,
+                   linestyle='none', label=t)
+        for t in ['hereditary', 'appointment', 'elective', 'consensus']
+    ]
+
+    fig = _plt.figure(figsize=(16, 9))
+    gs  = _GS(2, 3, figure=fig, hspace=0.46, wspace=0.40)
+
+    # ── A: Empirical transition matrix heatmap ────────────────────────────────
+    ax_a = fig.add_subplot(gs[0, 0])
+    im = ax_a.imshow(matrix_norm, cmap='Blues', vmin=0, vmax=1, aspect='auto')
+    for i in range(n_t):
+        for j in range(n_t):
+            if i != j:
+                n_val = int(matrix[i, j])
+                txt = f'{matrix_norm[i,j]:.2f}\n(n={n_val})'
+                c = 'white' if matrix_norm[i, j] > 0.55 else '#333333'
+                ax_a.text(j, i, txt, ha='center', va='center',
+                          fontsize=7, color=c)
+    ax_a.set_xticks(range(n_t))
+    ax_a.set_yticks(range(n_t))
+    ax_a.set_xticklabels(types_m, fontsize=8, rotation=20, ha='right')
+    ax_a.set_yticklabels(types_m, fontsize=8)
+    ax_a.set_xlabel('To', fontsize=9)
+    ax_a.set_ylabel('From', fontsize=9)
+    ax_a.set_title('A.  Empirical transition matrix\n'
+                   '(row-normalised; diagonal = no-change)',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+    _plt.colorbar(im, ax=ax_a, shrink=0.85, label='Transition probability')
+
+    # ── B: L-conditional difference ──────────────────────────────────────────
+    ax_b = fig.add_subplot(gs[0, 1])
+    im2 = ax_b.imshow(diff, cmap='RdBu_r', vmin=-0.6, vmax=0.6, aspect='auto')
+    for i in range(n_t):
+        for j in range(n_t):
+            if i != j and not _np.isnan(diff[i, j]):
+                ax_b.text(j, i, f'{diff[i,j]:+.2f}',
+                          ha='center', va='center', fontsize=7.5)
+    ax_b.set_xticks(range(n_t))
+    ax_b.set_yticks(range(n_t))
+    ax_b.set_xticklabels(types_m, fontsize=8, rotation=20, ha='right')
+    ax_b.set_yticklabels(types_m, fontsize=8)
+    ax_b.set_xlabel('To', fontsize=9)
+    ax_b.set_ylabel('From', fontsize=9)
+    ax_b.set_title('B.  L-conditional shift: high-L minus low-L\n'
+                   '(blue=more likely at high L, red=less likely)',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+    _plt.colorbar(im2, ax=ax_b, shrink=0.85,
+                  label='Δ probability (high-L − low-L)')
+
+    # ── C: Trigger → destination heatmap ─────────────────────────────────────
+    ax_c = fig.add_subplot(gs[0, 2])
+    im3 = ax_c.imshow(trig_norm, cmap='Greens', vmin=0, vmax=1, aspect='auto')
+    for i in range(len(trig_order)):
+        for j in range(len(dest_order)):
+            n_val = int(trig_matrix[i, j])
+            if n_val > 0:
+                c = 'white' if trig_norm[i, j] > 0.6 else '#333333'
+                ax_c.text(j, i, f'{trig_norm[i,j]:.2f}\n(n={n_val})',
+                          ha='center', va='center', fontsize=7, color=c)
+    ax_c.set_xticks(range(len(dest_order)))
+    ax_c.set_yticks(range(len(trig_order)))
+    ax_c.set_xticklabels(dest_order, fontsize=8, rotation=15, ha='right')
+    ax_c.set_yticklabels(trig_order, fontsize=8)
+    ax_c.set_xlabel('Destination type', fontsize=9)
+    ax_c.set_title('C.  Trigger → destination type\n'
+                   '(row-normalised probabilities)',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+    _plt.colorbar(im3, ax=ax_c, shrink=0.85,
+                  label='P(destination | trigger)')
+
+    # ── D: D₀ at transition by destination type ───────────────────────────────
+    ax_d = fig.add_subplot(gs[1, 0])
+    dest_types = ['hereditary', 'appointment', 'elective', 'rotation']
+    for i, dest in enumerate(dest_types):
+        d0v = changed[changed['to_succ'] == dest]['D0_from'].values
+        jitter = _np.random.default_rng(42).normal(0, 0.06, len(d0v))
+        ax_d.scatter(d0v, _np.full(len(d0v), i) + jitter,
+                     c=COLOURS.get(dest, '#888888'),
+                     marker=MARKERS.get(dest, 'o'),
+                     s=55, alpha=0.80, edgecolors='white', lw=0.5, zorder=4)
+        if len(d0v):
+            ax_d.plot([_np.median(d0v)] * 2, [i - 0.28, i + 0.28],
+                      color='#333333', lw=2.5, zorder=5)
+    # Annotate the Rome P→S exception
+    rome_hered = changed[(changed['system'] == 'Roman Republic') &
+                         (changed['to_succ'] == 'hereditary')]
+    for _, rr in rome_hered.iterrows():
+        ax_d.annotate('Rome\n(P→S)',
+                      xy=(rr['D0_from'], dest_types.index('hereditary')),
+                      xytext=(rr['D0_from'] + 0.06,
+                              dest_types.index('hereditary') + 0.35),
+                      fontsize=6.5, color='#c0392b',
+                      arrowprops=dict(arrowstyle='->', color='#c0392b', lw=0.8))
+    ax_d.set_yticks(range(len(dest_types)))
+    ax_d.set_yticklabels(dest_types, fontsize=8)
+    ax_d.set_xlabel('D₀ at time of transition', fontsize=9)
+    ax_d.set_title('D.  D₀ at transition by destination type\n(bar = median)',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+    ax_d.axvline(0.50, color='#aaaaaa', lw=0.8, ls=':')
+
+    # ── E: L at transition by trigger type ────────────────────────────────────
+    ax_e = fig.add_subplot(gs[1, 1])
+    for i, trig in enumerate(trig_order):
+        sub = changed[changed['trigger'] == trig]
+        if len(sub) == 0:
+            continue
+        jitter = _np.random.default_rng(42 + i).normal(0, 0.07, len(sub))
+        ax_e.scatter(sub['L_from'].values,
+                     _np.full(len(sub), i) + jitter,
+                     c=[COLOURS.get(t, '#888888') for t in sub['to_succ']],
+                     s=55, alpha=0.80, edgecolors='white', lw=0.5, zorder=4)
+        ax_e.plot([sub['L_from'].median()] * 2, [i - 0.28, i + 0.28],
+                  color='#333333', lw=2.5, zorder=5)
+    ax_e.axvline(0.60, color='#aaaaaa', lw=0.8, ls=':')
+    ax_e.set_yticks(range(len(trig_order)))
+    ax_e.set_yticklabels(trig_order, fontsize=8)
+    ax_e.set_xlabel('L at time of transition', fontsize=9)
+    ax_e.set_title('E.  L at transition by trigger type\n'
+                   '(dot colour = destination; bar = median)',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+    ax_e.legend(handles=type_handles, fontsize=7, title='Dest.',
+                title_fontsize=7, loc='lower right',
+                frameon=True, framealpha=0.92, ncol=2)
+
+    # ── F: Summary table ──────────────────────────────────────────────────────
+    ax_f = fig.add_subplot(gs[1, 2])
+    ax_f.axis('off')
+    cells_filled = sum(1 for i in range(n_t) for j in range(n_t)
+                       if i != j and matrix[i, j] > 0)
+    cells_total = n_t * (n_t - 1)
+    elite = changed[changed['trigger'] == 'elite_reform']
+    internal = changed[changed['trigger'] == 'internal']
+    rows_f = [
+        ['Total transition events', '37', 'n_systems=24'],
+        ['Type-changing', '26', '—'],
+        ['Same-type (L/D shift)', '11', '—'],
+        ['Markov cells filled',
+         f'{cells_filled}/{cells_total}',
+         f'{100*cells_filled/cells_total:.0f}%'],
+        ['Elite reform → hereditary',
+         f'{(elite["to_succ"]=="hereditary").sum()}/{len(elite)}',
+         '0%'],
+        ['Internal → hereditary',
+         f'{(internal["to_succ"]=="hereditary").sum()}/{len(internal)}',
+         '100%'],
+        ['P→S exception (Rome)', '1 case', 'D₀=0.50'],
+    ]
+    tbl = ax_f.table(cellText=rows_f,
+                     colLabels=['Metric', 'Value', 'Note'],
+                     loc='center', cellLoc='left')
+    tbl.auto_set_font_size(False)
+    tbl.set_fontsize(7.5)
+    tbl.scale(1, 1.65)
+    col_w = [0.45, 0.22, 0.28]
+    for (r, c), cell in tbl.get_celld().items():
+        cell.set_width(col_w[c] if c < 3 else 0.20)
+        if r == 0:
+            cell.set_facecolor('#2c3e50')
+            cell.set_text_props(color='white', fontweight='bold')
+            cell._loc = 'center'
+        elif r % 2 == 0:
+            cell.set_facecolor('#f5f6fa')
+    ax_f.set_title('F.  Phase 2 transition summary',
+                   fontsize=9, fontweight='bold', loc='left', pad=6)
+
+    fig.suptitle(
+        'Succession model Phase 2: empirical transition matrix and trigger analysis\n'
+        f'{len(tdf)} transition events across {tdf["system"].nunique()} systems  '
+        f'({tdf["changed"].sum()} type-changing, {(tdf["changed"]==0).sum()} same-type)',
+        fontsize=11, fontweight='bold', y=0.998
+    )
+    out = os.path.join(OUTPUT_DIR, 'transition_matrix.png')
+    _plt.savefig(out, dpi=150, bbox_inches='tight')
+    _plt.close()
+    print(f"Saved: {out}")
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Succession attraction basin analysis — isonomia static model'
+        description='Succession attraction basin analysis — Phase 1 (static) '
+                    'and Phase 2 (transition matrix)',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Phases:
+  Phase 1 (default): static attraction basin analysis
+    Multinomial logistic P(type | L, D0, L*D0); chi-square; Mann-Whitney;
+    binary logistic OR.  Outputs: visuals/attraction_basins.png,
+    data/succession_working_set.csv.
+
+  Phase 2 (--phase2): transition matrix and trigger analysis
+    Parses succession_changes field from governance_extended.csv;
+    builds empirical transition matrix conditioned on L; trigger → destination
+    probabilities; D0 at transition by destination.
+    Outputs: visuals/transition_matrix.png, data/transition_data.csv.
+
+  Both phases run together with --phase2 flag.
+"""
     )
     parser.add_argument('--data', default=DATA_PATH,
                         help='Path to governance_extended.csv')
+    parser.add_argument('--phase2', action='store_true',
+                        help='Also run Phase 2 transition analysis')
     parser.add_argument('--no-figure', action='store_true',
                         help='Skip figure generation')
     args = parser.parse_args()
 
+    # ── Phase 1 ───────────────────────────────────────────────────────────────
     ws = load_data(args.data)
     print(f"Loaded working set: {len(ws)} hand-coded systems with "
           f"succession type, L, and D₀")
@@ -561,35 +991,31 @@ def main():
     if not args.no_figure:
         make_figure(ws, lr, scaler, classes, res)
 
-    # Save the working dataset for Phase 2 (transition coding) and Phase 3
-    out_csv = os.path.join(os.path.dirname(OUTPUT_DIR), 'data',
-                           'succession_working_set.csv')
+    out_csv = os.path.join(ROOT, 'data', 'succession_working_set.csv')
     ws.to_csv(out_csv, index=False)
     print(f"Working dataset saved to {out_csv}")
-    print()
-    print("=== PHASE 2 PREPARATION ===")
-    print()
-    print("The Markov transition model requires time-ordered within-system")
-    print("succession changes.  The following hand-coded systems have notes")
-    print("suggesting documented transitions:")
-    trans_candidates = ws[ws['notes'].str.contains(
-        'succession|transition|changed|reform|replaced|republic|empire',
-        case=False, na=False
-    )][['System', 'succ_canon', 'L', 'D0', 'notes']]
-    if len(trans_candidates):
-        for _, row in trans_candidates.iterrows():
-            print(f"  {row['System']} ({row['succ_canon']}, "
-                  f"L={row['L']:.2f}, D₀={row['D0']:.2f})")
-            print(f"    Note: {str(row['notes'])[:120]}...")
-    print()
-    print("Recommended additions to governance_extended.csv:")
-    print("  - succession_changes: structured field recording documented")
-    print("    within-system succession mechanism changes")
-    print("  - Format: '[from_type]->[to_type] (YEAR): cause_note'")
-    print("  - Priority systems: Rome Republic→Empire, Athens oscillation,")
-    print("    England Elective→Hereditary→Constitutional, Egypt Old→Middle")
-    print("    Kingdom resets, Qin Legalism→Han consolidation")
+
+    # ── Phase 2 ───────────────────────────────────────────────────────────────
+    if args.phase2:
+        print()
+        print("=== PHASE 2: TRANSITION ANALYSIS ===")
+        df_full = pd.read_csv(args.data)
+        df_full.columns = df_full.columns.str.strip()
+        for col in ['surplus_legibility', 'disobedience_freedom']:
+            df_full[col] = pd.to_numeric(df_full[col], errors='coerce')
+
+        tdf = parse_succession_changes(df_full)
+        save_transition_csv(tdf)
+        run_transition_statistics(tdf)
+
+        if not args.no_figure:
+            make_transition_figure(tdf)
+    else:
+        print()
+        print("Run with --phase2 to generate transition matrix analysis.")
+        print("Requires succession_changes field in governance_extended.csv.")
 
 
 if __name__ == '__main__':
     main()
+

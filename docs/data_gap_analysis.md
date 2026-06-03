@@ -164,4 +164,6 @@ Beyond new rows, the following columns were added to support the isonomia framew
 | `gw_discussed` | boolean | Whether G&W explicitly discuss this case |
 | `coding_confidence` | ordinal 1–3 | Evidence quality (1=auto-coded, 2–3=hand-coded) |
 | `notes` | text | Coding rationale and caveats |
-| `succession_changes` | text | Documented within-system succession mechanism transitions; format `[from]->[to] (YEAR): trigger_note`; used by `succession_attraction_basins.py`; 9 systems coded to date |
+| `succession_changes` | text | Documented within-system succession mechanism transitions; format `[from]->[to] (YEAR): trigger_note`; 24 systems coded, 37 transition events; see `data/coding_scheme.md` for full format specification |
+
+**Note on derived columns:** `succ_canon` is a derived column computed by `succession_attraction_basins.py` at runtime by mapping `Succession Method` through the `CANON` dictionary. It is not stored in `governance_extended.csv`. Scripts that need it apply the mapping directly from `Succession Method`.

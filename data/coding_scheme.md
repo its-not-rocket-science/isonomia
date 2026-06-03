@@ -407,3 +407,71 @@ The most contested codings are likely to be:
 - **R for systems where governance reinvention is implicit rather than explicit**
 
 In all contested cases, err toward the lower value and note the uncertainty.
+
+---
+
+## Succession Method — Coding Guidelines and Phase 2 Fills
+
+The `Succession Method` field records the primary mechanism by which the highest office in a governance system was filled. It is a descriptive categorical variable, normalised in analysis scripts to six canonical types via the `CANON` dictionary in `succession_attraction_basins.py`:
+
+| Canonical type | Raw values mapped to it |
+|---|---|
+| `hereditary` | Hereditary, Dynastic, Inheritance, Matrilineal, Patriarchal |
+| `elective` | Election, Elections, Elective, Sortition, Referendum, Lottery |
+| `consensus` | Consensus, Elder consensus, Acclamation |
+| `rotation` | Rotation, Age grades |
+| `appointment` | Appointment, Merit-based, Exams, Co-optation, Promotion |
+| `charismatic` | Charismatic, Charismatic selection, Oratory skill, Competition, Competitive, Testing |
+
+**Coding rules:**
+
+- Code the *de facto* mechanism where it differs from the de jure. Sparta's dual kingship is `Hereditary`, not `Elective`, despite the assembly's nominal ratification role.
+- Where multiple mechanisms coexist, code the primary one. Venice used sortition for the Doge election but appointment for most offices; code `Elective` (sortition = a form of election).
+- Pre-state and archaeologically attested systems: code from burial evidence, settlement structure, and documented authority patterns. No royal burials + communal storage = Consensus. Elite burials + palace redistribution = Hereditary.
+
+**Phase 2 fills (60 systems, confidence 2–3):** The following systems had null Succession Method in the original dataset and were filled in the Phase 2 coding pass. Fills are sourced from the primary literature cited in the `notes` field. The working set for succession analysis grew from n=65 to n=125 (8 charismatic excluded from the multinomial model).
+
+Selected decisions with rationale:
+
+| System | Coded as | Rationale |
+|---|---|---|
+| Çatalhöyük | Consensus | No evidence of hereditary office; Hodder 2006 argues communal decision-making |
+| Early Uruk | Charismatic | Pre-dynastic lugal = emergent war leader; dynastic succession not yet established |
+| Late Uruk / Early Dynastic | Hereditary | First dynastic king-lists appear ~3000 BCE |
+| Teotihuacan | Consensus | No royal burials; Cowgill 2015 argues collective governance; contrast with Aztec |
+| Tlaxcala Republic | Elective | Tlahtocayotl council of four elected lords; documented in Spanish colonial records |
+| Tang Dynasty | Hereditary | Tang imperial dynastic succession; codified in Zhengguan zhengyao |
+| Confucian Bureaucracy | Appointment | Keju examination system defines appointment; hereditary rank excluded from office |
+| Greek Tyranny | Charismatic | Seizure of power by strong individual; no formal selection mechanism |
+| Greek Oligarchy | Appointment | Council selects from property-qualified pool (Solon's census classes) |
+| Kurultai | Elective | Great assembly of Mongol nobles elects khan; became hereditary after 1229 |
+| Highland New Guinea Big Man System | Charismatic | Status achieved through exchange/oratory competition; no succession mechanism |
+| Gadaa System | Rotation | 8-year age-grade rotation; Oromo system; Legesse 1973 |
+| Satrapy System | Appointment | Satraps appointed by Achaemenid king; Briant 2002 |
+| Holy Roman Empire | Election | Seven electoral princes; codified in Golden Bull 1356 |
+
+---
+
+## succession_changes Field — Format and Coverage
+
+The `succession_changes` field records documented within-system succession mechanism transitions. It is the source data for `data/transition_data.csv` and for the Phase 2 transition analysis in `succession_attraction_basins.py`.
+
+**Format:** Each entry is `[from_type]->[to_type] (YEAR): trigger_note`. Multiple entries per system are separated by ` | ` (space-pipe-space).
+
+**Trigger types used in notes:**
+- `P_to_S` — competitive politics generates military sovereignty (Rome)
+- `external_shock` — external military, political, or environmental event forces mechanism change
+- `elite_reform` — internal elite coalition changes mechanism without collapse
+- `collapse` — state fragmentation or collapse; succession mechanism changes in reconstitution
+- `reconsolidation` — conquest or administrative rebuilding restores or changes mechanism
+- `internal` — within-dynasty succession crisis without external trigger
+
+**Phase 2 coverage:** 24 systems, 37 transition events (26 type-changing, 11 same-type L/D shift events). Same-type transitions are retained because they provide L-conditional stability evidence for the Phase 3 Markov model.
+
+**Known limitations:**
+
+1. `L_from` and `D0_from` in the parsed transition data use the system's single coded value for the entire period, not a time-varying estimate. Systems whose L or D changed significantly over their history (Tang Dynasty, Ottoman Empire) are affected by this limitation. It is noted in the `succession_attraction_basins.py` docstring and in the Phase 3 modelling assumptions.
+
+2. The transition dataset is drawn from systems that have *both* a coded succession method and a documented transition. This introduces selection bias toward systems with rich historical records (European, East Asian, Near Eastern). Oral-tradition societies (Gadaa, Iroquois, many African systems) are under-represented in the transition data relative to their presence in the static working set.
+
+3. The Markov transition matrix (Phase 3) currently has 9 of 20 cells filled (45%). Empty cells cluster around `consensus` and `rotation` as origin states. Priority systems for additional transition coding: Aztec Triple Alliance (hereditary → collapse), Hanseatic League (appointment → dissolution), Swiss Cantonal Democracy (elective → elective constitutional changes), Song Dynasty (appointment → appointment under Mongol pressure), and any pre-modern consensus system with a documented transition to hereditary.
