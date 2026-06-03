@@ -492,7 +492,7 @@ def kaplan_meier(sdf_sub):
 
 # ── Figure ────────────────────────────────────────────────────────────────────
 
-def make_figure(sdf):
+def make_figure(sdf, visuals_dir=OUTPUT_DIR):
     plt.rcParams.update({
         'font.family': 'serif', 'font.size': 9,
         'axes.spines.top': False, 'axes.spines.right': False,
@@ -752,7 +752,7 @@ def make_figure(sdf):
         fontsize=10.5, fontweight='bold', y=0.998,
     )
 
-    out = os.path.join(OUTPUT_DIR, 'ctmc_model.png')
+    out = os.path.join(visuals_dir, 'ctmc_model.png')
     plt.savefig(out, dpi=150, bbox_inches='tight')
     plt.close()
     print(f"Saved: {out}")
@@ -767,13 +767,15 @@ def main():
         epilog="""
 Reads governance_extended.csv, parses the succession_changes field to
 build a survival spell dataset, estimates the CTMC rate matrix Q,
-computes L-conditional stationary distributions, and tests the D₀
+computes L-conditional stationary distributions, and tests the D0
 moderator prediction.
 
-Outputs:
-    visuals/ctmc_model.png       — six-panel figure
-    data/survival_spells.csv     — spell-level dataset (145 spells)
+Outputs (always written):
+    data/survival_spells.csv     — spell-level dataset
     data/transition_data.csv     — re-parsed transition events
+
+Outputs (only with --figure):
+    visuals/ctmc_model.png       — six-panel figure
 
 The full succession model runs as three scripts in sequence:
     python src/succession_attraction_basins.py        # Phase 1+2
@@ -782,9 +784,17 @@ The full succession model runs as three scripts in sequence:
     )
     parser.add_argument('--data', default=DATA_PATH,
                         help='Path to governance_extended.csv')
-    parser.add_argument('--no-figure', action='store_true',
-                        help='Skip figure generation')
+    parser.add_argument('--figure', action='store_true',
+                        help='Generate ctmc_model.png figure')
     args = parser.parse_args()
+
+    # Resolve output directories relative to the data file's parent
+    # so the script works regardless of working directory
+    data_file = os.path.abspath(args.data)
+    data_dir   = os.path.dirname(data_file)
+    visuals_dir = os.path.join(os.path.dirname(data_dir), 'visuals')
+    os.makedirs(data_dir,   exist_ok=True)
+    os.makedirs(visuals_dir, exist_ok=True)
 
     print("Loading governance data...")
     df = load_governance(args.data)
@@ -792,25 +802,24 @@ The full succession model runs as three scripts in sequence:
     print("Parsing transitions from succession_changes field...")
     tdf = parse_transitions(df)
 
-    # Save transition data
-    tdf_path = os.path.join(ROOT, 'data', 'transition_data.csv')
+    tdf_path = os.path.join(data_dir, 'transition_data.csv')
     tdf.to_csv(tdf_path, index=False)
     print(f"  Transition data saved to {tdf_path}")
 
     print("\nBuilding survival spell dataset...")
     sdf = build_survival_spells(df, tdf)
 
-    # Save survival spells
-    sdf_path = os.path.join(ROOT, 'data', 'survival_spells.csv')
+    sdf_path = os.path.join(data_dir, 'survival_spells.csv')
     sdf.to_csv(sdf_path, index=False)
     print(f"  Survival spells saved to {sdf_path}")
 
     print()
     print_ctmc_results(sdf)
 
-    if not args.no_figure:
+    if args.figure:
         print("Building figure...")
-        make_figure(sdf)
+        # Pass visuals_dir so make_figure saves to the right place
+        make_figure(sdf, visuals_dir)
 
     print("\nDone.")
 
