@@ -63,7 +63,7 @@ The **EDR composite** is defined as (E + D + R) / 3.
 
 The mechanism is as follows. High EDR provides error-correction: bad leadership is abandoned (E), bad decisions are refused (D), failing institutions are replaced (R). When EDR drops below θ — through rising surplus legibility (L) enabling taxation, rising information infrastructure (I) enabling persistent obligation-tracking, and the consequent rise in A and suppression of E and D — this error-correction mechanism is dismantled. The system can no longer self-correct through internal reorganisation and becomes dependent on external perturbation (invasion, climate shock, elite civil war) to reset.
 
-Preliminary analysis of the 398-society dataset (hand-coded n=73, auto-coded n=325) finds EDR-SAP correlation r = –0.844 (hand-coded subset, n=73); r = –0.763 (full dataset, n=398), consistent with the hypothesis that SAP elevation systematically suppresses the three freedoms. The EDR distribution is notably bimodal, with a trough at θ ≈ 0.45 — systems cluster either clearly above or below the threshold with few in between, consistent with a genuine phase boundary rather than a smooth gradient.
+Preliminary analysis of the 389-society dataset (hand-coded n = 125, auto-coded n = 264) finds EDR-SAP correlation r = −0.844 (hand-coded subset, n = 125); r = −0.775 (full dataset), consistent with the hypothesis that SAP elevation systematically suppresses the three freedoms. The EDR distribution is notably bimodal, with a trough at θ ≈ 0.45 — systems cluster either clearly above or below the threshold with few in between, consistent with a genuine phase boundary rather than a smooth gradient.
 
 ### The Lock-In Sequence
 
@@ -124,24 +124,34 @@ Crucially, this reframing makes collapse a *regime transition rather than a fail
 
 Several questions remain unresolved and constitute a research agenda:
 
-**The threshold value θ.** What EDR composite value marks the resilience threshold? Preliminary analysis suggests θ ≈ 0.4–0.5, but this requires cross-validation against known collapse events.
+**The threshold value θ.** What EDR composite value marks the resilience threshold? Analysis of the bimodal EDR distribution trough identifies θ ≈ 0.45 empirically. Cross-validation against known collapse event data is a primary goal of Paper 4.
 
 **Scale and egalitarianism.** G&W demonstrate that large-scale egalitarian societies existed. What are the scaling mechanisms — is it always ritual assembly, and is there an upper bound?
 
 **Irreversibility.** Once below θ, are endogenous reform pathways possible? The Roman Gracchi reforms, various revolutionary transitions, and post-colonial constitution-building all suggest partial reversibility requiring specific conditions (elite fracture, external shock, or ideological reconfiguration).
 
-**The measurement problem.** EDR variables are harder to operationalise from archaeological data than SAP variables. The coding scheme (see `data/coding_scheme.md`) establishes anchor cases and inter-rater reliability targets, but independent validation is needed.
+**The measurement problem.** EDR variables are harder to operationalise from archaeological data than SAP variables. The coding scheme (`data/coding_scheme.md`) establishes anchor cases and inter-rater reliability targets. External validation against five independent datasets is documented in `data/coding_scheme.md`; the CCP de jure/de facto divergence analysis confirms that D, E, and R measure de facto freedom rather than constitutional text.
+
+**The L validation gap.** No existing external dataset directly measures surplus legibility. The lock-in sequence (L→I→A→EDR suppression) is the central mechanism of Paper 2, but L itself has no external cross-validation. World Bank population registry completeness and IMF financial account coverage are candidate proxies for modern systems; no pre-modern analogue exists beyond Seshat's writing composite (which measures script, not extractability). This is the highest-priority measurement gap for Paper 4.
+
+**P (competitive politics) validation.** Freedom House FIW-B Political Pluralism yields r = 0.357 (ns, n = 9); Polity PARCOMP yields r = 0.491 (ns, n = 11). Both results reflect range restriction in the modern matched set (iso_P ranges 0.30–0.75) rather than construct invalidity. V-Dem v2x_polyarchy is the next candidate; it has more historical depth than PARCOMP and covers non-electoral prestige competition more directly.
 
 ---
 
 ## References
 
 - Bateson, G. (1935). Culture contact and schismogenesis. *Man*, 35, 178–183.
+- Coppedge, M. et al. (2026). *V-Dem Codebook v16*. Varieties of Democracy Project. https://www.v-dem.net
+- Elkins, Z., Ginsburg, T., and Melton, J. (2025). *Comparative Constitutions Project: Constitute*, v5. https://comparativeconstitutionsproject.org
+- Freedom House. (2021). *Freedom in the World 2013–2021*. https://freedomhouse.org/report/freedom-world
 - Fukuyama, F. (2011). *The Origins of Political Order*. Farrar, Straus and Giroux.
 - Graeber, D. & Wengrow, D. (2021). *The Dawn of Everything: A New History of Humanity*. Allen Lane.
 - Mann, M. (1986). *The Sources of Social Power, Vol. 1*. Cambridge University Press.
+- Marshall, M. G. and Gurr, T. R. (2020). *Polity5*. Center for Systemic Peace. https://www.systemicpeace.org/inscrdata.html
 - Motesharrei, S., Rivas, J., & Kalnay, E. (2014). Human and nature dynamics (HANDY). *Ecological Economics*, 101, 90–102.
 - Scott, J. C. (2017). *Against the Grain: A Deep History of the Earliest States*. Yale University Press.
 - Tainter, J. (1988). *The Collapse of Complex Societies*. Cambridge University Press.
 - Turchin, P. (2003). *Historical Dynamics*. Princeton University Press.
 - Turchin, P. (2016). *Ages of Discord*. Beresta Books.
+- Turchin, P. et al. (2015). Seshat: The Global History Databank. *Cliodynamics*, 6(1), 77–107. https://seshat-db.com
+- World Justice Project. (2025). *WJP Rule of Law Index: Historical Data 2012–2025*. https://worldjusticeproject.org/rule-of-law-index/

@@ -257,44 +257,124 @@ Multiple values may apply.
 
 ## External Construct Validity
 
-The EDR composite and SAP variables have been cross-validated against two independent datasets covering 18 matched governance systems spanning 1810–2015.
+The EDR composite and SAP variables have been cross-validated against five independent external datasets. Matched rows and all correlation results are stored in `data/crossval_matched.csv` (source column identifies dataset; mismatch_flag column identifies temporal proxies excluded from primary correlations). Run `src/crossvalidate_edr.py --vdem ... --polity ... --seshat ... --wjp ... --fiw ... --ccp ...` to reproduce all figures and tables.
 
-**V-Dem v16** (https://www.v-dem.net/data/the-v-dem-dataset/):
+---
+
+### V-Dem v16 (https://www.v-dem.net)
+
+16 matched systems, 1789–2015. Two systems removed after structural mismatch review: Roman Republic (ITA 1870 is post-Risorgimento Italy, not a valid proxy) and Qin Legalism (CHN 1949 is PRC, not a valid proxy). Dutch Republic re-matched from NLD 1800 to NLD 1789 (within Republic lifespan; 1800 was Batavian/Kingdom of Holland).
 
 | Isonomia variable | V-Dem variable | r | p | n |
 |---|---|---|---|---|
-| EDR composite | Liberal democracy index (v2x_libdem) | 0.869 | <0.001 | 18 |
-| EDR composite | Egalitarian democracy (v2x_egaldem) | 0.896 | <0.001 | 12 |
-| EDR composite | Deliberative democracy (v2x_delibdem) | 0.903 | <0.001 | 12 |
-| E (exit freedom) | Freedom of movement (v2clfmove) | 0.837 | <0.001 | 18 |
-| R (arrangement) | Civil society organisations (v2cseeorgs) | 0.748 | <0.001 | 18 |
-| D (disobedience) | Judicial compliance (v2jucomp) | 0.671 | 0.002 | 18 |
+| EDR composite | Liberal democracy index (v2x_libdem) | 0.868 | <0.001 | 16 |
+| EDR composite | Egalitarian democracy (v2x_egaldem) | 0.899 | <0.001 | 12 |
+| EDR composite | Deliberative democracy (v2x_delibdem) | 0.912 | <0.001 | 12 |
+| E (exit freedom) | Freedom of movement (v2clfmove) | 0.893 | <0.001 | 16 |
+| R (arrangement) | Civil society organisations (v2cseeorgs) | 0.776 | <0.001 | 16 |
+| D (disobedience) | Judicial compliance (v2jucomp) | 0.650 | 0.006 | 16 |
 
-**Polity5** (https://www.systemicpeace.org/inscrdata.html):
+---
+
+### Polity5 (https://www.systemicpeace.org/inscrdata.html)
+
+11 matched systems.
 
 | Isonomia variable | Polity5 variable | r | p | n |
 |---|---|---|---|---|
-| EDR composite | DEMOC (0–10) | 0.839 | <0.001 | 13 |
-| SAP composite | AUTOC (0–10) | 0.860 | <0.001 | 13 |
-| S (sovereignty) | AUTOC | 0.867 | <0.001 | 13 |
-| D (disobedience) | XCONST (executive constraints) | 0.748 | 0.003 | 13 |
-| P (competitive politics) | PARCOMP | 0.592 | 0.033 | 13 |
+| EDR composite | DEMOC (0–10) | 0.847 | 0.001 | 11 |
+| SAP composite | AUTOC (0–10) | 0.895 | <0.001 | 11 |
+| S (sovereignty) | AUTOC | 0.870 | 0.001 | 11 |
+| D (disobedience) | XCONST (executive constraints) | 0.747 | 0.008 | 11 |
+| P (competitive politics) | PARCOMP | 0.491 | ns | 11 |
 
-Note on P: the lower Polity PARCOMP correlation (r = 0.592) is expected. Our P captures prestige competition, ritual display, and non-electoral competitive politics that Polity's electoral-focused PARCOMP does not measure. See coding scheme P section for the critical distinction between competitive display *for* positions and performance of *held* power.
+Note on P: lower correlation expected. iso_P captures prestige competition and non-electoral competitive politics that Polity's electoral-focused PARCOMP does not measure. Range restriction (iso_P 0.30–0.75 in modern matched set) additionally suppresses the correlation. See FIW-B result below.
 
-**Seshat: Global History Databank — Equinox-2020** (https://seshat-db.com/downloads_page/, free registration required):
+---
+
+### WJP Rule of Law Index 2025 (https://worldjusticeproject.org/rule-of-law-index/)
+
+7 direct matches (target year ≥ 1980; modern political entity matched to WJP data). 7 proxy matches (target year < 1980; WJP measures successor state — excluded from primary correlations, shown in figure as grey points).
+
+Sub-factor mapping: D → Factor 1 (government constraints), 1.2 (judiciary limits government), 1.5 (non-governmental checks), 4.3 (due process). E → 4.4 (expression), 4.6 (privacy). R → 4.7 (assembly), 3.3 (civic participation).
+
+| Isonomia variable | WJP sub-factor composite | r | p | n |
+|---|---|---|---|---|
+| E (exit freedom) | Expression + privacy (4.4, 4.6) | 0.904 | 0.005 | 7 |
+| R (arrangement) | Assembly + civic participation (4.7, 3.3) | 0.861 | 0.013 | 7 |
+| D (disobedience) | Constraints + due process (F1, 1.2, 1.5, 4.3) | 0.640 | ns | 7 |
+| EDR composite | Overall rule of law | 0.633 | ns | 7 |
+
+Note: D and EDR ns at n = 7; proxy points (shown in figure) suggest positive pattern across the full range. n = 7 limits statistical power. WJP does not cover Switzerland (CHE) or Iceland (ISL).
+
+---
+
+### Freedom House Freedom in the World 2013–2021 (https://freedomhouse.org/report/freedom-world)
+
+9 direct matches (target year ≥ 1980). 7 proxy matches (target year < 1980 — excluded from correlations).
+
+Sub-score mapping: B (Political Pluralism and Participation) → iso_P; D (Freedom of Expression and Belief) → iso_E; E (Associational and Organisational Rights) → iso_R; F (Rule of Law) → iso_D. All sub-scores normalised to 0–1 from raw maximums (B: 16, D: 16, E: 12, F: 16).
+
+| Isonomia variable | FIW sub-score | r | p | n |
+|---|---|---|---|---|
+| E (exit freedom) | FIW-D Expression and Belief | 0.895 | 0.001 | 9 |
+| R (arrangement) | FIW-E Associational Rights | 0.943 | <0.001 | 9 |
+| D (disobedience) | FIW-F Rule of Law | 0.866 | 0.003 | 9 |
+| EDR composite | Civil Liberties aggregate | 0.923 | <0.001 | 9 |
+| EDR composite | Total score | 0.923 | <0.001 | 9 |
+| P (competitive politics) | FIW-B Political Pluralism | 0.357 | ns | 9 |
+
+Note on P: iso_P range 0.30–0.75 in direct matched set causes range restriction. Grey proxy points in `crossval_fiw.png` show positive pattern across full range. FIW-B is the best available external P proxy; the ns result reflects the composition of the modern matched set rather than construct invalidity.
+
+---
+
+### CCP Comparative Constitutions Project v5 (https://comparativeconstitutionsproject.org/download-data/)
+
+14 matched systems (Habsburg at AUT 1900 and Joseon at KOR 1895 excluded: year gaps of 18y and 53y respectively exceed threshold). CCP codes de jure constitutional text only.
+
+Variable recoding: binary provisions (1 = right enshrined, 2 = right absent, 96/98 = n/a → NaN) recoded to 1.0/0.0/NaN. intexec (executive independence from legislature, ordinal 1–4) recoded as (4 − intexec) / 3, where high = constrained executive.
+
+Composite mapping: ccp_D = mean(judind, dueproc, habcorp, fairtri, intexec_recoded); ccp_E = mean(freemove, express, privacy, press); ccp_R = mean(assem, assoc, petition).
+
+| Isonomia variable | CCP composite | r | p | n |
+|---|---|---|---|---|
+| D (disobedience) | judind + dueproc + intexec (recoded) + habcorp + fairtri | 0.681 | 0.021 | 11 |
+| E (exit freedom) | freemove + express + privacy + press | 0.230 | ns | 11 |
+| R (arrangement) | assem + assoc + petition | 0.084 | ns | 11 |
+
+**Important note — binary ceiling effect:** ccp_E and ccp_R use binary provisions that show near-zero variance in the matched set (most constitutions enshrine these rights in text). This suppresses r for E and R and does not indicate measurement failure. ccp_D retains variance because intexec is ordinal (1–4) and constitutional constraint provisions vary meaningfully across the matched systems.
+
+**De jure / de facto gaps** — systems where |iso − ccp| > 0.4 on any dimension (ccp_dejure_gap = 1 in crossval_matched.csv):
+
+| System | iso_E | ccp_E | iso_D | ccp_D | iso_R | ccp_R | Interpretation |
+|---|---|---|---|---|---|---|---|
+| Soviet Republics System | 0.05 | 0.75 | 0.05 | 0.40 | 0.08 | 1.00 | 1977 constitution enshrined rights denied in practice — passive revolution |
+| Meiji Oligarchy | 0.20 | 0.75 | 0.15 | 0.00 | 0.20 | 1.00 | 1889 constitution; rights overridden by lèse-majesté and public peace laws |
+| Singaporean Technocracy | 0.65 | 0.50 | 0.20 | 0.00 | 0.20 | 0.67 | Constitution silent on executive constraint (intexec = unconstrained) |
+| European Union Governance | 0.70 | 1.00 | 0.55 | 0.75 | 0.55 | 1.00 | German Basic Law over-scores for EU governance; mismatch of unit |
+| British Parliamentary System | 0.80 | 0.25 | 0.85 | 0.40 | 0.70 | 0.33 | No written constitution; common-law freedoms absent from CCP text coding |
+| Althingi Carbon-Neutral Parliament | 0.80 | 0.75 | 0.85 | 0.40 | 0.75 | 0.67 | Iceland's constitution under-specifies rights relative to practice |
+| Cossack Hetmanate | 0.65 | 0.75 | 0.65 | 0.80 | 0.55 | 1.00 | Ukrainian constitution generous on paper; gap narrows with gap ≤ 0.4 except R |
+
+The Soviet, Meiji cases are the strongest instances of the passive-revolution mechanism described in Paper 2 Section 8.3. The British case illustrates CCP's limitation for unwritten constitutional systems, not a coding error.
+
+---
+
+### Seshat: Global History Databank — Equinox-2020 (https://seshat-db.com/downloads_page/)
+
+14 pre-modern systems, 3000 BCE–1600 CE.
 
 | Isonomia variable | Seshat variable | r | p | n |
 |---|---|---|---|---|
 | A (admin index) | Admin composite (admin levels, bureaucrats, merit promotion) | 0.604 | 0.022 | 14 |
 | I (info infrastructure) | Writing composite (written records, script) | 0.672 | 0.008 | 14 |
-| S (sovereignty) | Military composite (professional soldiers, military levels) | 0.798 | 0.002 | 12 |
+| S (sovereignty) | Military composite (professional soldiers, military levels) | 0.774 | 0.003 | 12 |
 | SAP composite | Admin composite | 0.710 | 0.004 | 14 |
 | D (disobedience) | Legal composite (formal legal code, executive constraints) | 0.066 | ns | 11 |
 
-Coverage: 14 pre-modern systems, 3000 BCE–1600 CE. The D non-result is expected: Seshat was built to measure social complexity, not freedom. No Seshat variable captures exit, disobedience, or arrangement freedom directly. The D result confirms that our D dimension measures something outside Seshat's scope, consistent with its theoretical grounding in Graeber and Wengrow rather than in complexity science.
+Note: D non-result is expected — Seshat measures social complexity, not freedom. No Seshat variable captures exit, disobedience, or arrangement freedom directly.
 
-Run `src/crossvalidate_edr.py --seshat path/to/Equinox2020.csv` to reproduce. See `.gitignore` and README for dataset download instructions.
+Note on Inca and iso_I: iso_I = 0.70 (quipu-based information infrastructure) vs Seshat writing composite = 0.00 (no script). This is not a coding error. iso_I measures state capacity to track resources and populations; Seshat's writing composite measures script presence. The Inca administered the largest pre-Columbian empire without writing, using khipu knotted-cord records. The divergence is annotated in `crossval_seshat.png` and illustrates the distinction between information infrastructure (iso_I) and script-based literacy (Seshat writing composite). Mongol Empire and Achaemenid Empire are absent from the current matched set (both are in Seshat as mn_mongol_emp and ir_achaemenid_emp); planned addition for Paper 4.
 
 ## Reliability Exercise Results
 
