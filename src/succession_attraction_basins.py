@@ -245,12 +245,20 @@ def make_figure(ws, lr, scaler, classes, res):
     p_lo = sweep_probabilities(lr, scaler, 0.10, L_sw)
     p_hi = sweep_probabilities(lr, scaler, 0.85, L_sw)
 
-    type_handles = [mpatches.Patch(color=COLOURS[t], label=t)
-                    for t in ['hereditary', 'appointment', 'elective',
-                               'consensus', 'rotation']]
+    type_handles = [
+        mlines.Line2D([], [], color=COLOURS[t], marker=MARKERS[t],
+                      markerfacecolor=COLOURS[t], markeredgecolor='white',
+                      markeredgewidth=0.5, markersize=8,
+                      linestyle='none', label=t)
+        for t in ['hereditary', 'appointment', 'elective', 'consensus', 'rotation']
+    ]
 
-    fig = plt.figure(figsize=(15, 9))
-    gs  = GridSpec(2, 3, figure=fig, hspace=0.44, wspace=0.38)
+    # 3-row GridSpec: rows 0-1 are the 2×3 plot grid, row 2 is a thin
+    # shared-legend strip. height_ratios keeps the legend strip compact.
+    fig = plt.figure(figsize=(15, 10))
+    gs  = GridSpec(3, 3, figure=fig,
+                   height_ratios=[1, 1, 0.08],
+                   hspace=0.44, wspace=0.38)
 
     # ── A: L × D₀ scatter ────────────────────────────────────────────────────
     ax_a = fig.add_subplot(gs[0, 0])
@@ -259,7 +267,6 @@ def make_figure(ws, lr, scaler, classes, res):
         ax_a.scatter(sub['L'], sub['D0'], c=COLOURS[t], marker=MARKERS[t],
                      s=50, alpha=0.85, edgecolors='white', lw=0.5, zorder=4)
 
-    # Four anchor-case annotations, placed to avoid cluster overlap
     anno = {
         'Norwegian Sovereign Wealth Democracy': ('Norway',     (0.72, 0.94)),
         'Gadaa System':                          ('Gadaa',      (0.30, 0.92)),
@@ -281,9 +288,7 @@ def make_figure(ws, lr, scaler, classes, res):
     ax_a.set_ylabel('D₀ — disobedience freedom', fontsize=9)
     ax_a.set_title(f'A.  Succession types in L × D₀ space  (n = {res["n_total"]})',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
-    ax_a.legend(handles=type_handles, fontsize=7, loc='upper left',
-                frameon=True, framealpha=0.92, edgecolor='#dddddd',
-                title='Succession type', title_fontsize=7)
+    # No legend here — see shared legend strip below
 
     # ── B: Predicted probability curves ──────────────────────────────────────
     ax_b = fig.add_subplot(gs[0, 1])
@@ -309,8 +314,7 @@ def make_figure(ws, lr, scaler, classes, res):
     ax_b.set_title('B.  P(type | L, D₀) — multinomial logistic\n'
                    '(solid = D₀ 0.85  —  dashed = D₀ 0.10)',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
-    ax_b.legend(handles=type_handles, fontsize=7, loc='center right',
-                frameon=True, framealpha=0.92, edgecolor='#dddddd')
+    # No per-panel type legend
 
     # ── C: Moderator shading ──────────────────────────────────────────────────
     ax_c = fig.add_subplot(gs[0, 2])
@@ -328,8 +332,7 @@ def make_figure(ws, lr, scaler, classes, res):
     ax_c.set_title('C.  D₀ moderator effect  (shading = gap)\n'
                    '(solid = D₀ 0.85  —  dashed = D₀ 0.10)',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
-    ax_c.legend(handles=type_handles, fontsize=7, loc='upper right',
-                frameon=True, framealpha=0.92, edgecolor='#dddddd')
+    # No per-panel type legend
 
     # ── D: Boxplot D₀ by type × L regime ─────────────────────────────────────
     ax_d = fig.add_subplot(gs[1, 0])
@@ -354,6 +357,7 @@ def make_figure(ws, lr, scaler, classes, res):
     ax_d.set_title('D.  D₀ by type × L regime\n'
                    '(blue = L < 0.60  —  red = L ≥ 0.60)',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
+    # Panel D has its own L-regime legend (not succession types)
     lo_p = mpatches.Patch(facecolor='#5dade2', alpha=0.65, label='L < 0.60')
     hi_p = mpatches.Patch(facecolor='#e74c3c', alpha=0.65, label='L ≥ 0.60')
     ax_d.legend(handles=[lo_p, hi_p], fontsize=7.5, loc='upper right',
@@ -396,8 +400,7 @@ def make_figure(ws, lr, scaler, classes, res):
               transform=ax_e.transAxes, fontsize=7.5, va='top', ha='right',
               bbox=dict(boxstyle='round,pad=0.4', fc='white',
                         ec='#cccccc', alpha=0.92))
-    ax_e.legend(handles=type_handles, fontsize=7, loc='lower right',
-                frameon=True, framealpha=0.92, edgecolor='#dddddd')
+    # No per-panel type legend
 
     # ── F: Statistics table ───────────────────────────────────────────────────
     ax_f = fig.add_subplot(gs[1, 2])
@@ -437,6 +440,26 @@ def make_figure(ws, lr, scaler, classes, res):
             cell.set_facecolor('#f5f6fa')
     ax_f.set_title('F.  Key statistics',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
+
+    # ── Shared succession-type legend strip (row 2, spanning all 3 columns) ──
+    # A single invisible axis spanning the full bottom strip hosts one horizontal
+    # legend centred below all six panels.
+    ax_leg = fig.add_subplot(gs[2, :])
+    ax_leg.axis('off')
+    ax_leg.legend(
+        handles=type_handles,
+        loc='center',
+        ncol=len(type_handles),
+        fontsize=8.5,
+        frameon=True,
+        framealpha=0.95,
+        edgecolor='#cccccc',
+        title='Succession type  (colour + marker consistent across all panels)',
+        title_fontsize=8,
+        handlelength=1.2,
+        handletextpad=0.5,
+        columnspacing=1.5,
+    )
 
     fig.suptitle(
         'Succession mechanism attraction basins: '

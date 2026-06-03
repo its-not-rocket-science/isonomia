@@ -6,7 +6,7 @@
 
 ## Status
 
-This document records the gap analysis conducted against the original `global-governance-models` dataset (41 entries) and the additions made to produce `governance_extended.csv` (398 entries). All Tier 1 and Tier 2 gaps listed below have been filled. Tier 3 entries represent further enrichment opportunities.
+This document records the gap analysis conducted against the original `global-governance-models` dataset (41 entries) and the additions made to produce `governance_extended.csv` (389 entries). All Tier 1 and Tier 2 gaps listed below have been filled. Tier 3 entries represent further enrichment opportunities.
 
 ---
 
@@ -164,3 +164,4 @@ Beyond new rows, the following columns were added to support the isonomia framew
 | `gw_discussed` | boolean | Whether G&W explicitly discuss this case |
 | `coding_confidence` | ordinal 1–3 | Evidence quality (1=auto-coded, 2–3=hand-coded) |
 | `notes` | text | Coding rationale and caveats |
+| `succession_changes` | text | Documented within-system succession mechanism transitions; format `[from]->[to] (YEAR): trigger_note`; used by `succession_attraction_basins.py`; 9 systems coded to date |
