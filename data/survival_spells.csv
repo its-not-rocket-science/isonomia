@@ -1,0 +1,146 @@
+system,succ_type,duration,event,L,D0,to_succ,trigger
+Andean Tinku,rotation,1940.0,1,0.3,0.7,hereditary,external_shock
+Andean Tinku,hereditary,60.0,0,0.3,0.7,,
+Athenian Democracy,elective,97.0,1,0.55,0.85,appointment,external_shock
+Athenian Democracy,appointment,8.0,1,0.55,0.85,elective,elite_reform
+Athenian Democracy,elective,81.0,1,0.55,0.85,appointment,external_shock
+Classic Maya City-States,hereditary,550.0,0,0.6,0.35,,collapse
+Classic Maya City-States,hereditary,100.0,1,0.6,0.35,elective,reconsolidation
+Confucian Bureaucracy,appointment,1846.0,1,0.9,0.15,hereditary,external_shock
+Confucian Bureaucracy,hereditary,261.0,1,0.9,0.15,appointment,elite_reform
+Confucian Bureaucracy,appointment,7.0,0,0.9,0.15,,
+Egyptian Nomarchies,rotation,1095.0,1,0.75,0.2,hereditary,reconsolidation
+Egyptian Old Kingdom,hereditary,505.0,1,0.75,0.1,rotation,collapse
+Gadaa System,rotation,300.0,0,0.3,0.85,,external_shock
+Gadaa System,rotation,100.0,1,0.3,0.85,hereditary,external_shock
+Greek Aristocracy,hereditary,200.0,1,0.4,0.35,appointment,elite_reform
+Greek Oligarchy,appointment,92.0,1,0.5,0.35,elective,elite_reform
+Greek Oligarchy,elective,105.0,1,0.5,0.35,elective,elite_reform
+Greek Oligarchy,elective,3.0,0,0.5,0.35,,
+Greek Tyranny,charismatic,105.0,1,0.5,0.25,hereditary,internal
+Greek Tyranny,hereditary,45.0,0,0.5,0.25,,
+Han Dynasty Examination Prototype,appointment,211.0,1,0.4,0.15,hereditary,internal
+Han Dynasty Examination Prototype,hereditary,16.0,1,0.4,0.15,appointment,reconsolidation
+Han Dynasty Examination Prototype,appointment,195.0,0,0.4,0.15,,
+Holy Roman Empire,elective,556.0,0,0.55,0.45,,elite_reform
+Holy Roman Empire,elective,82.0,1,0.55,0.45,hereditary,internal
+Holy Roman Empire,hereditary,368.0,0,0.55,0.45,,
+Igbo Assemblies,consensus,2400.0,1,0.3,0.85,appointment,external_shock
+Iroquois Confederacy / Haudenosaunee,consensus,272.0,0,0.35,0.85,,external_shock
+Iroquois Confederacy / Haudenosaunee,consensus,126.0,1,0.35,0.85,elective,elite_reform
+Iroquois Confederacy / Haudenosaunee,elective,52.0,0,0.35,0.85,,
+Kurultai,elective,23.0,1,0.3,0.6,hereditary,internal
+Kurultai,hereditary,31.0,1,0.3,0.6,elective,collapse
+Kurultai,elective,440.0,0,0.3,0.6,,
+Magna Carta Baronage,elective,50.0,1,0.6,0.55,hereditary,collapse
+Magna Carta Baronage,hereditary,32.0,0,0.6,0.55,,
+Mossi Naam Militias,rotation,796.0,1,0.4,0.5,hereditary,external_shock
+Norman Feudal Domesday,appointment,129.0,1,0.8,0.15,elective,elite_reform
+Norman Feudal Domesday,elective,80.0,0,0.8,0.15,,elite_reform
+Norse Thing System,elective,200.0,1,0.3,0.75,hereditary,external_shock
+Norse Thing System,hereditary,300.0,0,0.3,0.75,,
+Ottoman Empire,hereditary,213.0,0,0.8,0.2,,internal
+Ottoman Empire,hereditary,314.0,1,0.8,0.2,appointment,elite_reform
+Ottoman Empire,appointment,96.0,0,0.8,0.2,,
+Qin Legalism,hereditary,15.0,1,0.9,0.0,appointment,collapse
+Roman Republic,elective,482.0,1,0.7,0.5,hereditary,other
+Tang Dynasty,hereditary,137.0,0,0.9,0.1,,collapse
+Tang Dynasty,hereditary,205.0,1,0.9,0.1,appointment,reconsolidation
+Teotihuacan,consensus,350.0,1,0.65,0.65,hereditary,collapse
+Teotihuacan,hereditary,100.0,0,0.65,0.65,,
+Tiv Segmentary Lineage System,consensus,2400.0,1,0.2,0.9,hereditary,external_shock
+Tlaxcala Republic,elective,137.0,0,0.55,0.6,,external_shock
+Tokugawa Shogunate,hereditary,265.0,0,0.75,0.15,,external_shock
+Venetian Merchant Oligarchy,elective,500.0,0,0.75,0.55,,
+Zomia Highland Communities,consensus,1450.0,0,0.05,0.9,,external_shock
+San Xaro Networks,consensus,11800.0,0,0.1,0.95,,
+Cucuteni-Trypillia Mega-Settlements,consensus,2750.0,0,0.4,0.85,,
+Sumerian Temple States,appointment,1166.0,0,0.75,0.3,,
+Hittite Panku Council,elective,450.0,0,0.55,0.45,,
+Zhou Dynasty Mandate of Heaven,hereditary,790.0,0,0.65,0.35,,
+Phoenician Merchant Oligarchies,elective,668.0,0,0.7,0.55,,
+Andean Ayllu Systems,rotation,2532.0,0,0.45,0.75,,
+Assyrian Military Autocracy,hereditary,302.0,0,0.8,0.0,,
+Etruscan Lucumones,appointment,600.0,0,0.5,0.4,,
+Persian Satrapy System,appointment,220.0,0,0.85,0.2,,
+Mayan Ajaw System,hereditary,650.0,0,0.6,0.25,,
+Gupta Golden Age,hereditary,230.0,0,0.5,0.3,,
+Byzantine Theme System,appointment,524.0,0,0.7,0.2,,
+Venetian Republic,elective,1100.0,0,0.75,0.6,,
+Viking Law Speakers,appointment,400.0,0,0.3,0.75,,
+Holy Roman Imperial Diarchy,elective,1006.0,0,0.55,0.5,,
+Khmer Devaraja,hereditary,629.0,0,0.8,0.1,,
+Chola Naval Assemblies,elective,429.0,0,0.6,0.55,,
+Icelandic Commonwealth,consensus,332.0,0,0.3,0.8,,
+Icelandic Althing,elective,869.0,0,0.3,0.8,,
+Althingi Carbon-Neutral Parliament,elective,1096.0,0,0.4,0.85,,
+Manx Tynwald,elective,1047.0,0,0.45,0.75,,
+Venetian Arsenal Guilds,appointment,693.0,0,0.7,0.45,,
+Khmer Water Mandala,hereditary,64.0,0,0.8,0.1,,
+Benin Oba Divine Kingship,hereditary,697.0,0,0.55,0.1,,
+Teutonic Ordensstaat,elective,299.0,0,0.6,0.15,,
+Golden Horde Yam System,appointment,262.0,0,0.6,0.2,,
+Andorran Co-Principality,elective,748.0,0,0.4,0.7,,
+Hanseatic League,elective,313.0,0,0.7,0.65,,
+Rhenish Hanseatic Cities,elective,313.0,0,0.65,0.6,,
+Ming Yellow Register Census,hereditary,276.0,0,0.9,0.05,,
+Joseon Confucian Bureaucracy,appointment,518.0,0,0.8,0.15,,
+Aztec Triple Alliance,elective,93.0,0,0.85,0.2,,
+Ottoman Millet System,hereditary,469.0,0,0.8,0.2,,
+Habsburg Composite Monarchy,hereditary,392.0,0,0.65,0.4,,
+Dutch Republic States-General,appointment,214.0,0,0.75,0.6,,
+Dahomey Mino Amazon State,appointment,294.0,0,0.55,0.15,,
+Qing Dynasty Banner System,hereditary,268.0,0,0.85,0.1,,
+British Parliamentary System,elective,337.0,0,0.75,0.85,,
+Napoleonic Meritocracy,appointment,16.0,0,0.8,0.05,,
+Swiss Consensus Democracy,rotation,178.0,0,0.65,0.9,,
+Liechtenstein Direct Democracy,elective,164.0,0,0.55,0.75,,
+Meiji Oligarchy,hereditary,44.0,0,0.75,0.15,,
+Paris Commune,elective,155.0,0,0.45,0.85,,
+Kibbutz Movement,rotation,117.0,0,0.45,0.85,,
+Soviet Republics System,appointment,69.0,0,0.85,0.05,,
+Singaporean Technocracy,appointment,61.0,0,0.8,0.2,,
+Norwegian Sovereign Wealth Democracy,elective,36.0,0,0.75,0.9,,
+European Union Governance,appointment,33.0,0,0.7,0.55,,
+Estonian Digital Democracy,elective,24.0,0,0.55,0.85,,
+Natufian Communities,consensus,3000.0,0,0.1,0.9,,
+Pre-Pottery Neolithic A (PPNA),consensus,800.0,0,0.25,0.8,,
+Pre-Pottery Neolithic B (PPNB),consensus,2200.0,0,0.35,0.7,,
+Çatalhöyük,consensus,1800.0,0,0.3,0.9,,
+Ubaid Culture,consensus,2700.0,0,0.5,0.65,,
+Late Uruk / Early Dynastic,hereditary,400.0,0,0.85,0.3,,
+Egyptian Middle Kingdom,hereditary,405.0,0,0.8,0.2,,
+Mohenjo-daro / Indus Valley Civilisation,consensus,700.0,0,0.6,0.75,,
+Shang Dynasty,hereditary,554.0,0,0.65,0.15,,
+Taosi,hereditary,500.0,0,0.5,0.55,,
+Vedic Jana/Gana Sanghas,elective,1200.0,0,0.4,0.65,,
+Olmec,hereditary,1100.0,0,0.5,0.35,,
+Celtic Tribal Assemblies,elective,843.0,0,0.3,0.7,,
+Scythian Nomadic Confederacy,hereditary,500.0,0,0.2,0.7,,
+Minoan Crete,hereditary,1250.0,0,0.7,0.45,,
+Mauryan Empire,hereditary,137.0,0,0.85,0.15,,
+Inca Empire (Tawantinsuyu),hereditary,95.0,0,0.9,0.1,,
+Balinese Negara,hereditary,1006.0,0,0.2,0.7,,
+Maroon Communities (Jamaica/Suriname),elective,245.0,0,0.3,0.8,,
+Akan Chieftaincy,elective,800.0,0,0.4,0.6,,
+Berber Jemaa,consensus,2900.0,0,0.3,0.75,,
+Zulu Monarchy,hereditary,12.0,0,0.5,0.1,,
+Greek Democracy,elective,186.0,0,0.55,0.8,,
+Politeia,elective,400.0,0,0.5,0.55,,
+Theatrocracy,elective,108.0,0,0.5,0.65,,
+Greek Stratocracy,appointment,329.0,0,0.5,0.15,,
+Greek Diarchy,hereditary,754.0,0,0.45,0.35,,
+Greek Timocracy,appointment,94.0,0,0.5,0.5,,
+Isocracy,elective,138.0,0,0.5,0.8,,
+Swiss Cantonal Democracy,rotation,734.0,0,0.6,0.85,,
+Cossack Hetmanate,elective,115.0,0,0.45,0.65,,
+Zapotec Cocijo Cult,hereditary,1300.0,0,0.6,0.3,,
+Pueblo Council Governance,consensus,2525.0,0,0.4,0.8,,
+Mississippian Chiefdoms,hereditary,800.0,0,0.5,0.3,,
+Tongan Maritime Empire,hereditary,915.0,0,0.55,0.3,,
+Micronesian Yapese Stone Council,consensus,2800.0,0,0.35,0.65,,
+Inuit Qaggiq Assemblies,consensus,2900.0,0,0.1,0.9,,
+Aboriginal Elders Councils,consensus,7025.0,0,0.1,0.75,,
+Majapahit Mandala,hereditary,234.0,0,0.6,0.5,,
+Satrapy System,appointment,220.0,0,0.8,0.25,,
+Ashanti Confederacy,elective,230.0,0,0.6,0.35,,

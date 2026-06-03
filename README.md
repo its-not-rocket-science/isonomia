@@ -26,7 +26,8 @@ isonomia/
 │   ├── network_edges.csv          # 760 citation/contrast/comparator edges
 │   ├── crossval_matched.csv       # Matched pairs for all five cross-validation datasets
 │   ├── succession_working_set.csv # 117-system working set for succession model
-│   ├── transition_data.csv        # 37 parsed transition events (Phase 2)
+│   ├── survival_spells.csv        # 145-spell CTMC survival dataset (Phase 3)
+│   ├── transition_data.csv        # 42 parsed transition events (Phase 2+3)
 │   └── coding_scheme.md           # Operationalisation guidelines for all variables
 ├── docs/
 │   ├── data_gap_analysis.md       # Gap analysis against G&W theoretical requirements
@@ -38,7 +39,8 @@ isonomia/
 │   ├── geo_contagion_analysis.py  # Geographic schismogenesis and contagion decay
 │   ├── lock_in_figures.py         # Paper 2 figures: lock-in sequence, counter-cases
 │   ├── crossvalidate_edr.py       # Cross-validation vs V-Dem, Polity5, WJP, FIW, CCP, Seshat
-│   └── succession_attraction_basins.py  # Succession model Phase 1+2: attraction basins + transition matrix
+│   ├── succession_attraction_basins.py  # Succession model Phase 1+2: attraction basins + transition matrix
+│   └── succession_markov_ctmc.py        # Succession model Phase 3: CTMC duration-weighted model
 ├── paper/
 │   ├── paper_01_framework_v3.md   # Isonomia I (submitted to JWSR, submission #1465)
 │   └── paper_02_lock_in.md        # Isonomia II (draft complete)
@@ -61,6 +63,7 @@ python src/schismogenesis.py          # network analysis and schismogenesis test
 python src/geo_contagion_analysis.py  # geographic contagion decay
 python src/succession_attraction_basins.py          # succession model Phase 1 (static)
 python src/succession_attraction_basins.py --phase2  # Phase 1 + Phase 2 (transition matrix)
+python src/succession_markov_ctmc.py                 # Phase 3 (CTMC duration-weighted model)
 ```
 
 ---
@@ -99,6 +102,7 @@ python src/succession_attraction_basins.py --phase2  # Phase 1 + Phase 2 (transi
 | `lock_in_figures.py` | `lock_in_sequence.png`, `lock_in_counter_cases.png`, `lock_in_d_moderator.png`, `lock_in_bifurcation.png` | Paper 2 lock-in sequence figures |
 | `crossvalidate_edr.py` | `crossval_vdem.png`, `crossval_polity.png`, `crossval_seshat.png`, `crossval_wjp.png`, `crossval_fiw.png`, `crossval_ccp.png` | Cross-validation scatter panels |
 | `succession_attraction_basins.py` | `attraction_basins.png`, `transition_matrix.png` | Succession model Phase 1 (static attraction basins) and Phase 2 (empirical transition matrix, trigger analysis) |
+| `succession_markov_ctmc.py` | `ctmc_model.png` | Succession model Phase 3: CTMC rate matrix, L-conditional stationary distributions, D₀ moderator, Kaplan-Meier curves |
 
 ---
 
@@ -116,7 +120,7 @@ python src/succession_attraction_basins.py --phase2  # Phase 1 + Phase 2 (transi
 
 125 systems are hand-coded at confidence 2–3. 264 are auto-coded at confidence 1 and flagged for review. The hand-coded subset is the basis for all quantitative claims in the paper.
 
-**New in Phase 2:** `succession_changes` field populated for 24 systems (37 transition events); 60 `Succession Method` values filled across all hand-coded systems, raising the succession working set from n=65 to n=117.
+**New in Phase 3:** 5 targeted `succession_changes` additions (Teotihuacan, Tiv, Igbo, Andean Tinku, Mossi Naam) raising type-changing transitions from 26 to 31; `survival_spells.csv` generated (145 spells, 31 events, 102,214 system-years).
 
 ---
 
@@ -157,17 +161,18 @@ Full results and matched comparison data: `data/crossval_matched.csv`. See `data
 
 - [x] Theoretical framework (`docs/theoretical_framework.md`)
 - [x] Gap analysis (`docs/data_gap_analysis.md`)
-- [x] Extended dataset — 389 systems; succession_changes (24 systems, 37 transitions); 60 Succession Method fills raising working set n=65→117
-- [x] Coding scheme with inter-rater reliability results, external validity tables, and succession coding guidelines
+- [x] Extended dataset — 389 systems; succession_changes (29 systems, 42 transitions incl. Phase 3 additions)
+- [x] Coding scheme with inter-rater reliability, external validity, succession coding, and CTMC data notes
 - [x] Phase space, EDR, schismogenesis, lock-in, and contagion analysis scripts
 - [x] Cross-validation against six external datasets (V-Dem, Polity5, WJP, FIW, CCP, Seshat)
 - [x] Paper 1 submitted to JWSR (submission #1465, 31 May 2026)
 - [x] Paper 2 draft complete (`paper_02_lock_in.md`, 9,309 words)
 - [x] Succession model Phase 1: static attraction basin analysis (n=117, χ² p<0.0001, OR=6.46)
-- [x] Succession model Phase 2: transition matrix (37 events, 26 type-changing; 9/20 Markov cells filled)
-- [ ] Succession model Phase 3: Markov chain model conditioned on L (requires ~60% cell coverage)
-- [ ] Paper 3: schismogenesis agent-based model
-- [ ] Paper 4: full V-Dem cross-validation + deeper Seshat pre-modern validation
+- [x] Succession model Phase 2: transition matrix (31 type-changing events; 9/20 Markov cells filled)
+- [x] Succession model Phase 3: CTMC — π(appointment) 0.136→0.368 at high-L; D₀ moderator 2.73×
+- [ ] Paper 3 (succession model): draft in progress
+- [ ] Paper 4: schismogenesis agent-based model
+- [ ] Paper 5: full V-Dem cross-validation + deeper Seshat pre-modern validation
 
 ---
 
