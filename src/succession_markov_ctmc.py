@@ -675,7 +675,7 @@ def make_figure(sdf, visuals_dir=OUTPUT_DIR):
     ax_e.set_title('E.  Kaplan-Meier survival curves\n'
                    '(bold = by type; thin = elective stratified by D₀)',
                    fontsize=9, fontweight='bold', loc='left', pad=6)
-    ax_e.legend(fontsize=6.5, loc='lower left',
+    ax_e.legend(fontsize=6.5, loc='upper right',
                 frameon=True, framealpha=0.92)
 
     # ── F: Summary table ──────────────────────────────────────────────────────

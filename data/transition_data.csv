@@ -1,5 +1,8 @@
 system,year,from_succ,to_succ,L,D0,trigger,changed
 Egyptian Nomarchies,-2055,rotation,hereditary,0.75,0.2,reconsolidation,1
+Zhou Dynasty Mandate of Heaven,221,hereditary,appointment,0.65,0.35,collapse,1
+Phoenician Merchant Oligarchies,539,elective,appointment,0.7,0.55,external_shock,1
+Assyrian Military Autocracy,745,hereditary,appointment,0.8,0.0,internal,1
 Roman Republic,-27,elective,hereditary,0.7,0.5,other,1
 Athenian Democracy,-411,elective,appointment,0.55,0.85,external_shock,1
 Athenian Democracy,-403,appointment,elective,0.55,0.85,elite_reform,1
@@ -7,12 +10,22 @@ Athenian Democracy,-322,elective,appointment,0.55,0.85,external_shock,1
 Qin Legalism,-206,hereditary,appointment,0.9,0.0,collapse,1
 Han Dynasty Examination Prototype,9,appointment,hereditary,0.4,0.15,internal,1
 Han Dynasty Examination Prototype,25,hereditary,appointment,0.4,0.15,reconsolidation,1
+Venetian Republic,1171,elective,appointment,0.75,0.6,elite_reform,1
+Khmer Devaraja,1177,hereditary,appointment,0.8,0.1,collapse,1
 Norman Feudal Domesday,1215,appointment,elective,0.8,0.15,elite_reform,1
 Norman Feudal Domesday,1295,elective,elective,0.8,0.15,elite_reform,0
 Mossi Naam Militias,1896,rotation,hereditary,0.4,0.5,external_shock,1
 Magna Carta Baronage,1265,elective,hereditary,0.6,0.55,collapse,1
 Venetian Merchant Oligarchy,1297,elective,elective,0.75,0.55,elite_reform,0
+Hanseatic League,1356,elective,elective,0.7,0.65,elite_reform,0
+Ming Yellow Register Census,1368,hereditary,appointment,0.9,0.05,reconsolidation,1
+Aztec Triple Alliance,1440,elective,hereditary,0.85,0.2,internal,1
+Habsburg Composite Monarchy,1740,hereditary,appointment,0.65,0.4,internal,1
+Dutch Republic States-General,1581,appointment,elective,0.75,0.6,elite_reform,1
+British Parliamentary System,1832,elective,elective,0.75,0.85,elite_reform,0
+Late Uruk / Early Dynastic,2750,hereditary,hereditary,0.85,0.3,collapse,0
 Egyptian Old Kingdom,-2181,hereditary,rotation,0.75,0.1,collapse,1
+Mauryan Empire,232,hereditary,appointment,0.85,0.15,internal,1
 Classic Maya City-States,800,hereditary,hereditary,0.6,0.35,collapse,0
 Classic Maya City-States,900,hereditary,elective,0.6,0.35,reconsolidation,1
 Teotihuacan,450,consensus,hereditary,0.65,0.65,collapse,1
@@ -20,6 +33,7 @@ Tlaxcala Republic,1521,elective,elective,0.55,0.6,external_shock,0
 Iroquois Confederacy / Haudenosaunee,1722,consensus,consensus,0.35,0.85,external_shock,0
 Iroquois Confederacy / Haudenosaunee,1848,consensus,elective,0.35,0.85,elite_reform,1
 Zomia Highland Communities,1950,consensus,consensus,0.05,0.9,external_shock,0
+Inca Empire (Tawantinsuyu),1438,hereditary,appointment,0.9,0.1,internal,1
 Norse Thing System,1000,elective,hereditary,0.3,0.75,external_shock,1
 Tiv Segmentary Lineage System,1900,consensus,hereditary,0.2,0.9,external_shock,1
 Tang Dynasty,755,hereditary,hereditary,0.9,0.1,collapse,0
@@ -33,6 +47,7 @@ Greek Aristocracy,-600,hereditary,appointment,0.4,0.35,elite_reform,1
 Greek Oligarchy,-508,appointment,elective,0.5,0.35,elite_reform,1
 Greek Oligarchy,-403,appointment,elective,0.5,0.35,elite_reform,1
 Greek Tyranny,-545,charismatic,hereditary,0.5,0.25,internal,1
+Swiss Cantonal Democracy,1291,rotation,elective,0.6,0.85,elite_reform,1
 Kurultai,1229,elective,hereditary,0.3,0.6,internal,1
 Kurultai,1260,hereditary,elective,0.3,0.6,collapse,1
 Andean Tinku,1440,rotation,hereditary,0.3,0.7,external_shock,1
