@@ -144,7 +144,7 @@ THETA = 0.45   # EDR resilience threshold
 class Agent:
     """A governance system in the schismogenesis model."""
 
-    __slots__ = ('id', 'edr', 'edr_init', 'l', 'is_bridge', 'edges', 'awareness')
+    __slots__ = ('id', 'edr', 'edr_init', 'l', 'is_bridge', 'delta', 'edges', 'awareness')
 
     def __init__(self, agent_id, edr, l=0.3, is_bridge=False):
         self.id        = agent_id
@@ -152,6 +152,7 @@ class Agent:
         self.edr_init  = float(edr)   # anchor point — initial EDR value
         self.l         = float(l)
         self.is_bridge = is_bridge    # bridge-region agent gets stronger anchor
+        self.delta     = 0.0             # per-agent lock-in drift (0 = inactive)
         self.edges     = {}    # {neighbour_id: 'comparator' | 'contrast'}
         self.awareness = set()   # agent ids this agent knows about
 
@@ -371,10 +372,11 @@ class SchismogenesisModel:
             anchor_strength = self.anchor_bridge if a.is_bridge else self.anchor
             delta -= anchor_strength * (a.edr - a.edr_init)
 
-            # Lock-in coupling
+            # Lock-in coupling: use per-agent delta if set, else model-level delta
             new_edr = a.edr + delta
-            if self.delta > 0 and a.l > self.l_thr:
-                new_edr -= self.delta * new_edr
+            effective_delta = a.delta if a.delta > 0 else self.delta
+            if effective_delta > 0 and a.l > self.l_thr:
+                new_edr -= effective_delta * new_edr
 
             new_edrs[i] = float(np.clip(new_edr, 0.02, 0.98))
 
@@ -610,6 +612,12 @@ CASE_STUDIES = {
         ),
         'expected_trajectory': 'stable_then_decline',
         'historical_end': 'EDR decline under colonial incorporation (~1800 CE)',
+        # Lock-in coupling: colonial incorporation raises L above threshold
+        # at approximately t=200 (mid-18th century contact becoming incorporation).
+        # δ=0.008 produces a gradual decline matching the historical arc.
+        'lock_in_onset':  200,
+        'lock_in_delta':  0.008,
+        'lock_in_l':      0.65,   # L imposed by colonial administration
     },
 }
 
@@ -636,6 +644,11 @@ def run_cases(best_params, n_agents=200, n_steps=500, n_replicates=20,
         print(f"  {case_name}")
         print(f"    {case_info['description']}")
 
+        # Lock-in coupling params for this case (if defined)
+        lock_in_onset = case_info.get('lock_in_onset', None)
+        lock_in_delta = case_info.get('lock_in_delta', 0.0)
+        lock_in_l     = case_info.get('lock_in_l',     0.0)
+
         traj_reps = []
         for rep in range(n_replicates):
             model = SchismogenesisModel(
@@ -643,11 +656,16 @@ def run_cases(best_params, n_agents=200, n_steps=500, n_replicates=20,
                 seed=rep * 777)
 
             # Override agent 0 with case study values
-            model.agents[0].edr = case_info['edr_init']
-            model.agents[0].l   = case_info['l_init']
+            model.agents[0].edr      = case_info['edr_init']
+            model.agents[0].edr_init = case_info['edr_init']
+            model.agents[0].l        = case_info['l_init']
 
             trajectory = [case_info['edr_init']]
-            for _ in range(n_steps):
+            for step_t in range(n_steps):
+                # Activate lock-in coupling at onset step
+                if lock_in_onset is not None and step_t == lock_in_onset:
+                    model.agents[0].delta = lock_in_delta
+                    model.agents[0].l     = lock_in_l
                 model.step()
                 trajectory.append(model.agents[0].edr)
             traj_reps.append(trajectory)
@@ -672,6 +690,7 @@ def run_cases(best_params, n_agents=200, n_steps=500, n_replicates=20,
             'expected':        case_info['expected_trajectory'],
             'final_edr_mean':  final_edr,
             'final_edr_std':   std_traj[-1],
+            'lock_in_onset':   case_info.get('lock_in_onset'),
         }
 
     return results
@@ -819,6 +838,12 @@ def make_cases_figure(results, visuals_dir=OUTPUT_DIR):
         ax.text(0.97, 0.05, f'Expected: {res["expected"]}',
                 transform=ax.transAxes, fontsize=7.5, va='bottom', ha='right',
                 style='italic', color='#555555')
+        # Annotate lock-in onset if present
+        if res.get('lock_in_onset'):
+            ax.axvline(res['lock_in_onset'], color='#c0392b', lw=1.2,
+                       ls='--', alpha=0.7)
+            ax.text(res['lock_in_onset'] + 8, 0.92, 'L-coupling\nonset',
+                    fontsize=6.5, color='#c0392b', va='top')
 
     fig.suptitle(
         'Schismogenesis ABM: Graeber-Wengrow case study trajectories\n'
