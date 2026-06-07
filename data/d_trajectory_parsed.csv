@@ -18,29 +18,51 @@ Aztec Triple Alliance,1400,0.25,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
 Aztec Triple Alliance,1450,0.2,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
 Aztec Triple Alliance,1500,0.15,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
 British Parliamentary System,1689,0.55,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
-British Parliamentary System,1780,0.65,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
-British Parliamentary System,1850,0.75,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
-British Parliamentary System,1950,0.85,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1720,0.58,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1760,0.62,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1789,0.65,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1832,0.68,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1867,0.72,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1884,0.75,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1906,0.78,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1918,0.8,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1944,0.82,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1998,0.85,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
 Carolingian Empire,768,0.45,0.35,0.5,0.55,0.45,educational_hegemony,768,987
 Carolingian Empire,820,0.38,0.35,0.5,0.55,0.45,educational_hegemony,768,987
 Carolingian Empire,870,0.3,0.35,0.5,0.55,0.45,educational_hegemony,768,987
 Carolingian Empire,950,0.25,0.35,0.5,0.55,0.45,educational_hegemony,768,987
 Chinese Communist Party Governance,1949,0.1,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
-Chinese Communist Party Governance,1966,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1953,0.18,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1957,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1961,0.08,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1966,0.03,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1971,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
 Chinese Communist Party Governance,1978,0.15,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
-Chinese Communist Party Governance,1989,0.18,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
-Chinese Communist Party Governance,1990,0.08,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
-Chinese Communist Party Governance,2012,0.06,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1985,0.18,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1989,0.12,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1990,0.07,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,2002,0.1,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,2012,0.08,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,2020,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
 Confucian Bureaucracy,-200,0.2,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
 Confucian Bureaucracy,200,0.15,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
 Confucian Bureaucracy,800,0.1,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
 Confucian Bureaucracy,1400,0.08,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
-French Third Republic,1870,0.5,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1870,0.45,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1875,0.52,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
 French Third Republic,1880,0.6,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
-French Third Republic,1900,0.65,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
-French Third Republic,1920,0.7,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
-French Third Republic,1935,0.55,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
-French Third Republic,1940,0.3,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1884,0.65,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1895,0.68,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1905,0.72,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1914,0.65,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1920,0.62,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1924,0.68,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1930,0.65,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1934,0.55,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1936,0.7,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1938,0.5,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1940,0.25,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
 Habsburg Composite Monarchy,1520,0.35,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
 Habsburg Composite Monarchy,1620,0.25,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
 Habsburg Composite Monarchy,1750,0.2,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
@@ -60,9 +82,14 @@ Mauryan Empire,-321,0.25,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
 Mauryan Empire,-268,0.18,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
 Mauryan Empire,-231,0.2,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
 Mauryan Empire,-200,0.15,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
-Meiji Oligarchy,1868,0.25,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
-Meiji Oligarchy,1880,0.2,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
-Meiji Oligarchy,1890,0.15,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1868,0.35,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1872,0.28,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1876,0.22,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1879,0.2,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1881,0.18,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1885,0.16,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1889,0.15,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1894,0.13,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
 Meiji Oligarchy,1910,0.12,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
 Ming Dynasty,1368,0.15,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
 Ming Dynasty,1450,0.1,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
@@ -85,10 +112,14 @@ Ottoman Empire,1300,0.35,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
 Ottoman Empire,1600,0.25,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
 Ottoman Empire,1800,0.2,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
 Ottoman Empire,1900,0.15,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
-Roman Republic,-400,0.65,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
-Roman Republic,-200,0.55,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
-Roman Republic,-100,0.5,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
-Roman Republic,-50,0.35,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-500,0.7,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-400,0.68,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-300,0.65,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-200,0.6,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-150,0.55,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-100,0.48,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-60,0.42,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-27,0.35,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
 Singapore Technocracy,1965,0.35,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
 Singapore Technocracy,1980,0.25,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
 Singapore Technocracy,2000,0.2,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
@@ -97,11 +128,20 @@ Song Dynasty,960,0.2,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
 Song Dynasty,1050,0.15,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
 Song Dynasty,1127,0.12,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
 Song Dynasty,1200,0.1,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
-Soviet Republics System,1922,0.15,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
-Soviet Republics System,1937,0.05,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
-Soviet Republics System,1956,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
-Soviet Republics System,1985,0.1,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
-Soviet Republics System,1991,0.4,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1917,0.2,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1922,0.12,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1929,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1934,0.05,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1937,0.03,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1945,0.05,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1953,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1956,0.12,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1964,0.1,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1968,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1975,0.1,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1985,0.18,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1989,0.3,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1991,0.45,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
 Swiss Cantonal Democracy,1291,0.65,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
 Swiss Cantonal Democracy,1400,0.7,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
 Swiss Cantonal Democracy,1515,0.75,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025

@@ -124,6 +124,82 @@ def parse_d_trajectories(df):
 
 # ── Trajectory classification ─────────────────────────────────────────────────
 
+def parse_a_trajectories(df):
+    """Parse a_trajectory field into long-format DataFrame."""
+    rows = []
+    coded = df[df['a_trajectory'].notna() & (df['a_trajectory'].astype(str).str.strip() != '')]
+    for _, row in coded.iterrows():
+        traj_str = str(row['a_trajectory'])
+        entries = re.findall(r'A=([\d.]+)@(-?\d+)', traj_str)
+        if not entries:
+            continue
+        for a_str, yr_str in entries:
+            rows.append({
+                'system':  row['System'],
+                'year':    int(yr_str),
+                'A_t':     float(a_str),
+                'S':       row['sovereignty_index'],
+                'mechanism': row.get('hegemonic_mechanism', ''),
+            })
+    return pd.DataFrame(rows).sort_values(['system', 'year'])
+
+
+def within_system_da_correlation(traj_df, a_traj_df):
+    """
+    For each system with both D and A trajectories, compute:
+      r_lag0: contemporaneous correlation between ΔA and ΔD rates
+      r_lag1: ΔA in period t predicts ΔD in period t+1
+
+    The SIGN of r_lag0 is the mechanism classifier:
+      r < 0: A expansion accompanies D decline (suppression)
+      r > 0: A expansion accompanies D rise (counter-hegemony)
+    """
+    systems = set(traj_df['system']) & set(a_traj_df['system'])
+    results = []
+    all_intervals = []
+
+    for system in systems:
+        d_df = traj_df[traj_df['system'] == system].sort_values('year')
+        a_df = a_traj_df[a_traj_df['system'] == system].sort_values('year')
+        if len(d_df) < 4 or len(a_df) < 4 or len(d_df) != len(a_df):
+            continue
+
+        d_v = d_df['D_t'].values
+        a_v = a_df['A_t'].values
+        yrs = d_df['year'].values
+        n = len(d_v) - 1
+
+        intervals = [(yrs[i+1] - yrs[i]) for i in range(n)]
+        dD = [(d_v[i+1] - d_v[i]) / max(intervals[i], 1) * 100 for i in range(n)]
+        dA = [(a_v[i+1] - a_v[i]) / max(intervals[i], 1) * 100 for i in range(n)]
+
+        if len(set(dA)) < 2 or len(set(dD)) < 2:
+            continue
+
+        r0, p0 = stats.pearsonr(dA, dD)
+
+        r1, p1 = float('nan'), float('nan')
+        if n >= 4:
+            dA_lead = dA[:-1]; dD_lag = dD[1:]
+            if len(set(dA_lead)) >= 2 and len(set(dD_lag)) >= 2:
+                r1, p1 = stats.pearsonr(dA_lead, dD_lag)
+
+        mech = d_df['mechanism'].iloc[0]
+        S    = d_df['S'].iloc[0]
+        results.append({
+            'system': system, 'mech': mech, 'S': S,
+            'n_intervals': n, 'r_lag0': r0, 'p_lag0': p0,
+            'r_lag1': r1, 'p_lag1': p1,
+        })
+        for i in range(n):
+            all_intervals.append({
+                'system': system, 'dA_rate': dA[i], 'dD_rate': dD[i],
+                'mech': mech, 'S': S,
+            })
+
+    return pd.DataFrame(results), pd.DataFrame(all_intervals)
+
+
 def classify_trajectory(system_df):
     """
     Classify a single system's D trajectory.
@@ -203,6 +279,7 @@ def classify_trajectory(system_df):
 def build_hegemony_index_table(traj_df):
     """Build a per-system hegemony index table."""
     rows = []
+    legend_handles = []
     for system, sdf in traj_df.groupby('system'):
         result = classify_trajectory(sdf)
         if result:
@@ -340,14 +417,28 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
     }
     DEFAULT_COL = '#aaaaaa'
 
-    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-    fig.subplots_adjust(top=0.88, hspace=0.35, wspace=0.30)
+    from matplotlib.gridspec import GridSpec
+    fig = plt.figure(figsize=(18, 13))
+    # 3 rows: top panels (A,B), legend strip, bottom panels (C,D)
+    # 2 cols with B and D slightly narrower (more room for trajectory panels)
+    gs = GridSpec(3, 2, figure=fig,
+                  height_ratios=[5, 0.70, 5],
+                  width_ratios=[1.15, 1],
+                  top=0.87, bottom=0.06,
+                  left=0.06, right=0.97,
+                  hspace=0.30, wspace=0.28)
+    axes = [
+        [fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1])],
+        [fig.add_subplot(gs[2, 0]), fig.add_subplot(gs[2, 1])],
+    ]
+    ax_legend = fig.add_subplot(gs[1, :])
 
     # ── A: D trajectories — all systems ──────────────────────────────────────
-    ax = axes[0, 0]
+    ax = axes[0][0]
     # Jitter year slightly so overlapping labels separate
     import random; random.seed(42)
     labelled = set()
+    legend_handles = []
     for system, sdf in traj_df.groupby('system'):
         sdf = sdf.sort_values('year')
         mech = sdf['mechanism'].iloc[0]
@@ -355,31 +446,41 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
         sys_row = hi_df[hi_df['system']==system]
         ttype   = sys_row['traj_type'].values[0] if len(sys_row) else ''
         lw      = 2.0 if ('counter' in mech or ttype == 'rising') else 1.2
-        ax.plot(sdf['year'], sdf['D_t'], 'o-', color=col, lw=lw,
-                markersize=4, alpha=0.85)
+        # Reduce marker size for high-density trajectories (>8 points)
+        ms = 2.5 if len(sdf) > 8 else 4.0
+        lw_final = lw * (0.8 if len(sdf) > 8 else 1.0)
+        ax.plot(sdf['year'], sdf['D_t'], 'o-', color=col, lw=lw_final,
+                markersize=ms, alpha=0.85)
         # Label only first point (less crowded) with short name
         first = sdf.iloc[0]
         short = (system.replace(' Democracy','').replace(' System','')
                        .replace(' Monarchy','').replace(' Parliamentary','')
                        .replace(' Sovereign Wealth','')[:20])
-        # Stagger label vertical offset slightly to avoid collision
-        y_nudge = 8 if 'Confucian' in system else (-8 if 'Zhou' in system else 0)
-        ax.annotate(short, (first['year'], first['D_t']),
-                    fontsize=5.5, ha='right', va='center',
-                    xytext=(-4, y_nudge), textcoords='offset points',
-                    color=col, alpha=0.85)
+        # Collect for shared legend (no inline labels)
+        legend_handles.append(
+            plt.Line2D([0], [0], color=col, lw=lw_final, marker='o',
+                       markersize=3, label=short))
 
     ax.axhline(THETA, color='#c0392b', lw=1.2, ls='--', alpha=0.7)
-    ax.text(-1200, THETA + 0.025, 'θ = 0.45', fontsize=7, color='#c0392b')
+    ax.text(1820, THETA + 0.025, 'θ = 0.45', fontsize=7, color='#c0392b', ha='left')
     ax.set_xlabel('Year (BCE/CE)', fontsize=9)
     ax.set_ylabel('D (disobedience freedom)', fontsize=9)
     ax.set_xlim(-1300, 2050)
-    ax.set_title('A.  D-trajectories across 15 systems\n'
+    ax.set_title('A.  D-trajectories across 30 systems\n'
                  '(colour by hegemonic mechanism; label at first coded year)',
                  fontsize=9, fontweight='bold', loc='left', pad=4)
 
+    # ── Legend strip between rows ──────────────────────────────────────────
+    ax_legend.set_axis_off()
+    ax_legend.legend(handles=legend_handles, fontsize=5.5, ncol=6,
+                     loc='center', frameon=True, framealpha=0.9,
+                     handlelength=1.5, handletextpad=0.4,
+                     columnspacing=1.0, borderpad=0.6, labelspacing=0.35,
+                     title='Panel A & C: governance systems',
+                     title_fontsize=6.0)
+
     # ── B: Hegemony index by mechanism ───────────────────────────────────────
-    ax = axes[0, 1]
+    ax = axes[0][1]
     # Order by theoretical category: counter-hegemonic → hegemonic → coercive
     # barh plots bottom-to-top, so REVERSE list to get counter_hegemony at top
     MECH_ORDER = [
@@ -401,25 +502,26 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
     ax.set_yticks(list(y_pos))
     ax.set_yticklabels([m.replace('_', ' ') for m in mech_order], fontsize=7.5)
     ax.axvline(1.0, color='#aaaaaa', lw=0.8, ls=':', alpha=0.7)
+    ax.set_xlim(0, 1.60)
+    ax.annotate('Iceland HI=3.18\n(off scale →)',
+                xy=(1.59, len(mech_order)-0.5), xytext=(1.05, len(mech_order)-0.5),
+                fontsize=5.5, color='#7f8c8d', ha='left', va='center',
+                arrowprops=dict(arrowstyle='->', color='#7f8c8d', lw=0.7))
     ax.set_xlabel('Hegemony index (|ΔD| / S)', fontsize=9)
     ax.set_title('B.  Hegemony index by mechanism\n'
-                 '(higher = more drift relative to coercion capacity)',
+                 '(higher = more drift relative to coercion capacity; '
+                 'Icelandic HI=3.18 off scale)',
                  fontsize=9, fontweight='bold', loc='left', pad=4)
 
     # ── C: ΔD vs S — hegemonic drift vs coercive scatter ─────────────────────
-    ax = axes[1, 0]
+    ax = axes[1][0]
     for _, r in hi_df.iterrows():
         mech = r['mechanism']
         col  = MECH_COLOURS.get(mech, DEFAULT_COL)
         marker = 'v' if r['delta_D'] < 0 else '^'
         ax.scatter(r['S'], abs(r['delta_D']), color=col, marker=marker,
                    s=80, alpha=0.85, zorder=5)
-        short = (r['system'].replace(' Democracy','').replace(' System','')
-                            .replace(' Monarchy','').replace(' Republic','')
-                            .replace(' Bureaucracy','')[:16])
-        ax.annotate(short, (r['S'], abs(r['delta_D'])),
-                    fontsize=5.5, xytext=(5, 3), textcoords='offset points',
-                    color=col, alpha=0.85)
+        pass  # labels suppressed — see shared legend strip
 
     ax.set_xlabel('S (sovereignty index, proxy for coercion capacity)', fontsize=9)
     ax.set_ylabel('|ΔD| (absolute D change over trajectory)', fontsize=9)
@@ -436,7 +538,7 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
             fontsize=7.5, color='#c0392b', style='italic', va='top')
 
     # ── D: Soviet and Roman case study detail ─────────────────────────────────
-    ax = axes[1, 1]
+    ax = axes[1][1]
 
     cases = {
         'Soviet Republics System':   ('#c0392b', 'coercion_to_consent'),
@@ -451,15 +553,17 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
         if len(sdf) == 0:
             continue
         label = system.replace(' System','').replace(' Democracy','')[:28]
-        ax.plot(sdf['year'], sdf['D_t'], 'o-', color=col, lw=2.0,
-                markersize=5, label=label, alpha=0.90)
+        ms_d = 2.5 if len(sdf) > 8 else 5.0
+        lw_d = 1.5 if len(sdf) > 8 else 2.0
+        ax.plot(sdf['year'], sdf['D_t'], 'o-', color=col, lw=lw_d,
+                markersize=ms_d, label=label, alpha=0.90)
 
     ax.axhline(THETA, color='#c0392b', lw=1.2, ls='--', alpha=0.6)
     ax.text(1921, THETA + 0.02, 'θ = 0.45', fontsize=7, color='#c0392b')
 
     # Annotate key events
-    ax.annotate('Stalin terror', xy=(1937, 0.05), xytext=(1945, 0.02),
-                fontsize=6.5, color='#c0392b',
+    ax.annotate('Stalin terror (1937)', xy=(1937, 0.04), xytext=(1870, 0.12),
+                fontsize=6.5, color='#c0392b', ha='right',
                 arrowprops=dict(arrowstyle='->', color='#c0392b', lw=0.8))
     # Magna Carta annotation — points to British Parliamentary data at 1689
     ax.annotate('1689\nBill of Rights', xy=(1689, 0.55), xytext=(1400, 0.48),
@@ -468,23 +572,23 @@ def make_figure(traj_df, hi_df, vis_dir=VIS_DIR):
 
     ax.set_xlabel('Year (CE)', fontsize=9)
     ax.set_ylabel('D (disobedience freedom)', fontsize=9)
-    ax.legend(fontsize=7, loc='upper left', frameon=True, framealpha=0.9)
     ax.set_title('D.  Case studies — hegemonic drift and counter-hegemony\n'
                  '(post-1000 CE systems)',
                  fontsize=9, fontweight='bold', loc='left', pad=4)
-    ax.set_xlim(-450, 2050)
+    ax.set_xlim(-600, 2060)
     # Add Roman Republic to Panel D (pre-1000 but theoretically critical)
     roman = traj_df[traj_df['system']=='Roman Republic'].sort_values('year')
     if len(roman):
         ax.plot(roman['year'], roman['D_t'], 's--', color='#c0392b',
                 lw=1.5, markersize=4, alpha=0.70, label='Roman Republic')
-    ax.legend(fontsize=7, loc='upper left', frameon=True, framealpha=0.9)
+    ax.legend(fontsize=6.5, loc='lower left', frameon=True, framealpha=0.92,
+              bbox_to_anchor=(0.02, 0.02), borderpad=0.5)
 
     fig.suptitle(
-        'Hegemonic drift analysis: D-trajectory coding across 15 governance systems\n'
+        'Hegemonic drift analysis: D-trajectory coding across 30 governance systems\n'
         'Distinguishing coercive suppression (high S) from hegemonic normalisation '
         '(high A, moderate S)',
-        fontsize=11, fontweight='bold', y=0.94)
+        fontsize=11, fontweight='bold', y=0.99)
 
     out = os.path.join(vis_dir, 'hegemonic_drift.png')
     plt.savefig(out, dpi=150, bbox_inches='tight')
@@ -538,6 +642,32 @@ Usage:
     print()
 
     run_analysis(traj_df, hi_df)
+
+    # Within-system ΔA vs ΔD analysis (requires a_trajectory field)
+    a_traj_df = parse_a_trajectories(df)
+    if len(a_traj_df):
+        ws_df, intervals_df = within_system_da_correlation(traj_df, a_traj_df)
+        if len(ws_df):
+            print('=== WITHIN-SYSTEM r(ΔA, ΔD) ANALYSIS ===')
+            print(f'Systems with both D and A trajectories: {len(ws_df)}')
+            print()
+            print(f'{"System":45s} {"n":>3} {"r_lag0":>8} {"p0":>7} {"r_lag1":>8} {"p1":>7}')
+            for _, r in ws_df.iterrows():
+                r0 = f'{r["r_lag0"]:+.3f}' if not np.isnan(r['r_lag0']) else '    nan'
+                p0 = f'{r["p_lag0"]:.3f}' if not np.isnan(r['p_lag0']) else '    nan'
+                r1 = f'{r["r_lag1"]:+.3f}' if not np.isnan(r['r_lag1']) else '    nan'
+                p1 = f'{r["p_lag1"]:.3f}' if not np.isnan(r['p_lag1']) else '    nan'
+                print(f'  {r["system"]:45s} {r["n_intervals"]:3d} '
+                      f'{r0:>8} {p0:>7} {r1:>8} {p1:>7}')
+            print()
+            if len(intervals_df) >= 10:
+                r_sp, p_sp = stats.spearmanr(
+                    intervals_df['dA_rate'], intervals_df['dD_rate'])
+                print(f'Pooled Spearman r(ΔA, ΔD): {r_sp:.3f}, p={p_sp:.4f}'
+                      f' (n={len(intervals_df)} intervals)')
+                n_neg = (ws_df['r_lag0'] < 0).sum()
+                print(f'Systems with r_lag0 < 0 (A↑,D↓): {n_neg}/{len(ws_df)}')
+                print()
 
     if args.figure:
         make_figure(traj_df, hi_df)
