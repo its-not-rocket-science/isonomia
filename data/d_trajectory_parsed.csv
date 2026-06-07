@@ -1,0 +1,113 @@
+system,year,D_t,D_static,S,A,L,mechanism,start,end
+Athenian Democracy,-508,0.75,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
+Athenian Democracy,-450,0.8,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
+Athenian Democracy,-411,0.65,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
+Athenian Democracy,-403,0.75,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
+Athenian Democracy,-338,0.6,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
+Aztec Triple Alliance,1300,0.35,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
+Aztec Triple Alliance,1400,0.25,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
+Aztec Triple Alliance,1450,0.2,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
+Aztec Triple Alliance,1500,0.15,0.2,0.8,0.7,0.85,tributary_hegemony,1428,1521
+British Parliamentary System,1689,0.55,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1780,0.65,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1850,0.75,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+British Parliamentary System,1950,0.85,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+Chinese Communist Party Governance,1949,0.1,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1966,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1978,0.15,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1989,0.18,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,1990,0.08,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Chinese Communist Party Governance,2012,0.06,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
+Confucian Bureaucracy,-200,0.2,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
+Confucian Bureaucracy,200,0.15,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
+Confucian Bureaucracy,800,0.1,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
+Confucian Bureaucracy,1400,0.08,0.15,0.8,0.95,0.9,educational_hegemony,-202,1912
+French Third Republic,1870,0.5,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1880,0.6,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1900,0.65,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1920,0.7,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1935,0.55,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+French Third Republic,1940,0.3,0.6,0.5,0.75,0.75,failing_counter_hegemony,1870,1940
+Habsburg Composite Monarchy,1520,0.35,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
+Habsburg Composite Monarchy,1620,0.25,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
+Habsburg Composite Monarchy,1750,0.2,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
+Habsburg Composite Monarchy,1848,0.25,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
+Habsburg Composite Monarchy,1900,0.3,0.4,0.55,0.65,0.65,administrative_absorption,1526,1918
+Hanseatic League,1241,0.7,0.65,0.25,0.5,0.7,administrative_absorption,1356,1669
+Hanseatic League,1350,0.65,0.65,0.25,0.5,0.7,administrative_absorption,1356,1669
+Hanseatic League,1450,0.6,0.65,0.25,0.5,0.7,administrative_absorption,1356,1669
+Hanseatic League,1550,0.5,0.65,0.25,0.5,0.7,administrative_absorption,1356,1669
+Hanseatic League,1650,0.4,0.65,0.25,0.5,0.7,administrative_absorption,1356,1669
+Icelandic Commonwealth,930,0.8,0.8,0.1,0.2,0.3,resilient_then_absorbed,930,1262
+Icelandic Commonwealth,1000,0.82,0.8,0.1,0.2,0.3,resilient_then_absorbed,930,1262
+Icelandic Commonwealth,1100,0.75,0.8,0.1,0.2,0.3,resilient_then_absorbed,930,1262
+Icelandic Commonwealth,1200,0.65,0.8,0.1,0.2,0.3,resilient_then_absorbed,930,1262
+Icelandic Commonwealth,1262,0.45,0.8,0.1,0.2,0.3,resilient_then_absorbed,930,1262
+Mauryan Empire,-321,0.25,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
+Mauryan Empire,-268,0.18,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
+Mauryan Empire,-231,0.2,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
+Mauryan Empire,-200,0.15,0.15,0.8,0.85,0.85,administrative_hegemony,-322,-185
+Meiji Oligarchy,1868,0.25,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1880,0.2,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1890,0.15,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Meiji Oligarchy,1910,0.12,0.15,0.75,0.85,0.75,educational_hegemony,1868,1912
+Ming Dynasty,1368,0.15,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
+Ming Dynasty,1450,0.1,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
+Ming Dynasty,1550,0.08,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
+Ming Dynasty,1620,0.06,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
+Nazi Germany,1932,0.45,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
+Nazi Germany,1934,0.15,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
+Nazi Germany,1937,0.05,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
+Nazi Germany,1942,0.03,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
+Norwegian Sovereign Wealth Democracy,1814,0.7,0.9,0.15,0.75,0.75,counter_hegemony,1990,Present
+Norwegian Sovereign Wealth Democracy,1900,0.75,0.9,0.15,0.75,0.75,counter_hegemony,1990,Present
+Norwegian Sovereign Wealth Democracy,1950,0.8,0.9,0.15,0.75,0.75,counter_hegemony,1990,Present
+Norwegian Sovereign Wealth Democracy,2000,0.85,0.9,0.15,0.75,0.75,counter_hegemony,1990,Present
+Ottoman Empire,1300,0.35,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
+Ottoman Empire,1600,0.25,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
+Ottoman Empire,1800,0.2,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
+Ottoman Empire,1900,0.15,0.2,0.8,0.8,0.8,administrative_drift,1299,1922
+Roman Republic,-400,0.65,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-200,0.55,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-100,0.5,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Roman Republic,-50,0.35,0.5,0.45,0.65,0.7,passive_revolution,-509,-27
+Singapore Technocracy,1965,0.35,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
+Singapore Technocracy,1980,0.25,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
+Singapore Technocracy,2000,0.2,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
+Singapore Technocracy,2020,0.18,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
+Song Dynasty,960,0.2,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1050,0.15,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1127,0.12,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1200,0.1,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
+Soviet Republics System,1922,0.15,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1937,0.05,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1956,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1985,0.1,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Soviet Republics System,1991,0.4,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
+Swiss Cantonal Democracy,1291,0.65,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
+Swiss Cantonal Democracy,1400,0.7,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
+Swiss Cantonal Democracy,1515,0.75,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
+Swiss Cantonal Democracy,1648,0.8,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
+Swiss Cantonal Democracy,1848,0.85,0.85,0.2,0.5,0.6,counter_hegemony,1291,2025
+Tang Dynasty,618,0.2,0.1,0.85,0.9,0.9,educational_hegemony,618,907
+Tang Dynasty,750,0.12,0.1,0.85,0.9,0.9,educational_hegemony,618,907
+Tang Dynasty,850,0.08,0.1,0.85,0.9,0.9,educational_hegemony,618,907
+Tang Dynasty,900,0.1,0.1,0.85,0.9,0.9,educational_hegemony,618,907
+Tokugawa Shogunate,1603,0.2,0.15,0.8,0.8,0.75,ideological_hegemony,1603,1868
+Tokugawa Shogunate,1650,0.15,0.15,0.8,0.8,0.75,ideological_hegemony,1603,1868
+Tokugawa Shogunate,1750,0.15,0.15,0.8,0.8,0.75,ideological_hegemony,1603,1868
+Tokugawa Shogunate,1830,0.18,0.15,0.8,0.8,0.75,ideological_hegemony,1603,1868
+United States Federal Republic,1789,0.6,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+United States Federal Republic,1865,0.55,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+United States Federal Republic,1900,0.65,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+United States Federal Republic,1965,0.75,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+United States Federal Republic,2001,0.7,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+United States Federal Republic,2020,0.65,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+Weimar Republic,1919,0.7,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
+Weimar Republic,1923,0.65,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
+Weimar Republic,1928,0.6,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
+Weimar Republic,1932,0.45,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
+Zhou Dynasty Mandate of Heaven,-1046,0.5,0.35,0.5,0.4,0.65,ideological_hegemony,-1046,-256
+Zhou Dynasty Mandate of Heaven,-800,0.4,0.35,0.5,0.4,0.65,ideological_hegemony,-1046,-256
+Zhou Dynasty Mandate of Heaven,-500,0.35,0.35,0.5,0.4,0.65,ideological_hegemony,-1046,-256
+Zhou Dynasty Mandate of Heaven,-300,0.25,0.35,0.5,0.4,0.65,ideological_hegemony,-1046,-256
