@@ -241,16 +241,41 @@ def run_analysis(traj_df, hi_df):
               f"{sub['S'].mean():6.3f}  {len(sub)}")
     print()
 
-    # Test: hegemonic vs coercive fall rates
-    heg = hi_df[hi_df['traj_type']=='falling_hegemonic']['rate_D']
-    coe = hi_df[hi_df['traj_type']=='falling_coercive']['rate_D']
-    if len(heg) >= 2 and len(coe) >= 1:
-        print("=== HEGEMONIC vs COERCIVE FALL RATE ===")
-        print(f"  Hegemonic: mean={heg.mean():.3f}/century, n={len(heg)}")
-        print(f"  Coercive:  mean={coe.mean():.3f}/century, n={len(coe)}")
-        if len(heg) >= 2 and len(coe) >= 2:
-            u, p = stats.mannwhitneyu(abs(heg), abs(coe), alternative='two-sided')
-            print(f"  Mann-Whitney (rate difference): p={p:.4f}")
+    # PRIMARY TEST: Hegemonic drift starts from higher D₀ than coercive suppression
+    # Hegemonic drift = normalisation FROM a prior high-D state
+    # Coercive suppression = maintenance of an already-low-D state by force
+    heg = hi_df[hi_df['traj_type']=='falling_hegemonic']
+    coe = hi_df[hi_df['traj_type']=='falling_coercive']
+    if len(heg) >= 2 and len(coe) >= 2:
+        print("=== PRIMARY FINDING: D_start by trajectory type ===")
+        print(f"  Hegemonic drift:       D_start mean={heg['D_start'].mean():.3f} "
+              f"(SD={heg['D_start'].std():.3f}), n={len(heg)}")
+        print(f"  Coercive suppression:  D_start mean={coe['D_start'].mean():.3f} "
+              f"(SD={coe['D_start'].std():.3f}), n={len(coe)}")
+        u, p = stats.mannwhitneyu(
+            heg['D_start'], coe['D_start'], alternative='greater')
+        sig = '***' if p<0.001 else '**' if p<0.01 else '*' if p<0.05 else 'ns'
+        print(f"  MW hegemonic D_start > coercive: p={p:.4f} {sig}")
+        print()
+        print("  Interpretation: hegemonic drift requires a prior high-D state")
+        print("  to normalise FROM. Coercive systems begin already suppressed.")
+        print()
+        # SECONDARY: rate of fall
+        heg_r = heg['rate_D']; coe_r = coe['rate_D']
+        print("=== SECONDARY: Fall rate (hegemonic slower than coercive?) ===")
+        print(f"  Hegemonic: mean={heg_r.mean():.3f}/century, n={len(heg_r)}")
+        print(f"  Coercive:  mean={coe_r.mean():.3f}/century, n={len(coe_r)}")
+        u2, p2 = stats.mannwhitneyu(abs(heg_r), abs(coe_r), alternative='less')
+        sig2 = '***' if p2<0.001 else '**' if p2<0.01 else '*' if p2<0.05 else 'ns'
+        print(f"  MW hegemonic SLOWER than coercive: p={p2:.4f} {sig2}")
+        print()
+        # D_start vs |ΔD| correlation
+        all_fall = hi_df[hi_df['traj_type'].isin(
+            ['falling_hegemonic','falling_coercive'])]
+        r_corr, p_corr = stats.pearsonr(
+            all_fall['D_start'], all_fall['delta_D'])
+        print(f"=== D_start vs total ΔD (falling systems) ===")
+        print(f"  r={r_corr:.3f}, p={p_corr:.4f} — higher D_start → more D lost")
         print()
 
     # Counter-hegemonic systems

@@ -1,4 +1,13 @@
 system,year,D_t,D_static,S,A,L,mechanism,start,end
+Abbasid Caliphate,750,0.3,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,900,0.22,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,1050,0.18,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,1200,0.15,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Achaemenid Persian Empire,-550,0.35,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
+Achaemenid Persian Empire,-490,0.28,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
+Achaemenid Persian Empire,-450,0.22,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
+Achaemenid Persian Empire,-400,0.18,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
+Achaemenid Persian Empire,-350,0.15,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
 Athenian Democracy,-508,0.75,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
 Athenian Democracy,-450,0.8,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
 Athenian Democracy,-411,0.65,0.85,0.15,0.45,0.55,resilient_with_shocks,-508,-322
@@ -12,6 +21,10 @@ British Parliamentary System,1689,0.55,0.85,0.2,0.75,0.75,counter_hegemony,1689,
 British Parliamentary System,1780,0.65,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
 British Parliamentary System,1850,0.75,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
 British Parliamentary System,1950,0.85,0.85,0.2,0.75,0.75,counter_hegemony,1689,Present
+Carolingian Empire,768,0.45,0.35,0.5,0.55,0.45,educational_hegemony,768,987
+Carolingian Empire,820,0.38,0.35,0.5,0.55,0.45,educational_hegemony,768,987
+Carolingian Empire,870,0.3,0.35,0.5,0.55,0.45,educational_hegemony,768,987
+Carolingian Empire,950,0.25,0.35,0.5,0.55,0.45,educational_hegemony,768,987
 Chinese Communist Party Governance,1949,0.1,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
 Chinese Communist Party Governance,1966,0.05,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
 Chinese Communist Party Governance,1978,0.15,0.08,0.9,0.9,0.85,coercive_then_hegemonic,1949,2025
@@ -55,6 +68,11 @@ Ming Dynasty,1368,0.15,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
 Ming Dynasty,1450,0.1,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
 Ming Dynasty,1550,0.08,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
 Ming Dynasty,1620,0.06,0.08,0.85,0.95,0.9,administrative_hegemony,1368,1644
+Mughal Empire Akbar Period,1556,0.3,0.18,0.7,0.8,0.65,manufactured_consent,1556,1707
+Mughal Empire Akbar Period,1580,0.22,0.18,0.7,0.8,0.65,manufactured_consent,1556,1707
+Mughal Empire Akbar Period,1605,0.18,0.18,0.7,0.8,0.65,manufactured_consent,1556,1707
+Mughal Empire Akbar Period,1660,0.12,0.18,0.7,0.8,0.65,manufactured_consent,1556,1707
+Mughal Empire Akbar Period,1707,0.08,0.18,0.7,0.8,0.65,manufactured_consent,1556,1707
 Nazi Germany,1932,0.45,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
 Nazi Germany,1934,0.15,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
 Nazi Germany,1937,0.05,0.03,0.95,0.9,0.85,coercive_then_hegemonic,1933,1945
@@ -75,10 +93,10 @@ Singapore Technocracy,1965,0.35,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
 Singapore Technocracy,1980,0.25,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
 Singapore Technocracy,2000,0.2,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
 Singapore Technocracy,2020,0.18,0.2,0.8,0.9,0.9,manufactured_consent,1965,2025
-Song Dynasty,960,0.2,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
-Song Dynasty,1050,0.15,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
-Song Dynasty,1127,0.12,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
-Song Dynasty,1200,0.1,0.15,0.7,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,960,0.2,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1050,0.15,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1127,0.12,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
+Song Dynasty,1200,0.1,0.15,0.55,0.9,0.85,educational_hegemony,960,1279
 Soviet Republics System,1922,0.15,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
 Soviet Republics System,1937,0.05,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
 Soviet Republics System,1956,0.08,0.05,0.9,0.9,0.85,coercion_to_consent,1922,1991
@@ -103,6 +121,11 @@ United States Federal Republic,1900,0.65,0.7,0.45,0.7,0.8,oscillating_counter_he
 United States Federal Republic,1965,0.75,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
 United States Federal Republic,2001,0.7,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
 United States Federal Republic,2020,0.65,0.7,0.45,0.7,0.8,oscillating_counter_hegemony,1789,2025
+Venetian Republic,697,0.6,0.6,0.35,0.7,0.75,administrative_closure,697,1797
+Venetian Republic,1000,0.58,0.6,0.35,0.7,0.75,administrative_closure,697,1797
+Venetian Republic,1200,0.55,0.6,0.35,0.7,0.75,administrative_closure,697,1797
+Venetian Republic,1400,0.45,0.6,0.35,0.7,0.75,administrative_closure,697,1797
+Venetian Republic,1600,0.35,0.6,0.35,0.7,0.75,administrative_closure,697,1797
 Weimar Republic,1919,0.7,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
 Weimar Republic,1923,0.65,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
 Weimar Republic,1928,0.6,0.6,0.4,0.65,0.7,failing_counter_hegemony,1919,1933
