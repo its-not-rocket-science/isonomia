@@ -3,980 +3,656 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isonomia — Can Freedom Be Measured?</title>
+<title>Isonomia: Can Freedom Be Measured?</title>
+<meta name="description" content="A computational research project measuring political freedom across 401 governance systems and 2,600 years of history, inspired by Graeber and Wengrow's The Dawn of Everything.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* ── Reset & tokens ──────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d1b2a;
+  --parchment:#f0ece0;
+  --amber:#e8a020;
+  --amber-dim:#c4841a;
+  --slate:#4a6580;
+  --slate-lt:#7a96b0;
+  --mid:#1f3347;
+  --rule:rgba(232,160,32,0.28);
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'Source Sans 3',system-ui,sans-serif;
+}
+html{scroll-behaviour:smooth}
+body{background:var(--ink);color:var(--parchment);font-family:var(--fb);font-size:clamp(16px,1.1vw + 13px,19px);line-height:1.72;-webkit-font-smoothing:antialiased}
+.measure{max-width:68ch}.wide{max-width:90ch}.centre{margin-inline:auto}
+img{max-width:100%;height:auto;display:block;border-radius:4px}
 
-:root {
-  --ink:       #0d1b2a;
-  --parchment: #f0ece0;
-  --amber:     #e8a020;
-  --amber-dim: #c4841a;
-  --slate:     #4a6580;
-  --slate-lt:  #7a96b0;
-  --mid:       #1f3347;
-  --rule:      rgba(232,160,32,0.35);
-  --font-disp: 'Playfair Display', Georgia, serif;
-  --font-body: 'Source Sans 3', system-ui, sans-serif;
-  --measure:   68ch;
-  --wide:      90ch;
-}
+/* Fade-in */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-html { scroll-behaviour: smooth; }
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);padding:.7rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+nav .wm{font-family:var(--fd);font-size:1.05rem;letter-spacing:.06em;color:var(--amber);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:1.4rem;flex-wrap:wrap}
+nav ul a{text-decoration:none;color:var(--slate-lt);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+nav ul a:hover{color:var(--amber)}
 
-body {
-  background: var(--ink);
-  color: var(--parchment);
-  font-family: var(--font-body);
-  font-size: clamp(16px, 1.1vw + 13px, 19px);
-  line-height: 1.72;
-  -webkit-font-smoothing: antialiased;
-}
+/* Hero */
+#hero{min-height:100svh;display:grid;place-items:center;padding:6rem 2rem 4rem;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(232,160,32,.09) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(74,101,128,.15) 0%,transparent 60%),var(--ink);position:relative;overflow:hidden}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:.9rem}
+h1{font-family:var(--fd);font-size:clamp(2.6rem,5.5vw + 1rem,5.2rem);font-weight:700;line-height:1.08;color:var(--parchment);margin-bottom:1.6rem;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--amber)}
+.hero-sub{font-size:clamp(1rem,1vw + .8rem,1.22rem);color:var(--slate-lt);max-width:54ch;margin-bottom:2.8rem;line-height:1.65}
+.hero-cta{display:inline-flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.6rem;border-radius:3px;font-family:var(--fb);font-size:.9rem;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:background .2s,color .2s}
+.btn-p{background:var(--amber);color:var(--ink)}.btn-p:hover{background:var(--amber-dim)}
+.btn-g{border:1px solid var(--slate);color:var(--slate-lt)}.btn-g:hover{border-color:var(--amber);color:var(--amber)}
+.hero-stats{margin-top:4rem;display:flex;gap:3rem;flex-wrap:wrap}
+.stat-num{font-family:var(--fd);font-size:2.4rem;font-weight:700;color:var(--amber);line-height:1}
+.stat-lbl{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-lt);margin-top:.3rem}
 
-/* ── Utility ─────────────────────────────────────────────────────────── */
-.measure  { max-width: var(--measure); }
-.wide     { max-width: var(--wide); }
-.centre   { margin-inline: auto; }
-.amber    { color: var(--amber); }
-.slate    { color: var(--slate-lt); }
-.italic   { font-style: italic; }
-img       { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+/* Sections */
+section{padding:5rem 2rem;border-top:1px solid var(--rule)}
+section:nth-child(even){background:rgba(31,51,71,.22)}
+h2{font-family:var(--fd);font-size:clamp(1.8rem,3vw + .8rem,3rem);font-weight:700;line-height:1.18;color:var(--parchment);margin-bottom:1.6rem;letter-spacing:-.01em}
+h3{font-family:var(--fd);font-size:clamp(1.15rem,1.5vw + .6rem,1.6rem);font-weight:600;color:var(--parchment);margin-bottom:.9rem;margin-top:2.2rem;line-height:1.25}
+p{margin-bottom:1.2rem;color:rgba(240,236,224,.88)}
+p:last-child{margin-bottom:0}
 
-/* ── Fade-in on scroll ───────────────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+/* Pull quote */
+.pq{border-left:3px solid var(--amber);padding:1rem 1.5rem;margin:2.4rem 0;background:rgba(232,160,32,.06);border-radius:0 4px 4px 0}
+.pq p{font-family:var(--fd);font-size:clamp(1.05rem,1.2vw + .7rem,1.3rem);font-style:italic;color:var(--parchment);margin:0;line-height:1.55}
+.pq cite{display:block;font-family:var(--fb);font-style:normal;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-top:.6rem}
 
-/* ── Nav ─────────────────────────────────────────────────────────────── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(13,27,42,0.93);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--rule);
-  padding: 0.75rem 2rem;
-  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
-}
-nav .wordmark {
-  font-family: var(--font-disp);
-  font-size: 1.1rem;
-  letter-spacing: 0.06em;
-  color: var(--amber);
-  text-decoration: none;
-  white-space: nowrap;
-}
-nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-nav ul a {
-  text-decoration: none;
-  color: var(--slate-lt);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-nav ul a:hover { color: var(--amber); }
+/* Figures */
+.fig-wrap{margin:2.5rem 0;background:rgba(31,51,71,.5);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.fig-wrap img{width:100%}
+.fig-cap{padding:.8rem 1.2rem;font-size:.82rem;color:var(--slate-lt);line-height:1.5;border-top:1px solid var(--rule)}
+.fig-cap strong{color:var(--amber)}
 
-/* ── Hero ────────────────────────────────────────────────────────────── */
-#hero {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 6rem 2rem 4rem;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(232,160,32,0.09) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(74,101,128,0.15) 0%, transparent 60%),
-    var(--ink);
-  position: relative;
-  overflow: hidden;
-}
+/* Interactive chart container */
+.chart-box{margin:2rem 0;background:rgba(13,27,42,.9);border:1px solid var(--rule);border-radius:6px;padding:1.4rem 1.4rem 1rem}
+.chart-box h4{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--amber);margin-bottom:.25rem}
+.chart-box .sub{font-size:.8rem;color:var(--slate-lt);margin-bottom:1rem}
+.chart-box svg{width:100%;display:block}
 
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 1.4rem;
-}
+/* Filter buttons */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.fbtn{background:rgba(74,101,128,.25);border:1px solid rgba(74,101,128,.4);color:var(--slate-lt);padding:.3rem .8rem;border-radius:3px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .18s}
+.fbtn:hover{border-color:var(--amber);color:var(--amber)}
+.fbtn.active{background:rgba(232,160,32,.15);border-color:var(--amber);color:var(--amber)}
 
-h1 {
-  font-family: var(--font-disp);
-  font-size: clamp(2.6rem, 5.5vw + 1rem, 5.2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  color: var(--parchment);
-  margin-bottom: 1.6rem;
-  letter-spacing: -0.01em;
-}
-h1 em { font-style: italic; color: var(--amber); }
+/* Tooltip */
+#tt{position:fixed;background:rgba(13,27,42,.97);border:1px solid var(--rule);border-radius:4px;padding:.6rem .9rem;font-family:var(--fb);font-size:.8rem;color:var(--parchment);pointer-events:none;z-index:999;max-width:220px;line-height:1.45;display:none}
+#tt .tt-name{font-family:var(--fd);font-weight:600;color:var(--amber);font-size:.9rem;margin-bottom:.2rem}
+#tt .tt-vals{color:var(--slate-lt)}
 
-.hero-sub {
-  font-size: clamp(1rem, 1vw + 0.8rem, 1.22rem);
-  color: var(--slate-lt);
-  max-width: 54ch;
-  margin-bottom: 2.8rem;
-  line-height: 1.65;
-}
+/* Finding blocks */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1.2rem;margin-top:2rem}
+.fblock{background:rgba(31,51,71,.4);border-top:2px solid var(--amber);padding:1.2rem;border-radius:0 0 4px 4px}
+.fnum{font-family:var(--fd);font-size:1.9rem;font-weight:700;color:var(--amber);line-height:1;margin-bottom:.4rem}
+.fblock p{font-size:.87rem;color:rgba(240,236,224,.8);margin:0}
 
-.hero-cta {
-  display: inline-flex; gap: 1rem; flex-wrap: wrap;
-}
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  border-radius: 3px;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: background 0.2s, color 0.2s;
-}
-.btn-primary { background: var(--amber); color: var(--ink); }
-.btn-primary:hover { background: var(--amber-dim); }
-.btn-ghost { border: 1px solid var(--slate); color: var(--slate-lt); }
-.btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+/* Mechanism cards */
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.4rem;margin-top:2rem}
+.mcard{background:rgba(31,51,71,.5);border:1px solid rgba(232,160,32,.15);border-radius:6px;padding:1.4rem;transition:border-color .2s,background .2s}
+.mcard:hover{border-color:rgba(232,160,32,.45);background:rgba(31,51,71,.75)}
+.mcard h3{font-size:1rem;margin-top:0}
+.mcard p{font-size:.87rem;color:rgba(240,236,224,.72);margin-top:.5rem}
 
-.hero-stats {
-  margin-top: 4rem;
-  display: flex; gap: 3rem; flex-wrap: wrap;
-}
-.stat-item { display: flex; flex-direction: column; }
-.stat-num {
-  font-family: var(--font-disp);
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--amber);
-  line-height: 1;
-}
-.stat-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--slate-lt);
-  margin-top: 0.3rem;
-}
+/* Paper cards */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:1.5rem;margin-top:2.5rem}
+.pcard{background:rgba(31,51,71,.55);border:1px solid rgba(232,160,32,.18);border-radius:6px;padding:1.5rem;transition:border-color .2s,background .2s}
+.pcard:hover{border-color:rgba(232,160,32,.5);background:rgba(31,51,71,.8)}
+.pill{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-bottom:.8rem}
+.ps{background:rgba(232,160,32,.15);color:var(--amber)}
+.pd{background:rgba(74,101,128,.25);color:var(--slate-lt)}
+.pr{background:rgba(111,207,151,.15);color:#6fcf97}
+.pcard h3{font-size:1.05rem;margin-top:0;color:var(--parchment)}
+.pcard p{font-size:.87rem;color:rgba(240,236,224,.72);margin-top:.5rem}
+.pcard .jnl{font-size:.75rem;color:var(--slate-lt);margin-top:.8rem;font-style:italic}
 
-/* ── Section base ────────────────────────────────────────────────────── */
-section {
-  padding: 5rem 2rem;
-  border-top: 1px solid var(--rule);
-}
-section:nth-child(even) { background: rgba(31,51,71,0.25); }
+/* Timeline */
+.tl{list-style:none;position:relative;padding-left:1.8rem;margin-top:2rem}
+.tl::before{content:'';position:absolute;left:0;top:.6rem;bottom:0;width:1px;background:var(--rule)}
+.tl li{position:relative;padding:0 0 2rem 1.5rem}
+.tl li::before{content:'';position:absolute;left:-1.8rem;top:.55rem;width:10px;height:10px;border-radius:50%;background:var(--amber);border:2px solid var(--ink)}
+.tl .dt{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.25rem}
+.tl h4{font-family:var(--fd);font-size:1rem;color:var(--parchment);margin-bottom:.3rem}
+.tl p{font-size:.88rem;color:rgba(240,236,224,.75);margin:0}
 
-.section-eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.9rem;
-}
+/* Equation */
+.eq{background:rgba(13,27,42,.8);border:1px solid var(--rule);border-radius:4px;padding:1.2rem 1.6rem;margin:1.6rem 0;font-family:'Courier New',monospace;font-size:1rem;color:var(--amber);overflow-x:auto;text-align:center;line-height:1.8}
 
-h2 {
-  font-family: var(--font-disp);
-  font-size: clamp(1.8rem, 3vw + 0.8rem, 3rem);
-  font-weight: 700;
-  line-height: 1.18;
-  color: var(--parchment);
-  margin-bottom: 1.6rem;
-  letter-spacing: -0.01em;
-}
+/* Trajectory selector */
+#traj-select{background:rgba(31,51,71,.8);border:1px solid rgba(232,160,32,.35);color:var(--parchment);padding:.5rem .9rem;border-radius:3px;font-family:var(--fb);font-size:.9rem;cursor:pointer;min-width:260px}
+#traj-select option{background:#1f3347}
 
-h3 {
-  font-family: var(--font-disp);
-  font-size: clamp(1.2rem, 1.5vw + 0.6rem, 1.65rem);
-  font-weight: 600;
-  color: var(--parchment);
-  margin-bottom: 0.9rem;
-  margin-top: 2.2rem;
-  line-height: 1.25;
-}
+/* Footer */
+footer{padding:3rem 2rem;border-top:1px solid var(--rule);background:rgba(13,27,42,.6)}
+.footer-inner{max-width:90ch;margin-inline:auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
+footer .wm{font-family:var(--fd);font-size:1.2rem;color:var(--amber)}
+footer p{font-size:.82rem;color:var(--slate-lt);margin-top:.5rem;margin-bottom:0}
+footer a{color:var(--amber);text-decoration:none}
+footer a:hover{text-decoration:underline}
 
-p { margin-bottom: 1.2rem; color: rgba(240,236,224,0.88); }
-p:last-child { margin-bottom: 0; }
-
-/* ── Pull quote ──────────────────────────────────────────────────────── */
-.pullquote {
-  border-left: 3px solid var(--amber);
-  padding: 1rem 1.5rem;
-  margin: 2.4rem 0;
-  background: rgba(232,160,32,0.06);
-  border-radius: 0 4px 4px 0;
-}
-.pullquote p {
-  font-family: var(--font-disp);
-  font-size: clamp(1.1rem, 1.2vw + 0.7rem, 1.35rem);
-  font-style: italic;
-  color: var(--parchment);
-  margin: 0;
-  line-height: 1.55;
-}
-.pullquote cite {
-  display: block;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-top: 0.7rem;
-}
-
-/* ── Figure / image ──────────────────────────────────────────────────── */
-.fig-wrap {
-  margin: 2.5rem 0;
-  background: rgba(31,51,71,0.5);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.fig-wrap img { width: 100%; }
-.fig-caption {
-  padding: 0.8rem 1.2rem;
-  font-size: 0.82rem;
-  color: var(--slate-lt);
-  line-height: 1.5;
-  border-top: 1px solid var(--rule);
-}
-.fig-caption strong { color: var(--amber); }
-
-/* ── Interactive phase-space plot ────────────────────────────────────── */
-#phasespace-wrap {
-  margin: 2.5rem 0;
-  background: rgba(13,27,42,0.95);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 1.5rem;
-}
-#phasespace-wrap h4 {
-  font-family: var(--font-disp);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--amber);
-  margin-bottom: 0.4rem;
-}
-#phasespace-wrap p.sub {
-  font-size: 0.8rem;
-  color: var(--slate-lt);
-  margin-bottom: 1rem;
-}
-#phasespace { width: 100%; height: 420px; }
-
-/* ── Paper cards ─────────────────────────────────────────────────────── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-.paper-card {
-  background: rgba(31,51,71,0.55);
-  border: 1px solid rgba(232,160,32,0.18);
-  border-radius: 6px;
-  padding: 1.5rem;
-  transition: border-color 0.2s, background 0.2s;
-}
-.paper-card:hover {
-  border-color: rgba(232,160,32,0.5);
-  background: rgba(31,51,71,0.8);
-}
-.paper-card .pill {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-  margin-bottom: 0.8rem;
-}
-.pill-submitted { background: rgba(232,160,32,0.15); color: var(--amber); }
-.pill-draft     { background: rgba(74,101,128,0.25); color: var(--slate-lt); }
-.pill-progress  { background: rgba(39,174,96,0.15); color: #6fcf97; }
-.paper-card h3 { font-size: 1.05rem; margin-top: 0; color: var(--parchment); }
-.paper-card p  { font-size: 0.88rem; color: rgba(240,236,224,0.72); margin-top: 0.5rem; }
-.paper-card .journal {
-  font-size: 0.75rem;
-  color: var(--slate-lt);
-  margin-top: 0.8rem;
-  font-style: italic;
-}
-
-/* ── Key-finding block ───────────────────────────────────────────────── */
-.finding-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  gap: 1.2rem;
-  margin-top: 2rem;
-}
-.finding-block {
-  background: rgba(31,51,71,0.4);
-  border-top: 2px solid var(--amber);
-  padding: 1.2rem;
-  border-radius: 0 0 4px 4px;
-}
-.finding-block .stat {
-  font-family: var(--font-disp);
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--amber);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.finding-block p { font-size: 0.87rem; color: rgba(240,236,224,0.80); margin: 0; }
-
-/* ── Timeline ────────────────────────────────────────────────────────── */
-.timeline { list-style: none; position: relative; padding-left: 1.8rem; margin-top: 2rem; }
-.timeline::before {
-  content: '';
-  position: absolute; left: 0; top: 0.6rem; bottom: 0;
-  width: 1px; background: var(--rule);
-}
-.timeline li {
-  position: relative;
-  padding: 0 0 2rem 1.5rem;
-}
-.timeline li::before {
-  content: '';
-  position: absolute; left: -1.8rem; top: 0.55rem;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--amber);
-  border: 2px solid var(--ink);
-}
-.timeline .tl-date {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.25rem;
-}
-.timeline h4 {
-  font-family: var(--font-disp);
-  font-size: 1rem;
-  color: var(--parchment);
-  margin-bottom: 0.3rem;
-}
-.timeline p { font-size: 0.88rem; color: rgba(240,236,224,0.75); margin: 0; }
-
-/* ── Equation display ────────────────────────────────────────────────── */
-.equation {
-  background: rgba(13,27,42,0.8);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  padding: 1.2rem 1.6rem;
-  margin: 1.6rem 0;
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  color: var(--amber);
-  overflow-x: auto;
-  text-align: center;
-  line-height: 1.8;
-}
-
-/* ── Footer ──────────────────────────────────────────────────────────── */
-footer {
-  padding: 3rem 2rem;
-  border-top: 1px solid var(--rule);
-  background: rgba(13,27,42,0.6);
-}
-footer .footer-inner {
-  max-width: var(--wide);
-  margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-footer .wordmark {
-  font-family: var(--font-disp);
-  font-size: 1.2rem;
-  color: var(--amber);
-}
-footer p { font-size: 0.82rem; color: var(--slate-lt); margin-top: 0.5rem; margin-bottom: 0; }
-footer a { color: var(--amber); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ── Responsive ──────────────────────────────────────────────────────── */
-@media (max-width: 600px) {
-  nav { gap: 0.8rem; padding: 0.6rem 1rem; }
-  nav ul { gap: 0.8rem; }
-  section { padding: 3.5rem 1.2rem; }
-  #hero { padding: 5rem 1.2rem 3rem; }
-  .hero-stats { gap: 1.5rem; }
-}
+@media(max-width:600px){nav{gap:.8rem;padding:.6rem 1rem}nav ul{gap:.8rem}section{padding:3.5rem 1.2rem}#hero{padding:5rem 1.2rem 3rem}.hero-stats{gap:1.5rem}}
 </style>
 </head>
 <body>
+<div id="tt"><div class="tt-name"></div><div class="tt-vals"></div></div>
 
-<!-- ── Navigation ───────────────────────────────────────────────────── -->
+<!-- Nav -->
 <nav>
-  <a href="#hero" class="wordmark">isonomia</a>
+  <a href="#hero" class="wm">isonomia</a>
   <ul>
     <li><a href="#origin">Origin</a></li>
     <li><a href="#framework">Framework</a></li>
+    <li><a href="#explorer">Explorer</a></li>
+    <li><a href="#lockin">Lock-in</a></li>
     <li><a href="#findings">Findings</a></li>
     <li><a href="#papers">Papers</a></li>
-    <li><a href="#data">Data</a></li>
   </ul>
 </nav>
 
-<!-- ── Hero ─────────────────────────────────────────────────────────── -->
-<section id="hero" style="border-top:none;">
+<!-- Hero -->
+<section id="hero" style="border-top:none">
   <div class="measure centre">
-    <p class="hero-eyebrow reveal">Computational governance research</p>
-    <h1 class="reveal">Can freedom be<br><em>measured</em>?</h1>
-    <p class="hero-sub reveal">A question provoked by a remarkable book about the deep history of human societies — and answered, in part, by the largest cross-civilisational governance dataset ever assembled.</p>
+    <p class="eyebrow reveal">Computational governance research</p>
+    <h1 class="reveal">Can freedom be<br><em>measured?</em></h1>
+    <p class="hero-sub reveal">A question provoked by a remarkable book about the deep history of human societies, answered in part by the largest cross-civilisational governance dataset yet assembled.</p>
     <div class="hero-cta reveal">
-      <a href="#origin" class="btn btn-primary">Start reading</a>
-      <a href="https://github.com/its-not-rocket-science/isonomia" class="btn btn-ghost" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="#origin" class="btn btn-p">Start reading</a>
+      <a href="https://github.com/its-not-rocket-science/isonomia" class="btn btn-g" target="_blank" rel="noopener">View on GitHub</a>
     </div>
     <div class="hero-stats reveal">
-      <div class="stat-item">
-        <span class="stat-num">401</span>
-        <span class="stat-label">Governance systems coded</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2,600</span>
-        <span class="stat-label">Years of history</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">6</span>
-        <span class="stat-label">Linked research papers</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">r = 0.91</span>
-        <span class="stat-label">Correlation with V-Dem</span>
-      </div>
+      <div><div class="stat-num">401</div><div class="stat-lbl">Governance systems coded</div></div>
+      <div><div class="stat-num">2,600</div><div class="stat-lbl">Years of history</div></div>
+      <div><div class="stat-num">6</div><div class="stat-lbl">Research papers</div></div>
+      <div><div class="stat-num">r = 0.91</div><div class="stat-lbl">Correlation with V-Dem</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── 1. Origin ─────────────────────────────────────────────────────── -->
+<!-- 1. Origin -->
 <section id="origin">
   <div class="measure centre reveal">
-    <p class="section-eyebrow">The question</p>
-    <h2>A book that asked the wrong question — in the best possible way</h2>
+    <p class="eyebrow">The question</p>
+    <h2>A book that opened up a remarkable question</h2>
 
-    <p>In 2021, the anthropologist David Graeber and archaeologist David Wengrow published <em>The Dawn of Everything: A New History of Humanity</em>. It was an immediate sensation. The argument was simple and explosive: for most of human history, people regularly and deliberately chose between radically different ways of organising themselves. Societies were not locked into fixed evolutionary stages — chiefdoms giving way to states giving way to democracies. They experimented. They argued. They walked away from hierarchies that didn't suit them and built new ones elsewhere. Freedom and political self-determination, Graeber and Wengrow suggested, were not modern inventions. They were ancient human capacities that many of our ancestors exercised quite consciously.</p>
+    <p>In 2021, the anthropologist David Graeber and archaeologist David Wengrow published <em>The Dawn of Everything: A New History of Humanity</em>. It was an immediate sensation. The argument was simple and explosive: for most of human history, people regularly and deliberately chose between radically different ways of organising themselves. Societies were not locked into fixed evolutionary stages. They experimented, argued, and walked away from hierarchies that did not suit them.</p>
 
-    <div class="pullquote">
+    <p>Freedom and political self-determination, Graeber and Wengrow argued, were not modern inventions. They were ancient human capacities that many of our ancestors exercised quite consciously. Çatalhöyük, a 9,000-year-old settlement in Anatolia, shows no evidence of rulers or hierarchy. The Icelandic Commonwealth ran itself for three centuries without a king or state. The Iroquois Confederacy developed a system of collective governance that influenced Enlightenment political thought.</p>
+
+    <div class="pq">
       <p>"The ultimate, hidden truth of the world is that it is something we make, and could just as easily make differently."</p>
       <cite>Graeber &amp; Wengrow, The Dawn of Everything (2021)</cite>
     </div>
 
-    <p>The book was thrilling to read and genuinely important. But it raised an immediate empirical question: if societies really did have this capacity for self-determination — for disobedience, for political exit, for replacing their rulers — can we actually measure whether they used it? Can we compare Athens in 450 BCE with the Tang Dynasty in 700 CE, or the Tokugawa Shogunate with modern Norway, and say something rigorous about how free people actually were to push back against power?</p>
+    <p>The book is thrilling to read and genuinely important. It also raises an immediate empirical question: if societies really did have this capacity for self-determination, can we actually measure whether they used it? Can we compare Athens in 450 BCE with the Tang Dynasty in 700 CE, or the Tokugawa Shogunate with modern Norway, and say something rigorous about how free people were to push back against power?</p>
 
-    <p>Graeber and Wengrow worked primarily with deep historical and archaeological evidence — fascinating, but by its nature fragmentary and qualitative. What would happen if you took their core ideas seriously and tried to turn them into numbers?</p>
+    <p>Graeber and Wengrow worked primarily with deep historical and archaeological evidence. What would happen if you took their core ideas seriously and tried to turn them into numbers?</p>
 
     <p>That question is what the isonomia project set out to answer.</p>
 
     <h3>Why "isonomia"?</h3>
-    <p><em>Isonomia</em> (ἰσονομία) is an ancient Greek term meaning equality before the law — the equal right of citizens to participate in governance and to hold power accountable. The Athenians used it to describe the political conditions that made democracy possible. It is older than the word <em>demokratia</em> itself, and captures something more fundamental: not just that people vote, but that they have the practical freedom to refuse, resist, and replace those who govern them. That is the phenomenon this project measures.</p>
+    <p><em>Isonomia</em> (ἰσονομία) is an ancient Greek term meaning equality before the law: the equal right of citizens to participate in governance and to hold power accountable. The Athenians used it to describe the political conditions that made democracy possible. It is older than the word <em>demokratia</em> itself, and captures something more fundamental than voting rights. It describes the practical freedom to refuse, resist, and replace those who govern you. That is the phenomenon this project measures.</p>
   </div>
 </section>
 
-<!-- ── 2. Framework ──────────────────────────────────────────────────── -->
+<!-- 2. Framework -->
 <section id="framework">
   <div class="measure centre reveal">
-    <p class="section-eyebrow">The framework</p>
+    <p class="eyebrow">The framework</p>
     <h2>Six numbers to describe a governance system</h2>
 
-    <p>The first challenge was conceptual: what, exactly, do you measure? Political freedom is not a single thing. A society can have free elections but a secret police. It can permit vigorous public debate but make it physically impossible to leave. The Roman Republic held elections for centuries while progressively stripping those elections of any genuine power.</p>
+    <p>The first challenge was conceptual: what exactly do you measure? Political freedom is not a single thing. A society can have free elections but a secret police. It can permit vigorous public debate whilst making it physically impossible to leave. The Roman Republic held elections for centuries whilst progressively stripping those elections of any genuine power.</p>
 
     <p>The isonomia framework addresses this by decomposing political freedom into six distinct dimensions, each coded independently on a scale from 0 to 1 for every governance system in the dataset.</p>
 
-    <div class="finding-grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%,210px),1fr));">
-      <div class="finding-block">
-        <div class="stat">S</div>
-        <p><strong>Sovereignty index.</strong> How much concentrated coercive power does the ruling apparatus hold? High S = hard to resist.</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">A</div>
-        <p><strong>Administrative capacity.</strong> How deeply does the state penetrate daily life — through census, taxation, education, surveillance?</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">P</div>
-        <p><strong>Political competition.</strong> How genuinely contested is access to power? Can outsiders realistically challenge incumbents?</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">E</div>
-        <p><strong>Exit freedom.</strong> Can people physically leave, relocate, or withdraw from the system without catastrophic cost?</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">D</div>
-        <p><strong>Disobedience freedom.</strong> Can people refuse compliance, protest, or organise opposition without immediate severe punishment?</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">R</div>
-        <p><strong>Replacement freedom.</strong> Can the governed actually remove and replace their rulers through legitimate means?</p>
-      </div>
+    <div class="fgrid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr))">
+      <div class="fblock"><div class="fnum">S</div><p><strong>Sovereignty index.</strong> How much concentrated coercive power does the ruling apparatus hold? High S means hard to resist.</p></div>
+      <div class="fblock"><div class="fnum">A</div><p><strong>Administrative capacity.</strong> How deeply does the state penetrate daily life through census, taxation, education, and surveillance?</p></div>
+      <div class="fblock"><div class="fnum">P</div><p><strong>Political competition.</strong> How genuinely contested is access to power? Can outsiders realistically challenge incumbents?</p></div>
+      <div class="fblock"><div class="fnum">E</div><p><strong>Exit freedom.</strong> Can people physically leave or withdraw from the system without catastrophic cost?</p></div>
+      <div class="fblock"><div class="fnum">D</div><p><strong>Disobedience freedom.</strong> Can people refuse compliance, protest, or organise opposition without immediate severe punishment?</p></div>
+      <div class="fblock"><div class="fnum">R</div><p><strong>Replacement freedom.</strong> Can the governed actually remove and replace their rulers through legitimate means?</p></div>
     </div>
 
-    <p style="margin-top:2rem;">Of these six, <strong>D — disobedience freedom</strong> is the pivotal dimension. It is the closest modern analogue to Graeber and Wengrow's concept of societies that retained the capacity to say no. A society with high D has not just formal rights of protest but practical ones: the space to dissent without being disappeared, fired, impoverished, or killed.</p>
+    <p style="margin-top:2rem">Of these six, <strong>D (disobedience freedom)</strong> is the pivotal dimension. It is the closest analogue to Graeber and Wengrow's concept of societies that retained the practical capacity to say no. A society with high D has not just formal rights of protest but real ones: the space to dissent without being disappeared, fired, impoverished, or killed.</p>
 
-    <h3>Extending Graeber and Wengrow's model</h3>
-    <p>Graeber and Wengrow were primarily interested in showing that alternatives existed — that early societies were not trapped in a linear evolutionary progression from bands to chiefdoms to states. The isonomia project takes their insight further in three ways.</p>
+    <h3>Building on Graeber and Wengrow</h3>
+    <p>Graeber and Wengrow were primarily interested in showing that alternatives existed and that early societies were not trapped in a linear evolutionary progression. The isonomia project takes their insight further in three ways.</p>
+    <p>First, it asks not just whether societies had political freedom, but how much, and whether that quantity can be tracked across time. Second, it asks what happens when freedom is lost: what triggers the suppression of D, and can it be reversed? Third, it tests these questions against 2,600 years of evidence from 401 governance systems across every inhabited continent, validated against six independent modern political-science datasets.</p>
 
-    <p>First, it asks not just <em>whether</em> societies had political freedom, but <em>how much</em> — and whether that quantity can be tracked across time. Second, it asks what happens when freedom is lost: what triggers the suppression of D, and is it reversible? Third, it tests these questions against 2,600 years of evidence from 401 governance systems across every inhabited continent, validated against six independent modern political-science datasets.</p>
-
-    <div class="pullquote">
-      <p>The framework does not assume that freedom follows a single historical arc. It assumes precisely the opposite: that political freedom is unstable, contested, and can be won or lost at any point in history — exactly as Graeber and Wengrow argued.</p>
+    <div class="pq">
+      <p>The framework does not assume that freedom follows a single historical arc. It assumes precisely the opposite: that political freedom is unstable, contested, and can be won or lost at any point in history, exactly as Graeber and Wengrow argued.</p>
     </div>
 
-    <h3>How does the coding work?</h3>
-    <p>Each governance system is assigned values for S, A, P, E, D, and R based on systematic reading of the historical and archaeological record. The coding draws on primary sources, existing political science datasets (including V-Dem, Polity5, the World Justice Project Rule of Law Index, and the Seshat global history database), and specialist historiography for each civilisation. The dataset is publicly available on GitHub; every coding decision is documented and auditable.</p>
-
-    <p>The resulting framework has been cross-validated against six external modern datasets. The correlations range from r = 0.60 (Seshat, using the oldest and most indirect evidence) to r = 0.92 (Freedom in the World). For a measure that spans Bronze Age city-states and contemporary welfare democracies, this is a remarkably strong set of validations.</p>
+    <p>The dataset has been cross-validated against six external benchmarks. Correlations range from r = 0.60 (Seshat, using the oldest and most indirect evidence) to r = 0.92 (Freedom in the World). For a measure spanning Bronze Age city-states and contemporary welfare democracies, that is a remarkably strong set of validations.</p>
   </div>
 </section>
 
-<!-- ── 3. The Phase Space ─────────────────────────────────────────────── -->
-<section id="phasespace-section">
+<!-- 3. Phase Space Explorer -->
+<section id="explorer">
   <div class="wide centre">
     <div class="measure reveal">
-      <p class="section-eyebrow">The key insight</p>
-      <h2>A map of political possibility</h2>
-      <p>Plot any governance system's sovereignty (S) against its disobedience freedom (D) and something striking appears. Most systems don't scatter randomly across the space — they cluster. And they cluster in ways that reveal the fundamental tension at the heart of governance: the more power a ruling apparatus concentrates, the harder it becomes for citizens to say no.</p>
-      <p>But the relationship is not deterministic. Some systems sustain high D despite high S. Others lose their freedoms rapidly once they cross a critical threshold. The chart below, generated from the full 401-system dataset, shows the phase space — hover over any point to explore.</p>
+      <p class="eyebrow">Interactive explorer</p>
+      <h2>401 societies in political possibility space</h2>
+      <p>Plot any governance system's sovereignty (S) against its disobedience freedom (D) and something striking appears. Most systems do not scatter randomly across the space. They cluster in ways that reveal the fundamental tension at the heart of governance: the more power a ruling apparatus concentrates, the harder it becomes for citizens to say no.</p>
+      <p>The chart below is built from the full dataset. Every point is a real governance system. Hover or tap for its name and values. Use the filters to highlight regions or the Graeber-Wengrow systems they discussed in <em>The Dawn of Everything</em>.</p>
     </div>
 
-    <div id="phasespace-wrap" class="reveal" style="margin-top:2rem;">
-      <h4>Governance phase space: Sovereignty (S) vs Disobedience Freedom (D)</h4>
-      <p class="sub">Each point is one governance system. Colour indicates trajectory type. Dashed line at D = 0.45 marks the critical threshold below which lock-in typically becomes self-sustaining.</p>
-      <svg id="phasespace" viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scatter plot of 401 governance systems in sovereignty vs disobedience freedom space"></svg>
+    <div class="chart-box reveal">
+      <h4>Phase space: Sovereignty (S) vs Disobedience Freedom (D)</h4>
+      <p class="sub">Dashed line at D = 0.45 marks the critical lock-in threshold. Points above the line retain structural potential for resistance; below it, recovery becomes much harder.</p>
+      <div class="filters" id="region-filters">
+        <button class="fbtn active" data-region="all">All regions</button>
+        <button class="fbtn" data-region="Europe">Europe</button>
+        <button class="fbtn" data-region="East Asia">East Asia</button>
+        <button class="fbtn" data-region="Middle East">Middle East</button>
+        <button class="fbtn" data-region="Africa">Africa</button>
+        <button class="fbtn" data-region="Americas">Americas</button>
+        <button class="fbtn" data-region="South Asia">South Asia</button>
+        <button class="fbtn" data-region="gw">Graeber &amp; Wengrow systems</button>
+      </div>
+      <svg id="phase-svg" viewBox="0 0 800 400" style="height:420px"></svg>
     </div>
 
-    <div class="measure reveal" style="margin-top:2rem;">
-      <p>The horizontal dashed line at D = 0.45 is not arbitrary. Statistical analysis of the full dataset reveals it as a critical transition point: once a governance system's disobedience freedom falls below this threshold, the probability of recovery drops sharply. Systems above the line have a 6.46× higher odds ratio for avoiding full lock-in. The line separates the territory of political possibility from the territory of autocratic consolidation.</p>
+    <div class="measure reveal" style="margin-top:1.5rem">
+      <p>The horizontal dashed line at D = 0.45 is not arbitrary. Statistical analysis of the full dataset reveals it as a critical transition: once a governance system's disobedience freedom falls below this threshold, the probability of recovery drops sharply. Systems above the line have a 6.46 times higher odds ratio for avoiding full lock-in. The line separates the territory of political possibility from the territory of autocratic consolidation.</p>
       <p>This is a quantitative version of something Graeber and Wengrow described qualitatively: there is a point of no return beyond which societies lose the practical capacity to change course.</p>
     </div>
   </div>
 </section>
 
-<!-- ── 4. The Lock-In Sequence ───────────────────────────────────────── -->
-<section id="lockin">
-  <div class="measure centre reveal">
-    <p class="section-eyebrow">The mechanism</p>
-    <h2>How freedom is lost: the lock-in sequence</h2>
-
-    <p>The single most important finding of the isonomia project is that the suppression of political freedom is not random. It follows a reproducible sequence — so reproducible that it appears across systems separated by thousands of years and tens of thousands of kilometres.</p>
-
-    <div class="equation">
-      L → I → A → E↓ → D↓ → R↓
+<!-- 4. D-Trajectory explorer -->
+<section id="trajectories">
+  <div class="wide centre">
+    <div class="measure reveal">
+      <p class="eyebrow">Interactive explorer</p>
+      <h2>How freedom changes over time</h2>
+      <p>For 30 governance systems in the dataset, there is enough historical evidence to track D not just as a single value but as a series of measurements across centuries. The result is a set of trajectories that reveal very different stories about how political freedom is won, lost, and occasionally recovered.</p>
+      <p>Select any system below to see its trajectory. The dashed line marks the critical threshold at D = 0.45.</p>
     </div>
 
-    <p>Reading this left to right: surplus resources (L) fund the construction of administrative apparatus (I → A). Once that apparatus is sufficiently developed, it begins to constrain the freedom to leave (E↓). As exit becomes harder, the freedom to disobey (D↓) follows, and finally the ability to replace rulers altogether (R↓) is foreclosed.</p>
+    <div class="chart-box reveal">
+      <h4>D-trajectory explorer</h4>
+      <p class="sub">D (disobedience freedom) over time for the selected governance system</p>
+      <select id="traj-select"></select>
+      <div id="traj-info" style="margin:.6rem 0 .8rem;font-size:.8rem;color:var(--slate-lt);min-height:1.2rem"></div>
+      <svg id="traj-svg" viewBox="0 0 800 320" style="height:320px"></svg>
+    </div>
 
-    <p>This is the lock-in sequence — and it maps remarkably well onto the history of state formation across the ancient world. The Mauryan Empire, the Tang Dynasty, the Roman Republic's transformation into the Principate, the Ottoman Empire under the Hamidian autocracy: all follow recognisable variants of this pattern.</p>
+    <div class="measure reveal" style="margin-top:1.5rem">
+      <p>The trajectories show patterns that are impossible to see in a single-point measurement. The Roman Republic's 473-year gradual decline from D = 0.70 to 0.35. The Soviet Union's plunge to near zero under Stalin, partial recovery, and then rapid expansion during glasnost. The British Parliamentary System's slow but consistent rise from 0.55 at the Glorious Revolution to 0.85 by the late twentieth century.</p>
+      <p>The full figure from the research paper, showing all 30 trajectories simultaneously, is below.</p>
+    </div>
+
+    <div class="fig-wrap reveal">
+      <img src="hegemonic_drift.png" alt="Four-panel figure showing D-trajectories across 30 governance systems, hegemony index by mechanism, D change vs sovereignty scatter, and case study trajectories">
+      <div class="fig-cap">
+        <strong>Figure 1.</strong> Hegemonic drift analysis across 30 governance systems.
+        <strong>Panel A:</strong> D-trajectories coloured by mechanism; dashed line at θ = 0.45.
+        <strong>Panel B:</strong> Hegemony index (|ΔD|/S) by mechanism type.
+        <strong>Panel C:</strong> Absolute D change vs sovereignty index; ▼ = falling D, ▲ = rising D.
+        <strong>Panel D:</strong> Five case-study systems with key historical events annotated.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Lock-in -->
+<section id="lockin">
+  <div class="measure centre reveal">
+    <p class="eyebrow">The mechanism</p>
+    <h2>How freedom is lost: the lock-in sequence</h2>
+
+    <p>The single most important finding of the isonomia project is that the suppression of political freedom is not random. It follows a reproducible sequence, so reproducible that it appears across systems separated by thousands of years and tens of thousands of kilometres.</p>
+
+    <div class="eq">L &rarr; I &rarr; A &rarr; E&darr; &rarr; D&darr; &rarr; R&darr;</div>
+
+    <p>Reading this left to right: surplus resources (L) fund the construction of administrative apparatus (I then A). Once that apparatus is sufficiently developed, it begins to constrain the freedom to leave (E). As exit becomes harder, the freedom to disobey (D) follows, and finally the ability to replace rulers altogether (R) is foreclosed.</p>
+
+    <p>This is the lock-in sequence, and it maps remarkably well onto the history of state formation across the ancient world. The Mauryan Empire, the Tang Dynasty, the Roman Republic's transformation into the Principate, the Ottoman Empire under the Hamidian autocracy: all follow recognisable variants of this pattern.</p>
 
     <h3>D₀ as a critical moderator</h3>
-    <p>Not all systems lock in equally. The key variable turns out to be the initial level of disobedience freedom — what the papers call D₀ — at the point when the lock-in process begins. Systems with high D₀ (starting above the θ = 0.45 threshold) show a 5× higher exit rate from the lock-in pathway. They have more room to organise, protest, and resist before the window closes.</p>
+    <p>Not all systems lock in equally. The key variable is the initial level of disobedience freedom, D₀, at the point when the lock-in process begins. Systems with high D₀ (starting above the θ = 0.45 threshold) show a 5 times higher exit rate from the lock-in pathway. They have more room to organise, protest, and resist before the window closes.</p>
 
-    <p>This is a deeply important result. It means that political freedom is not just an outcome but a structural resource. Societies that begin with high D₀ are substantially harder to lock in. This is precisely why authoritarian consolidations so often target civil society, press freedom, and the right to organise first — not because these things are immediately threatening, but because they represent the structural D₀ that makes resistance possible later.</p>
+    <p>This is a deeply important result. It means that political freedom is not just an outcome but a structural resource. Societies that begin with high D₀ are substantially harder to lock in. This is precisely why authoritarian consolidations so often target civil society, press freedom, and the right to organise first: not because these things are immediately threatening, but because they represent the structural D₀ that makes resistance possible later.</p>
 
-    <div class="pullquote">
+    <div class="pq">
       <p>Societies that begin with high disobedience freedom are substantially harder to lock in. Authoritarian consolidations target civil society first because high D₀ is the structural resource that makes later resistance possible.</p>
     </div>
 
     <h3>The appointment attractor</h3>
-    <p>A related finding — discovered through an entirely separate model (a continuous-time Markov chain applied to succession mechanisms) — shows what happens to leadership replacement as lock-in progresses. As administrative capacity (A) rises and political competition (P) falls, governance systems converge on an appointment attractor: a stable state in which power is transferred by the incumbent to a chosen successor, rather than through any competitive or popular mechanism. The equilibrium probability of this appointment state reaches π = 0.595 in high-L systems — more than half of all potential stable states are appointment-based once resource surplus becomes large enough.</p>
+    <p>A related finding from an entirely separate model (a continuous-time Markov chain applied to succession mechanisms) shows what happens to leadership replacement as lock-in progresses. As administrative capacity (A) rises and political competition (P) falls, governance systems converge on an appointment attractor: a stable state in which power is transferred by the incumbent to a chosen successor, rather than through any competitive or popular mechanism. The equilibrium probability of this appointment state reaches π = 0.595 in high-surplus systems.</p>
 
     <p>This is not a prediction about any particular ideology or period. It has appeared in Bronze Age palaces, mediaeval courts, twentieth-century single-party states, and contemporary hybrid regimes. The mechanism is structural, not cultural.</p>
   </div>
 </section>
 
-<!-- ── 5. Hegemony ────────────────────────────────────────────────────── -->
+<!-- 6. Hegemony -->
 <section id="hegemony">
   <div class="measure centre reveal">
-    <p class="section-eyebrow">How suppression works</p>
+    <p class="eyebrow">How suppression works</p>
     <h2>Not all lock-ins are the same</h2>
 
-    <p>A key refinement of the basic lock-in model came from asking a more granular question: when D falls, how does it fall? Blunt coercion — secret police, imprisonment, physical violence — is one answer. But it is not the most durable one. The most enduring suppression of political freedom does not need continuous force. It works by making the idea of resistance culturally unavailable.</p>
+    <p>A key refinement of the basic lock-in model came from asking a more granular question: when D falls, how does it fall? Blunt coercion, through secret police, imprisonment, and physical violence, is one answer, but it is not the most durable one. The most enduring suppression of political freedom does not need continuous force. It works by making the idea of resistance culturally unavailable.</p>
 
-    <p>This is what the Italian Marxist Antonio Gramsci called hegemony: the ruling class does not merely compel compliance, it manufactures consent. Subjects internalise the worldview of those who govern them so thoroughly that alternatives become literally inconceivable. Michel Foucault described a related mechanism in his analysis of disciplinary societies: when populations are organised under sufficiently comprehensive surveillance, they police themselves. Obedience does not require a guard at every door because the awareness of potential observation is enough.</p>
+    <p>This is what the Italian theorist Antonio Gramsci called hegemony: the ruling class does not merely compel compliance, it manufactures consent. Subjects internalise the worldview of those who govern them so thoroughly that alternatives become literally inconceivable. Michel Foucault described a related mechanism in his analysis of disciplinary societies: when populations are organised under sufficiently comprehensive surveillance, they police themselves. Obedience does not require a guard at every door because the awareness of potential observation is enough.</p>
 
     <h3>Four mechanisms, one outcome</h3>
-    <p>The fifth paper in the isonomia series tested these ideas systematically across 30 governance systems for which detailed time-series data are available. It found four empirically distinguishable mechanisms by which D declines or recovers.</p>
+    <p>Paper 5 of the isonomia series tested these ideas systematically across 30 governance systems. It found four empirically distinguishable mechanisms by which D declines or recovers.</p>
 
-    <div class="card-grid">
-      <div class="paper-card" style="border-color:rgba(232,160,32,0.3);">
-        <h3 style="color:var(--amber); font-size:1rem; margin-top:0;">Hegemonic drift</h3>
-        <p>D declines gradually as educational institutions, legal systems, and cultural norms normalise compliance. The Abbasid Caliphate is the paradigm case: freedom continued to erode for three centuries <em>after</em> the coercive capacity that established it had collapsed. The hegemonic apparatus had become self-reproducing.</p>
-      </div>
-      <div class="paper-card" style="border-color:rgba(74,101,128,0.5);">
-        <h3 style="color:var(--slate-lt); font-size:1rem; margin-top:0;">Coercive maintenance</h3>
-        <p>D is kept low through the direct application of state force. These systems typically begin with low D₀ and stay there. Unlike hegemonic systems, remove the coercive apparatus and the suppression may lift — but it is exhausting and expensive to maintain.</p>
-      </div>
-      <div class="paper-card" style="border-color:rgba(111,207,151,0.3);">
-        <h3 style="color:#6fcf97; font-size:1rem; margin-top:0;">Counter-hegemony</h3>
-        <p>D rises through the deliberate construction of civic institutions — trade unions, free press, independent courts — that embed a culture of dissent across generations. All three rising-D systems in the dataset (Britain, Switzerland, Norway) have sovereignty indices below 0.20: the state must be too weak to crush these institutions while they are forming.</p>
-      </div>
-      <div class="paper-card" style="border-color:rgba(149,165,166,0.4);">
-        <h3 style="color:rgba(240,236,224,0.7); font-size:1rem; margin-top:0;">Joint collapse</h3>
-        <p>Both administrative capacity and disobedience freedom decline together under imperial overextension. The Ottoman Empire in its final century is the case study: as Tanzimat administrative modernisation failed and provincial control collapsed, the Hamidian autocracy intensified coercion to compensate — driving D down alongside A.</p>
-      </div>
+    <div class="mgrid">
+      <div class="mcard"><h3 style="color:var(--amber)">Hegemonic drift</h3><p>D declines gradually as educational institutions, legal systems, and cultural norms normalise compliance. The Abbasid Caliphate is the clearest case: freedom continued to erode for three centuries after the coercive capacity that established suppression had collapsed. The hegemonic apparatus had become self-reproducing.</p></div>
+      <div class="mcard"><h3 style="color:var(--slate-lt)">Coercive maintenance</h3><p>D is kept low through the direct application of state force. These systems typically begin with low D₀ and stay there. Remove the coercive apparatus and suppression may lift, but it is exhausting and expensive to maintain.</p></div>
+      <div class="mcard"><h3 style="color:#6fcf97">Counter-hegemony</h3><p>D rises through the deliberate construction of civic institutions (trade unions, free press, independent courts) that embed a culture of dissent across generations. All three rising-D systems in the dataset (Britain, Switzerland, Norway) have sovereignty indices below 0.20: the state must be too weak to crush these institutions whilst they are forming.</p></div>
+      <div class="mcard"><h3 style="color:rgba(240,236,224,.65)">Joint collapse</h3><p>Both administrative capacity and disobedience freedom decline together under imperial overextension. The Ottoman Empire in its final century is the case study: as Tanzimat administrative modernisation failed and provincial control collapsed, the Hamidian autocracy intensified coercion to compensate.</p></div>
     </div>
 
     <h3>The Tokugawa anomaly</h3>
-    <p>One case is particularly striking. The Tokugawa Shogunate in Japan (1603–1868) sits in the stable-low zone of the phase space: D remained suppressed throughout, with minimal change. But it was not maintained by active coercive deployment. Instead, it was produced by what Foucault would recognise as a panopticon — a system of mutual surveillance so comprehensive that disobedience was practically inconceivable. The mandatory residence system (<em>sankin-kōtai</em>), five-family mutual accountability groups (<em>goningumi</em>), temple registration, and hereditary status categories created a social architecture in which the state's presence did not need to be felt because it could always, in principle, be felt. The Shogunate inherited a population that had lived through 150 years of civil war and actively wanted order. It began at its equilibrium rather than drifting to it.</p>
+    <p>One case is particularly striking. The Tokugawa Shogunate in Japan (1603–1868) sits in the stable-low zone of the phase space: D remained suppressed throughout with minimal change, yet it was not maintained by active coercive deployment. Instead it was produced by what Foucault would recognise as a panopticon. The mandatory residence system (<em>sankin-kōtai</em>), five-family mutual accountability groups (<em>goningumi</em>), temple registration, and hereditary status categories created a social architecture in which the state's presence did not need to be felt because it could always, in principle, be felt. The Shogunate inherited a population that had lived through 150 years of civil war and actively wanted order. It began at its equilibrium rather than drifting to it.</p>
   </div>
 </section>
 
-<!-- ── 6. Key Findings ────────────────────────────────────────────────── -->
+<!-- 7. Key Findings -->
 <section id="findings">
   <div class="wide centre">
     <div class="measure reveal">
-      <p class="section-eyebrow">What we found</p>
+      <p class="eyebrow">What we found</p>
       <h2>The headline results</h2>
       <p>Across six papers and a dataset spanning 2,600 years, a coherent picture has emerged. These are the findings that have survived statistical testing most robustly.</p>
     </div>
-
-    <div class="finding-grid reveal" style="margin-top:2rem;">
-      <div class="finding-block">
-        <div class="stat">6.46×</div>
-        <p>Higher odds of avoiding lock-in for governance systems starting above the D = 0.45 threshold.</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">p = 0.014</div>
-        <p>Hegemonic systems begin with significantly higher D than coercive systems — confirming the distinction is real and measurable.</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">r = −0.326</div>
-        <p>Pooled correlation between administrative capacity expansion and disobedience freedom decline across 79 historical intervals in 9 systems.</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">π = 0.595</div>
-        <p>Equilibrium probability of appointment-based succession in high-surplus governance systems — the "appointment attractor."</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">S ≤ 0.20</div>
-        <p>Sovereignty threshold below which counter-hegemonic D recovery becomes possible. Above it, the state can always crush dissent while it is forming.</p>
-      </div>
-      <div class="finding-block">
-        <div class="stat">3 centuries</div>
-        <p>Duration for which Abbasid hegemonic suppression of D persisted after the coercive capacity that established it had fully collapsed.</p>
-      </div>
+    <div class="fgrid reveal">
+      <div class="fblock"><div class="fnum">6.46×</div><p>Higher odds of avoiding lock-in for governance systems starting above the D = 0.45 threshold.</p></div>
+      <div class="fblock"><div class="fnum">p = 0.014</div><p>Hegemonic systems begin with significantly higher D than coercive systems, confirming the distinction is real and measurable.</p></div>
+      <div class="fblock"><div class="fnum">r = −0.326</div><p>Pooled correlation between administrative capacity expansion and disobedience freedom decline across 79 historical intervals in 9 systems.</p></div>
+      <div class="fblock"><div class="fnum">π = 0.595</div><p>Equilibrium probability of appointment-based succession in high-surplus governance systems: the appointment attractor.</p></div>
+      <div class="fblock"><div class="fnum">S &le; 0.20</div><p>Sovereignty threshold below which counter-hegemonic D recovery becomes possible. Above it, the state can always crush dissent whilst it is forming.</p></div>
+      <div class="fblock"><div class="fnum">3 centuries</div><p>Duration for which Abbasid hegemonic suppression of D persisted after the coercive capacity that established it had fully collapsed.</p></div>
     </div>
-
-    <div class="measure reveal" style="margin-top:3rem;">
+    <div class="measure reveal" style="margin-top:3rem">
       <h3>What this means for today</h3>
-      <p>The isonomia findings are historical, but their implications are not limited to the past. The lock-in sequence has been observed in enough modern governance systems — including some that many observers would currently classify as democratic — to suggest that the structural mechanisms identified here are active in the present.</p>
-      <p>The D₀ result is particularly relevant. The evidence suggests that the most effective protection against autocratic consolidation is not the response to it — it is the prior existence of a high-D political culture, with the civic institutions, legal traditions, and cultures of organised dissent that sustain it. Dismantling those institutions, even incrementally, reduces the structural resource available for resistance later.</p>
-      <p>Similarly, the hegemonic inertia finding carries a sober implication: removing coercive apparatus may be insufficient to restore freedom in societies where the normalisation of compliance has become deeply embedded. The Abbasid case shows that even after the coercive apparatus is gone, D may continue to fall for centuries — because the educational, juridical, and cultural infrastructure of compliance has become self-reproducing.</p>
+      <p>The isonomia findings are historical, but their implications are not limited to the past. The lock-in sequence has been observed in enough modern governance systems to suggest that the structural mechanisms identified here are active in the present.</p>
+      <p>The D₀ result is particularly relevant. The evidence suggests that the most effective protection against autocratic consolidation is not the response to it. It is the prior existence of a high-D political culture, with the civic institutions, legal traditions, and cultures of organised dissent that sustain it. Dismantling those institutions, even incrementally, reduces the structural resource available for resistance later.</p>
+      <p>The hegemonic inertia finding carries a sober implication: removing a coercive apparatus may be insufficient to restore freedom in societies where the normalisation of compliance has become deeply embedded. The Abbasid case shows that even after coercive capacity is gone, D may continue falling for centuries because the educational, juridical, and cultural infrastructure of compliance has become self-reproducing.</p>
     </div>
   </div>
 </section>
 
-<!-- ── 7. The Figure ──────────────────────────────────────────────────── -->
-<section id="figure">
-  <div class="wide centre reveal">
-    <div class="measure" style="margin-bottom:1.5rem;">
-      <p class="section-eyebrow">The data visualised</p>
-      <h2>Thirty societies, 2,600 years, one picture</h2>
-      <p>The figure below is taken directly from the research. It shows D-trajectories — how disobedience freedom changed over time — for all 30 governance systems in the trajectory subsample, alongside the hegemony index for each mechanism type, the relationship between D change and coercive capacity, and five detailed case studies.</p>
-    </div>
-    <div class="fig-wrap">
-      <img src="hegemonic_drift.png" alt="Four-panel figure showing D-trajectories across 30 governance systems, hegemony index by mechanism, D change vs sovereignty scatter plot, and case study trajectories for Soviet, Roman, British, Athenian, and Norwegian systems">
-      <div class="fig-caption">
-        <strong>Figure 1.</strong> Hegemonic drift analysis: D-trajectory coding across 30 governance systems, distinguishing coercive suppression (high S) from hegemonic normalisation (high A, moderate S). <strong>Panel A:</strong> D-trajectories across all 30 systems, coloured by hegemonic mechanism; dashed line at θ = 0.45. <strong>Panel B:</strong> Hegemony index (|ΔD|/S) by mechanism. <strong>Panel C:</strong> Absolute D change vs sovereignty index; ▼ = falling D, ▲ = rising D. <strong>Panel D:</strong> Case studies for five post-500 BCE systems with key historical events annotated.
-      </div>
-    </div>
-    <div class="measure" style="margin-top:2rem;">
-      <p>The most striking feature of Panel A is what it shows about the three rising-D systems — Britain, Switzerland, and Norway — in the top-right of the post-1600 cluster. They are not just exceptions to the general downward trend. They are cases where the counter-hegemonic pathway worked: where civic institutions were built while sovereign capacity was still low enough not to crush them, and where those institutions became durable enough to sustain rising D over centuries.</p>
-      <p>Panel D tells the Soviet story with particular clarity. The plunge to near-zero D during the Stalin terror (1937), the partial recovery under de-Stalinisation, the second suppression under Brezhnev, and the rapid expansion during glasnost and demokratizatsiya — all in 74 years, all measurable and comparable with the Roman Republic's 473-year decline or the Abbasid Caliphate's 550-year trajectory.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── 8. Papers ──────────────────────────────────────────────────────── -->
+<!-- 8. Papers -->
 <section id="papers">
   <div class="wide centre">
     <div class="measure reveal">
-      <p class="section-eyebrow">The research</p>
+      <p class="eyebrow">The research</p>
       <h2>Six papers, one framework</h2>
       <p>The isonomia project has produced six linked research papers. Each addresses a distinct question using the same underlying dataset and framework, building towards a unified computational theory of governance dynamics.</p>
     </div>
-
-    <div class="card-grid reveal">
-      <div class="paper-card">
-        <span class="pill pill-submitted">Under review</span>
-        <h3>Paper 1 — The SAP-EDR Framework</h3>
-        <p>Establishes the governance coding scheme, validates it against six external datasets, and maps 401 governance systems in a six-dimensional phase space. The foundational paper for the entire series.</p>
-        <p class="journal">Journal of World-Systems Research (submitted May 2026)</p>
-      </div>
-      <div class="paper-card">
-        <span class="pill pill-draft">Draft complete</span>
-        <h3>Paper 2 — The Lock-In Sequence</h3>
-        <p>Documents the L→I→A→E↓→D↓→R↓ sequence and establishes D₀ as the critical moderator. Finds an odds ratio of 6.46 for avoiding lock-in in high-D₀ systems, with a 5× higher exit rate.</p>
-        <p class="journal">Target journal: TBC</p>
-      </div>
-      <div class="paper-card">
-        <span class="pill pill-draft">Draft complete</span>
-        <h3>Paper 3 — The Succession CTMC</h3>
-        <p>Applies continuous-time Markov chain modelling to leadership succession mechanisms. Documents the appointment attractor (π = 0.595) and the consensus founding-state finding.</p>
-        <p class="journal">Target journal: TBC</p>
-      </div>
-      <div class="paper-card">
-        <span class="pill pill-draft">Draft complete</span>
-        <h3>Paper 4 — Schismogenesis ABM</h3>
-        <p>Agent-based model of Bateson's schismogenesis concept. Reproduces the degree-4 sign reversal in governance-network dynamics and confirms three Graeber-Wengrow case studies.</p>
-        <p class="journal">Target journal: TBC</p>
-      </div>
-      <div class="paper-card">
-        <span class="pill pill-submitted">Under review</span>
-        <h3>Cliodynamics — Integrated Synthesis</h3>
-        <p>Integrates the findings of Papers 1–4 into a unified synthesis. Submitted as a standalone contribution to the cliodynamics literature, with six embedded figures.</p>
-        <p class="journal">Cliodynamics (submitted 2026)</p>
-      </div>
-      <div class="paper-card">
-        <span class="pill pill-progress">Ready to submit</span>
-        <h3>Paper 5 — Hegemonic Drift</h3>
-        <p>Disaggregates D-suppression into four mechanisms (hegemonic drift, coercive maintenance, counter-hegemony, joint collapse). Proposes the sign of r(ΔA,ΔD) as a non-circular mechanism classifier.</p>
-        <p class="journal">Social Evolution &amp; History (in preparation)</p>
-      </div>
+    <div class="pgrid reveal">
+      <div class="pcard"><span class="pill ps">Under review</span><h3>Paper 1: The SAP-EDR Framework</h3><p>Establishes the governance coding scheme, validates it against six external datasets, and maps 401 governance systems in six-dimensional phase space.</p><p class="jnl">Journal of World-Systems Research (submitted May 2026)</p></div>
+      <div class="pcard"><span class="pill pd">Draft complete</span><h3>Paper 2: The Lock-In Sequence</h3><p>Documents the L→I→A→E↓→D↓→R↓ sequence and establishes D₀ as the critical moderator. Odds ratio of 6.46 for avoiding lock-in in high-D₀ systems.</p><p class="jnl">Target journal: TBC</p></div>
+      <div class="pcard"><span class="pill pd">Draft complete</span><h3>Paper 3: The Succession CTMC</h3><p>Applies continuous-time Markov chain modelling to leadership succession. Documents the appointment attractor (π = 0.595) and the consensus founding-state finding.</p><p class="jnl">Target journal: TBC</p></div>
+      <div class="pcard"><span class="pill pd">Draft complete</span><h3>Paper 4: Schismogenesis ABM</h3><p>Agent-based model of Bateson's schismogenesis concept applied to governance networks. Reproduces the degree-4 sign reversal and confirms three Graeber-Wengrow case studies.</p><p class="jnl">Target journal: TBC</p></div>
+      <div class="pcard"><span class="pill ps">Under review</span><h3>Cliodynamics: Integrated Synthesis</h3><p>Integrates the findings of Papers 1–4 into a unified synthesis, submitted as a standalone contribution to the cliodynamics literature.</p><p class="jnl">Cliodynamics (submitted 2026)</p></div>
+      <div class="pcard"><span class="pill ps">Under review</span><h3>Paper 5: Hegemonic Drift</h3><p>Disaggregates D-suppression into four mechanisms. Proposes the sign of r(ΔA,ΔD) as a non-circular mechanism classifier. Thirty systems, 2,600 years of trajectory data.</p><p class="jnl">Social Evolution &amp; History (submitted June 2026)</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── 9. Timeline ────────────────────────────────────────────────────── -->
+<!-- 9. Timeline -->
 <section id="timeline">
   <div class="measure centre reveal">
-    <p class="section-eyebrow">The journey</p>
+    <p class="eyebrow">The journey</p>
     <h2>How the project developed</h2>
-
-    <ul class="timeline">
-      <li>
-        <p class="tl-date">Starting point</p>
-        <h4>Graeber &amp; Wengrow's challenge</h4>
-        <p><em>The Dawn of Everything</em> proposes that human societies have always had the capacity for radical political self-determination. The isonomia project asks: can this be formalised and tested?</p>
-      </li>
-      <li>
-        <p class="tl-date">Foundation</p>
-        <h4>The SAP-EDR coding framework</h4>
-        <p>401 governance systems coded across six dimensions (S, A, P, E, D, R). Cross-validated against V-Dem, Polity5, WJP, Freedom in the World, CCP, and Seshat. Correlations range from r = 0.60 to r = 0.92.</p>
-      </li>
-      <li>
-        <p class="tl-date">Core finding</p>
-        <h4>The lock-in sequence discovered</h4>
-        <p>The L→I→A→E↓→D↓→R↓ sequence documented. D₀ identified as the pivotal moderator. The θ = 0.45 critical threshold established. The appointment attractor modelled via CTMC.</p>
-      </li>
-      <li>
-        <p class="tl-date">Deepening</p>
-        <h4>Schismogenesis and network dynamics</h4>
-        <p>Bateson's schismogenesis applied to governance networks via agent-based modelling. The degree-4 sign reversal reproduced. Three Graeber-Wengrow case studies confirmed computationally.</p>
-      </li>
-      <li>
-        <p class="tl-date">Refinement</p>
-        <h4>Disaggregating D-suppression</h4>
-        <p>The mechanism question: not just whether D falls, but how. Four pathways identified. The Gramsci-Foucault-Bateson synthesis operationalised. The r(ΔA,ΔD) sign classifier proposed.</p>
-      </li>
-      <li>
-        <p class="tl-date">Next steps</p>
-        <h4>Hegemonic drift analysis (Paper 5)</h4>
-        <p>Thirty governance systems, 2,600 years of D-trajectory data, nine systems with matched A-trajectories. Submitted to <em>Social Evolution &amp; History</em>.</p>
-      </li>
+    <ul class="tl">
+      <li><p class="dt">Starting point</p><h4>Graeber &amp; Wengrow's challenge</h4><p><em>The Dawn of Everything</em> proposes that human societies have always had the capacity for radical political self-determination. The isonomia project asks: can this be formalised and tested?</p></li>
+      <li><p class="dt">Foundation</p><h4>The SAP-EDR coding framework</h4><p>401 governance systems coded across six dimensions (S, A, P, E, D, R). Cross-validated against V-Dem, Polity5, WJP, Freedom in the World, CCP, and Seshat. Correlations from r = 0.60 to r = 0.92.</p></li>
+      <li><p class="dt">Core finding</p><h4>The lock-in sequence</h4><p>The L→I→A→E↓→D↓→R↓ sequence documented. D₀ identified as the pivotal moderator. The θ = 0.45 critical threshold established. The appointment attractor modelled via CTMC.</p></li>
+      <li><p class="dt">Deepening</p><h4>Schismogenesis and network dynamics</h4><p>Bateson's schismogenesis applied to governance networks via agent-based modelling. The degree-4 sign reversal reproduced. Three Graeber-Wengrow case studies confirmed computationally.</p></li>
+      <li><p class="dt">Refinement</p><h4>Disaggregating D-suppression</h4><p>Not just whether D falls, but how. Four pathways identified. The Gramsci-Foucault-Bateson synthesis operationalised. The r(ΔA,ΔD) sign classifier proposed.</p></li>
+      <li><p class="dt">June 2026</p><h4>Paper 5 submitted</h4><p>Hegemonic drift analysis across 30 systems. Submitted to <em>Social Evolution &amp; History</em>.</p></li>
     </ul>
   </div>
 </section>
 
-<!-- ── 10. Data & Code ────────────────────────────────────────────────── -->
+<!-- 10. Data -->
 <section id="data">
   <div class="measure centre reveal">
-    <p class="section-eyebrow">Open research</p>
+    <p class="eyebrow">Open research</p>
     <h2>The data and code are open</h2>
-
-    <p>All data, analysis scripts, and coding documentation are publicly available in the isonomia GitHub repository. The project is committed to full reproducibility: every statistical result reported in the papers can be replicated from the source data using the provided scripts.</p>
-
+    <p>All data, analysis scripts, and coding documentation are publicly available in the GitHub repository. Every statistical result reported in the papers can be replicated from the source data using the provided scripts.</p>
     <p>The dataset includes:</p>
-    <ul style="margin: 1rem 0 1.5rem 1.5rem; color:rgba(240,236,224,0.85); line-height:2;">
-      <li><strong>governance_extended.csv</strong> — the full 401-system dataset with all six primary dimensions plus extended trajectory fields</li>
-      <li><strong>d_trajectory_parsed.csv</strong> — time-series D codings for 30 systems with trajectory data</li>
-      <li><strong>hegemony_index.csv</strong> — computed hegemony indices and trajectory classifications for the 30-system subsample</li>
-      <li><strong>hegemonic_drift.py</strong> — the analysis script for Paper 5, producing all reported statistical results</li>
+    <ul style="margin:1rem 0 1.5rem 1.5rem;color:rgba(240,236,224,.85);line-height:2">
+      <li><strong>governance_extended.csv</strong>: the full 401-system dataset with all six primary dimensions plus trajectory fields</li>
+      <li><strong>d_trajectory_parsed.csv</strong>: time-series D codings for 30 systems</li>
+      <li><strong>hegemony_index.csv</strong>: computed hegemony indices and trajectory classifications</li>
+      <li><strong>hegemonic_drift.py</strong>: the Paper 5 analysis script, producing all reported statistical results</li>
     </ul>
-
-    <p>The repository also contains draft manuscripts for Papers 2–5 and the submitted versions of Papers 1 and the Cliodynamics synthesis.</p>
-
-    <div style="margin-top:2rem;">
-      <a href="https://github.com/its-not-rocket-science/isonomia" class="btn btn-primary" target="_blank" rel="noopener">Explore the repository</a>
-    </div>
+    <a href="https://github.com/its-not-rocket-science/isonomia" class="btn btn-p" target="_blank" rel="noopener">Explore the repository</a>
   </div>
 </section>
 
-<!-- ── Footer ────────────────────────────────────────────────────────── -->
+<!-- Footer -->
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="wordmark">isonomia</div>
-      <p>Computational governance research.<br>
-      Building on Graeber &amp; Wengrow's <em>The Dawn of Everything</em>.</p>
-    </div>
-    <div>
-      <p><a href="https://github.com/its-not-rocket-science/isonomia" target="_blank" rel="noopener">GitHub repository</a><br>
-      MIT Licence<br>
-      © 2026 Paul Schleifer</p>
-    </div>
+    <div><div class="wm">isonomia</div><p>Computational governance research.<br>Building on Graeber &amp; Wengrow's <em>The Dawn of Everything</em>.</p></div>
+    <div><p><a href="https://github.com/its-not-rocket-science/isonomia" target="_blank" rel="noopener">GitHub repository</a><br>MIT Licence<br>&copy; 2026 Paul Schleifer<br>ORCID: 0009-0004-7972-3566</p></div>
   </div>
 </footer>
 
-<!-- ── Scripts ───────────────────────────────────────────────────────── -->
+<!-- Data -->
 <script>
-// ── Intersection observer for reveal ─────────────────────────────────
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const IDATA={"phase":[{"n":"Neanderthal Megafauna Councils","S":0.1,"D":0.8,"r":"Other","gw":false},{"n":"Denisovan Cave Networks","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Natufian Grain Storage Pacts","S":0.25,"D":0.75,"r":"Middle East","gw":false},{"n":"Jomon Shellfish Consensus","S":0.2,"D":0.8,"r":"East Asia","gw":false},{"n":"Clovis Megafauna Quotas","S":0.4,"D":0.55,"r":"Other","gw":false},{"n":"San Xaro Networks","S":0.05,"D":0.95,"r":"Africa","gw":false},{"n":"Ainu Bear Ritual Governance","S":0.85,"D":0.1,"r":"East Asia","gw":false},{"n":"Indigenous IPLCs","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Yolngu Aboriginal Kinship","S":0.4,"D":0.5,"r":"Pacific","gw":false},{"n":"Fuegian Canoe Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Aboriginal Tjurunga Councils","S":0.4,"D":0.6,"r":"Pacific","gw":false},{"n":"Cucuteni-Trypillia Mega-Settlements","S":0.1,"D":0.85,"r":"Other","gw":false},{"n":"Nubian Qustul Sacral Kingship","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Sumerian Temple States","S":0.55,"D":0.3,"r":"Middle East","gw":false},{"n":"Indus Priest-Kings","S":0.65,"D":0.25,"r":"South Asia","gw":false},{"n":"Egyptian Nomarchies","S":0.6,"D":0.2,"r":"Africa","gw":false},{"n":"Xia Dynasty Hydraulic Rule","S":0.7,"D":0.0,"r":"East Asia","gw":false},{"n":"Minoan Thalassocracy","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Poverty Point Earthwork League","S":0.35,"D":0.75,"r":"Other","gw":false},{"n":"Hittite Panku Council","S":0.55,"D":0.45,"r":"Middle East","gw":false},{"n":"Hittite Sun Priest-Kings","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Mycenaean Wanax System","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Shang Dynasty Oracle Kings","S":0.75,"D":0.05,"r":"East Asia","gw":false},{"n":"Vedic Sabha Assemblies","S":0.2,"D":0.9,"r":"South Asia","gw":false},{"n":"Lapita Voyaging Networks","S":0.2,"D":0.8,"r":"Pacific","gw":false},{"n":"Olmec Were-Jaguar Cult","S":0.65,"D":0.25,"r":"Americas","gw":false},{"n":"Zhou Dynasty Mandate of Heaven","S":0.5,"D":0.35,"r":"East Asia","gw":false},{"n":"Hallstatt Salt Lords","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"Phoenician Merchant Oligarchies","S":0.4,"D":0.55,"r":"Middle East","gw":false},{"n":"Adena Moundbuilder Councils","S":0.65,"D":0.35,"r":"Other","gw":false},{"n":"Nok Terracotta Chiefdoms","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Andean Ayllu Systems","S":0.2,"D":0.75,"r":"Other","gw":false},{"n":"Assyrian Military Autocracy","S":0.95,"D":0.0,"r":"Middle East","gw":false},{"n":"Urartian Hydraulic Kings","S":0.9,"D":0.0,"r":"Other","gw":false},{"n":"Phrygian Matar Cult","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Etruscan Haruspex Diviners","S":0.85,"D":0.1,"r":"Europe","gw":false},{"n":"Sabaean Dam Council","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Kingdom of Kush","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Scythian Kurgan Diarchy","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Etruscan Lucumones","S":0.6,"D":0.4,"r":"Europe","gw":false},{"n":"Lydian Electrum Oligarchy","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Persian Satrapy System","S":0.75,"D":0.2,"r":"Middle East","gw":false},{"n":"Roman Republic","S":0.45,"D":0.5,"r":"Europe","gw":false},{"n":"Athenian Democracy","S":0.15,"D":0.85,"r":"Other","gw":false},{"n":"Celtic Druidic Synods","S":0.5,"D":0.35,"r":"Europe","gw":false},{"n":"Roman Collegia Guild Republics","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Bantu Mfecane Councils","S":0.4,"D":0.5,"r":"Africa","gw":false},{"n":"Proto-Norse Thing Assemblies","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Zapotec Glyph-Judge System","S":0.7,"D":0.0,"r":"Americas","gw":false},{"n":"Berber Amazigh Councils","S":0.2,"D":0.9,"r":"Africa","gw":false},{"n":"La T\u00e8ne Tribal Federations","S":0.35,"D":0.65,"r":"Other","gw":false},{"n":"Rhodes Naval Oligarchy","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Syracusan Mathematical Tyrants","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"Nabatean Water Merchants","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"Garamantian Foggaras","S":0.85,"D":0.0,"r":"Other","gw":false},{"n":"Theban Sacred Band Oligarchy","S":0.4,"D":0.55,"r":"Other","gw":false},{"n":"Qi Jixia Academy","S":0.4,"D":0.5,"r":"East Asia","gw":false},{"n":"Mauryan Arthashastra State","S":0.7,"D":0.0,"r":"South Asia","gw":false},{"n":"Yuezhi Nomad Diarchy","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Sarmatian Female Warbands","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"D'mt Beehive Councils","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Bactrian Greek Syncretism","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Qin Legalism","S":0.95,"D":0.0,"r":"East Asia","gw":false},{"n":"Han Dynasty Examination Prototype","S":0.7,"D":0.15,"r":"East Asia","gw":false},{"n":"Hopewell Copper Exchange","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Teotihuacan Theocratic Oligarchy","S":0.65,"D":0.25,"r":"Americas","gw":false},{"n":"Mogollon Pit-House Democracies","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Kushan Devaputra","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Silla Bone-Rank System","S":0.8,"D":0.0,"r":"East Asia","gw":false},{"n":"Moche Sacrificial Hydraulics","S":0.85,"D":0.0,"r":"Other","gw":false},{"n":"Moche Ceremonial Brewmasters","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Champa Linga-Kings","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Blemmyes Desert Assemblies","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Khotanese Buddhist Monarchy","S":0.4,"D":0.35,"r":"East Asia","gw":false},{"n":"Tairona Gold-Shaman Councils","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Mayan Ajaw System","S":0.7,"D":0.25,"r":"Americas","gw":false},{"n":"Pallava Guild Republics","S":0.5,"D":0.45,"r":"South Asia","gw":false},{"n":"Pictish Matrilineal Kings","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Gupta Golden Age","S":0.45,"D":0.3,"r":"South Asia","gw":false},{"n":"Ghana Empire Wagadu","S":0.65,"D":0.25,"r":"Africa","gw":false},{"n":"Marajoara Amazonian Queens","S":0.4,"D":0.35,"r":"Other","gw":false},{"n":"Visigothic Code Judges","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Sogdian Merchant-Republics","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Frisian Tribal Thing","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Sogdian Merchant Caravanserais","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Dalriada Gaelic Law Schools","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Sao Clay Wall Cities","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Irish Brehon Law","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Calusa Shell Mound Kingdom","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Chumash Tomol Canoe Guilds","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"S\u00e1mi Siida Councils","S":0.15,"D":0.9,"r":"Europe","gw":false},{"n":"G\u00f6kt\u00fcrk Orkhon Script Khans","S":0.75,"D":0.2,"r":"East Asia","gw":false},{"n":"Wari Tinku Labor System","S":0.8,"D":0.15,"r":"Other","gw":false},{"n":"Tang Dynasty Keju","S":0.85,"D":0.1,"r":"East Asia","gw":false},{"n":"Tang Fanzhen Clans","S":0.7,"D":0.0,"r":"East Asia","gw":false},{"n":"Khazar Jewish Khaganate","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Srivijayan Mandala","S":0.4,"D":0.35,"r":"Other","gw":false},{"n":"Byzantine Theme System","S":0.7,"D":0.2,"r":"Other","gw":false},{"n":"Venetian Republic","S":0.35,"D":0.6,"r":"Europe","gw":false},{"n":"Kanem Duguwa Nomad-Kings","S":0.85,"D":0.1,"r":"Other","gw":false},{"n":"Anasazi Kiva Water Councils","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Viking Law Speakers","S":0.25,"D":0.75,"r":"Europe","gw":false},{"n":"Welsh Cantrefi","S":0.15,"D":0.8,"r":"Other","gw":false},{"n":"Orkney Jarl Sea-Kingdoms","S":0.75,"D":0.3,"r":"Other","gw":false},{"n":"Chachapoya Cloud Forest Clans","S":0.25,"D":0.6,"r":"Other","gw":false},{"n":"Frisian Sea-Law Republics","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Frisian Moot Hall Democracy","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Taino Cacique Matrilineage","S":0.55,"D":0.25,"r":"Other","gw":false},{"n":"Holy Roman Imperial Diarchy","S":0.35,"D":0.5,"r":"Europe","gw":false},{"n":"Domari Blacksmith Networks","S":0.4,"D":0.35,"r":"Middle East","gw":false},{"n":"Khmer Devaraja","S":0.85,"D":0.1,"r":"Other","gw":false},{"n":"Ghana Empire","S":0.75,"D":0.05,"r":"Africa","gw":false},{"n":"Pagan Temple-State","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Chola Naval Assemblies","S":0.55,"D":0.55,"r":"South Asia","gw":false},{"n":"Toltec Warrior-Priest State","S":0.65,"D":0.1,"r":"Americas","gw":false},{"n":"Toltec Warrior-Poet State","S":0.65,"D":0.1,"r":"Americas","gw":false},{"n":"Pomeranian Veleti Tribal Republic","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Volga Bulgar Islamic Merchants","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Faroe Islands L\u00f8gting","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Icelandic Commonwealth","S":0.1,"D":0.8,"r":"Europe","gw":true},{"n":"Icelandic Althing","S":0.15,"D":0.8,"r":"Europe","gw":true},{"n":"Althingi Carbon-Neutral Parliament","S":0.2,"D":0.85,"r":"Europe","gw":false},{"n":"Nri Kingdom Pacifist Theocracy","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Manx Tynwald","S":0.25,"D":0.75,"r":"Other","gw":false},{"n":"Jomsviking Warrior Commune","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Greenland Norse Althing","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Gotlandic Sea-Farmer Althing","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Ruthenian Viche","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Swahili Waungwana Councils","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"Nan Madol Coral Kingdoms","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Timucua Waterborne Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Finnish Kalevala Singing Governors","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Sami Noaide Shamanic Bands","S":0.4,"D":0.5,"r":"Europe","gw":false},{"n":"Tahitian Arioi Cult Society","S":0.5,"D":0.35,"r":"Pacific","gw":false},{"n":"Siberian Yukaghir Moon Calendar","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Hawaiian Kapu System","S":0.85,"D":0.0,"r":"Pacific","gw":false},{"n":"Hawaiian Ahupua\u02bba System","S":0.4,"D":0.35,"r":"Pacific","gw":false},{"n":"Fijian Bati Warrior Guilds","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Saho-Irob Mountain Democracies","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Yoruba Ogboni Earth Justice","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Igbo Umunna Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Yupik Bladder Festival Rule","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Marshallese Stick Chart Navigators","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Samoan Matai Talking Chiefs","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Nenets Yamal Clan Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Xingu Tribal Aquatic Law","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Faroese Sheep Court","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Seljuk Iqta System","S":0.65,"D":0.25,"r":"Middle East","gw":false},{"n":"Almoravid Lamtuna Councils","S":0.65,"D":0.35,"r":"Other","gw":false},{"n":"Cahokia Birdman Dynasty","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Norman Feudal Domesday","S":0.75,"D":0.15,"r":"Other","gw":false},{"n":"Cuman Tribal Federations","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Great Zimbabwe Rain Priests","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Frisian Sea-Law Tribunals","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Kanem-Bornu Sufi Knights","S":0.8,"D":0.15,"r":"Other","gw":false},{"n":"Mossi Naam Militias","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Maldivian Furya Coral Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Pueblo Kiva Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Romani Kris Councils","S":0.35,"D":0.7,"r":"Europe","gw":false},{"n":"Venetian Arsenal Guilds","S":0.5,"D":0.45,"r":"Europe","gw":false},{"n":"Khmer Water Mandala","S":0.8,"D":0.1,"r":"Other","gw":false},{"n":"Novgorod Veche Republic","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Cathar Perfecti Councils","S":0.65,"D":0.25,"r":"Europe","gw":false},{"n":"Hanseatic Kontor","S":0.4,"D":0.6,"r":"Europe","gw":false},{"n":"Bavarian Beer Hall Communes","S":0.4,"D":0.5,"r":"Europe","gw":false},{"n":"Javanese Kabuyutan Councils","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Kven Arctic Trader Networks","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Rapa Iti T\u016btae Councils","S":0.4,"D":0.5,"r":"Pacific","gw":false},{"n":"Rapa Nui Tangata Manu Trials","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Rapa Nui Birdman Cult","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Benin Oba Eweka Dynasty","S":0.7,"D":0.0,"r":"Other","gw":false},{"n":"Benin Oba Divine Kingship","S":0.8,"D":0.1,"r":"Other","gw":false},{"n":"Evenk Tungus Clan Federations","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Alpine Pastoral Communes","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Maluku Sasi Harvest Bans","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Cornish Stannary","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Mongolian Kurultai","S":0.75,"D":0.25,"r":"East Asia","gw":true},{"n":"Delhi Sultanate Slave Kings","S":0.7,"D":0.15,"r":"South Asia","gw":false},{"n":"Magna Carta Baronage","S":0.5,"D":0.55,"r":"Other","gw":false},{"n":"Transylvanian Saxon Seats","S":0.4,"D":0.5,"r":"Europe","gw":false},{"n":"Teutonic Ordensstaat","S":0.75,"D":0.15,"r":"Other","gw":false},{"n":"Mali Mansa Rule","S":0.75,"D":0.05,"r":"Africa","gw":false},{"n":"Golden Horde Yam System","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Lithuanian Pagan Kings","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Rhenish City Leagues","S":0.35,"D":0.65,"r":"Europe","gw":false},{"n":"Genoese Black Sea Colonies","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Yuan Semu Caste System","S":0.65,"D":0.1,"r":"East Asia","gw":false},{"n":"Andorran Co-Principality","S":0.3,"D":0.7,"r":"Other","gw":false},{"n":"Majapahit Terracotta Bureaucracy","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Venetian Merchant Oligarchy","S":0.3,"D":0.55,"r":"Europe","gw":false},{"n":"M\u0101ori Umu T\u012b Earth Oven Parleys","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"M\u0101ori Iwi River Federations","S":0.8,"D":0.0,"r":"Other","gw":false},{"n":"Buganda Clan-Based Monarchy","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Timbuktu Qadi Scholar-Judges","S":0.65,"D":0.25,"r":"Africa","gw":false},{"n":"Wolof Garmi Anti-Corruption","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Wolof Ceddo Slave Armies","S":0.4,"D":0.35,"r":"Other","gw":false},{"n":"Ayutthaya Elephant Bureaucracy","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Lan Xang Million Elephant Kings","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Hanseatic League","S":0.25,"D":0.65,"r":"Europe","gw":false},{"n":"Rhenish Hanseatic Cities","S":0.35,"D":0.6,"r":"Europe","gw":false},{"n":"Ragusan Aristocratic Republic","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Ming Yellow Register Census","S":0.85,"D":0.05,"r":"East Asia","gw":false},{"n":"Kongo Mbanza Council","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Bamum Script Bureaucracy","S":0.85,"D":0.1,"r":"Other","gw":false},{"n":"Joseon Confucian Bureaucracy","S":0.75,"D":0.15,"r":"East Asia","gw":false},{"n":"Malacca Straits Mandala","S":0.2,"D":0.7,"r":"Other","gw":false},{"n":"Scottish Tacksmen","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Circassian Xabze Councils","S":0.25,"D":0.85,"r":"Other","gw":false},{"n":"Akan Amanhene Gold States","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Jukun Aku Oracle Kings","S":0.65,"D":0.1,"r":"Other","gw":false},{"n":"Kiribati Maneaba Councils","S":0.15,"D":0.8,"r":"Other","gw":false},{"n":"Vlax Rom Baro Systems","S":0.3,"D":0.55,"r":"Europe","gw":false},{"n":"Aztec Triple Alliance","S":0.8,"D":0.2,"r":"Americas","gw":false},{"n":"Ryukyu Gusuku Trade Kingdom","S":0.4,"D":0.35,"r":"East Asia","gw":false},{"n":"Ryukyu Maritime Tributary","S":0.4,"D":0.35,"r":"East Asia","gw":false},{"n":"Ottoman Millet System","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Pampas Querand\u00ed Nomadism","S":0.1,"D":1.0,"r":"Other","gw":false},{"n":"Breton Parish Closes","S":0.65,"D":0.25,"r":"Europe","gw":false},{"n":"Sami Reindeer Herding Units","S":0.35,"D":0.8,"r":"Europe","gw":false},{"n":"Shilluk Divine Kingship","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Sinti Musical Guilds","S":0.4,"D":0.5,"r":"Europe","gw":false},{"n":"Kalderash Gold-Smithing Dynasties","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Sennar Funj Sultanate","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Mughal Mansabdari System","S":0.7,"D":0.15,"r":"South Asia","gw":false},{"n":"Habsburg Composite Monarchy","S":0.55,"D":0.4,"r":"Europe","gw":false},{"n":"Cossack Sich Republic","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Mapuche Parlamento Confederacy","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Polish-Lithuanian Elective Monarchy","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Powhatan Paramount Chiefdom","S":0.55,"D":0.4,"r":"Other","gw":false},{"n":"Dutch Republic States-General","S":0.3,"D":0.6,"r":"Other","gw":false},{"n":"Luba Bambudye Memory State","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Tahitian Arioi Society","S":0.5,"D":0.35,"r":"Pacific","gw":false},{"n":"Maroon Palenque Republics","S":0.8,"D":0.25,"r":"Other","gw":false},{"n":"Lunda Ruwej Matrilineacy","S":0.8,"D":0.15,"r":"Other","gw":false},{"n":"Dahomey Mino Amazon State","S":0.8,"D":0.15,"r":"Other","gw":false},{"n":"Kuba Bushong Cloth Kings","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Imbangala Kilombo","S":0.8,"D":0.15,"r":"Other","gw":false},{"n":"Romanichal Wagon Republics","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Koryak Reindeer-Oracle System","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Ket Yenisei Fish-Taboo Councils","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Lozi Litunga Flood Kings","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Bermudian Parliamentary Hybrid","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Kalmyk Khanate Nomadic Parliament","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Qing Lifan Yuan Tributaries","S":0.8,"D":0.15,"r":"East Asia","gw":false},{"n":"Tibetan Ganden Phodrang","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Qing Dynasty Banner System","S":0.8,"D":0.1,"r":"East Asia","gw":false},{"n":"Leveller Agitators","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Digger Communes","S":0.6,"D":0.4,"r":"Other","gw":false},{"n":"Pirate Articles","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Barbuda Communal Land System","S":0.15,"D":0.9,"r":"Other","gw":false},{"n":"British Parliamentary System","S":0.2,"D":0.85,"r":"Other","gw":false},{"n":"Blackfoot Confederacy","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Haida Potlatch Governance","S":0.2,"D":0.75,"r":"Other","gw":false},{"n":"Tlingit Potlatch Confederacy","S":0.2,"D":0.75,"r":"Other","gw":false},{"n":"Merina Andriana Castes","S":0.4,"D":0.35,"r":"Other","gw":false},{"n":"Chukchi Whalebone Assemblies","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Tswana Kgotla","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Malagasy Fokonolona","S":0.15,"D":0.9,"r":"Other","gw":false},{"n":"Fante Asafo Companies","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Vanuatu Nimangki Grade-taking","S":0.2,"D":0.75,"r":"Other","gw":false},{"n":"Irish Traveller Cant Systems","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Arctic Nenets Yamal Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Sikh Misldar Confederacy","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Liechtenstein Direct Monarchy","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Moravian Mission Communes","S":0.65,"D":0.25,"r":"Other","gw":false},{"n":"Aleut Unangan Whalebone Chiefs","S":0.5,"D":0.2,"r":"Other","gw":false},{"n":"Konbaung Hluttaw","S":0.7,"D":0.15,"r":"Other","gw":false},{"n":"Metis Buffalo Councils","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Haitian Revolutionary Councils","S":0.15,"D":0.9,"r":"Other","gw":false},{"n":"Freetown Settler Democracy","S":0.35,"D":0.75,"r":"Other","gw":false},{"n":"Batavian Republic","S":0.35,"D":0.65,"r":"Other","gw":false},{"n":"Napoleonic Meritocracy","S":0.9,"D":0.05,"r":"Europe","gw":false},{"n":"Cheyenne Council of 44","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Palauan Stone Money Yap","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Yenish Horse-Tribes","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Scottish Traveller Peat Laws","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"\u00c5land Islands Neutrality","S":0.2,"D":0.85,"r":"Other","gw":false},{"n":"Zanzibar Clove Plantation Councils","S":0.4,"D":0.35,"r":"Other","gw":false},{"n":"Zulu Impi Regiments","S":0.3,"D":0.7,"r":"Africa","gw":false},{"n":"Utopian Socialist Colonies","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Cherokee Constitutional Republic","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Maohi Tapu System","S":0.65,"D":0.35,"r":"Pacific","gw":false},{"n":"Sorbian Serbski Sejm","S":0.4,"D":0.6,"r":"Europe","gw":false},{"n":"Swiss Consensus Democracy","S":0.15,"D":0.9,"r":"Other","gw":false},{"n":"Manush Circus Kingdoms","S":0.85,"D":0.0,"r":"Europe","gw":false},{"n":"Taiping Heavenly Kingdom","S":0.4,"D":0.5,"r":"East Asia","gw":false},{"n":"Liechtenstein Direct Democracy","S":0.4,"D":0.75,"r":"Other","gw":false},{"n":"Meiji Oligarchy","S":0.75,"D":0.15,"r":"East Asia","gw":false},{"n":"Paris Commune","S":0.15,"D":0.85,"r":"Europe","gw":false},{"n":"Bamum Scriptocracy","S":0.85,"D":0.1,"r":"Other","gw":false},{"n":"Pavee Road Councils","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Kibbutz Movement","S":0.1,"D":0.85,"r":"Other","gw":false},{"n":"Weimar Coalition Governance","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Tuvan People's Republic","S":0.35,"D":0.75,"r":"Other","gw":false},{"n":"Soviet Republics System","S":0.9,"D":0.05,"r":"Other","gw":false},{"n":"UN Trusteeship Councils","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"United Nations Security Council","S":0.5,"D":0.35,"r":"Other","gw":false},{"n":"Apartheid Bantustans","S":0.85,"D":0.1,"r":"Africa","gw":false},{"n":"Tokelau Village Atoll Consensus","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Cuban Revolutionary Committees","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Singaporean Technocracy","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Botswana Tribal Democracy","S":0.75,"D":0.3,"r":"Other","gw":false},{"n":"Tanzanian Ujamaa Villages","S":0.6,"D":0.4,"r":"Other","gw":false},{"n":"United Arab Emirates Tribal Technocracy","S":0.75,"D":0.05,"r":"Other","gw":false},{"n":"Libyan Jamahiriya","S":0.4,"D":0.6,"r":"Other","gw":false},{"n":"Nordic Sami Parliaments","S":0.4,"D":0.6,"r":"Europe","gw":false},{"n":"Norwegian Sovereign Wealth Democracy","S":0.15,"D":0.9,"r":"Other","gw":false},{"n":"Indian Panchayati Raj","S":0.2,"D":0.9,"r":"South Asia","gw":false},{"n":"European Union Governance","S":0.3,"D":0.55,"r":"Europe","gw":false},{"n":"Post-Apartheid Ubuntu Democracy","S":0.3,"D":0.8,"r":"Africa","gw":false},{"n":"Zapatista Caracoles","S":0.05,"D":0.95,"r":"Americas","gw":false},{"n":"Rwandan Unity Government","S":0.4,"D":0.5,"r":"Other","gw":false},{"n":"Ubuntu Councils","S":0.2,"D":0.9,"r":"Africa","gw":false},{"n":"Kerala People\u2019s Planning","S":0.6,"D":0.4,"r":"South Asia","gw":false},{"n":"Estonian Digital Democracy","S":0.15,"D":0.85,"r":"Other","gw":false},{"n":"Bhutanese Gross National Happiness","S":0.75,"D":0.2,"r":"Other","gw":false},{"n":"Bitcoin Decentralized Governance","S":0.2,"D":0.85,"r":"Other","gw":false},{"n":"Bolivian Plurinational State","S":0.6,"D":0.4,"r":"Other","gw":false},{"n":"Icelandic Crowdsourced Constitution","S":0.2,"D":0.9,"r":"Europe","gw":false},{"n":"Rojava Democratic Confederalism","S":0.25,"D":0.85,"r":"Other","gw":false},{"n":"Taiwanese Digital Democracy","S":0.2,"D":0.9,"r":"Other","gw":false},{"n":"Chilean Constitutional Experiment","S":0.25,"D":0.85,"r":"Other","gw":false},{"n":"Natufian Communities","S":0.15,"D":0.9,"r":"Middle East","gw":true},{"n":"G\u00f6bekli Tepe (ritual complex)","S":0.2,"D":0.85,"r":"Middle East","gw":true},{"n":"Pre-Pottery Neolithic A (PPNA)","S":0.2,"D":0.8,"r":"Middle East","gw":false},{"n":"Pre-Pottery Neolithic B (PPNB)","S":0.3,"D":0.7,"r":"Middle East","gw":false},{"n":"\u00c7atalh\u00f6y\u00fck","S":0.05,"D":0.9,"r":"Middle East","gw":true},{"n":"Ubaid Culture","S":0.35,"D":0.65,"r":"Middle East","gw":false},{"n":"Early Uruk","S":0.4,"D":0.55,"r":"Middle East","gw":true},{"n":"Late Uruk / Early Dynastic","S":0.75,"D":0.3,"r":"Middle East","gw":true},{"n":"Egyptian Old Kingdom","S":0.9,"D":0.1,"r":"Africa","gw":false},{"n":"Egyptian Middle Kingdom","S":0.7,"D":0.2,"r":"Africa","gw":false},{"n":"Mohenjo-daro / Indus Valley Civilisation","S":0.1,"D":0.75,"r":"South Asia","gw":true},{"n":"Shang Dynasty","S":0.85,"D":0.15,"r":"East Asia","gw":false},{"n":"Taosi","S":0.45,"D":0.55,"r":"East Asia","gw":true},{"n":"Vedic Jana/Gana Sanghas","S":0.35,"D":0.65,"r":"South Asia","gw":false},{"n":"Olmec","S":0.6,"D":0.35,"r":"Americas","gw":false},{"n":"Celtic Tribal Assemblies","S":0.3,"D":0.7,"r":"Europe","gw":true},{"n":"Scythian Nomadic Confederacy","S":0.45,"D":0.7,"r":"Other","gw":false},{"n":"Minoan Crete","S":0.5,"D":0.45,"r":"Europe","gw":false},{"n":"Mauryan Empire","S":0.8,"D":0.15,"r":"South Asia","gw":false},{"n":"Classic Maya City-States","S":0.65,"D":0.35,"r":"Americas","gw":true},{"n":"Teotihuacan","S":0.3,"D":0.65,"r":"Americas","gw":true},{"n":"Tlaxcala Republic","S":0.4,"D":0.6,"r":"Americas","gw":false},{"n":"Iroquois Confederacy / Haudenosaunee","S":0.25,"D":0.85,"r":"Other","gw":true},{"n":"Highland New Guinea Big Man System","S":0.1,"D":0.85,"r":"Other","gw":false},{"n":"Zomia Highland Communities","S":0.05,"D":0.9,"r":"Other","gw":false},{"n":"Inca Empire (Tawantinsuyu)","S":0.75,"D":0.1,"r":"Other","gw":false},{"n":"Balinese Negara","S":0.2,"D":0.7,"r":"Other","gw":false},{"n":"Norse Thing System","S":0.3,"D":0.75,"r":"Europe","gw":false},{"n":"Tiv Segmentary Lineage System","S":0.05,"D":0.9,"r":"Other","gw":false},{"n":"Maroon Communities (Jamaica/Suriname)","S":0.3,"D":0.8,"r":"Other","gw":false},{"n":"Tang Dynasty","S":0.85,"D":0.1,"r":"East Asia","gw":false},{"n":"Ottoman Empire","S":0.8,"D":0.2,"r":"Middle East","gw":false},{"n":"Gadaa System","S":0.3,"D":0.85,"r":"Other","gw":false},{"n":"Akan Chieftaincy","S":0.5,"D":0.6,"r":"Africa","gw":false},{"n":"Igbo Assemblies","S":0.1,"D":0.85,"r":"Other","gw":false},{"n":"Berber Jemaa","S":0.25,"D":0.75,"r":"Africa","gw":false},{"n":"Zulu Monarchy","S":0.9,"D":0.1,"r":"Africa","gw":false},{"n":"Greek Democracy","S":0.2,"D":0.8,"r":"Europe","gw":false},{"n":"Greek Aristocracy","S":0.55,"D":0.35,"r":"Europe","gw":false},{"n":"Greek Oligarchy","S":0.5,"D":0.35,"r":"Europe","gw":false},{"n":"Greek Tyranny","S":0.75,"D":0.25,"r":"Europe","gw":false},{"n":"Politeia","S":0.4,"D":0.55,"r":"Europe","gw":false},{"n":"Theatrocracy","S":0.3,"D":0.65,"r":"Europe","gw":false},{"n":"Greek Stratocracy","S":0.8,"D":0.15,"r":"Europe","gw":false},{"n":"Greek Diarchy","S":0.6,"D":0.35,"r":"Europe","gw":false},{"n":"Greek Timocracy","S":0.4,"D":0.5,"r":"Europe","gw":false},{"n":"Isocracy","S":0.15,"D":0.8,"r":"Europe","gw":false},{"n":"Ochlokratia","S":0.2,"D":0.7,"r":"Europe","gw":false},{"n":"Swiss Cantonal Democracy","S":0.2,"D":0.85,"r":"Other","gw":false},{"n":"Kurultai","S":0.6,"D":0.6,"r":"East Asia","gw":false},{"n":"Cossack Hetmanate","S":0.5,"D":0.65,"r":"Other","gw":false},{"n":"Andean Tinku","S":0.2,"D":0.7,"r":"Other","gw":false},{"n":"Zapotec Cocijo Cult","S":0.65,"D":0.3,"r":"Americas","gw":false},{"n":"Pacific Potlatch","S":0.3,"D":0.75,"r":"Pacific","gw":false},{"n":"Pueblo Council Governance","S":0.2,"D":0.8,"r":"Americas","gw":false},{"n":"Mississippian Chiefdoms","S":0.65,"D":0.3,"r":"Americas","gw":false},{"n":"Tupi Confederacies","S":0.2,"D":0.8,"r":"Other","gw":false},{"n":"Tongan Maritime Empire","S":0.75,"D":0.3,"r":"Pacific","gw":false},{"n":"Micronesian Yapese Stone Council","S":0.3,"D":0.65,"r":"Other","gw":false},{"n":"Inuit Qaggiq Assemblies","S":0.1,"D":0.9,"r":"Other","gw":false},{"n":"Aboriginal Elders Councils","S":0.2,"D":0.75,"r":"Pacific","gw":false},{"n":"Majapahit Mandala","S":0.55,"D":0.5,"r":"Other","gw":false},{"n":"Tokugawa Shogunate","S":0.8,"D":0.15,"r":"East Asia","gw":false},{"n":"Confucian Bureaucracy","S":0.8,"D":0.15,"r":"East Asia","gw":false},{"n":"Holy Roman Empire","S":0.4,"D":0.45,"r":"Europe","gw":false},{"n":"Satrapy System","S":0.7,"D":0.25,"r":"Middle East","gw":false},{"n":"Ashanti Confederacy","S":0.65,"D":0.35,"r":"Africa","gw":false},{"n":"Singapore Technocracy","S":0.8,"D":0.2,"r":"Other","gw":false},{"n":"Nazi Germany","S":0.95,"D":0.03,"r":"Europe","gw":false},{"n":"Weimar Republic","S":0.4,"D":0.6,"r":"Europe","gw":false},{"n":"Song Dynasty","S":0.55,"D":0.15,"r":"Other","gw":false},{"n":"Ming Dynasty","S":0.85,"D":0.08,"r":"Other","gw":false},{"n":"French Third Republic","S":0.5,"D":0.6,"r":"Europe","gw":false},{"n":"Chinese Communist Party Governance","S":0.9,"D":0.08,"r":"Other","gw":false},{"n":"United States Federal Republic","S":0.45,"D":0.7,"r":"Other","gw":false},{"n":"Carolingian Empire","S":0.5,"D":0.35,"r":"Europe","gw":false},{"n":"Abbasid Caliphate","S":0.55,"D":0.25,"r":"Middle East","gw":false},{"n":"Achaemenid Persian Empire","S":0.55,"D":0.28,"r":"Middle East","gw":false},{"n":"Mughal Empire Akbar Period","S":0.7,"D":0.18,"r":"South Asia","gw":false}],"traj":{"Abbasid Caliphate":{"m":"educational_hegemony","tt":"falling_hegemonic","S":0.55,"pts":[[650,0.5],[700,0.42],[750,0.35],[800,0.3],[850,0.24],[900,0.2],[945,0.18],[1000,0.17],[1050,0.16],[1200,0.15]]},"Achaemenid Persian Empire":{"m":"ideological_hegemony","tt":"falling_hegemonic","S":0.55,"pts":[[-550,0.35],[-490,0.28],[-450,0.22],[-400,0.18],[-350,0.15]]},"Athenian Democracy":{"m":"resilient_with_shocks","tt":"oscillating","S":0.15,"pts":[[-508,0.75],[-450,0.8],[-411,0.65],[-403,0.75],[-338,0.6]]},"Aztec Triple Alliance":{"m":"tributary_hegemony","tt":"falling_coercive","S":0.8,"pts":[[1300,0.35],[1400,0.25],[1450,0.2],[1500,0.15]]},"British Parliamentary System":{"m":"counter_hegemony","tt":"rising","S":0.2,"pts":[[1689,0.55],[1720,0.58],[1760,0.62],[1789,0.65],[1832,0.68],[1867,0.72],[1884,0.75],[1906,0.78],[1918,0.8],[1944,0.82],[1998,0.85]]},"Carolingian Empire":{"m":"educational_hegemony","tt":"falling_hegemonic","S":0.5,"pts":[[768,0.45],[820,0.38],[870,0.3],[950,0.25]]},"Chinese Communist Party Governance":{"m":"coercive_then_hegemonic","tt":"oscillating","S":0.9,"pts":[[1949,0.1],[1953,0.18],[1957,0.05],[1961,0.08],[1966,0.03],[1971,0.05],[1978,0.15],[1985,0.18],[1989,0.12],[1990,0.07],[2002,0.1],[2012,0.08],[2020,0.05]]},"Confucian Bureaucracy":{"m":"educational_hegemony","tt":"falling_coercive","S":0.8,"pts":[[-200,0.2],[200,0.15],[800,0.1],[1400,0.08]]},"French Third Republic":{"m":"failing_counter_hegemony","tt":"oscillating","S":0.5,"pts":[[1870,0.45],[1875,0.52],[1880,0.6],[1884,0.65],[1895,0.68],[1905,0.72],[1914,0.65],[1920,0.62],[1924,0.68],[1930,0.65],[1934,0.55],[1936,0.7],[1938,0.5],[1940,0.25]]},"Habsburg Composite Monarchy":{"m":"administrative_absorption","tt":"stable_low","S":0.55,"pts":[[1520,0.35],[1620,0.25],[1750,0.2],[1848,0.25],[1900,0.3]]},"Hanseatic League":{"m":"administrative_absorption","tt":"falling_mixed","S":0.25,"pts":[[1241,0.7],[1350,0.65],[1450,0.6],[1550,0.5],[1650,0.4]]},"Icelandic Commonwealth":{"m":"resilient_then_absorbed","tt":"falling_mixed","S":0.1,"pts":[[930,0.8],[1000,0.82],[1100,0.75],[1200,0.65],[1262,0.45]]},"Mauryan Empire":{"m":"administrative_hegemony","tt":"oscillating","S":0.8,"pts":[[-321,0.25],[-268,0.18],[-231,0.2],[-200,0.15]]},"Meiji Oligarchy":{"m":"educational_hegemony","tt":"falling_coercive","S":0.75,"pts":[[1868,0.35],[1872,0.28],[1876,0.22],[1879,0.2],[1881,0.18],[1885,0.16],[1889,0.15],[1894,0.13],[1910,0.12]]},"Ming Dynasty":{"m":"administrative_hegemony","tt":"falling_coercive","S":0.85,"pts":[[1368,0.15],[1450,0.1],[1550,0.08],[1620,0.06]]},"Mughal Empire Akbar Period":{"m":"manufactured_consent","tt":"falling_coercive","S":0.7,"pts":[[1556,0.3],[1580,0.22],[1605,0.18],[1660,0.12],[1707,0.08]]},"Nazi Germany":{"m":"coercive_then_hegemonic","tt":"falling_coercive","S":0.95,"pts":[[1932,0.45],[1934,0.15],[1937,0.05],[1942,0.03]]},"Norwegian Sovereign Wealth Democracy":{"m":"counter_hegemony","tt":"rising","S":0.15,"pts":[[1814,0.7],[1900,0.75],[1950,0.8],[2000,0.85]]},"Ottoman Empire":{"m":"administrative_drift","tt":"falling_coercive","S":0.8,"pts":[[1300,0.35],[1600,0.25],[1800,0.2],[1900,0.15]]},"Roman Republic":{"m":"passive_revolution","tt":"falling_hegemonic","S":0.45,"pts":[[-500,0.7],[-400,0.68],[-300,0.65],[-200,0.6],[-150,0.55],[-100,0.48],[-60,0.42],[-27,0.35]]},"Singapore Technocracy":{"m":"manufactured_consent","tt":"falling_coercive","S":0.8,"pts":[[1965,0.35],[1980,0.25],[2000,0.2],[2020,0.18]]},"Song Dynasty":{"m":"educational_hegemony","tt":"falling_hegemonic","S":0.55,"pts":[[960,0.2],[1050,0.15],[1127,0.12],[1200,0.1]]},"Soviet Republics System":{"m":"coercion_to_consent","tt":"oscillating","S":0.9,"pts":[[1917,0.2],[1922,0.12],[1929,0.08],[1934,0.05],[1937,0.03],[1945,0.05],[1953,0.08],[1956,0.12],[1964,0.1],[1968,0.08],[1975,0.1],[1985,0.18],[1989,0.3],[1991,0.45]]},"Swiss Cantonal Democracy":{"m":"counter_hegemony","tt":"rising","S":0.2,"pts":[[1291,0.65],[1400,0.7],[1515,0.75],[1648,0.8],[1848,0.85]]},"Tang Dynasty":{"m":"educational_hegemony","tt":"falling_coercive","S":0.85,"pts":[[618,0.2],[750,0.12],[850,0.08],[900,0.1]]},"Tokugawa Shogunate":{"m":"ideological_hegemony","tt":"stable_low","S":0.8,"pts":[[1603,0.2],[1650,0.15],[1750,0.15],[1830,0.18]]},"United States Federal Republic":{"m":"oscillating_counter_hegemony","tt":"oscillating","S":0.45,"pts":[[1789,0.6],[1865,0.55],[1900,0.65],[1965,0.75],[2001,0.7],[2020,0.65]]},"Venetian Republic":{"m":"administrative_closure","tt":"falling_hegemonic","S":0.35,"pts":[[697,0.6],[1000,0.58],[1200,0.55],[1400,0.45],[1600,0.35]]},"Weimar Republic":{"m":"failing_counter_hegemony","tt":"falling_hegemonic","S":0.4,"pts":[[1919,0.7],[1923,0.65],[1928,0.6],[1932,0.45]]},"Zhou Dynasty Mandate of Heaven":{"m":"ideological_hegemony","tt":"falling_mixed","S":0.5,"pts":[[-1046,0.5],[-800,0.4],[-500,0.35],[-300,0.25]]}}};
 
-// ── Phase-space scatter plot ──────────────────────────────────────────
-(function buildPhasespace() {
-  const svg = document.getElementById('phasespace');
+// ── Colours ─────────────────────────────────────────────────────────────
+const RCOL = {
+  'Europe':    '#e8a020',
+  'East Asia': '#c0392b',
+  'Middle East':'#9b59b6',
+  'Africa':    '#27ae60',
+  'Americas':  '#2980b9',
+  'South Asia':'#e67e22',
+  'Pacific':   '#1abc9c',
+  'Other':     '#7f8c8d',
+};
+const TCOL = {
+  'falling_hegemonic':'#e8a020',
+  'falling_coercive': '#c0392b',
+  'rising':           '#6fcf97',
+  'oscillating':      '#7a96b0',
+  'falling_mixed':    '#d35400',
+  'stable_low':       '#95a5a6',
+};
+const TNAME = {
+  'falling_hegemonic':'Hegemonic drift',
+  'falling_coercive': 'Coercive maintenance',
+  'rising':           'Counter-hegemony',
+  'oscillating':      'Oscillating',
+  'falling_mixed':    'Mixed/absorbed',
+  'stable_low':       'Stable-low',
+};
+
+// ── Tooltip ─────────────────────────────────────────────────────────────
+const tt = document.getElementById('tt');
+let ttTimer;
+function showTT(e, name, vals) {
+  clearTimeout(ttTimer);
+  tt.querySelector('.tt-name').textContent = name;
+  tt.querySelector('.tt-vals').innerHTML = vals;
+  tt.style.display = 'block';
+  moveTT(e);
+}
+function moveTT(e) {
+  const x = e.clientX + 14, y = e.clientY - 10;
+  const w = tt.offsetWidth, ww = window.innerWidth;
+  tt.style.left = (x + w > ww - 10 ? x - w - 20 : x) + 'px';
+  tt.style.top  = Math.max(4, y) + 'px';
+}
+function hideTT() { ttTimer = setTimeout(() => tt.style.display = 'none', 80); }
+
+// ── Scroll reveal ────────────────────────────────────────────────────────
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+}, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// ── Phase space ─────────────────────────────────────────────────────────
+(function buildPhase() {
+  const svg = document.getElementById('phase-svg');
   if (!svg) return;
+  const W=800,H=400, PAD={t:24,r:24,b:50,l:52};
+  const PW=W-PAD.l-PAD.r, PH=H-PAD.t-PAD.b;
+  const sx=s=>PAD.l+s*PW, sy=d=>PAD.t+(1-d)*PH;
+  let activeRegion='all';
 
-  const W = 820, H = 420;
-  const PAD = { top: 30, right: 30, bottom: 50, left: 55 };
-  const PW = W - PAD.left - PAD.right;
-  const PH = H - PAD.top  - PAD.bottom;
+  function render() {
+    const pts = IDATA.phase.filter(p => {
+      if(activeRegion==='all') return true;
+      if(activeRegion==='gw') return p.gw;
+      return p.r===activeRegion;
+    });
+    const grey = IDATA.phase.filter(p => {
+      if(activeRegion==='all') return false;
+      if(activeRegion==='gw') return !p.gw;
+      return p.r!==activeRegion;
+    });
 
-  // Colours per trajectory type
-  const COL = {
-    falling_hegemonic: '#e8a020',
-    falling_coercive:  '#c0392b',
-    rising:            '#6fcf97',
-    oscillating:       '#7a96b0',
-    falling_mixed:     '#d35400',
-    stable_low:        '#95a5a6',
-    stable_high:       '#bdc3c7',
-  };
-
-  // 30-system trajectory subsample (S, D_start, traj_type, label)
-  const systems = [
-    [0.45,0.70,'falling_hegemonic','Roman Republic'],
-    [0.75,0.35,'falling_coercive','Meiji Oligarchy'],
-    [0.20,0.55,'rising','British Parliamentary'],
-    [0.80,0.35,'falling_coercive','Ottoman Empire'],
-    [0.65,0.45,'falling_hegemonic','Abbasid Caliphate'],
-    [0.70,0.30,'falling_coercive','Chinese Communist Party'],
-    [0.20,0.65,'rising','Swiss Cantonal Democracy'],
-    [0.15,0.70,'rising','Norwegian Sovereign Wealth'],
-    [0.80,0.25,'falling_coercive','Soviet Republics'],
-    [0.65,0.35,'falling_hegemonic','Tang Dynasty'],
-    [0.60,0.40,'falling_hegemonic','Song Dynasty'],
-    [0.55,0.45,'falling_hegemonic','Carolingian Empire'],
-    [0.80,0.15,'falling_coercive','Ming Dynasty'],
-    [0.70,0.20,'falling_coercive','Confucian Bureaucracy'],
-    [0.45,0.50,'falling_hegemonic','Achaemenid Persian Empire'],
-    [0.60,0.50,'falling_hegemonic','Venetian Republic'],
-    [0.85,0.35,'falling_coercive','Aztec Triple Alliance'],
-    [0.40,0.55,'falling_hegemonic','Zhou Dynasty'],
-    [0.75,0.30,'falling_coercive','Mauryan Empire'],
-    [0.80,0.25,'falling_coercive','Mughal Empire (Akbar)'],
-    [0.85,0.30,'falling_coercive','Singapore Technocracy'],
-    [0.40,0.70,'oscillating','Athenian Democracy'],
-    [0.45,0.65,'oscillating','US Federal Republic'],
-    [0.50,0.60,'oscillating','French Third Republic'],
-    [0.60,0.50,'oscillating','Habsburg Composite Monarchy'],
-    [0.10,0.75,'falling_mixed','Icelandic Commonwealth'],
-    [0.40,0.60,'falling_mixed','Hanseatic League'],
-    [0.80,0.20,'stable_low','Tokugawa Shogunate'],
-    [0.70,0.25,'stable_low','Nazi Germany'],
-    [0.40,0.70,'oscillating','Weimar Republic'],
-  ];
-
-  // Also sample ~80 representative points from the full 401-system dataset
-  // (approximated — represent the overall distribution)
-  const bg = [];
-  const rng = (seed) => { let s=seed; return ()=>{ s=(s*1664525+1013904223)&0xffffffff; return (s>>>0)/0xffffffff; }; };
-  const rand = rng(42);
-  for (let i=0; i<371; i++) {
-    const s = rand()*0.85 + 0.08;
-    // D tends to be lower at high S — approximate the real distribution
-    const d_max = Math.max(0.05, 0.95 - s*0.7 + (rand()-0.5)*0.3);
-    const d = Math.max(0.02, Math.min(0.98, rand()*d_max + 0.02));
-    bg.push([s, d]);
+    let h='';
+    // Grid
+    for(let v=0;v<=1;v+=.2){
+      h+=`<line x1="${sx(v)}" y1="${PAD.t}" x2="${sx(v)}" y2="${PAD.t+PH}" stroke="rgba(240,236,224,.06)" stroke-width="0.5"/>`;
+      h+=`<line x1="${PAD.l}" y1="${sy(v)}" x2="${PAD.l+PW}" y2="${sy(v)}" stroke="rgba(240,236,224,.06)" stroke-width="0.5"/>`;
+      h+=`<text x="${sx(v)}" y="${PAD.t+PH+18}" text-anchor="middle" fill="rgba(240,236,224,.4)" font-size="10" font-family="Source Sans 3,sans-serif">${v.toFixed(1)}</text>`;
+      h+=`<text x="${PAD.l-8}" y="${sy(v)+4}" text-anchor="end" fill="rgba(240,236,224,.4)" font-size="10" font-family="Source Sans 3,sans-serif">${v.toFixed(1)}</text>`;
+    }
+    // Axis labels
+    h+=`<text x="${PAD.l+PW/2}" y="${H-2}" text-anchor="middle" fill="rgba(240,236,224,.55)" font-size="12" font-family="Source Sans 3,sans-serif">Sovereignty index (S)</text>`;
+    h+=`<text x="12" y="${PAD.t+PH/2}" text-anchor="middle" fill="rgba(240,236,224,.55)" font-size="12" font-family="Source Sans 3,sans-serif" transform="rotate(-90,12,${PAD.t+PH/2})">Disobedience freedom (D)</text>`;
+    // Threshold line
+    const yt=sy(.45);
+    h+=`<line x1="${PAD.l}" y1="${yt}" x2="${PAD.l+PW}" y2="${yt}" stroke="rgba(232,160,32,.55)" stroke-width="1.2" stroke-dasharray="5,4"/>`;
+    h+=`<text x="${PAD.l+PW-6}" y="${yt-5}" text-anchor="end" fill="rgba(232,160,32,.7)" font-size="10" font-family="Source Sans 3,sans-serif">θ = 0.45</text>`;
+    // Zone labels
+    h+=`<text x="${sx(.06)}" y="${sy(.75)}" fill="rgba(232,160,32,.3)" font-size="11" font-family="Playfair Display,serif" font-style="italic">Counter-hegemonic zone</text>`;
+    h+=`<text x="${sx(.65)}" y="${sy(.1)}" fill="rgba(192,57,43,.35)" font-size="11" font-family="Playfair Display,serif" font-style="italic">Coercive zone</text>`;
+    // Grey background points
+    grey.forEach(p=>{
+      h+=`<circle cx="${sx(p.S)}" cy="${sy(p.D)}" r="3" fill="rgba(122,150,176,.15)" stroke="none" data-n="${p.n}" data-s="${p.S}" data-d="${p.D}" data-r="${p.r}"/>`;
+    });
+    // Active points
+    pts.forEach(p=>{
+      const col = activeRegion==='gw' ? '#e8a020' : (RCOL[p.r]||'#7f8c8d');
+      const r   = p.gw && activeRegion!=='gw' ? 7 : 4.5;
+      const op  = p.gw ? '.95' : '.78';
+      h+=`<circle cx="${sx(p.S)}" cy="${sy(p.D)}" r="${r}" fill="${col}" fill-opacity="${op}" stroke="${col}" stroke-width="${p.gw?1.5:0.5}" stroke-opacity=".5" data-n="${p.n}" data-s="${p.S}" data-d="${p.D}" data-r="${p.r}" data-gw="${p.gw}" style="cursor:pointer"/>`;
+    });
+    svg.innerHTML = h;
+    // Events
+    svg.querySelectorAll('circle[data-n]').forEach(c=>{
+      c.addEventListener('mouseenter', e=>{
+        const d=c.dataset;
+        showTT(e, d.n, `S = ${d.s}&nbsp;&nbsp;D = ${d.d}<br>${d.r}${d.gw==='true'?' &bull; <span style="color:var(--amber)">Graeber &amp; Wengrow</span>':''}`);
+      });
+      c.addEventListener('mousemove', moveTT);
+      c.addEventListener('mouseleave', hideTT);
+    });
   }
 
-  function scaleX(s) { return PAD.left + s * PW; }
-  function scaleY(d) { return PAD.top + (1 - d) * PH; }
+  render();
+  document.querySelectorAll('#region-filters .fbtn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#region-filters .fbtn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeRegion = btn.dataset.region;
+      render();
+    });
+  });
+})();
 
-  let html = `<defs>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="rgba(232,160,32,0.6)"/>
-    </marker>
-  </defs>`;
+// ── D-Trajectory explorer ───────────────────────────────────────────────
+(function buildTraj() {
+  const sel = document.getElementById('traj-select');
+  const svg = document.getElementById('traj-svg');
+  const info = document.getElementById('traj-info');
+  if(!sel||!svg) return;
 
-  // Grid lines
-  for (let v=0; v<=1; v+=0.2) {
-    const x = scaleX(v);
-    const y = scaleY(v);
-    html += `<line x1="${x}" y1="${PAD.top}" x2="${x}" y2="${PAD.top+PH}" stroke="rgba(240,236,224,0.07)" stroke-width="0.5"/>`;
-    html += `<line x1="${PAD.left}" y1="${y}" x2="${PAD.left+PW}" y2="${y}" stroke="rgba(240,236,224,0.07)" stroke-width="0.5"/>`;
-    html += `<text x="${x}" y="${PAD.top+PH+18}" text-anchor="middle" fill="rgba(240,236,224,0.45)" font-size="10" font-family="Source Sans 3,sans-serif">${v.toFixed(1)}</text>`;
-    html += `<text x="${PAD.left-10}" y="${y+4}" text-anchor="end" fill="rgba(240,236,224,0.45)" font-size="10" font-family="Source Sans 3,sans-serif">${v.toFixed(1)}</text>`;
+  const systems = Object.keys(IDATA.traj).sort();
+  systems.forEach(s=>{ const o=document.createElement('option'); o.value=s; o.textContent=s; sel.appendChild(o); });
+  sel.value = 'Roman Republic';
+
+  function drawTraj(sysName) {
+    const d=IDATA.traj[sysName];
+    if(!d) return;
+    const pts=d.pts;
+    const W=800,H=320,PAD={t:24,r:24,b:48,l:52};
+    const PW=W-PAD.l-PAD.r, PH=H-PAD.t-PAD.b;
+    const years=pts.map(p=>p[0]), dvals=pts.map(p=>p[1]);
+    const minY=Math.min(0,Math.min(...dvals)-.05), maxY=Math.min(1,Math.max(...dvals)+.08);
+    const minX=Math.min(...years)-20, maxX=Math.max(...years)+20;
+    const sx=y=>PAD.l+(y-minX)/(maxX-minX)*PW;
+    const sy=d=>PAD.t+(1-(d-minY)/(maxY-minY))*PH;
+    const col=TCOL[d.tt]||'#7a96b0';
+
+    // Build path
+    const pathD=pts.map((p,i)=>(i===0?'M':'L')+sx(p[0]).toFixed(1)+','+sy(p[1]).toFixed(1)).join(' ');
+    // Area fill
+    const areaD=pathD+` L${sx(pts[pts.length-1][0]).toFixed(1)},${sy(minY).toFixed(1)} L${sx(pts[0][0]).toFixed(1)},${sy(minY).toFixed(1)} Z`;
+
+    let h='';
+    // Grid
+    const yTicks=[0,.2,.4,.6,.8,1].filter(v=>v>=minY&&v<=maxY);
+    yTicks.forEach(v=>{
+      h+=`<line x1="${PAD.l}" y1="${sy(v)}" x2="${PAD.l+PW}" y2="${sy(v)}" stroke="rgba(240,236,224,.06)" stroke-width="0.5"/>`;
+      h+=`<text x="${PAD.l-8}" y="${sy(v)+4}" text-anchor="end" fill="rgba(240,236,224,.4)" font-size="10" font-family="Source Sans 3,sans-serif">${v.toFixed(1)}</text>`;
+    });
+    // x-axis ticks
+    const span=maxX-minX;
+    const xStep=span>3000?1000:span>1000?200:span>400?100:50;
+    let xStart=Math.ceil(minX/xStep)*xStep;
+    for(let x=xStart;x<=maxX;x+=xStep){
+      h+=`<line x1="${sx(x)}" y1="${PAD.t}" x2="${sx(x)}" y2="${PAD.t+PH}" stroke="rgba(240,236,224,.06)" stroke-width="0.5"/>`;
+      const lbl=x<0?x+' BCE':x+' CE';
+      h+=`<text x="${sx(x)}" y="${PAD.t+PH+18}" text-anchor="middle" fill="rgba(240,236,224,.4)" font-size="9.5" font-family="Source Sans 3,sans-serif">${lbl}</text>`;
+    }
+    // Axis labels
+    h+=`<text x="${PAD.l+PW/2}" y="${H-2}" text-anchor="middle" fill="rgba(240,236,224,.5)" font-size="12" font-family="Source Sans 3,sans-serif">Year</text>`;
+    h+=`<text x="12" y="${PAD.t+PH/2}" text-anchor="middle" fill="rgba(240,236,224,.5)" font-size="12" font-family="Source Sans 3,sans-serif" transform="rotate(-90,12,${PAD.t+PH/2})">D</text>`;
+    // Threshold
+    if(.45>=minY&&.45<=maxY){
+      const yt=sy(.45);
+      h+=`<line x1="${PAD.l}" y1="${yt}" x2="${PAD.l+PW}" y2="${yt}" stroke="rgba(232,160,32,.5)" stroke-width="1" stroke-dasharray="5,4"/>`;
+      h+=`<text x="${PAD.l+PW-4}" y="${yt-4}" text-anchor="end" fill="rgba(232,160,32,.6)" font-size="9.5">θ = 0.45</text>`;
+    }
+    // Area
+    h+=`<path d="${areaD}" fill="${col}" fill-opacity="0.07" stroke="none"/>`;
+    // Line
+    h+=`<path d="${pathD}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    // Points
+    pts.forEach(p=>{
+      h+=`<circle cx="${sx(p[0]).toFixed(1)}" cy="${sy(p[1]).toFixed(1)}" r="4" fill="${col}" fill-opacity=".85" stroke="${col}" stroke-width=".5" data-y="${p[0]}" data-d="${p[1]}" style="cursor:pointer"/>`;
+    });
+
+    svg.innerHTML=h;
+    // Point tooltips
+    svg.querySelectorAll('circle[data-y]').forEach(c=>{
+      c.addEventListener('mouseenter',e=>{
+        const yr=parseInt(c.dataset.y);
+        showTT(e,sysName,`${yr<0?Math.abs(yr)+' BCE':yr+' CE'}<br>D = ${c.dataset.d}`);
+      });
+      c.addEventListener('mousemove',moveTT);
+      c.addEventListener('mouseleave',hideTT);
+    });
+
+    info.innerHTML=`<span style="color:${col};font-weight:600">${TNAME[d.tt]||d.tt}</span>&ensp;&bull;&ensp;${d.m.replace(/_/g,' ')}&ensp;&bull;&ensp;S = ${d.S}&ensp;&bull;&ensp;${pts.length} data points&ensp;&bull;&ensp;${Math.min(...years)<0?Math.abs(Math.min(...years))+' BCE':Math.min(...years)+' CE'} &ndash; ${Math.max(...years)<0?Math.abs(Math.max(...years))+' BCE':Math.max(...years)+' CE'}`;
   }
 
-  // Axis labels
-  html += `<text x="${PAD.left+PW/2}" y="${H-4}" text-anchor="middle" fill="rgba(240,236,224,0.6)" font-size="12" font-family="Source Sans 3,sans-serif">Sovereignty index (S)</text>`;
-  html += `<text x="14" y="${PAD.top+PH/2}" text-anchor="middle" fill="rgba(240,236,224,0.6)" font-size="12" font-family="Source Sans 3,sans-serif" transform="rotate(-90,14,${PAD.top+PH/2})">Disobedience freedom (D)</text>`;
-
-  // Critical threshold line
-  const yTheta = scaleY(0.45);
-  html += `<line x1="${PAD.left}" y1="${yTheta}" x2="${PAD.left+PW}" y2="${yTheta}" stroke="rgba(232,160,32,0.55)" stroke-width="1.2" stroke-dasharray="5,4"/>`;
-  html += `<text x="${PAD.left+PW-4}" y="${yTheta-6}" text-anchor="end" fill="rgba(232,160,32,0.75)" font-size="10" font-family="Source Sans 3,sans-serif">θ = 0.45</text>`;
-
-  // Background points
-  bg.forEach(([s,d]) => {
-    html += `<circle cx="${scaleX(s)}" cy="${scaleY(d)}" r="2.5" fill="rgba(122,150,176,0.18)" stroke="none"/>`;
-  });
-
-  // Labelled systems
-  systems.forEach(([s, d, type, label]) => {
-    const cx = scaleX(s), cy = scaleY(d);
-    const col = COL[type] || '#aaaaaa';
-    html += `<circle cx="${cx}" cy="${cy}" r="5.5" fill="${col}" fill-opacity="0.82" stroke="${col}" stroke-width="1" stroke-opacity="0.5">
-      <title>${label}\nS=${s}, D=${d}\n${type.replace(/_/g,' ')}</title>
-    </circle>`;
-  });
-
-  // Zone labels
-  html += `<text x="${scaleX(0.1)}" y="${scaleY(0.72)}" fill="rgba(232,160,32,0.35)" font-size="11" font-family="Playfair Display,serif" font-style="italic">Counter-hegemonic zone</text>`;
-  html += `<text x="${scaleX(0.62)}" y="${scaleY(0.15)}" fill="rgba(192,57,43,0.4)" font-size="11" font-family="Playfair Display,serif" font-style="italic">Coercive zone</text>`;
-
-  // Legend
-  const legItems = [
-    ['falling_hegemonic','Hegemonic drift'],
-    ['falling_coercive','Coercive maintenance'],
-    ['rising','Counter-hegemony'],
-    ['oscillating','Oscillating'],
-    ['falling_mixed','Mixed/absorbed'],
-    ['stable_low','Stable low'],
-  ];
-  let lx = PAD.left, ly = PAD.top + PH + 34;
-  legItems.forEach(([type, label]) => {
-    const col = COL[type];
-    html += `<circle cx="${lx+6}" cy="${ly}" r="5" fill="${col}" fill-opacity="0.8"/>`;
-    html += `<text x="${lx+16}" y="${ly+4}" fill="rgba(240,236,224,0.65)" font-size="10" font-family="Source Sans 3,sans-serif">${label}</text>`;
-    lx += label.length*6.5 + 22;
-    if (lx > W - 100) { lx = PAD.left; ly += 18; }
-  });
-
-  svg.innerHTML = html;
+  drawTraj('Roman Republic');
+  sel.addEventListener('change',()=>drawTraj(sel.value));
 })();
 </script>
-
 </body>
 </html>
