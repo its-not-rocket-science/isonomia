@@ -7,18 +7,18 @@ oscillating,-0.15000000000000002,-0.08823529411764708,0.9375000000000001,0.15,0.
 rising,0.15000000000000002,0.08064516129032259,0.9375000000000001,0.15,0.75,0.7,0.85,0.7,186,4,Norwegian Sovereign Wealth Democracy,counter_hegemony
 falling_hegemonic,-0.35,-0.07399577167019027,0.7608695652173912,0.45,0.65,0.7,0.35,0.35,473,8,Roman Republic,passive_revolution
 falling_hegemonic,-0.25,-0.02768549280177187,0.6944444444444444,0.35,0.7,0.6,0.35,0.35,903,5,Venetian Republic,administrative_closure
+falling_hegemonic,-0.35,-0.06363636363636363,0.6249999999999999,0.55,0.8,0.5,0.15,0.15,550,10,Abbasid Caliphate,educational_hegemony
 falling_hegemonic,-0.24999999999999994,-1.9230769230769225,0.6097560975609754,0.4,0.65,0.7,0.45,0.45,13,4,Weimar Republic,failing_counter_hegemony
 falling_mixed,-0.25,-0.03351206434316354,0.49019607843137253,0.5,0.4,0.5,0.25,0.25,746,4,Zhou Dynasty Mandate of Heaven,ideological_hegemony
 falling_coercive,-0.42000000000000004,-4.2,0.43750000000000006,0.95,0.9,0.45,0.03,0.03,10,4,Nazi Germany,coercive_then_hegemonic
-falling_hegemonic,-0.2,-0.10989010989010989,0.39215686274509803,0.5,0.55,0.45,0.25,0.25,182,4,Carolingian Empire,educational_hegemony
 oscillating,-0.2,-0.2857142857142857,0.39215686274509803,0.5,0.75,0.45,0.25,0.25,70,14,French Third Republic,failing_counter_hegemony
+falling_hegemonic,-0.2,-0.10989010989010989,0.39215686274509803,0.5,0.55,0.45,0.25,0.25,182,4,Carolingian Empire,educational_hegemony
 falling_hegemonic,-0.19999999999999998,-0.1,0.3571428571428571,0.55,0.8,0.35,0.15,0.15,200,5,Achaemenid Persian Empire,ideological_hegemony
 falling_coercive,-0.21999999999999997,-0.14569536423841056,0.30985915492957744,0.7,0.8,0.3,0.08,0.08,151,5,Mughal Empire Akbar Period,manufactured_consent
 falling_coercive,-0.22999999999999998,-0.5476190476190476,0.3026315789473684,0.75,0.85,0.35,0.12,0.12,42,9,Meiji Oligarchy,educational_hegemony
 oscillating,0.25,0.33783783783783783,0.2747252747252747,0.9,0.9,0.2,0.45,0.03,74,14,Soviet Republics System,coercion_to_consent
-falling_hegemonic,-0.15,-0.03333333333333333,0.26785714285714285,0.55,0.8,0.3,0.15,0.15,450,4,Abbasid Caliphate,educational_hegemony
-falling_coercive,-0.19999999999999998,-0.03333333333333333,0.24691358024691354,0.8,0.8,0.35,0.15,0.15,600,4,Ottoman Empire,administrative_drift
 falling_coercive,-0.19999999999999998,-0.1,0.24691358024691354,0.8,0.7,0.35,0.15,0.15,200,4,Aztec Triple Alliance,tributary_hegemony
+falling_coercive,-0.19999999999999998,-0.03333333333333333,0.24691358024691354,0.8,0.8,0.35,0.15,0.15,600,4,Ottoman Empire,administrative_drift
 falling_coercive,-0.16999999999999998,-0.3090909090909091,0.2098765432098765,0.8,0.9,0.35,0.18,0.18,55,4,Singapore Technocracy,manufactured_consent
 falling_hegemonic,-0.1,-0.04166666666666667,0.17857142857142858,0.55,0.9,0.2,0.1,0.1,240,4,Song Dynasty,educational_hegemony
 falling_coercive,-0.12000000000000001,-0.007500000000000001,0.14814814814814814,0.8,0.95,0.2,0.08,0.08,1600,4,Confucian Bureaucracy,educational_hegemony

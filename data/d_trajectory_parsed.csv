@@ -1,7 +1,13 @@
 system,year,D_t,D_static,S,A,L,mechanism,start,end
-Abbasid Caliphate,750,0.3,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
-Abbasid Caliphate,900,0.22,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
-Abbasid Caliphate,1050,0.18,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,650,0.5,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,700,0.42,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,750,0.35,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,800,0.3,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,850,0.24,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,900,0.2,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,945,0.18,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,1000,0.17,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
+Abbasid Caliphate,1050,0.16,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
 Abbasid Caliphate,1200,0.15,0.25,0.55,0.8,0.65,educational_hegemony,750,1258
 Achaemenid Persian Empire,-550,0.35,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
 Achaemenid Persian Empire,-490,0.28,0.28,0.55,0.8,0.6,ideological_hegemony,-550,-330
