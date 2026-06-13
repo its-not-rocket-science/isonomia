@@ -1,0 +1,58 @@
+system,year,from_type,to_type,cause,desc,D,S,A,L,direction,is_appt,is_free
+Egyptian Nomarchies,-2055,rotation,hereditary,reconsolidation,Mentuhotep II reunifies; pharaonic hereditary restored; EDR partially suppressed again,0.200,0.600,0.650,0.750,toward_appointment,1,0
+Zhou Dynasty Mandate of Heaven,221,hereditary,appointment,collapse,Qin Shi Huang replaces Zhou feudal hereditary fiefdoms with commandery-county system of appointed governors; Lewis 2007,0.350,0.500,0.400,0.650,appt_to_appt,0,0
+Phoenician Merchant Oligarchies,539,elective,appointment,external_shock,Persian conquest; sufetes displaced by Persian-appointed satraps; Markoe 2000,0.550,0.400,0.600,0.700,toward_appointment,1,0
+Assyrian Military Autocracy,745,hereditary,appointment,internal,Tiglath-Pileser III reforms; hereditary provincial governors replaced by appointed eunuch officials directly accountable,0.000,0.950,0.850,0.800,appt_to_appt,0,0
+Roman Republic,-27,elective,hereditary,P_to_S,Octavian concentration of imperium; cursus honorum competition generates military S that eliminates D,0.500,0.450,0.650,0.700,toward_appointment,1,0
+Athenian Democracy,-411,elective,appointment,external_shock,Sicilian Expedition disaster enables Council of 400,0.850,0.150,0.450,0.550,toward_appointment,1,0
+Athenian Democracy,-403,appointment,elective,elite_reform,Thrasybulus restoration; pre-existing civic D memory enables rapid reversal,0.850,0.150,0.450,0.550,toward_freedom,0,1
+Athenian Democracy,-322,elective,appointment,external_shock,Macedonian conquest; Demetrius of Phalerum installed,0.850,0.150,0.450,0.550,toward_appointment,1,0
+Qin Legalism,-206,hereditary,appointment,collapse,Chen Sheng rebellion; Han adopts modified Legalist admin with merit overlay,0.000,0.950,0.900,0.900,appt_to_appt,0,0
+Han Dynasty Examination Prototype,9,appointment,hereditary,internal,Wang Mang usurpation; appointment system interrupted by hereditary seizure,0.150,0.700,0.850,0.400,appt_to_appt,0,0
+Han Dynasty Examination Prototype,25,hereditary,appointment,reconsolidation,Later Han restoration; examination system re-established,0.150,0.700,0.850,0.400,appt_to_appt,0,0
+Venetian Republic,1171,elective,appointment,elite_reform,Great Council replaces popular assembly election for doge; sortition retained within oligarchic council; Cracco 1967,0.600,0.350,0.700,0.750,toward_appointment,1,0
+Khmer Devaraja,1177,hereditary,appointment,collapse,Cham sack of Angkor; Jayavarman VII reconstructs with Buddhist meritocratic appointments; Shaivite hereditary priestly-r,0.100,0.850,0.600,0.800,appt_to_appt,0,0
+Norman Feudal Domesday,1215,appointment,elective,elite_reform,Magna Carta; baronial coalition coerces John; customary D enables constraint,0.150,0.750,0.800,0.800,toward_freedom,0,1
+Norman Feudal Domesday,1295,elective,elective,elite_reform,Model Parliament; commons added to elected representation,0.150,0.750,0.800,0.800,free_to_free,0,0
+Mossi Naam Militias,1896,rotation,hereditary,external_shock,French colonial formalisation; naam military rotation displaced by hereditary chiefly succession under French administra,0.500,0.400,0.300,0.400,toward_appointment,1,0
+Magna Carta Baronage,1265,elective,hereditary,collapse,Second Barons War; Henry III reasserts hereditary prerogative after de Montfort defeat,0.550,0.500,0.400,0.600,toward_appointment,1,0
+Venetian Merchant Oligarchy,1297,elective,elective,elite_reform,Serrata closes Great Council; sortition retained but eligibility permanently restricted; D decreases within type,0.550,0.300,0.750,0.750,free_to_free,0,0
+Hanseatic League,1356,elective,elective,elite_reform,Lübeck diet formalises confederation; L rises as commercial record-keeping expands; Dollinger 1970,0.650,0.250,0.500,0.700,free_to_free,0,0
+Ming Yellow Register Census,1368,hereditary,appointment,reconsolidation,Hongwu emperor establishes imperial examination system as primary civilian governance route; hereditary military titles ,0.050,0.850,0.850,0.900,appt_to_appt,0,0
+Aztec Triple Alliance,1440,elective,hereditary,internal,Tlacaelel reforms under Itzcoatl; tlatoani selection shifts from council-elective toward hereditary-dynastic; Townsend 1,0.200,0.800,0.700,0.850,toward_appointment,1,0
+Habsburg Composite Monarchy,1740,hereditary,appointment,internal,Maria Theresa Haugwitz reforms; hereditary estates partially displaced by appointed centralised bureaucracy; Ingrao 1994,0.400,0.550,0.650,0.650,appt_to_appt,0,0
+Dutch Republic States-General,1581,appointment,elective,elite_reform,Act of Abjuration; States-General assumes sovereignty; regent oligarchy becomes formally elective; Israel 1995,0.600,0.300,0.700,0.750,toward_freedom,0,1
+British Parliamentary System,1832,elective,elective,elite_reform,Reform Act; franchise extended; rotten boroughs abolished; D0 rises,0.850,0.200,0.750,0.750,free_to_free,0,0
+Late Uruk / Early Dynastic,2750,hereditary,hereditary,collapse,Early Dynastic fragmentation; Uruk centralised temple-state fragments into competing city-states; L drops from 0.85 to ~,0.300,0.750,0.700,0.850,appt_to_appt,0,0
+Egyptian Old Kingdom,-2181,hereditary,rotation,collapse,4.2kya drought event + admin overextension; nome governors de facto independent,0.100,0.900,0.450,0.750,toward_freedom,0,1
+Mauryan Empire,232,hereditary,appointment,internal,Ashoka establishes Arthashastra meritocratic bureaucracy; provincial governors appointed by examination and loyalty; kin,0.150,0.800,0.850,0.850,appt_to_appt,0,0
+Classic Maya City-States,800,hereditary,hereditary,collapse,Classic Maya collapse; individual cities fragment; L drops (0.60→0.30); within-type but key L-conditional case,0.350,0.650,0.550,0.600,appt_to_appt,0,0
+Classic Maya City-States,900,hereditary,elective,reconsolidation,Postclassic council governance (Chichen Itza multepal system),0.350,0.650,0.550,0.600,toward_freedom,0,1
+Teotihuacan,450,consensus,hereditary,internal,apartment compound stratification increases; elite burials appear c.350-450CE; Cowgill 2015 notes shift toward hierarchi,0.650,0.300,0.500,0.650,toward_appointment,1,0
+Tlaxcala Republic,1521,elective,elective,external_shock,Spanish alliance; council system preserved under Spanish colonial rule; D decreases but election mechanism survives,0.600,0.400,0.400,0.550,free_to_free,0,0
+Iroquois Confederacy / Haudenosaunee,1722,consensus,consensus,external_shock,Tuscarora admission; sixth nation added; consensus mechanism preserved,0.850,0.250,0.200,0.350,free_to_free,0,0
+Iroquois Confederacy / Haudenosaunee,1848,consensus,elective,elite_reform,written constitution introduces elected chiefs alongside traditional sachems,0.850,0.250,0.200,0.350,free_to_free,0,0
+Zomia Highland Communities,1950,consensus,consensus,external_shock,"state incorporation campaigns (Burma, China, Laos, Vietnam); D suppressed; consensus forms persist in highland pockets",0.900,0.050,0.050,0.050,free_to_free,0,0
+Inca Empire (Tawantinsuyu),1438,hereditary,appointment,internal,Pachacuti decimal administrative system; apu governors appointed by Sapa Inca replacing purely kinship-based provincial ,0.100,0.750,0.800,0.900,appt_to_appt,0,0
+Norse Thing System,1000,elective,hereditary,external_shock,Christianisation + Harald Fairhair consolidation; thing survives but kings become hereditary with thing ratification rit,0.750,0.300,0.150,0.300,toward_appointment,1,0
+Tiv Segmentary Lineage System,1900,consensus,hereditary,external_shock,British colonial administration imposes warrant chief system; segmentary consensus displaced by hereditary colonial inte,0.900,0.050,0.050,0.200,toward_appointment,1,0
+Tang Dynasty,755,hereditary,hereditary,collapse,An Lushan Rebellion; jiedushi fragment central authority; L collapses regionally (0.90→0.40),0.100,0.850,0.900,0.900,appt_to_appt,0,0
+Tang Dynasty,960,hereditary,appointment,reconsolidation,Song dynasty restores central keju examination system,0.100,0.850,0.900,0.900,appt_to_appt,0,0
+Ottoman Empire,1512,hereditary,hereditary,internal,kafes system; princes imprisoned rather than killed; succession violence reduced but hereditary principle unchanged,0.200,0.800,0.800,0.800,appt_to_appt,0,0
+Ottoman Empire,1826,hereditary,appointment,elite_reform,Mahmud II destroys janissary corps; modern conscript army on merit appointments,0.200,0.800,0.800,0.800,appt_to_appt,0,0
+Gadaa System,1800,rotation,rotation,external_shock,Oromo expansion into highland Ethiopia; gadaa system contracts geographically but rotation mechanism preserved,0.850,0.300,0.100,0.300,free_to_free,0,0
+Gadaa System,1900,rotation,hereditary,external_shock,Ethiopian imperial incorporation; gadaa suppressed; hereditary Amhara administration imposed,0.850,0.300,0.100,0.300,toward_appointment,1,0
+Igbo Assemblies,1900,consensus,appointment,external_shock,British indirect rule creates warrant chief system; assembly consensus displaced by appointed colonial intermediaries; A,0.850,0.100,0.100,0.300,toward_appointment,1,0
+Greek Aristocracy,-600,hereditary,appointment,elite_reform,Solonian reforms; property-census replaces birth as qualification,0.350,0.550,0.200,0.400,appt_to_appt,0,0
+Greek Oligarchy,-508,appointment,elective,elite_reform,Cleisthenic reforms; demokratia replaces oligarchic council,0.350,0.500,0.300,0.500,toward_freedom,0,1
+Greek Oligarchy,-403,appointment,elective,elite_reform,Thrasybulus; democracy restored after Thirty Tyrants,0.350,0.500,0.300,0.500,toward_freedom,0,1
+Greek Tyranny,-545,charismatic,hereditary,internal,Peisistratos passes power to sons; charismatic seizure becomes dynastic,0.250,0.750,0.250,0.500,toward_appointment,1,0
+Swiss Cantonal Democracy,1291,rotation,elective,elite_reform,Federal Charter; Habsburg military service rotations formalised into elected cantonal assemblies; Marchal 2006,0.850,0.200,0.500,0.600,free_to_free,0,0
+Kurultai,1229,elective,hereditary,internal,Ögedei succession contested; kurultai increasingly rubber-stamps dynastic line,0.600,0.600,0.200,0.300,toward_appointment,1,0
+Kurultai,1260,hereditary,elective,collapse,Toluid Civil War; kurultai authority briefly restored before Kublai consolidates,0.600,0.600,0.200,0.300,toward_freedom,0,1
+Andean Tinku,1440,rotation,hereditary,external_shock,Inca incorporation; tinku ritual competition displaced by Inca mit'a system and hereditary kuraka intermediaries appoint,0.700,0.200,0.100,0.300,toward_appointment,1,0
+Tokugawa Shogunate,1868,hereditary,hereditary,external_shock,Perry + Satsuma-Choshu; succession type unchanged but A/I/L rise sharply under Meiji,0.150,0.800,0.800,0.750,appt_to_appt,0,0
+Confucian Bureaucracy,1644,appointment,hereditary,external_shock,Manchu conquest; Qing emperors inherit Confucian bureaucracy but impose hereditary Manchu bannerman overlay,0.150,0.800,0.950,0.900,appt_to_appt,0,0
+Confucian Bureaucracy,1905,hereditary,appointment,elite_reform,Qing abolish keju; Western-style schools replace examination (transitional),0.150,0.800,0.950,0.900,appt_to_appt,0,0
+Holy Roman Empire,1356,elective,elective,elite_reform,Golden Bull; seven electors codified; electoral principle formalised,0.450,0.400,0.450,0.550,free_to_free,0,0
+Holy Roman Empire,1438,elective,hereditary,internal,Habsburg monopoly on throne; election becomes formality,0.450,0.400,0.450,0.550,toward_appointment,1,0
