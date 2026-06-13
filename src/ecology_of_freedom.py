@@ -370,6 +370,305 @@ def main():
     print("    matters, and that composition also varies ecologically.")
     print()
 
+# ── CSV output ────────────────────────────────────────────────────────────────
+
+def save_csv(gov, out_path):
+    """Write the per-system analysis dataset to CSV."""
+    cols = [
+        'System', 'Region', 'Historical Epoch', 'Start',
+        'Latitude', 'Longitude', 'abs_lat', 'lat_band',
+        'sovereignty_index', 'admin_index', 'info_infrastructure',
+        'disobedience_freedom', 'norm_frac',
+        'Economic Base', 'econ',
+        'binding_mechanism', 'bind',
+        'coding_confidence', 'gw_discussed',
+    ]
+    out = gov[[c for c in cols if c in gov.columns]].copy()
+    out = out.sort_values('System').reset_index(drop=True)
+    out.to_csv(out_path, index=False, float_format='%.3f')
+    n_geo = int(out['abs_lat'].notna().sum())
+    print(f"  Saved CSV: {out_path}  ({len(out)} systems, {n_geo} geocoded)")
+
+
+# ── Figure output ─────────────────────────────────────────────────────────────
+
+def save_figure(gov, out_path):
+    """
+    Three-panel figure for ecology_of_freedom analysis.
+
+    Panel A: Latitude-D regression by economic base (the non-Boserup result).
+             Legend below the axes.
+    Panel B: D by binding mechanism -- dot + mean +/- SD, high to low.
+             No separate legend; y-axis labels serve that purpose.
+    Panel C: Full |latitude|-D scatter with S as point size and
+             Graeber-Wengrow systems annotated.
+             Legend to the right of the panel, outside the axes.
+    """
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import matplotlib.lines as mlines
+    import numpy as np
+    from scipy import stats as sc_stats
+
+    AMBER = '#e8a020'
+    SLATE = '#4a6580'
+
+    plt.rcParams.update({
+        'font.family': 'serif',
+        'axes.spines.top': False,
+        'axes.spines.right': False,
+        'axes.grid': True,
+        'grid.alpha': 0.15,
+        'grid.linewidth': 0.5,
+        'font.size': 9,
+    })
+
+    valid = gov.dropna(subset=['abs_lat', 'disobedience_freedom',
+                                'sovereignty_index']).copy()
+
+    ECON_STYLE = {
+        'foraging/fishing': (AMBER,    '-',  2.0, 'Foraging/fishing'),
+        'extraction':       (SLATE,    '-',  2.0, 'Extraction'),
+        'agriculture':      ('#aaaaaa', '--', 1.4, 'Agriculture'),
+        'trade':            ('#c0c0c0', ':',  1.2, 'Trade'),
+    }
+    BIND_ORDER = ['social', 'none/voluntary', 'mixed',
+                  'coercive', 'material', 'ritual']
+    BIND_COLOUR = {
+        'social':        AMBER,
+        'none/voluntary':'#c8c8b0',
+        'mixed':         '#a0a080',
+        'coercive':      '#c0392b',
+        'material':      SLATE,
+        'ritual':        '#7f5f8f',
+    }
+    ECON_COL = {
+        'foraging/fishing': AMBER,
+        'extraction':       SLATE,
+        'agriculture':      '#888888',
+        'trade':            '#a0b8c0',
+        'pastoral':         '#b8a060',
+        'other':            '#c0c0c0',
+    }
+
+    fig, axes = plt.subplots(1, 3, figsize=(19, 5.6),
+                              gridspec_kw={'width_ratios': [1, 0.85, 1.15]})
+    fig.patch.set_facecolor('white')
+    for ax in axes:
+        ax.set_facecolor('white')
+
+    # -- Panel A: legend below axes -------------------------------------------
+    ax = axes[0]
+    lat_range = np.linspace(0, 72, 200)
+    handles = []
+    for econ, (col, ls, lw, label) in ECON_STYLE.items():
+        grp = valid[valid['econ'] == econ].dropna(
+            subset=['abs_lat', 'disobedience_freedom'])
+        if len(grp) < 8:
+            continue
+        ax.scatter(grp['abs_lat'], grp['disobedience_freedom'],
+                   color=col, alpha=0.25, s=18, zorder=2)
+        slope, intercept, r, p, _ = sc_stats.linregress(
+            grp['abs_lat'], grp['disobedience_freedom'])
+        y_fit = slope * lat_range + intercept
+        sig = ('***' if p < 0.001 else '**' if p < 0.01
+               else '*' if p < 0.05 else 'ns')
+        ax.plot(lat_range, y_fit, color=col, ls=ls, lw=lw, zorder=3)
+        handles.append(mlines.Line2D(
+            [], [], color=col, ls=ls, lw=lw,
+            label=f'{label}  r={r:+.2f} ({sig}), n={len(grp)}'))
+
+    ax.axhline(0.45, color='#c0392b', lw=1.0, ls='--', alpha=0.55)
+    ax.text(68, 0.47, '\u03b8=0.45', color='#c0392b', fontsize=7.5, ha='right')
+    ax.set_xlabel('Absolute latitude (\u00b0)', fontsize=9)
+    ax.set_ylabel('D (disobedience freedom)', fontsize=9)
+    ax.set_xlim(0, 72)
+    ax.set_ylim(-0.02, 1.05)
+    ax.legend(handles=handles, fontsize=7.2,
+              loc='upper center', bbox_to_anchor=(0.5, -0.16),
+              frameon=True, framealpha=0.95, borderpad=0.6,
+              ncol=2, handlelength=2.0, columnspacing=1.0)
+    ax.set_title(
+        'A.  Latitude\u2013D by economic base\n'
+        '(agriculture: flat; foraging/extraction: rising)',
+        fontsize=9, fontweight='bold', loc='left', pad=4)
+
+    # -- Panel B: y-axis labels serve as legend --------------------------------
+    ax = axes[1]
+    bind_data = valid.dropna(subset=['bind', 'disobedience_freedom'])
+    for i, b in enumerate(BIND_ORDER):
+        grp = bind_data[bind_data['bind'] == b]['disobedience_freedom'].values
+        if len(grp) == 0:
+            continue
+        col = BIND_COLOUR.get(b, '#888888')
+        rng = np.random.default_rng(42 + i)
+        jitter = rng.uniform(-0.22, 0.22, len(grp))
+        ax.scatter(grp, np.full(len(grp), i) + jitter,
+                   color=col, alpha=0.35, s=16, zorder=2)
+        mn, sd = grp.mean(), grp.std()
+        ax.plot([mn - sd, mn + sd], [i, i],
+                color=col, lw=2.0, solid_capstyle='round', zorder=3)
+        ax.scatter([mn], [i], color=col, s=55, zorder=4,
+                   edgecolors='white', linewidths=0.8)
+        ax.text(mn + sd + 0.03, i, f'{mn:.2f}', va='center',
+                fontsize=7.5, color=col)
+
+    ax.axvline(0.45, color='#c0392b', lw=1.0, ls='--', alpha=0.55)
+    ax.set_yticks(list(range(len(BIND_ORDER))))
+    ax.set_yticklabels(BIND_ORDER, fontsize=8)
+    ax.set_xlabel('D (disobedience freedom)', fontsize=9)
+    ax.set_xlim(-0.05, 1.15)
+    ax.set_title(
+        'B.  D by binding mechanism\n'
+        '(dot\u202f=\u202fmean; bar\u202f=\u202f\u00b11\u202fSD;'
+        ' KW H=39.7, p<0.001)',
+        fontsize=9, fontweight='bold', loc='left', pad=4)
+    ax.invert_yaxis()
+
+    # -- Panel C: legend outside right edge ------------------------------------
+    ax = axes[2]
+    for econ, col in ECON_COL.items():
+        grp = valid[valid['econ'] == econ]
+        if len(grp) == 0:
+            continue
+        sizes = (1.0 - grp['sovereignty_index'].fillna(0.5)) * 80 + 12
+        ax.scatter(grp['abs_lat'], grp['disobedience_freedom'],
+                   color=col, s=sizes, alpha=0.55, zorder=2, edgecolors='none')
+
+    # Per-system label offsets to avoid overlap between closely-spaced points
+    LABEL_OFFSETS = {
+        'Icelandic Althing':                   (4,  9),   # above
+        'Icelandic Commonwealth':              (4, -11),  # below
+    }
+    gw = valid[valid['gw_discussed'].astype(str).str.lower()
+               .isin(['true', '1', 'yes', 't'])].dropna(subset=['abs_lat'])
+    for _, row in gw.iterrows():
+        ax.scatter(row['abs_lat'], row['disobedience_freedom'],
+                   color='white', s=60, zorder=5,
+                   edgecolors=AMBER, linewidths=1.2)
+        sys_name = str(row['System'])
+        short = (sys_name.replace(' Democracy', '').replace(' Communities', '')
+                         .replace(' Mega-Settlements', '').replace(' / ', '/')[:24])
+        offset = LABEL_OFFSETS.get(sys_name, (4, 3))
+        va = 'bottom' if offset[1] >= 0 else 'top'
+        ax.annotate(short,
+                    xy=(row['abs_lat'], row['disobedience_freedom']),
+                    xytext=offset, textcoords='offset points',
+                    fontsize=5.8, color='#444444', zorder=6, va=va)
+
+    ax.axhline(0.45, color='#c0392b', lw=1.0, ls='--', alpha=0.55)
+    ax.text(69, 0.47, '\u03b8=0.45', color='#c0392b', fontsize=7.5, ha='right')
+
+    leg_handles = []
+    for s_val, label in [(0.8, 'S\u202f=\u202f0.8'),
+                          (0.5, 'S\u202f=\u202f0.5'),
+                          (0.2, 'S\u202f=\u202f0.2')]:
+        sz = (1.0 - s_val) * 80 + 12
+        leg_handles.append(plt.scatter([], [], s=sz, color='#888888',
+                                       alpha=0.6, label=label,
+                                       edgecolors='none'))
+    leg_handles.append(plt.scatter([], [], color='white', s=50,
+                                   edgecolors=AMBER, linewidths=1.2,
+                                   label='Graeber\u202f&\u202fWengrow'))
+    leg_handles.append(mlines.Line2D([], [], color='none', label=''))
+    for econ, col in ECON_COL.items():
+        leg_handles.append(plt.scatter([], [], color=col, s=28, alpha=0.7,
+                                       label=econ, edgecolors='none'))
+
+    ax.legend(handles=leg_handles,
+              loc='center left', bbox_to_anchor=(1.01, 0.5),
+              fontsize=6.5, frameon=True, framealpha=0.95,
+              borderpad=0.6, labelspacing=0.45, handletextpad=0.4)
+    ax.set_xlabel('Absolute latitude (\u00b0)', fontsize=9)
+    ax.set_ylabel('D (disobedience freedom)', fontsize=9)
+    ax.set_xlim(0, 72)
+    ax.set_ylim(-0.02, 1.05)
+    ax.set_title(
+        'C.  Full dataset scatter\n'
+        '(size\u202f\u221d\u202f1\u2212S;'
+        ' \u25cb\u202f=\u202fGraeber\u202f&\u202fWengrow systems)',
+        fontsize=9, fontweight='bold', loc='left', pad=4)
+
+    fig.suptitle(
+        'Ecology of political freedom: latitude, economic base, and binding '
+        'mechanisms as predictors of D\n'
+        'across 327 geocoded governance systems (isonomia dataset, v7)',
+        fontsize=10.5, fontweight='bold', y=1.02)
+
+    plt.tight_layout()
+    plt.subplots_adjust(bottom=0.18, right=0.88)
+    plt.savefig(out_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f'  Saved figure: {out_path}')
+
+
+# ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
+    import argparse, os, pandas as pd
+
+    parser = argparse.ArgumentParser(
+        description='Ecology of political freedom -- with CSV and figure output',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        '--data', type=str,
+        default=os.path.join(DATA_DIR, 'governance_extended.csv'),
+        help='Path to governance_extended.csv')
+    parser.add_argument(
+        '--csv', type=str, default=None,
+        help='Output CSV path (default: data/ecology_of_freedom.csv)')
+    parser.add_argument(
+        '--figure', type=str, default=None,
+        help='Output figure path (default: visuals/ecology_of_freedom.png)')
+    parser.add_argument('--no-csv',    action='store_true',
+                        help='Skip CSV output')
+    parser.add_argument('--no-figure', action='store_true',
+                        help='Skip figure output')
+    args = parser.parse_args()
+
+    # Call the analysis
+    # (Re-use main() logic inline rather than calling it separately,
+    #  since argparse is already handled above)
+    import sys
+    # Inject the --data arg into sys.argv so main() picks it up
+    old_argv = sys.argv[:]
+    sys.argv = [sys.argv[0], '--data', args.data]
     main()
+    sys.argv = old_argv
+
+    # Prepare data for outputs
+    if not os.path.isfile(args.data):
+        raise SystemExit(1)
+
+    gov = pd.read_csv(args.data)
+    gov.columns = gov.columns.str.strip()
+    for col in ['sovereignty_index', 'admin_index', 'info_infrastructure',
+                'disobedience_freedom', 'Latitude', 'Longitude']:
+        if col in gov.columns:
+            gov[col] = pd.to_numeric(gov[col], errors='coerce')
+
+    gov['abs_lat']   = gov['Latitude'].abs()
+    gov['norm_frac'] = gov['info_infrastructure'] / gov['admin_index']
+    gov['econ']      = gov['Economic Base'].apply(econ_group)
+    gov['bind']      = gov['binding_mechanism'].apply(bind_group)
+    gov['lat_band']  = pd.cut(
+        gov['abs_lat'], bins=[0, 20, 40, 70],
+        labels=['tropical', 'temperate', 'high-lat'])
+
+    root     = os.path.join(SCRIPT_DIR, '..')
+    data_dir = os.path.join(root, 'data')
+    vis_dir  = os.path.join(root, 'visuals')
+    os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(vis_dir,  exist_ok=True)
+
+    csv_out = args.csv    or os.path.join(data_dir, 'ecology_of_freedom.csv')
+    fig_out = args.figure or os.path.join(vis_dir,  'ecology_of_freedom.png')
+
+    print()
+    print('=== OUTPUTS ===')
+    if not args.no_csv:
+        save_csv(gov, csv_out)
+    if not args.no_figure:
+        save_figure(gov, fig_out)

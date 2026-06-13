@@ -1,0 +1,402 @@
+System,Region,Historical Epoch,Start,Latitude,Longitude,abs_lat,lat_band,sovereignty_index,admin_index,info_infrastructure,disobedience_freedom,norm_frac,Economic Base,econ,binding_mechanism,bind,coding_confidence,gw_discussed
+Abbasid Caliphate,Middle East,Medieval,750,,,,,0.550,0.800,0.750,0.250,0.938,,other,,mixed,2,
+Aboriginal Elders Councils,Australia,,-5000,,,,,0.200,0.100,0.050,0.750,0.500,,other,kinship/sacred,social,3,False
+Aboriginal Tjurunga Councils,Australia,Paleolithic,-8000,-25.000,133.000,25.000,temperate,0.400,0.300,0.150,0.600,0.500,Foraging,foraging/fishing,none,none/voluntary,1,False
+Achaemenid Persian Empire,Middle East,Ancient,-550,,,,,0.550,0.800,0.650,0.280,0.812,,other,,mixed,2,
+Adena Moundbuilder Councils,USA,Woodland,-1000,39.000,-83.000,39.000,temperate,0.650,0.500,0.300,0.350,0.600,Pipeweed,other,ritual,ritual,1,False
+Ainu Bear Ritual Governance,Japan,Paleolithic,-10000,43.100,144.300,43.100,high-lat,0.850,0.600,0.300,0.100,0.500,Salmon/foraging,foraging/fishing,ritual,ritual,1,False
+Akan Amanhene Gold States,Ghana,Early Modern,1400,6.700,-1.600,6.700,tropical,0.750,0.450,0.300,0.200,0.667,Gold/cocoa,extraction,ritual,ritual,1,False
+Akan Chieftaincy,West Africa (Akan),,1000,,,,,0.500,0.200,0.100,0.600,0.500,,other,clan,social,2,False
+Aleut Unangan Whalebone Chiefs,USA,Early Modern,1741,52.000,-176.000,52.000,high-lat,0.500,0.450,0.300,0.200,0.667,Sea otter pelts,other,none,none/voluntary,1,False
+Almoravid Lamtuna Councils,Morocco,Medieval,1040,31.800,-7.100,31.800,temperate,0.650,0.500,0.300,0.350,0.600,Trans-Saharan trade,trade,none,none/voluntary,1,False
+Alpine Pastoral Communes,Switzerland/Austria,Medieval,1200,46.500,8.600,46.500,high-lat,0.400,0.300,0.300,0.500,1.000,Dairy farming,agriculture,none,none/voluntary,1,False
+Althingi Carbon-Neutral Parliament,Iceland,Medieval-Modern,930,64.100,-21.900,64.100,high-lat,0.200,0.750,0.850,0.850,1.133,Geothermal energy,other,none,none/voluntary,2,False
+Anasazi Kiva Water Councils,USA,Medieval,750,36.100,-109.500,36.100,temperate,0.200,0.400,0.300,0.800,0.750,Corn/beans,other,none,none/voluntary,1,False
+Andean Ayllu Systems,Peru,Bronze Age,-1000,-13.200,-72.200,13.200,tropical,0.200,0.250,0.200,0.750,0.800,Potato/maize,agriculture,clan,social,2,False
+Andean Tinku,Andean South America,,-500,,,,,0.200,0.100,0.050,0.700,0.500,,other,ritual,ritual,2,False
+Andorran Co-Principality,Andorra,Medieval,1278,42.500,1.500,42.500,high-lat,0.300,0.550,0.650,0.700,1.182,Tourism/Banking,other,none,none/voluntary,2,False
+Apartheid Bantustans,South Africa,Modern,1948,-29.000,24.000,29.000,temperate,0.850,0.600,0.300,0.100,0.500,Migrant labor,other,none,none/voluntary,1,False
+Arctic Nenets Yamal Councils,Russia,Modern,1700,67.500,77.900,67.500,high-lat,0.200,0.400,0.300,0.900,0.750,Reindeer fur,foraging/fishing,none,none/voluntary,1,False
+Ashanti Confederacy,West Africa,Early Modern,1670,6.700,-1.600,6.700,tropical,0.650,0.400,0.300,0.350,0.750,Gold/cocoa,extraction,tribute/military,material,2,False
+Assyrian Military Autocracy,Mesopotamia,Iron Age,-911,36.400,43.100,36.400,temperate,0.950,0.850,0.700,0.000,0.824,Tribute economy,other,coercion,coercive,2,False
+Athenian Democracy,Greece,Iron Age,-508,37.900,23.700,37.900,temperate,0.150,0.450,0.550,0.850,1.222,Olive trade,trade,citizenship,social,2,False
+Ayutthaya Elephant Bureaucracy,Thailand,Early Modern,1351,14.400,100.500,14.400,tropical,0.400,0.300,0.300,0.500,1.000,Rice/tin,agriculture,none,none/voluntary,1,False
+Aztec Triple Alliance,Mesoamerica,Medieval,1428,19.400,-99.100,19.400,tropical,0.800,0.700,0.700,0.200,1.000,Maize/chocolate,agriculture,land/tribute/ritual,material,3,False
+Bactrian Greek Syncretism,Afghanistan,Classical,-250,36.700,67.000,36.700,temperate,0.750,0.450,0.300,0.050,0.667,Wine/gold,trade,none,none/voluntary,1,False
+Balinese Negara,Bali,,900,,,,,0.200,0.150,0.100,0.700,0.667,,other,ritual,ritual,3,False
+Bamum Script Bureaucracy,Cameroon,Early Modern,1390,5.700,10.900,5.700,tropical,0.850,0.600,0.600,0.100,1.000,Palm oil,extraction,none,none/voluntary,1,False
+Bamum Scriptocracy,Cameroon,Modern,1880,5.500,10.500,5.500,tropical,0.850,0.600,0.600,0.100,1.000,Palm oil/ivory,extraction,none,none/voluntary,1,False
+Bantu Mfecane Councils,Central Africa,Iron Age,-500,-5.000,23.000,5.000,tropical,0.400,0.300,0.150,0.500,0.500,Iron/bananas,extraction,clan,social,1,False
+Barbuda Communal Land System,Barbuda,Early Modern,1685,17.600,-61.800,17.600,tropical,0.150,0.200,0.150,0.900,0.750,Lobster fishing,foraging/fishing,land,material,1,False
+Batavian Republic,Netherlands,Early Modern,1795,52.100,5.100,52.100,high-lat,0.350,0.550,0.300,0.650,0.545,Trade/industry,trade,none,none/voluntary,1,False
+Bavarian Beer Hall Communes,Germany,Medieval,1200,48.100,11.600,48.100,high-lat,0.400,0.300,0.300,0.500,1.000,Barley trade,trade,none,none/voluntary,1,False
+Benin Oba Divine Kingship,Nigeria,Medieval,1200,6.300,5.600,6.300,tropical,0.800,0.550,0.400,0.100,0.727,Ivory/Bronze,other,tribute/ritual,material,2,False
+Benin Oba Eweka Dynasty,Nigeria,Medieval,1200,6.300,5.600,6.300,tropical,0.700,0.850,0.300,0.000,0.353,Bronze casting,other,none,none/voluntary,1,False
+Berber Amazigh Councils,North Africa,Medieval,-500,31.800,-5.500,31.800,temperate,0.200,0.400,0.600,0.900,1.500,Salt caravans,extraction,clan,social,1,False
+Berber Jemaa,North Africa,,-1000,,,,,0.250,0.100,0.050,0.750,0.500,,other,clan,social,2,False
+Bermudian Parliamentary Hybrid,Bermuda,Modern,1620,32.300,-64.800,32.300,temperate,0.200,0.400,0.300,0.900,0.750,Tourism/reinsurance,foraging/fishing,none,none/voluntary,1,False
+Bhutanese Gross National Happiness,Bhutan,Modern,2008,27.500,90.500,27.500,temperate,0.750,0.450,0.300,0.200,0.667,Hydroelectricity,other,none,none/voluntary,1,False
+Bitcoin Decentralized Governance,Digital,Information Age,2009,,,,,0.200,0.200,0.300,0.850,1.500,Crypto mining,extraction,none,none/voluntary,1,False
+Blackfoot Confederacy,USA/Canada,Early Modern,1700,49.000,-113.000,49.000,high-lat,0.300,0.150,0.350,0.800,2.333,Bison herds,pastoral,none,none/voluntary,1,False
+Blemmyes Desert Assemblies,Sudan,Classical,200,22.000,35.000,22.000,temperate,0.200,0.400,0.300,0.900,0.750,Camel herding,pastoral,none,none/voluntary,1,False
+Bolivian Plurinational State,Bolivia,Modern,2009,-16.300,-63.300,16.300,tropical,0.600,0.650,0.150,0.400,0.231,Lithium/Gas,other,none,none/voluntary,1,False
+Botswana Tribal Democracy,Botswana,Modern,1966,-22.300,24.700,22.300,temperate,0.750,0.450,0.300,0.300,0.667,Diamond mining,extraction,none,none/voluntary,1,False
+Breton Parish Closes,France,Early Modern,1500,48.200,-3.700,48.200,high-lat,0.650,0.500,0.300,0.250,0.600,Fishing/Linen,foraging/fishing,none,none/voluntary,1,False
+British Parliamentary System,UK,Modern,1689,51.500,-0.100,51.500,high-lat,0.200,0.750,0.900,0.850,1.200,Industrial,other,none,none/voluntary,2,False
+Buganda Clan-Based Monarchy,Uganda,Medieval,1300,0.300,32.600,0.300,tropical,0.750,0.450,0.300,0.050,0.667,Banana/iron,extraction,clan,social,1,False
+Byzantine Theme System,Turkey,Medieval,680,41.000,28.900,41.000,high-lat,0.700,0.800,0.750,0.200,0.938,Wheat/silk,agriculture,land/military,material,2,False
+Cahokia Birdman Dynasty,USA,Medieval,1050,38.700,-90.100,38.700,temperate,0.650,0.500,0.350,0.100,0.700,Maize/copper,agriculture,ritual,ritual,1,False
+Calusa Shell Mound Kingdom,USA,Medieval,500,26.500,-81.900,26.500,temperate,0.750,0.450,0.800,0.050,1.778,Shellfish,foraging/fishing,none,none/voluntary,1,False
+Carolingian Empire,Europe,Medieval,768,,,,,0.500,0.550,0.550,0.350,1.000,,other,,mixed,2,
+Cathar Perfecti Councils,France,Medieval,1150,43.600,1.400,43.600,high-lat,0.650,0.500,0.300,0.250,0.600,Viticulture,other,none,none/voluntary,1,False
+Celtic Druidic Synods,Western Europe,Iron Age,-500,48.900,2.300,48.900,high-lat,0.500,0.450,0.600,0.350,1.333,Ironworking,extraction,none,none/voluntary,1,False
+Celtic Tribal Assemblies,Northwestern Europe,,-800,,,,,0.300,0.100,0.100,0.700,1.000,,other,clan/honour,social,2,True
+Chachapoya Cloud Forest Clans,Peru,Medieval,800,-6.700,-77.800,6.700,tropical,0.250,0.200,0.300,0.600,1.500,Quinoa/coca,other,none,none/voluntary,1,False
+Champa Linga-Kings,Vietnam,Classical,192,11.900,108.900,11.900,tropical,0.650,0.500,0.300,0.100,0.600,Sandalwood,other,none,none/voluntary,1,False
+Cherokee Constitutional Republic,USA,Modern,1821,35.500,-83.500,35.500,temperate,0.200,0.400,0.600,0.900,1.500,Agriculture,agriculture,none,none/voluntary,1,False
+Cheyenne Council of 44,Great Plains,Early Modern,1800,44.000,-102.500,44.000,high-lat,0.300,0.150,0.300,0.800,2.000,Bison hunting,foraging/fishing,military,coercive,1,False
+Chilean Constitutional Experiment,Chile,Modern,2022,-33.400,-70.700,33.400,temperate,0.250,0.500,0.300,0.850,0.600,Copper exports,extraction,none,none/voluntary,1,False
+Chinese Communist Party Governance,East Asia,Modern,1949,,,,,0.900,0.900,0.950,0.080,1.056,,other,,mixed,3,
+Chola Naval Assemblies,India,Medieval,850,10.500,79.500,10.500,tropical,0.550,0.550,0.500,0.550,0.909,Pepper/textiles,other,tribute,material,2,False
+Chukchi Whalebone Assemblies,Russia,Early Modern,1700,64.400,-172.900,64.400,high-lat,0.200,0.400,0.300,0.900,0.750,Walrus/whale,other,clan,social,1,False
+Chumash Tomol Canoe Guilds,California,Medieval,500,34.500,-120.000,34.500,temperate,0.500,0.450,0.300,0.200,0.667,Shell beads,other,none,none/voluntary,1,False
+Circassian Xabze Councils,Russia/Georgia,Early Modern,1400,44.000,40.000,44.000,high-lat,0.250,0.200,0.300,0.850,1.500,Horses/wine,trade,none,none/voluntary,1,False
+Classic Maya City-States,Mesoamerica,,250,,,,,0.650,0.550,0.650,0.350,1.182,,other,ritual/land,material,3,True
+Clovis Megafauna Quotas,N. America,Paleolithic,-13000,39.000,-102.000,39.000,temperate,0.400,0.300,0.300,0.550,1.000,Big game,other,none,none/voluntary,1,False
+Confucian Bureaucracy,China,,-202,,,,,0.800,0.950,0.900,0.150,0.947,,other,land/exam,material,3,False
+Cornish Stannary,England,Medieval,1201,50.200,-5.100,50.200,high-lat,0.400,0.300,0.150,0.500,0.500,Stannary charters,other,none,none/voluntary,1,False
+Cossack Hetmanate,Ukraine,,1649,,,,,0.500,0.300,0.250,0.650,0.833,,other,military,coercive,2,False
+Cossack Sich Republic,Ukraine,Early Modern,1550,48.000,35.000,48.000,high-lat,0.200,0.400,0.300,0.900,0.750,Grain/raiding,agriculture,military,coercive,1,False
+Cuban Revolutionary Committees,Cuba,Modern,1960,21.500,-78.000,21.500,temperate,0.400,0.300,0.300,0.500,1.000,Sugar/medical,other,none,none/voluntary,1,False
+Cucuteni-Trypillia Mega-Settlements,Ukraine/Moldova,Neolithic,-5500,47.700,29.100,47.700,high-lat,0.100,0.350,0.100,0.850,0.286,Wheat/barley,agriculture,community,social,2,False
+Cuman Tribal Federations,Ukraine,Medieval,1100,48.000,33.000,48.000,high-lat,0.200,0.400,0.300,0.900,0.750,Horse breeding,other,none,none/voluntary,1,False
+D'mt Beehive Councils,Eritrea,Classical,-300,15.000,39.000,15.000,tropical,0.650,0.500,0.300,0.250,0.600,Honey/incense,other,tribute,material,1,False
+Dahomey Mino Amazon State,Benin,Early Modern,1600,9.300,2.300,9.300,tropical,0.800,0.550,0.350,0.150,0.636,Palm oil,extraction,military,coercive,2,False
+Dalriada Gaelic Law Schools,Scotland,Early Medieval,500,56.800,-5.400,56.800,high-lat,0.400,0.300,0.300,0.500,1.000,Cattle herding,pastoral,none,none/voluntary,1,False
+Delhi Sultanate Slave Kings,India,Medieval,1206,28.600,77.200,28.600,temperate,0.700,0.850,0.300,0.150,0.353,Spice trade,trade,military,coercive,1,False
+Denisovan Cave Networks,"Siberia, Altai Mountains",Paleolithic,-100000,51.400,84.700,51.400,high-lat,0.200,0.400,0.150,0.900,0.375,Foraging,foraging/fishing,clan,social,1,False
+Digger Communes,England,Early Modern,1649,51.500,-0.100,51.500,high-lat,0.600,0.650,0.600,0.400,0.923,Subsistence farming,agriculture,land,material,1,False
+Domari Blacksmith Networks,Middle East,Medieval-Modern,800,31.000,36.000,31.000,temperate,0.400,0.300,0.300,0.350,1.000,Metalwork,other,clan,social,1,False
+Dutch Republic States-General,Netherlands,Early Modern,1581,52.100,5.100,52.100,high-lat,0.300,0.700,0.750,0.600,1.071,Tulips/slaves,other,trade,mixed,2,False
+Early Uruk,Mesopotamia,,-4000,,,,,0.400,0.550,0.550,0.550,1.000,,other,temple/debt,material,3,True
+Egyptian Middle Kingdom,Egypt,,-2055,,,,,0.700,0.650,0.600,0.200,0.923,,other,land/debt,material,3,False
+Egyptian Nomarchies,Egypt,Bronze Age,-3150,26.800,30.800,26.800,temperate,0.600,0.650,0.500,0.200,0.769,Wine/grain,agriculture,land,material,2,False
+Egyptian Old Kingdom,Egypt,,-2686,,,,,0.900,0.450,0.400,0.100,0.889,,other,land/coercion,material,3,False
+Estonian Digital Democracy,Estonia,Information Age,2002,58.700,25.000,58.700,high-lat,0.150,0.950,0.950,0.850,1.000,IT services,other,none,none/voluntary,2,False
+Etruscan Haruspex Diviners,Italy,Iron Age,-800,42.800,12.400,42.800,high-lat,0.850,0.600,0.300,0.100,0.500,Wine trade,trade,none,none/voluntary,1,False
+Etruscan Lucumones,Italy,Iron Age,-700,42.800,12.400,42.800,high-lat,0.600,0.300,0.200,0.400,0.667,Wine trade,trade,clan/ritual,social,2,False
+European Union Governance,Europe,Modern,1993,50.800,4.500,50.800,high-lat,0.300,0.900,0.850,0.550,0.944,Single market,other,law,mixed,2,False
+Evenk Tungus Clan Federations,Russia,Medieval,1200,55.000,125.000,55.000,high-lat,0.200,0.400,0.300,0.900,0.750,Fur trade,trade,none,none/voluntary,1,False
+Fante Asafo Companies,Ghana,Early Modern,1700,5.000,-1.000,5.000,tropical,0.400,0.300,0.300,0.600,1.000,Gold/cocoa,extraction,none,none/voluntary,1,False
+Faroe Islands Løgting,Faroe Islands,Medieval-Modern,900,62.000,-7.000,62.000,high-lat,0.200,0.400,0.300,0.800,0.750,Fishing,foraging/fishing,none,none/voluntary,1,False
+Faroese Sheep Court,Faroe Islands,Medieval,1000,62.000,-7.000,62.000,high-lat,0.200,0.400,0.300,0.800,0.750,Sheep/wool,trade,land,material,1,False
+Fijian Bati Warrior Guilds,Fiji,Medieval,1000,-18.100,178.400,18.100,tropical,0.400,0.300,0.300,0.500,1.000,Yams/whales,other,military,coercive,1,False
+Finnish Kalevala Singing Governors,Finland,Medieval,1000,63.000,27.000,63.000,high-lat,0.650,0.500,0.150,0.250,0.300,Fur/fish,foraging/fishing,none,none/voluntary,1,False
+Freetown Settler Democracy,Sierra Leone,Early Modern,1792,8.500,-13.200,8.500,tropical,0.350,0.550,0.300,0.750,0.545,Cash crops,other,coercion,coercive,1,False
+French Third Republic,Europe,Modern,1870,,,,,0.500,0.750,0.850,0.600,1.133,,other,,mixed,2,
+Frisian Moot Hall Democracy,Netherlands,Medieval,800,53.200,5.800,53.200,high-lat,0.200,0.400,0.300,0.900,0.750,Fishing/salt,foraging/fishing,none,none/voluntary,1,False
+Frisian Sea-Law Republics,Netherlands,Medieval,800,53.200,5.800,53.200,high-lat,0.200,0.400,0.300,0.900,0.750,Fishing/salt,foraging/fishing,none,none/voluntary,1,False
+Frisian Sea-Law Tribunals,Netherlands,Medieval,1100,53.200,5.800,53.200,high-lat,0.400,0.400,0.300,0.600,0.750,Fishing/Dikes,foraging/fishing,none,none/voluntary,1,False
+Frisian Tribal Thing,Netherlands/Germany,Early Medieval,500,53.200,5.800,53.200,high-lat,0.200,0.400,0.300,0.900,0.750,Fishing/salt,foraging/fishing,none,none/voluntary,1,False
+Fuegian Canoe Councils,Tierra del Fuego,Paleolithic,-8000,-54.500,-67.200,54.500,high-lat,0.200,0.400,0.350,0.900,0.875,Seal hunting,foraging/fishing,none,none/voluntary,1,False
+Gadaa System,Oromo (Ethiopia),,1500,,,,,0.300,0.100,0.050,0.850,0.500,,other,age-set,social,3,False
+Garamantian Foggaras,Libya,Classical,-400,26.000,13.000,26.000,temperate,0.850,0.600,0.300,0.000,0.500,Date/slave,other,coercion,coercive,1,False
+Genoese Black Sea Colonies,Ukraine/Crimea,Medieval,1266,45.000,35.000,45.000,high-lat,0.500,0.450,0.300,0.350,0.667,Grain/slaves,agriculture,coercion,coercive,1,False
+Ghana Empire,West Africa,Medieval,830,15.700,-8.000,15.700,tropical,0.750,0.450,0.150,0.050,0.333,Gold/salt,extraction,ritual,ritual,1,False
+Ghana Empire Wagadu,West Africa,Medieval,400,15.700,-8.000,15.700,tropical,0.650,0.500,0.300,0.250,0.600,Gold/salt,extraction,none,none/voluntary,1,False
+Golden Horde Yam System,Russia/Kazakhstan,Medieval,1240,50.000,60.000,50.000,high-lat,0.750,0.650,0.550,0.200,0.846,Fur/tribute,other,tribute/military,material,2,False
+Gotlandic Sea-Farmer Althing,Sweden,Medieval,1000,57.000,18.000,57.000,high-lat,0.400,0.300,0.300,0.600,1.000,Grain/silver,agriculture,none,none/voluntary,1,False
+Great Zimbabwe Rain Priests,Zimbabwe,Medieval,1100,-20.300,30.900,20.300,temperate,0.650,0.500,0.300,0.100,0.600,Gold/cattle,pastoral,ritual,ritual,1,False
+Greek Aristocracy,Greek,,-800,,,,,0.550,0.200,0.200,0.350,1.000,,other,clan/birth,social,2,False
+Greek Democracy,Greek,,-508,,,,,0.200,0.350,0.500,0.800,1.429,,other,citizenship,social,3,False
+Greek Diarchy,Greek,,-900,,,,,0.600,0.300,0.200,0.350,0.667,,other,military,coercive,2,False
+Greek Oligarchy,Greek,,-600,,,,,0.500,0.300,0.300,0.350,1.000,,other,wealth,mixed,2,False
+Greek Stratocracy,Greek,,-700,,,,,0.800,0.400,0.300,0.150,0.750,,other,military,coercive,2,False
+Greek Timocracy,Greek,,-594,,,,,0.400,0.350,0.300,0.500,0.857,,other,wealth,mixed,2,False
+Greek Tyranny,Greek,,-650,,,,,0.750,0.250,0.200,0.250,0.800,,other,charisma,ritual,2,False
+Greenland Norse Althing,Greenland,Medieval,985,61.000,-45.000,61.000,high-lat,0.200,0.400,0.300,0.800,0.750,Dairy/whale,other,none,none/voluntary,1,False
+Gupta Golden Age,India,Classical,320,25.600,85.100,25.600,temperate,0.450,0.550,0.500,0.300,0.909,Spice trade,trade,land,material,2,False
+Göbekli Tepe (ritual complex),Southeast Anatolia,,-9600,,,,,0.200,0.050,0.050,0.850,1.000,,other,none,none/voluntary,2,True
+Göktürk Orkhon Script Khans,Mongolia,Medieval,552,47.900,106.900,47.900,high-lat,0.750,0.450,0.600,0.200,1.333,Horse breeding,other,none,none/voluntary,1,False
+Habsburg Composite Monarchy,Central Europe,Early Modern,1526,48.200,16.400,48.200,high-lat,0.550,0.650,0.650,0.400,1.000,Mining,extraction,land/law,material,2,False
+Haida Potlatch Governance,Canada,Early Modern,1700,53.300,-132.100,53.300,high-lat,0.200,0.100,0.300,0.750,3.000,Cedar/copper,extraction,none,none/voluntary,1,False
+Haitian Revolutionary Councils,Haiti,Early Modern,1791,19.000,-72.400,19.000,tropical,0.150,0.200,0.300,0.900,1.500,Sugar plantations,other,coercion,coercive,1,False
+Hallstatt Salt Lords,Austria,Iron Age,-1000,47.600,13.600,47.600,high-lat,0.500,0.450,0.300,0.200,0.667,Salt/iron,extraction,none,none/voluntary,1,False
+Han Dynasty Examination Prototype,China,Classical,-202,34.500,113.600,34.500,temperate,0.700,0.850,0.300,0.150,0.353,Silk Road,trade,none,none/voluntary,1,False
+Hanseatic Kontor,England/Germany,Medieval,1200,51.500,0.100,51.500,high-lat,0.400,0.550,0.300,0.600,0.545,Wool/beer,trade,none,none/voluntary,1,False
+Hanseatic League,Northern Europe,Medieval,1356,54.300,10.100,54.300,high-lat,0.250,0.500,0.600,0.650,1.200,Timber/amber,trade,trade,mixed,2,False
+Hawaiian Ahupuaʻa System,Hawaii,Medieval,1000,19.900,-155.500,19.900,tropical,0.400,0.300,0.300,0.350,1.000,Taro farming,agriculture,none,none/voluntary,1,False
+Hawaiian Kapu System,Hawaii,Early Modern,1000,19.900,-155.500,19.900,tropical,0.850,0.600,0.300,0.000,0.500,Taro farming,agriculture,none,none/voluntary,1,False
+Highland New Guinea Big Man System,Papua New Guinea,,-1000,,,,,0.100,0.050,0.050,0.850,1.000,,other,none,none/voluntary,3,False
+Hittite Panku Council,Anatolia,Bronze Age,-1650,39.700,34.800,39.700,temperate,0.550,0.450,0.450,0.450,1.000,Iron smelting,extraction,land/military,material,3,False
+Hittite Sun Priest-Kings,Turkey,Bronze Age,-1600,40.000,34.000,40.000,temperate,0.750,0.450,0.300,0.050,0.667,Wheat/iron,agriculture,none,none/voluntary,1,False
+Holy Roman Empire,Central Europe,,800,,,,,0.400,0.450,0.550,0.450,1.222,,other,land/law,material,2,False
+Holy Roman Imperial Diarchy,Central Europe,Medieval,800,50.100,8.700,50.100,high-lat,0.350,0.500,0.600,0.500,1.200,Manorialism,other,land/law,material,2,False
+Hopewell Copper Exchange,USA,Woodland,-200,39.800,-83.100,39.800,temperate,0.300,0.150,0.300,0.800,2.000,Copper/pipe,extraction,ritual,ritual,1,False
+Icelandic Althing,Iceland,Medieval,930,64.100,-21.900,64.100,high-lat,0.150,0.250,0.250,0.800,1.000,Fishing,foraging/fishing,honour,social,2,True
+Icelandic Commonwealth,Iceland,Medieval,930,64.000,-19.000,64.000,high-lat,0.100,0.200,0.200,0.800,1.000,Fish/wool,foraging/fishing,honour,social,2,True
+Icelandic Crowdsourced Constitution,Iceland,Modern,2010,64.100,-21.900,64.100,high-lat,0.200,0.400,0.300,0.900,0.750,Fisheries,foraging/fishing,none,none/voluntary,1,False
+Igbo Assemblies,Igbo (Nigeria),,-500,,,,,0.100,0.100,0.050,0.850,0.500,,other,community,social,3,False
+Igbo Umunna Councils,Nigeria,Early Modern,1000,5.500,7.000,5.500,tropical,0.200,0.400,0.150,0.900,0.375,Yam/palm oil,extraction,none,none/voluntary,1,False
+Imbangala Kilombo,Angola,Early Modern,1600,-12.000,17.000,12.000,tropical,0.800,0.400,0.300,0.150,0.750,Slave raiding,other,military,coercive,1,False
+Inca Empire (Tawantinsuyu),Andean South America,Medieval,1438,-13.500,-71.900,13.500,tropical,0.750,0.800,0.600,0.100,0.750,Potato/maize,agriculture,labour/land,material,3,False
+Indian Panchayati Raj,India,Modern,1992,20.600,78.900,20.600,temperate,0.200,0.400,0.300,0.900,0.750,Agriculture/GDP,agriculture,none,none/voluntary,1,False
+Indigenous IPLCs,Global,All Ages,-10000,,,,,0.400,0.300,0.300,0.600,1.000,Subsistence,other,none,none/voluntary,1,False
+Indus Priest-Kings,Pakistan/India,Bronze Age,-3300,30.600,72.800,30.600,temperate,0.650,0.500,0.800,0.250,1.600,Cotton trade,trade,none,none/voluntary,1,False
+Inuit Qaggiq Assemblies,Arctic,Medieval,-1000,70.000,-100.000,70.000,high-lat,0.100,0.050,0.050,0.900,1.000,Seal hunting,foraging/fishing,none,none/voluntary,3,False
+Irish Brehon Law,Ireland,Medieval,500,53.500,-8.000,53.500,high-lat,0.400,0.300,0.300,0.500,1.000,Cattle/dairy,pastoral,none,none/voluntary,1,False
+Irish Traveller Cant Systems,Ireland,Modern,1700,53.000,-8.000,53.000,high-lat,0.400,0.300,0.300,0.500,1.000,Scrap/tarmac,other,none,none/voluntary,1,False
+Iroquois Confederacy / Haudenosaunee,Northeast North America,Medieval,1450,43.100,-77.600,43.100,high-lat,0.250,0.200,0.150,0.850,0.750,Maize/beans,agriculture,clan,social,3,True
+Isocracy,Greek,,-460,,,,,0.150,0.350,0.400,0.800,1.143,,other,citizenship,social,2,False
+Javanese Kabuyutan Councils,Indonesia,Medieval,1200,-7.600,110.700,7.600,tropical,0.500,0.450,0.600,0.350,1.333,Rice farming,agriculture,none,none/voluntary,1,False
+Jomon Shellfish Consensus,Japan,Mesolithic,-14000,36.500,138.600,36.500,temperate,0.200,0.400,0.300,0.800,0.750,Marine foraging,foraging/fishing,none,none/voluntary,1,False
+Jomsviking Warrior Commune,Denmark/Poland,Medieval,980,55.000,16.000,55.000,high-lat,0.400,0.300,0.300,0.500,1.000,Plunder/Iron,extraction,none,none/voluntary,1,False
+Joseon Confucian Bureaucracy,Korea,Early Modern,1392,37.500,127.000,37.500,temperate,0.750,0.850,0.850,0.150,1.000,Rice/silk,agriculture,land/exam,material,2,False
+Jukun Aku Oracle Kings,Nigeria,Early Modern,1400,8.900,9.800,8.900,tropical,0.650,0.500,0.300,0.100,0.600,Yam/fishing,foraging/fishing,none,none/voluntary,1,False
+Kalderash Gold-Smithing Dynasties,Balkans,Early Modern,1500,44.000,21.000,44.000,high-lat,0.400,0.300,0.300,0.500,1.000,Goldsmithing,extraction,clan,social,1,False
+Kalmyk Khanate Nomadic Parliament,Russia,Early Modern,1630,47.000,45.000,47.000,high-lat,0.200,0.200,0.600,0.800,3.000,Horse herds,pastoral,none,none/voluntary,1,False
+Kanem Duguwa Nomad-Kings,Chad,Medieval,700,14.100,15.300,14.100,tropical,0.850,0.600,0.300,0.100,0.500,Salt/slaves,extraction,coercion,coercive,1,False
+Kanem-Bornu Sufi Knights,Chad,Medieval,1100,13.100,14.700,13.100,tropical,0.800,0.400,0.600,0.150,1.500,Salt/slaves,extraction,coercion,coercive,1,False
+Kerala People’s Planning,India,Modern,1996,8.500,76.900,8.500,tropical,0.600,0.650,0.300,0.400,0.462,Spice/remittances,trade,none,none/voluntary,1,False
+Ket Yenisei Fish-Taboo Councils,Russia,Early Modern,1600,63.000,88.000,63.000,high-lat,0.400,0.300,0.300,0.600,1.000,Sturgeon fishing,foraging/fishing,clan,social,1,False
+Khazar Jewish Khaganate,Russia/Kazakhstan,Medieval,650,47.000,50.000,47.000,high-lat,0.400,0.350,0.300,0.600,0.857,Fur/slaves,other,coercion,coercive,1,False
+Khmer Devaraja,Cambodia,Medieval,802,13.400,103.800,13.400,tropical,0.850,0.600,0.500,0.100,0.833,Rice farming,agriculture,land/ritual,material,3,False
+Khmer Water Mandala,Cambodia,Medieval,1113,13.400,103.800,13.400,tropical,0.800,0.650,0.550,0.100,0.846,Rice farming,agriculture,land/ritual,material,2,False
+Khotanese Buddhist Monarchy,China,Medieval,200,37.100,79.900,37.100,temperate,0.400,0.300,0.600,0.350,2.000,Jade trade,trade,none,none/voluntary,1,False
+Kibbutz Movement,Israel,Modern,1909,32.500,35.000,32.500,temperate,0.100,0.300,0.350,0.850,1.167,Agriculture,agriculture,community,social,2,False
+Kingdom of Kush,Sudan,Iron Age,-780,19.600,30.400,19.600,tropical,0.750,0.450,0.600,0.200,1.333,Gold mining,extraction,none,none/voluntary,1,False
+Kiribati Maneaba Councils,Kiribati,Early Modern,1400,1.400,173.000,1.400,tropical,0.150,0.200,0.150,0.800,0.750,Fishing/coconut,foraging/fishing,none,none/voluntary,1,False
+Konbaung Hluttaw,Myanmar,Early Modern,1752,21.000,96.000,21.000,temperate,0.700,0.850,0.300,0.150,0.353,Rice/teak,agriculture,coercion,coercive,1,False
+Kongo Mbanza Council,Angola,Early Modern,1390,-8.800,13.200,8.800,tropical,0.400,0.300,0.300,0.500,1.000,Copper/ivory,extraction,none,none/voluntary,1,False
+Koryak Reindeer-Oracle System,Russia,Early Modern,1600,59.200,159.300,59.200,high-lat,0.650,0.500,0.300,0.250,0.600,Reindeer blood,foraging/fishing,none,none/voluntary,1,False
+Kuba Bushong Cloth Kings,DRC,Early Modern,1600,-5.000,22.000,5.000,tropical,0.750,0.450,0.300,0.050,0.667,Raffia cloth,other,none,none/voluntary,1,False
+Kurultai,Mongolia,,1206,,,,,0.600,0.200,0.100,0.600,0.500,,other,military,coercive,2,False
+Kushan Devaputra,Afghanistan,Classical,30,36.000,68.000,36.000,temperate,0.750,0.450,0.600,0.050,1.333,Silk Road trade,trade,none,none/voluntary,1,False
+Kven Arctic Trader Networks,Norway/Finland,Medieval,1200,70.000,28.000,70.000,high-lat,0.400,0.300,0.150,0.500,0.500,Fur/fish,foraging/fishing,none,none/voluntary,1,False
+La Tène Tribal Federations,Switzerland,Iron Age,-450,47.000,7.000,47.000,high-lat,0.350,0.200,0.300,0.650,1.500,Amber/wool,trade,clan,social,1,False
+Lan Xang Million Elephant Kings,Laos,Medieval,1353,17.900,102.600,17.900,tropical,0.650,0.450,0.800,0.100,1.778,Teak/opium,other,land,material,1,False
+Lapita Voyaging Networks,Pacific,Iron Age,-1500,-16.000,167.000,16.000,tropical,0.200,0.400,0.300,0.800,0.750,Taro/obsidian,other,clan,social,1,False
+Late Uruk / Early Dynastic,Mesopotamia,,-3100,,,,,0.750,0.700,0.750,0.300,1.071,,other,debt/land/coercion,material,3,True
+Leveller Agitators,England,Early Modern,1647,51.500,-0.100,51.500,high-lat,0.200,0.400,0.300,0.900,0.750,War taxes,other,tribute,material,1,False
+Libyan Jamahiriya,Libya,Modern,1977,32.900,13.200,32.900,temperate,0.400,0.300,0.300,0.600,1.000,Oil wealth,extraction,none,none/voluntary,1,False
+Liechtenstein Direct Democracy,Liechtenstein,Modern,1862,47.200,9.500,47.200,high-lat,0.400,0.600,0.750,0.750,1.250,Finance/Tourism,other,none,none/voluntary,2,False
+Liechtenstein Direct Monarchy,Liechtenstein,Modern,1719,47.200,9.500,47.200,high-lat,0.200,0.400,0.300,0.800,0.750,Banking,other,none,none/voluntary,1,False
+Lithuanian Pagan Kings,Lithuania/Ukraine,Medieval,1250,55.000,24.000,55.000,high-lat,0.750,0.450,0.300,0.050,0.667,Amber/bees,trade,none,none/voluntary,1,False
+Lozi Litunga Flood Kings,Zambia,Early Modern,1600,-15.200,23.100,15.200,tropical,0.750,0.450,0.150,0.050,0.333,Fish/sorghum,foraging/fishing,none,none/voluntary,1,False
+Luba Bambudye Memory State,DRC,Early Modern,1585,-6.100,23.600,6.100,tropical,0.500,0.450,0.150,0.350,0.333,Copper/ivory,extraction,none,none/voluntary,1,False
+Lunda Ruwej Matrilineacy,DRC,Early Modern,1600,-8.300,20.700,8.300,tropical,0.800,0.200,0.150,0.150,0.750,Ivory/beeswax,other,none,none/voluntary,1,False
+Lydian Electrum Oligarchy,Turkey,Iron Age,-650,38.000,28.000,38.000,temperate,0.400,0.550,0.300,0.500,0.545,Silver/gold,extraction,none,none/voluntary,1,False
+Magna Carta Baronage,England,Medieval,1215,51.800,-0.100,51.800,high-lat,0.500,0.400,0.500,0.550,1.250,Wool trade,trade,land,material,2,False
+Majapahit Mandala,Indonesia,,1293,,,,,0.550,0.400,0.350,0.500,0.875,,other,tribute,material,2,False
+Majapahit Terracotta Bureaucracy,Indonesia,Medieval,1293,-7.500,112.500,7.500,tropical,0.400,0.300,0.600,0.500,2.000,Rice/indigo,agriculture,none,none/voluntary,1,False
+Malacca Straits Mandala,Malaysia,Medieval,1400,2.200,102.300,2.200,tropical,0.200,0.200,0.800,0.700,4.000,Spice trade,trade,tribute,material,1,False
+Malagasy Fokonolona,Madagascar,Early Modern,1700,-18.900,47.500,18.900,tropical,0.150,0.200,0.300,0.900,1.500,Rice farming,agriculture,none,none/voluntary,1,False
+Maldivian Furya Coral Councils,Maldives,Medieval,1100,3.200,73.200,3.200,tropical,0.200,0.400,0.150,0.900,0.375,Sea cucumber trade,trade,none,none/voluntary,1,False
+Mali Mansa Rule,Mali,Medieval,1235,12.600,-8.000,12.600,tropical,0.750,0.450,0.300,0.050,0.667,Gold/salt,extraction,none,none/voluntary,1,False
+Maluku Sasi Harvest Bans,Indonesia,Medieval,1200,-3.700,128.200,3.700,tropical,0.400,0.300,0.350,0.600,1.167,Spice trade,trade,ritual,ritual,1,False
+Manush Circus Kingdoms,France,Modern,1850,47.000,2.000,47.000,high-lat,0.850,0.600,0.300,0.000,0.500,Entertainment,other,none,none/voluntary,1,False
+Manx Tynwald,Isle of Man,Medieval,979,54.200,-4.500,54.200,high-lat,0.250,0.550,0.650,0.750,1.182,Herring fishing,foraging/fishing,none,none/voluntary,2,False
+Maohi Tapu System,French Polynesia,Modern,1840,-17.500,-149.600,17.500,tropical,0.650,0.500,0.150,0.350,0.300,Vanilla/fish,foraging/fishing,none,none/voluntary,1,False
+Mapuche Parlamento Confederacy,Chile,Early Modern,1550,-38.700,-72.600,38.700,temperate,0.300,0.150,0.300,0.800,2.000,Horse/maize,agriculture,none,none/voluntary,1,False
+Marajoara Amazonian Queens,Brazil,Classical,400,-1.400,-49.300,1.400,tropical,0.400,0.300,0.300,0.350,1.000,Manioc/fish,foraging/fishing,none,none/voluntary,1,False
+Maroon Communities (Jamaica/Suriname),Caribbean,,1655,,,,,0.300,0.150,0.100,0.800,0.667,,other,community,social,2,False
+Maroon Palenque Republics,Colombia,Early Modern,1600,10.000,-75.000,10.000,tropical,0.800,0.200,0.150,0.250,0.750,Cassava/arms,other,military,coercive,1,False
+Marshallese Stick Chart Navigators,Marshall Islands,Medieval,1000,7.100,171.400,7.100,tropical,0.400,0.300,0.300,0.500,1.000,Coconut trade,trade,none,none/voluntary,1,False
+Mauryan Arthashastra State,India,Iron Age,-322,28.600,77.200,28.600,temperate,0.700,0.850,0.800,0.000,0.941,Rice taxation,agriculture,tribute,material,1,False
+Mauryan Empire,South Asia,,-322,,,,,0.800,0.850,0.800,0.150,0.941,,other,land/debt/coercion,material,3,False
+Mayan Ajaw System,Mesoamerica,Classical,250,17.200,-89.600,17.200,tropical,0.700,0.600,0.650,0.250,1.083,Cacao trade,trade,ritual/tribute,material,2,False
+Meiji Oligarchy,Japan,Modern,1868,35.700,139.700,35.700,temperate,0.750,0.850,0.850,0.150,1.000,Textiles/steel,other,land/conscription,material,2,False
+Merina Andriana Castes,Madagascar,Early Modern,1700,-19.000,47.000,19.000,tropical,0.400,0.300,0.300,0.350,1.000,Rice/silk,agriculture,clan,social,1,False
+Metis Buffalo Councils,Canada,Early Modern,1780,51.000,-101.000,51.000,high-lat,0.200,0.400,0.150,0.900,0.375,Pemmican trade,trade,none,none/voluntary,1,False
+Micronesian Yapese Stone Council,Micronesia,,-1000,,,,,0.300,0.100,0.050,0.650,0.500,,other,prestige/tribute,material,2,False
+Ming Dynasty,East Asia,Early Modern,1368,,,,,0.850,0.950,0.900,0.080,0.947,,other,,mixed,3,
+Ming Yellow Register Census,China,Early Modern,1368,32.100,118.800,32.100,temperate,0.850,0.850,0.850,0.050,1.000,Rice/tax,agriculture,land/coercion,material,2,False
+Minoan Crete,Aegean,,-2700,,,,,0.500,0.700,0.500,0.450,0.714,,other,land/palace,material,2,False
+Minoan Thalassocracy,Crete,Bronze Age,-2000,35.300,25.100,35.300,temperate,0.650,0.500,0.300,0.100,0.600,Bronze trade,trade,none,none/voluntary,1,False
+Mississippian Chiefdoms,Mississippi Valley,,800,,,,,0.650,0.300,0.100,0.300,0.333,,other,tribute,material,2,False
+Moche Ceremonial Brewmasters,Peru,Classical,100,-8.100,-79.000,8.100,tropical,0.400,0.300,0.300,0.500,1.000,Maize/peanuts,agriculture,none,none/voluntary,1,False
+Moche Sacrificial Hydraulics,Peru,Classical,100,-8.100,-79.000,8.100,tropical,0.850,0.600,0.300,0.000,0.500,Maize/fishing,foraging/fishing,ritual,ritual,1,False
+Mogollon Pit-House Democracies,USA,Woodland,-200,33.000,-109.000,33.000,temperate,0.200,0.400,0.300,0.800,0.750,Maize/beans,agriculture,none,none/voluntary,1,False
+Mohenjo-daro / Indus Valley Civilisation,South Asia,,-2600,,,,,0.100,0.400,0.450,0.750,1.125,,other,unknown,mixed,2,True
+Mongolian Kurultai,Mongolia,Medieval,1206,47.900,106.900,47.900,high-lat,0.750,0.450,0.300,0.250,0.667,Herding,pastoral,none,none/voluntary,1,True
+Moravian Mission Communes,USA,Early Modern,1735,40.600,-75.400,40.600,high-lat,0.650,0.500,0.300,0.250,0.600,Textiles,other,none,none/voluntary,1,False
+Mossi Naam Militias,Burkina Faso,Medieval,1100,12.400,-1.500,12.400,tropical,0.400,0.300,0.300,0.500,1.000,Millet/cattle,pastoral,none,none/voluntary,1,False
+Mughal Empire Akbar Period,South Asia,Early Modern,1556,,,,,0.700,0.800,0.650,0.180,0.812,,other,,mixed,2,
+Mughal Mansabdari System,India,Early Modern,1526,28.600,77.200,28.600,temperate,0.700,0.850,0.300,0.150,0.353,Spice trade,trade,land,material,1,False
+Mycenaean Wanax System,Greece,Bronze Age,-1600,37.700,22.700,37.700,temperate,0.750,0.450,0.300,0.050,0.667,Olive oil,extraction,military,coercive,1,False
+Māori Iwi River Federations,New Zealand,Medieval,1300,-40.900,175.000,40.900,high-lat,0.800,0.400,0.300,0.000,0.750,Kūmara farming,agriculture,none,none/voluntary,1,False
+Māori Umu Tī Earth Oven Parleys,New Zealand,Medieval,1300,-40.900,175.000,40.900,high-lat,0.200,0.400,0.150,0.800,0.375,Kūmara farming,agriculture,none,none/voluntary,1,False
+Nabatean Water Merchants,Jordan,Classical,-400,30.300,35.400,30.300,temperate,0.500,0.450,0.600,0.200,1.333,Incense trade,trade,none,none/voluntary,1,False
+Nan Madol Coral Kingdoms,Micronesia,Medieval,1000,6.800,158.300,6.800,tropical,0.650,0.500,0.150,0.100,0.300,Breadfruit/reef fish,foraging/fishing,land,material,1,False
+Napoleonic Meritocracy,France,Modern,1799,48.900,2.300,48.900,high-lat,0.900,0.900,0.800,0.050,0.889,War plunder,other,conscription/law,coercive,2,False
+Natufian Communities,Levant,,-12500,,,,,0.150,0.050,0.050,0.900,1.000,,other,none,none/voluntary,2,True
+Natufian Grain Storage Pacts,Levant,Mesolithic,-15000,32.500,35.300,32.500,temperate,0.250,0.200,0.350,0.750,1.750,Foraging,foraging/fishing,none,none/voluntary,1,False
+Nazi Germany,Europe,Modern,1933,,,,,0.950,0.900,0.900,0.030,1.000,,other,,mixed,3,
+Neanderthal Megafauna Councils,Eurasia,Paleolithic,-300000,45.000,10.000,45.000,high-lat,0.100,0.050,0.350,0.800,7.000,Megafauna hunting,foraging/fishing,none,none/voluntary,1,False
+Nenets Yamal Clan Councils,Russia,Medieval,1000,67.500,77.900,67.500,high-lat,0.200,0.400,0.300,0.900,0.750,Reindeer fur,foraging/fishing,none,none/voluntary,1,False
+Nok Terracotta Chiefdoms,Nigeria,Iron Age,-1000,9.500,8.500,9.500,tropical,0.500,0.450,0.600,0.350,1.333,Yam/iron,extraction,ritual,ritual,1,False
+Nordic Sami Parliaments,Scandinavia,Modern,1989,68.300,19.500,68.300,high-lat,0.400,0.300,0.300,0.600,1.000,Reindeer herding,foraging/fishing,none,none/voluntary,1,False
+Norman Feudal Domesday,England,Medieval,1086,51.500,-0.100,51.500,high-lat,0.750,0.800,0.750,0.150,0.938,Wool tax,trade,land,material,2,False
+Norse Thing System,Scandinavia,,800,,,,,0.300,0.150,0.100,0.750,0.667,,other,honour/law,social,2,False
+Norwegian Sovereign Wealth Democracy,Norway,Modern,1990,60.500,8.700,60.500,high-lat,0.150,0.750,0.900,0.900,1.200,Oil/Gas,extraction,none,none/voluntary,2,False
+Novgorod Veche Republic,Russia,Medieval,1136,58.500,31.300,58.500,high-lat,0.200,0.400,0.300,0.900,0.750,Fur/beeswax,other,none,none/voluntary,1,False
+Nri Kingdom Pacifist Theocracy,Nigeria,Medieval,948,6.200,7.000,6.200,tropical,0.650,0.500,0.600,0.250,1.200,Yam farming,agriculture,ritual,ritual,1,False
+Nubian Qustul Sacral Kingship,Sudan,Predynastic,-3500,22.500,31.900,22.500,temperate,0.650,0.500,0.150,0.250,0.300,Cattle/ivory,pastoral,none,none/voluntary,1,False
+Ochlokratia,Greek,,-430,,,,,0.200,0.200,0.300,0.700,1.500,,other,performance,mixed,2,False
+Olmec,Gulf Coast Mexico,,-1500,,,,,0.600,0.200,0.100,0.350,0.500,,other,ritual/tribute,material,2,False
+Olmec Were-Jaguar Cult,Mesoamerica,Bronze Age,-1200,18.400,-95.200,18.400,tropical,0.650,0.500,0.300,0.250,0.600,Maize farming,agriculture,none,none/voluntary,1,False
+Orkney Jarl Sea-Kingdoms,Scotland,Medieval,800,59.000,-3.000,59.000,high-lat,0.750,0.450,0.300,0.300,0.667,Fishing/whaling,foraging/fishing,none,none/voluntary,1,False
+Ottoman Empire,Anatolia/Middle East,,1299,,,,,0.800,0.800,0.800,0.200,1.000,,other,law/religion,ritual,3,False
+Ottoman Millet System,Turkey,Early Modern,1453,41.000,28.900,41.000,high-lat,0.750,0.800,0.800,0.200,1.000,Silk/tax farming,agriculture,law/religion,ritual,2,False
+Pacific Potlatch,Northwest Coast Pacific,,-1000,,,,,0.300,0.100,0.050,0.750,0.500,,other,honour/clan,social,3,False
+Pagan Temple-State,Myanmar,Medieval,849,21.200,94.900,21.200,temperate,0.650,0.500,0.600,0.100,1.200,Rice trade,agriculture,none,none/voluntary,1,False
+Palauan Stone Money Yap,Palau,Modern,1800,7.500,134.500,7.500,tropical,0.400,0.300,0.300,0.500,1.000,Fishing/pearls,foraging/fishing,none,none/voluntary,1,False
+Pallava Guild Republics,India,Classical,275,12.500,80.000,12.500,tropical,0.500,0.450,0.300,0.450,0.667,Textiles/perfume,other,none,none/voluntary,1,False
+Pampas Querandí Nomadism,Argentina,Early Modern,1500,-36.000,-60.000,36.000,temperate,0.100,0.050,0.300,1.000,6.000,Guanaco herds,pastoral,none,none/voluntary,1,False
+Paris Commune,France,Modern,1871,48.900,2.300,48.900,high-lat,0.150,0.300,0.350,0.850,1.167,Manufacturing,other,none,none/voluntary,2,False
+Pavee Road Councils,Ireland/UK,Modern,1900,53.000,-1.000,53.000,high-lat,0.400,0.300,0.300,0.600,1.000,Roadwork,other,none,none/voluntary,1,False
+Persian Satrapy System,Iran,Iron Age,-550,32.400,53.700,32.400,temperate,0.750,0.800,0.750,0.200,0.938,Royal Road taxes,other,tribute,material,2,False
+Phoenician Merchant Oligarchies,Levant,Iron Age,-1000,33.900,35.500,33.900,temperate,0.400,0.600,0.650,0.550,1.083,Cedar/purple dye,other,trade,mixed,2,False
+Phrygian Matar Cult,Turkey,Iron Age,-800,39.000,31.000,39.000,temperate,0.650,0.500,0.300,0.250,0.600,Textiles/Oracles,other,none,none/voluntary,1,False
+Pictish Matrilineal Kings,Scotland,Early Medieval,300,57.500,-4.500,57.500,high-lat,0.750,0.450,0.300,0.050,0.667,Cattle/stone,pastoral,none,none/voluntary,1,False
+Pirate Articles,Atlantic/Caribbean,Early Modern,1650,25.000,-71.000,25.000,temperate,0.200,0.400,0.300,0.900,0.750,Plunder,other,none,none/voluntary,1,False
+Polish-Lithuanian Elective Monarchy,Poland,Early Modern,1569,52.200,21.000,52.200,high-lat,0.200,0.400,0.300,0.800,0.750,Grain exports,agriculture,none,none/voluntary,1,False
+Politeia,Greek,,-700,,,,,0.400,0.350,0.300,0.550,0.857,,other,law,mixed,2,False
+Pomeranian Veleti Tribal Republic,Germany/Poland,Medieval,900,54.000,16.000,54.000,high-lat,0.200,0.400,0.300,0.900,0.750,Amber/fish,foraging/fishing,clan,social,1,False
+Post-Apartheid Ubuntu Democracy,South Africa,Modern,1994,-29.000,24.000,29.000,temperate,0.300,0.150,0.300,0.800,2.000,Mining/tech,extraction,none,none/voluntary,1,False
+Poverty Point Earthwork League,USA,Archaic,-1700,32.600,-91.400,32.600,temperate,0.350,0.200,0.300,0.750,1.500,Stone tools,other,none,none/voluntary,1,False
+Powhatan Paramount Chiefdom,USA,Early Modern,1570,37.500,-77.000,37.500,temperate,0.550,0.250,0.300,0.400,1.200,Corn/tobacco,other,none,none/voluntary,1,False
+Pre-Pottery Neolithic A (PPNA),Levant/Anatolia,,-9500,,,,,0.200,0.100,0.050,0.800,0.500,,other,land,material,2,False
+Pre-Pottery Neolithic B (PPNB),Levant/Anatolia,,-8700,,,,,0.300,0.200,0.100,0.700,0.500,,other,land/ancestor,material,2,False
+Proto-Norse Thing Assemblies,Scandinavia,Iron Age,-500,60.000,15.000,60.000,high-lat,0.200,0.400,0.300,0.900,0.750,Iron/amber,trade,none,none/voluntary,1,False
+Pueblo Council Governance,American Southwest,,-500,,,,,0.200,0.200,0.100,0.800,0.500,,other,community,social,2,False
+Pueblo Kiva Councils,USA,Medieval,1100,35.000,-106.000,35.000,temperate,0.200,0.400,0.150,0.900,0.375,Maize/beans,agriculture,none,none/voluntary,1,False
+Qi Jixia Academy,China,Warring States,-350,36.800,118.100,36.800,temperate,0.400,0.300,0.600,0.500,2.000,Millet/silk,trade,none,none/voluntary,1,False
+Qin Legalism,China,Iron Age,-221,34.200,108.900,34.200,temperate,0.950,0.900,0.800,0.000,0.889,Millet farming,agriculture,coercion/land,material,2,False
+Qing Dynasty Banner System,China,Early Modern,1644,39.900,116.400,39.900,temperate,0.800,0.850,0.850,0.100,1.000,Rice/silk,agriculture,land/status,material,2,False
+Qing Lifan Yuan Tributaries,China,Early Modern,1636,39.900,116.400,39.900,temperate,0.800,0.700,0.300,0.150,0.429,Horse/tribute,other,tribute,material,1,False
+Ragusan Aristocratic Republic,Croatia,Early Modern,1358,42.600,18.100,42.600,high-lat,0.500,0.450,0.300,0.350,0.667,Salt trade,trade,coercion,coercive,1,False
+Rapa Iti Tūtae Councils,French Polynesia,Medieval,1200,-27.600,-144.300,27.600,temperate,0.400,0.300,0.300,0.500,1.000,Fishing,foraging/fishing,land,material,1,False
+Rapa Nui Birdman Cult,Easter Island,Medieval,1200,-27.100,-109.400,27.100,temperate,0.400,0.300,0.300,0.500,1.000,Sweet potatoes,other,ritual,ritual,1,False
+Rapa Nui Tangata Manu Trials,Chile,Medieval,1200,-27.100,-109.400,27.100,temperate,0.400,0.300,0.300,0.500,1.000,Sweet potatoes,other,ritual,ritual,1,False
+Rhenish City Leagues,Germany,Medieval,1250,50.100,8.700,50.100,high-lat,0.350,0.200,0.300,0.650,1.500,Wine trade,trade,none,none/voluntary,1,False
+Rhenish Hanseatic Cities,Germany,Medieval,1356,51.200,6.800,51.200,high-lat,0.350,0.550,0.600,0.600,1.091,Textiles,other,trade,mixed,2,False
+Rhodes Naval Oligarchy,Greece,Classical,-408,36.400,28.200,36.400,temperate,0.400,0.550,0.300,0.600,0.545,Grain trade,agriculture,none,none/voluntary,1,False
+Rojava Democratic Confederalism,Syria,Modern,2014,36.900,38.500,36.900,temperate,0.250,0.200,0.300,0.850,1.500,Olive oil,extraction,none,none/voluntary,1,False
+Roman Collegia Guild Republics,Italy,Classical,-500,41.900,12.500,41.900,high-lat,0.200,0.400,0.300,0.900,0.750,Craftsmanship,other,none,none/voluntary,1,False
+Roman Republic,Italy,Iron Age,-509,41.900,12.500,41.900,high-lat,0.450,0.650,0.650,0.500,1.000,Slave plantations,other,land/patron,material,3,False
+Romani Kris Councils,Europe,Medieval-Modern,1100,45.000,15.000,45.000,high-lat,0.350,0.100,0.150,0.700,1.500,Crafts/trade,trade,none,none/voluntary,1,False
+Romanichal Wagon Republics,UK,Early Modern,1600,53.000,-2.000,53.000,high-lat,0.200,0.400,0.300,0.900,0.750,Smithing/horses,other,none,none/voluntary,1,False
+Ruthenian Viche,Ukraine/Belarus,Medieval,1000,50.500,30.500,50.500,high-lat,0.200,0.400,0.300,0.900,0.750,Forest products,other,none,none/voluntary,1,False
+Rwandan Unity Government,Rwanda,Modern,1994,-1.900,30.000,1.900,tropical,0.400,0.300,0.300,0.500,1.000,Agriculture/Tech,agriculture,none,none/voluntary,1,False
+Ryukyu Gusuku Trade Kingdom,Japan,Early Modern,1429,26.200,127.700,26.200,temperate,0.400,0.300,0.300,0.350,1.000,Sulfur/tribute,other,tribute,material,1,False
+Ryukyu Maritime Tributary,Japan,Early Modern,1429,26.000,127.000,26.000,temperate,0.400,0.300,0.300,0.350,1.000,Sulfur/tribute,other,land,material,1,False
+Sabaean Dam Council,Yemen,Classical,-800,15.400,45.300,15.400,tropical,0.650,0.500,0.600,0.100,1.200,Frankincense,other,none,none/voluntary,1,False
+Saho-Irob Mountain Democracies,Eritrea,Medieval,1000,15.200,39.500,15.200,tropical,0.200,0.400,0.300,0.900,0.750,Apiculture,other,land,material,1,False
+Sami Noaide Shamanic Bands,Scandinavia,Medieval,1000,68.300,19.500,68.300,high-lat,0.400,0.300,0.150,0.500,0.500,Reindeer herding,foraging/fishing,clan,social,1,False
+Sami Reindeer Herding Units,Scandinavia,Early Modern,1500,68.300,19.500,68.300,high-lat,0.350,0.100,0.150,0.800,1.500,Reindeer,foraging/fishing,land,material,1,False
+Samoan Matai Talking Chiefs,Samoa,Medieval,1000,-13.800,-171.800,13.800,tropical,0.200,0.400,0.300,0.900,0.750,Breadfruit,other,none,none/voluntary,1,False
+San Xaro Networks,Southern Africa (Kalahari),Paleolithic,-10000,-23.000,21.000,23.000,temperate,0.050,0.050,0.050,0.950,1.000,Foraging,foraging/fishing,none,none/voluntary,3,False
+Sao Clay Wall Cities,Chad,Medieval,500,13.000,15.000,13.000,tropical,0.400,0.300,0.300,0.500,1.000,Millet/fish,foraging/fishing,none,none/voluntary,1,False
+Sarmatian Female Warbands,Russia/Kazakhstan,Iron Age,-300,47.000,55.000,47.000,high-lat,0.400,0.300,0.300,0.500,1.000,Mare's milk,other,clan,social,1,False
+Satrapy System,Persian Empire,,-550,,,,,0.700,0.750,0.700,0.250,0.933,,other,land/tribute,material,3,False
+Scottish Tacksmen,Scotland,Early Modern,1400,57.000,-5.000,57.000,high-lat,0.650,0.450,0.300,0.100,0.667,Cattle/kelp,pastoral,land,material,1,False
+Scottish Traveller Peat Laws,Scotland,Modern,1800,57.000,-5.000,57.000,high-lat,0.400,0.300,0.300,0.500,1.000,Peat/flowers,other,none,none/voluntary,1,False
+Scythian Kurgan Diarchy,Ukraine/Kazakhstan,Iron Age,-700,48.000,68.000,48.000,high-lat,0.750,0.450,0.300,0.200,0.667,Horse/grains,agriculture,none,none/voluntary,1,False
+Scythian Nomadic Confederacy,Eurasian Steppe,,-700,,,,,0.450,0.050,0.050,0.700,1.000,,other,none,none/voluntary,2,False
+Seljuk Iqta System,Persia,Medieval,1037,32.400,53.200,32.400,temperate,0.650,0.450,0.300,0.250,0.667,Wheat/silk,agriculture,land,material,1,False
+Sennar Funj Sultanate,Sudan,Early Modern,1504,13.600,33.600,13.600,tropical,0.400,0.300,0.600,0.500,2.000,Sorghum/slaves,other,military,coercive,1,False
+Shang Dynasty,China,,-1600,,,,,0.850,0.350,0.300,0.150,0.857,,other,land/ritual,material,3,False
+Shang Dynasty Oracle Kings,China,Bronze Age,-1600,36.100,114.300,36.100,temperate,0.750,0.450,0.600,0.050,1.333,Bronze working,other,ritual,ritual,1,False
+Shilluk Divine Kingship,South Sudan,Early Modern,1500,10.000,32.000,10.000,tropical,0.650,0.500,0.300,0.250,0.600,Fishing/cattle,foraging/fishing,none,none/voluntary,1,False
+Siberian Yukaghir Moon Calendar,Russia,Medieval,1000,68.000,154.000,68.000,high-lat,0.400,0.300,0.350,0.500,1.167,Elk/fish,foraging/fishing,none,none/voluntary,1,False
+Sikh Misldar Confederacy,Punjab,Early Modern,1716,31.100,75.400,31.100,temperate,0.200,0.400,0.300,0.900,0.750,Wheat/trade,agriculture,military,coercive,1,False
+Silla Bone-Rank System,Korea,Classical,57,35.800,129.200,35.800,temperate,0.800,0.400,0.300,0.000,0.750,Rice/iron,agriculture,none,none/voluntary,1,False
+Singapore Technocracy,East Asia,Modern,1965,,,,,0.800,0.900,0.950,0.200,1.056,,other,,mixed,2,
+Singaporean Technocracy,Singapore,Modern,1965,1.300,103.800,1.300,tropical,0.750,0.850,0.900,0.200,1.059,Global trade,trade,law,mixed,2,False
+Sinti Musical Guilds,Germany,Early Modern,1500,51.000,10.000,51.000,high-lat,0.400,0.300,0.300,0.500,1.000,Entertainment,other,none,none/voluntary,1,False
+Sogdian Merchant Caravanserais,Uzbekistan,Medieval,500,39.700,66.900,39.700,temperate,0.500,0.450,0.300,0.350,0.667,Silk/glass,trade,none,none/voluntary,1,False
+Sogdian Merchant-Republics,Uzbekistan,Medieval,500,39.000,66.000,39.000,temperate,0.200,0.400,0.300,0.800,0.750,Silk/glass,trade,none,none/voluntary,1,False
+Song Dynasty,East Asia,Medieval,960,,,,,0.550,0.900,0.900,0.150,1.000,,other,,mixed,2,
+Sorbian Serbski Sejm,Germany,Modern,1848,51.300,14.200,51.300,high-lat,0.400,0.300,0.300,0.600,1.000,Lignite mining,extraction,none,none/voluntary,1,False
+Soviet Republics System,Eurasia,Modern,1922,55.800,37.600,55.800,high-lat,0.900,0.900,0.850,0.050,0.944,Heavy industry,other,land/coercion,material,2,False
+Srivijayan Mandala,Indonesia,Medieval,650,-3.000,102.000,3.000,tropical,0.400,0.400,0.600,0.350,1.500,Spice trade,trade,none,none/voluntary,1,False
+Sumerian Temple States,Mesopotamia,Bronze Age,-3500,31.300,45.600,31.300,temperate,0.550,0.650,0.600,0.300,0.923,Barley farming,agriculture,land/ritual,material,2,False
+Swahili Waungwana Councils,Kenya,Medieval,1000,-4.100,39.700,4.100,tropical,0.500,0.450,0.300,0.200,0.667,Ivory/glass,other,none,none/voluntary,1,False
+Swiss Cantonal Democracy,Switzerland,Early Modern,1291,46.800,8.200,46.800,high-lat,0.200,0.500,0.650,0.850,1.300,Cheese/clockmaking,other,law/community,social,3,False
+Swiss Consensus Democracy,Switzerland,Modern,1848,46.800,8.200,46.800,high-lat,0.150,0.650,0.800,0.900,1.231,Finance/tech,other,none,none/voluntary,2,False
+Syracusan Mathematical Tyrants,Sicily,Classical,-400,37.100,15.300,37.100,temperate,0.500,0.800,0.300,0.200,0.375,Grain/engineering,agriculture,none,none/voluntary,1,False
+Sámi Siida Councils,Scandinavia,Medieval,500,68.000,23.000,68.000,high-lat,0.150,0.200,0.150,0.900,0.750,Reindeer fur,foraging/fishing,none,none/voluntary,1,False
+Tahitian Arioi Cult Society,French Polynesia,Medieval,1000,-17.700,-149.400,17.700,tropical,0.500,0.450,0.300,0.350,0.667,Breadfruit,other,ritual,ritual,1,False
+Tahitian Arioi Society,French Polynesia,Early Modern,1600,-17.700,-149.400,17.700,tropical,0.500,0.450,0.300,0.350,0.667,Breadfruit,other,ritual,ritual,1,False
+Taino Cacique Matrilineage,Cuba,Medieval,800,21.500,-78.000,21.500,temperate,0.550,0.250,0.300,0.250,1.200,Cassava/yucca,other,land,material,1,False
+Taiping Heavenly Kingdom,China,Modern,1851,23.000,113.000,23.000,temperate,0.400,0.300,0.800,0.500,2.667,Rice/millet,agriculture,none,none/voluntary,1,False
+Tairona Gold-Shaman Councils,Colombia,Classical,200,11.300,-74.100,11.300,tropical,0.650,0.500,0.300,0.250,0.600,Gold/coca,extraction,none,none/voluntary,1,False
+Taiwanese Digital Democracy,Taiwan,Information Age,2016,25.000,121.000,25.000,temperate,0.200,0.400,0.300,0.900,0.750,Semiconductors,other,none,none/voluntary,1,False
+Tang Dynasty,China,,618,,,,,0.850,0.900,0.900,0.100,1.000,,other,land/law/exam,material,3,False
+Tang Dynasty Keju,China,Medieval,618,34.300,108.900,34.300,temperate,0.850,0.900,0.900,0.100,1.000,Tea/porcelain,other,land/exam,material,2,False
+Tang Fanzhen Clans,China,Medieval,618,34.300,108.900,34.300,temperate,0.700,0.850,0.300,0.000,0.353,Tea/porcelain,other,none,none/voluntary,1,False
+Tanzanian Ujamaa Villages,Tanzania,Modern,1967,-6.300,34.800,6.300,tropical,0.600,0.650,0.300,0.400,0.462,Subsistence farming,agriculture,none,none/voluntary,1,False
+Taosi,Northern China,,-2300,,,,,0.450,0.300,0.200,0.550,0.667,,other,land,material,2,True
+Teotihuacan,Mesoamerica,,100,,,,,0.300,0.500,0.400,0.650,0.800,,other,community/ritual,social,3,True
+Teotihuacan Theocratic Oligarchy,Mexico,Classical,-200,19.700,-98.800,19.700,tropical,0.650,0.500,0.300,0.250,0.600,Obsidian trade,trade,clan,social,1,False
+Teutonic Ordensstaat,Poland,Medieval,1226,54.000,19.000,54.000,high-lat,0.750,0.650,0.550,0.150,0.846,Amber trade,trade,military/ritual,coercive,2,False
+Theatrocracy,Greek,,-430,,,,,0.300,0.300,0.400,0.650,1.333,,other,performance,mixed,2,False
+Theban Sacred Band Oligarchy,Greece,Classical,-378,38.300,23.300,38.300,temperate,0.400,0.300,0.300,0.550,1.000,Olive/oil,extraction,military,coercive,1,False
+Tibetan Ganden Phodrang,Tibet,Early Modern,1642,29.600,91.000,29.600,temperate,0.650,0.500,0.300,0.250,0.600,Yak herding,pastoral,none,none/voluntary,1,False
+Timbuktu Qadi Scholar-Judges,Mali,Medieval,1327,16.800,-3.000,16.800,tropical,0.650,0.500,0.600,0.250,1.200,Book trade,trade,none,none/voluntary,1,False
+Timucua Waterborne Councils,USA,Medieval,1000,30.000,-82.000,30.000,temperate,0.200,0.400,0.300,0.900,0.750,Fish/maize,foraging/fishing,none,none/voluntary,1,False
+Tiv Segmentary Lineage System,Nigeria,,-500,,,,,0.050,0.050,0.050,0.900,1.000,,other,clan,social,3,False
+Tlaxcala Republic,Mesoamerica,,1384,,,,,0.400,0.400,0.300,0.600,0.750,,other,clan/honour,social,2,False
+Tlingit Potlatch Confederacy,Canada,Early Modern,1700,58.300,-134.400,58.300,high-lat,0.200,0.100,0.150,0.750,1.500,Salmon/cedar,other,clan,social,1,False
+Tokelau Village Atoll Consensus,Tokelau,Modern,1948,-9.000,-172.000,9.000,tropical,0.200,0.400,0.300,0.800,0.750,Fishing/coconut,foraging/fishing,none,none/voluntary,1,False
+Tokugawa Shogunate,Japan,Early Modern,1603,35.700,139.700,35.700,temperate,0.800,0.800,0.700,0.150,0.875,Rice taxation,agriculture,land/hostage/status,social,3,False
+Toltec Warrior-Poet State,Mexico,Medieval,900,19.700,-98.800,19.700,tropical,0.650,0.500,0.300,0.100,0.600,Obsidian/feathers,other,military,coercive,1,False
+Toltec Warrior-Priest State,Mexico,Medieval,900,19.700,-98.800,19.700,tropical,0.650,0.500,0.300,0.100,0.600,Obsidian/feathers,other,none,none/voluntary,1,False
+Tongan Maritime Empire,Polynesia,Medieval,950,-21.100,-175.200,21.100,temperate,0.750,0.250,0.100,0.300,0.400,Yams/tribute,other,tribute/ritual,material,2,False
+Transylvanian Saxon Seats,Romania,Medieval,1224,45.800,24.900,45.800,high-lat,0.400,0.300,0.300,0.500,1.000,Craft guilds,other,none,none/voluntary,1,False
+Tswana Kgotla,Botswana,Early Modern,1700,-22.300,24.700,22.300,temperate,0.200,0.200,0.150,0.800,0.750,Cattle herding,pastoral,none,none/voluntary,1,False
+Tupi Confederacies,Brazil,,-500,,,,,0.200,0.050,0.050,0.800,1.000,,other,none,none/voluntary,2,False
+Tuvan People's Republic,Tuva,Modern,1921,51.700,94.400,51.700,high-lat,0.350,0.550,0.300,0.750,0.545,Yak/cattle,pastoral,none,none/voluntary,1,False
+UN Trusteeship Councils,Global,Modern,1945,40.700,-74.000,40.700,high-lat,0.200,0.400,0.300,0.800,0.750,Resource extraction,other,none,none/voluntary,1,False
+Ubaid Culture,Mesopotamia,,-6500,,,,,0.350,0.250,0.200,0.650,0.800,,other,land/temple,material,2,False
+Ubuntu Councils,South Africa,Modern,1994,-29.000,24.000,29.000,temperate,0.200,0.400,0.300,0.900,0.750,Mining/tech,extraction,none,none/voluntary,1,False
+United Arab Emirates Tribal Technocracy,UAE,Modern,1971,24.400,54.400,24.400,temperate,0.750,0.450,0.300,0.050,0.667,Oil/AI,extraction,none,none/voluntary,1,False
+United Nations Security Council,Global,Modern,1945,40.700,-74.000,40.700,high-lat,0.500,0.450,0.300,0.350,0.667,Member dues,other,none,none/voluntary,1,False
+United States Federal Republic,North America,Modern,1789,,,,,0.450,0.700,0.950,0.700,1.357,,other,,mixed,2,
+Urartian Hydraulic Kings,Armenia,Iron Age,-860,38.500,43.500,38.500,temperate,0.900,0.500,0.300,0.000,0.600,Wine/iron,trade,none,none/voluntary,1,False
+Utopian Socialist Colonies,USA,Modern,1820,40.000,-90.000,40.000,temperate,0.400,0.300,0.300,0.600,1.000,Handicrafts,other,none,none/voluntary,1,False
+Vanuatu Nimangki Grade-taking,Vanuatu,Early Modern,1700,-16.000,167.000,16.000,tropical,0.200,0.100,0.300,0.750,3.000,Yams/pigs,other,none,none/voluntary,1,False
+Vedic Jana/Gana Sanghas,North India,,-1500,,,,,0.350,0.350,0.150,0.650,0.429,,other,clan,social,2,False
+Vedic Sabha Assemblies,India,Bronze Age,-1500,28.600,77.200,28.600,temperate,0.200,0.400,0.150,0.900,0.375,Cattle herding,pastoral,none,none/voluntary,1,False
+Venetian Arsenal Guilds,Italy,Medieval,1104,45.400,12.300,45.400,high-lat,0.500,0.800,0.600,0.450,0.750,Naval production,other,trade/status,mixed,2,False
+Venetian Merchant Oligarchy,Italy,Medieval,1297,45.400,12.300,45.400,high-lat,0.300,0.750,0.800,0.550,1.067,Spice trade,trade,trade/citizenship,social,2,False
+Venetian Republic,Italy,Medieval,697,45.400,12.300,45.400,high-lat,0.350,0.700,0.750,0.600,1.071,Spice trade,trade,trade/citizenship,social,2,False
+Viking Law Speakers,Scandinavia,Medieval,800,61.000,10.000,61.000,high-lat,0.250,0.100,0.100,0.750,1.000,Fish/iron,foraging/fishing,honour,social,2,False
+Visigothic Code Judges,Spain,Early Medieval,418,40.400,-3.700,40.400,high-lat,0.400,0.300,0.300,0.500,1.000,Sheep farming,agriculture,none,none/voluntary,1,False
+Vlax Rom Baro Systems,Romania,Early Modern,1400,46.000,25.000,46.000,high-lat,0.300,0.150,0.300,0.550,2.000,Metalwork/fortune-telling,other,clan,social,1,False
+Volga Bulgar Islamic Merchants,Russia,Medieval,900,55.000,49.000,55.000,high-lat,0.650,0.500,0.300,0.250,0.600,Fur/honey,other,none,none/voluntary,1,False
+Wari Tinku Labor System,Peru,Medieval,600,-13.000,-72.000,13.000,tropical,0.800,0.700,0.300,0.150,0.429,Potato/llama,other,ritual,ritual,1,False
+Weimar Coalition Governance,Germany,Modern,1919,52.500,13.400,52.500,high-lat,0.200,0.400,0.300,0.900,0.750,Industrial,other,none,none/voluntary,1,False
+Weimar Republic,Europe,Modern,1919,,,,,0.400,0.650,0.850,0.600,1.308,,other,,mixed,3,
+Welsh Cantrefi,Wales,Medieval,800,52.500,-3.500,52.500,high-lat,0.150,0.200,0.300,0.800,1.500,Sheep/wool,trade,clan,social,1,False
+Wolof Ceddo Slave Armies,Senegal,Medieval,1350,14.700,-17.400,14.700,tropical,0.400,0.300,0.300,0.350,1.000,Peanuts/millet,other,military,coercive,1,False
+Wolof Garmi Anti-Corruption,Senegal,Medieval,1350,14.700,-17.400,14.700,tropical,0.650,0.450,0.300,0.250,0.667,Gold/salt,extraction,land,material,1,False
+Xia Dynasty Hydraulic Rule,China,Bronze Age,-2070,34.500,109.700,34.500,temperate,0.700,0.850,0.800,0.000,0.941,Millet farming,agriculture,none,none/voluntary,1,False
+Xingu Tribal Aquatic Law,Brazil,Medieval,1000,-12.400,-53.200,12.400,tropical,0.400,0.300,0.300,0.600,1.000,Fish/cassava,foraging/fishing,clan,social,1,False
+Yenish Horse-Tribes,Switzerland,Modern,1800,47.000,8.000,47.000,high-lat,0.300,0.150,0.300,0.800,2.000,Odd jobs,other,none,none/voluntary,1,False
+Yolngu Aboriginal Kinship,Australia,Paleolithic,-10000,-12.700,136.800,12.700,tropical,0.400,0.300,0.150,0.500,0.500,Foraging,foraging/fishing,land,material,1,False
+Yoruba Ogboni Earth Justice,Nigeria,Medieval,1000,7.500,4.500,7.500,tropical,0.200,0.400,0.300,0.900,0.750,Kola nuts,other,none,none/voluntary,1,False
+Yuan Semu Caste System,China,Medieval,1271,39.900,116.400,39.900,temperate,0.650,0.450,0.300,0.100,0.667,Silk Road,trade,land,material,1,False
+Yuezhi Nomad Diarchy,Kazakhstan,Classical,-300,45.000,65.000,45.000,high-lat,0.400,0.300,0.300,0.500,1.000,Horse trade,trade,military,coercive,1,False
+Yupik Bladder Festival Rule,Alaska,Medieval,1000,61.200,-163.000,61.200,high-lat,0.400,0.300,0.300,0.500,1.000,Whale/seal,other,ritual,ritual,1,False
+Zanzibar Clove Plantation Councils,Tanzania,Modern,1810,-6.100,39.200,6.100,tropical,0.400,0.300,0.300,0.350,1.000,Clove exports,other,land,material,1,False
+Zapatista Caracoles,Mexico,Modern,1994,16.800,-92.600,16.800,tropical,0.050,0.050,0.300,0.950,6.000,Coffee farming,agriculture,none,none/voluntary,1,False
+Zapotec Cocijo Cult,Mesoamerica,,-500,,,,,0.650,0.500,0.450,0.300,0.900,,other,ritual,ritual,2,False
+Zapotec Glyph-Judge System,Mexico,Classical,-500,17.100,-96.700,17.100,tropical,0.700,0.850,0.300,0.000,0.353,Corn/obsidian,other,none,none/voluntary,1,False
+Zhou Dynasty Mandate of Heaven,China,Iron Age,-1046,34.700,113.600,34.700,temperate,0.500,0.400,0.450,0.350,1.125,Millet/rice,agriculture,land,material,2,False
+Zomia Highland Communities,Highland Southeast Asia,,500,,,,,0.050,0.050,0.050,0.900,1.000,,other,none,none/voluntary,3,False
+Zulu Impi Regiments,Southern Africa,Modern,1816,-28.800,31.900,28.800,temperate,0.300,0.150,0.300,0.700,2.000,Cattle herding,pastoral,none,none/voluntary,1,False
+Zulu Monarchy,Southern Africa,,1816,,,,,0.900,0.300,0.100,0.100,0.333,,other,military,coercive,2,False
+Åland Islands Neutrality,Finland/Sweden,Modern,1809,60.000,20.000,60.000,high-lat,0.200,0.200,0.300,0.850,1.500,Shipping/tourism,other,none,none/voluntary,1,False
+Çatalhöyük,Anatolia,,-7500,,,,,0.050,0.050,0.050,0.900,1.000,,other,community,social,3,True
