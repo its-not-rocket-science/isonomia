@@ -1,4 +1,4 @@
-<img src="isonomia-social-preview-hero.png" alt="Isonomia — Equality under the law" width="100%">
+<img src="isonomia-social-hero.png" alt="Isonomia — Equality under the law" width="100%">
 
 # Isonomia
 
