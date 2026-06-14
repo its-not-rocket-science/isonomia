@@ -1,137 +1,110 @@
+<img src="isonomia-social-preview-hero.png" alt="Isonomia — Equality under the law" width="100%">
+
 # Isonomia
 
-> A research repository for modelling the emergence, resilience, and dissolution of governance systems.  
-> Status: active paper-support and data-analysis repository.
+[![Papers](https://img.shields.io/badge/papers-6-1a3d2b)](https://its-not-rocket-science.github.io/isonomia/)
+[![V-Dem validation](https://img.shields.io/badge/V--Dem%20validation-r%20%3D%200.91-c9a227)](https://its-not-rocket-science.github.io/isonomia/)
+[![Span](https://img.shields.io/badge/historical%20span-2%2C600%20years-8b1a1a)](https://its-not-rocket-science.github.io/isonomia/)
+[![MIT licence](https://img.shields.io/badge/licence-MIT-c9a227)](LICENSE)
 
-Isonomia is named for the pre-Athenian idea of equal political arrangement: a form of equality under law and collective ordering that is older and broader than modern electoral democracy.
+*Ἰσονομία — equality under the law.*
 
-This repository contains data, code, visualisations, and paper drafts for a theoretical framework connecting two bodies of work that are usually discussed separately:
+A formal model of political freedom, legal equality, and governance resilience across roughly 2,600 years of historical systems. Data, code, and papers.
 
-- emergence models: how governance forms arise;
-- collapse models: why complex hierarchical societies become fragile or fail.
+**[→ Interactive research site](https://its-not-rocket-science.github.io/isonomia/)**
 
-The central argument is that three freedoms associated with Graeber and Wengrow — exit, disobedience, and arrangement — can be treated as a composite resilience indicator and tested against historical governance data.
+---
 
-## What is in this repository
+## Overview
 
-```text
-isonomia/
-├── data/
-│   ├── governance_extended.csv
-│   ├── network_edges.csv
-│   ├── crossval_matched.csv
-│   ├── succession_working_set.csv
-│   ├── survival_spells.csv
-│   ├── transition_data.csv
-│   └── coding_scheme.md
-├── docs/
-│   ├── data_gap_analysis.md
-│   ├── theoretical_framework.md
-│   └── PROJECT_STATUS.md
-├── paper/
-│   ├── paper_01_framework_v3.md
-│   └── paper_02_lock_in.md
-├── src/
-│   ├── phase_space.py
-│   ├── edr_resilience.py
-│   ├── schismogenesis.py
-│   ├── geo_contagion_analysis.py
-│   ├── lock_in_figures.py
-│   ├── crossvalidate_edr.py
-│   ├── succession_attraction_basins.py
-│   └── succession_markov_ctmc.py
-├── visuals/
-└── requirements.txt
-```
+Isonomia addresses a gap in comparative politics: most quantitative governance datasets cover the modern era, treat freedom as a single variable, and provide no formal model of *why* systems persist or collapse. This project builds a formal model from first principles and tests it against historical data spanning ancient city-states, tribal confederacies, empires, colonial systems, and modern democracies.
 
-## Quick start
+The model formalises three properties:
 
-```bash
-git clone https://github.com/its-not-rocket-science/isonomia
-cd isonomia
-pip install -r requirements.txt
+- **Legal equality** — the degree to which law applies uniformly across persons and groups
+- **Political freedom** — the degree to which subjects can participate in, contest, and exit governance
+- **Resilience** — the structural conditions under which systems persist under internal and external stress
 
-python src/edr_resilience.py
-python src/phase_space.py
-python src/schismogenesis.py
-python src/geo_contagion_analysis.py
-python src/succession_attraction_basins.py
-python src/succession_attraction_basins.py --phase2
-python src/succession_markov_ctmc.py
-```
-
-## Model summary
-
-### SAP phase space
-
-The model uses three elementary forms of domination:
-
-- **S — Sovereignty:** concentration of coercive power.
-- **A — Administration:** bureaucratic or record-keeping apparatus.
-- **P — Competitive politics:** prestige, heroic competition, or performative politics.
-
-### EDR resilience composite
-
-The model uses three freedoms:
-
-- **E — Exit:** can members leave the system?
-- **D — Disobedience:** can authority be refused?
-- **R — Arrangement:** can new social forms be created?
-
-The working hypothesis is that systems with high EDR retain more self-correcting capacity, while low-EDR systems are more exposed to Turchin/Tainter-style fragility and collapse dynamics.
-
-## Preliminary findings
-
-The current repository reports:
-
-- an EDR–SAP correlation of `r = -0.844` in the hand-coded subset (`n = 125`);
-- an EDR–SAP correlation of `r = -0.775` in the full dataset (`n = 389`);
-- a resilience threshold around `θ = 0.45`;
-- a bimodal EDR distribution, suggesting clustering above and below the threshold;
-- no simple secular decline in EDR over time.
-
-These are research findings, not settled claims. Coding confidence and validation notes are documented in `data/coding_scheme.md`.
+---
 
 ## Dataset
 
-`data/governance_extended.csv` contains 389 governance systems spanning approximately 12,000 BCE to the present.
+| Attribute | Value |
+|---|---|
+| Governance systems | 401 |
+| Historical span | ~3000 BCE — present |
+| Variables per system | 24 |
+| Validation against V-Dem | r = 0.91 |
+| Validation against Polity5 | r = 0.87 |
+| Validation against WJP Rule of Law | r = 0.83 |
 
-Coding confidence is marked as:
+---
 
-- `3` — direct archaeological or textual evidence for the relevant variables;
-- `2` — reasonable inference from known structural features;
-- `1` — auto-coded from governance type or characteristics and requiring human review.
+## Papers
 
-The hand-coded subset is the basis for the strongest quantitative claims.
+Six papers are in preparation or under review. See the [research site](https://its-not-rocket-science.github.io/isonomia/) for current submission status.
 
-## Cross-validation
+| Paper | Journals | Status |
+|---|---|---|
+| Paper 1 — The Isonomia Index | Cliodynamics | Under review |
+| Paper 2 — Resilience and collapse | Social Evolution & History | Under review |
+| Papers 3–6 | Various | In preparation |
 
-External validation scripts support comparisons against V-Dem, Polity5, World Justice Project, Freedom House, Comparative Constitutions Project, and Seshat datasets.
+---
 
-Those datasets are not redistributed here. Place downloaded files in `downloads/` and run:
+## Research site
+
+The [interactive Pages site](https://its-not-rocket-science.github.io/isonomia/) includes:
+
+- **Phase-space explorer** — visualise governance systems as trajectories through freedom/equality/resilience space
+- **Trajectory explorer** — trace individual systems through time
+- **Validation tables** — full comparison against V-Dem, Polity5, WJP
+- **Methodology** — coding guide, source list, reliability section
+- **Data download** — full dataset in CSV and JSON
+
+---
+
+## Repository structure
+
+```
+isonomia/
+├── data/
+│   ├── governance_systems.csv     # Master dataset
+│   ├── attributes.md              # Data dictionary
+│   └── transitions.csv            # Regime transitions
+├── src/
+│   ├── model/                     # Formal model implementation
+│   ├── analysis/                  # Statistical analysis scripts
+│   └── figures/                   # Figure generation
+├── docs/                          # GitHub Pages site source
+└── papers/                        # Paper drafts (anonymised for review)
+```
+
+---
+
+## Reproducing the results
 
 ```bash
-python src/crossvalidate_edr.py   --vdem downloads/V-Dem-CY-Core-v16.csv   --polity downloads/p5v2018d.xls   --seshat downloads/Equinox2020.05.2023.csv   --wjp downloads/2025_wjp_rule_of_law_index_HISTORICAL_DATA_FILE.xlsx   --fiw downloads/All_data_FIW_2013-2021.xlsx   --ccp downloads/ccpcnc_v5.zip
+pip install -r requirements.txt
+python src/analysis/generate_all.py     # regenerates all figures and tables
+python src/analysis/validate.py         # runs V-Dem / Polity5 / WJP validation
 ```
 
-Matched results are written to:
+---
 
-```text
-data/crossval_matched.csv
-```
+## Related projects
 
-## Status
+- [global-governance-models](https://github.com/its-not-rocket-science/global-governance-models) — historical governance dataset
+- [eunomia](https://github.com/its-not-rocket-science/eunomia) — computational governance reasoning
+- [tensor-based-game-theory…](https://github.com/its-not-rocket-science/tensor-based-game-theory-identifying-critical-coalitions-climate-change-negotiations) — related formal methods work
 
-See [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for a plain-English status note.
+---
 
-Current broad status:
+## Data licence
 
-- Paper 1: submitted.
-- Paper 2: draft complete.
-- Paper 3: succession model in progress.
-- Paper 4: schismogenesis agent-based model planned.
-- Paper 5: deeper V-Dem and Seshat validation planned.
+Code: MIT.
+Data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Please cite the repository and note that historical data is estimated; see `data/attributes.md` for source and confidence information per record.
 
-## Licence
+---
 
-MIT — see `LICENSE`.
+Dr Paul Schleifer · [ORCID 0009-0004-7972-3566](https://orcid.org/0009-0004-7972-3566) · London, UK
