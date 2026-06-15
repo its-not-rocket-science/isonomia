@@ -1,79 +1,80 @@
-# Ecological setting of D₀: robustness note for Paper 2
-
-## Where to insert this
-
-The note belongs in the **limitations section** of Paper 2, after the acknowledgement 
-of the D₀ circularity concern (that D₀ and D share the same measurement framework), 
-and before the conclusion. It can also be referenced in a footnote from the first 
-paragraph introducing D₀ as a moderator.
-
-Suggested in-text footnote at first mention of D₀ (Section 3 or wherever the OR=6.46 
-is introduced):
-
-> ³ The distribution of D₀ across systems is itself non-random: ecological conditions
-> partially set the structural floor on D₀ via their effect on sovereign capacity S.
-> See the robustness note in Section [X] and the companion analysis
-> `src/ecology_of_freedom.py`.
+# Robustness and extension notes for Paper 2 ecology analysis
+# For inclusion in `docs/notes/` alongside `paper2_ecology_note.md`
 
 ---
 
-## The note itself
+## Note A: Ecological setting of D₀ (original note — see docs/notes/paper2_ecology_note.md)
 
-**Subsection heading (add to limitations or a new robustness subsection):**
+## Note B: Seasonality as a mechanism for ecological S-constraints
 
-### The Ecological Setting of D₀
+The ecology analysis (`src/ecology_of_freedom.py`) finds r(|latitude|, D) = +0.316
+mediated 84.7% through S. A further question is: what is the structural mechanism
+through which ecological conditions constrain S?
 
-The D₀ moderator finding — that systems starting above θ=0.45 have a 6.46× higher 
-odds of avoiding lock-in — treats initial disobedience freedom as an exogenous 
-starting condition. A natural question is whether that starting condition is itself 
-systematically structured by factors outside the governance framework. If D₀ is 
-ecologically determined, the OR=6.46 finding partly reflects geographic fortune 
-rather than institutional path dependence.
+Seasonality of resource availability provides a partial answer. Across 388 systems
+with coded seasonality, the correlation with D is r = +0.348, KW H = 45.84 (p < 0.001).
+However, 95.9% of this relationship is mediated through S, and the partial
+r(seasonality, D | S) = 0.043 (p = 0.44) is non-significant. Seasonality does not
+independently predict D beyond what S already explains; it is an ecological predictor
+of S.
 
-An exploratory cross-sectional analysis across the 327 geocoded systems in the 
-dataset finds a significant positive correlation between absolute latitude and D 
-(r=+0.316, p<0.001, n=327). High-latitude societies have substantially higher D 
-than tropical ones, with 73.7% of high-latitude systems (|lat|≥40°) above the 
-θ=0.45 threshold compared with 36.7% of low-latitude systems (|lat|<25°; 
-Mann-Whitney p<0.001). Mediation analysis shows that 84.7% of this relationship 
-runs through S: high-latitude ecological conditions constrain state-building 
-capacity, which in turn sets a higher structural floor on D. This is the 
-cross-sectional analogue of the lock-in sequence itself — the same S→D pathway 
-that operates dynamically within the sequence also structures the cross-sectional 
-distribution of starting points.
+The mechanism operates through binding type. High-seasonality societies show 75.0%
+none/voluntary binding, 16.7% social binding, and only 4.2% material binding.
+No-seasonality societies show 50.9% material binding (land, tribute, debt) and
+only 7.3% none/voluntary. This crosstab (chi-squared p < 0.001) identifies the
+mechanism: episodic, mobile resources cannot be monopolised year-round, preventing
+the construction of material-binding surplus extraction structures (land tenure,
+tributary systems, debt peonage) that are the mechanism through which S rises.
 
-Importantly, the latitude-D relationship is not driven by agricultural surplus 
-accumulation in the way that standard political economy models predict. 
-Stratifying by economic base, r(|lat|, D) is non-significant for agricultural 
-systems (r=+0.102, p=0.45, n=58) but significant for foraging/fishing 
-(r=+0.386, p=0.005, n=52) and extraction economies (r=+0.447, p=0.003, n=41). 
-This pattern contradicts a simple Boserup interpretation: the ecological roots of 
-high D₀ run through ecological constraints on S in non-agricultural societies, 
-not through the channelling of agricultural surplus through state apparatus. 
-Once a society is agricultural, latitude ceases to predict D, because surplus 
-accumulation becomes the dominant variable regardless of geographic location.
+The Graeber-Wengrow argument about seasonal variation in social structure
+(Mauss and Beuchat 1904-05; discussed in The Dawn of Everything, chapter 3)
+is therefore supported in a specific, mechanistic sense: seasonal episodicity
+does not directly produce egalitarianism, but it prevents the construction
+of the sovereign capacity that suppresses it.
 
-The result survives the two most obvious confounds. Excluding all European and 
-North American systems, the correlation remains: r=+0.264, p<0.001, n=285. 
-Restricting to systems with higher coding confidence (coding_confidence>1), 
-the correlation strengthens: r=+0.477, p=0.0001, n=65. The relationship is 
-therefore not an artefact of high-D Scandinavian and North American liberal 
-democracies inflating the high-latitude cluster, nor of speculative low-confidence 
-prehistoric codings.
+**Statistical note:** r(seasonality, S) = -0.355, p < 0.001 (n = 388).
+Partial r(seasonality, D | lat + S) = 0.038, p = 0.50. The seasonal effect
+on D operates entirely through S, not independently.
 
-The implication for the D₀ moderator finding is that the odds advantage of 
-starting above θ is partly structurally set by ecological conditions. Systems 
-in ecological settings that constrain state capacity — non-agricultural, 
-high-latitude, resource-dispersed — begin with higher D₀ floors and therefore 
-enter the lock-in sequence with more structural room for resistance. This does 
-not invalidate the D₀ finding: the OR=6.46 is a conditional probability given 
-the lock-in process begins, and the process begins across ecological settings. 
-But it does suggest that the most ecologically constrained states face a double 
-structural advantage: lower S makes lock-in harder to initiate, and the 
-resulting higher D₀ makes it harder to complete if initiated.
+---
 
-*Note: This is an exploratory cross-sectional result. It is not causal: single-coder 
-codings, the acknowledged circularity between S and D in the framework, and the 
-absence of an instrumental variable for ecological conditions mean that the 
-latitude-D result should be treated as suggestive rather than confirmatory. 
-Full analysis is available in `src/ecology_of_freedom.py`.*
+## Note C: Gender structure as an independent predictor of D
+
+Gender structure (coded in the `Gender Roles` field) shows a strong raw correlation
+with D (r ≈ 0.35 before controlling for era). After controlling for historical era,
+the within-era correlations remain substantial: r(gender, D | classical) = +0.716,
+r(gender, D | medieval) = +0.586 (both p < 0.001).
+
+Critically, the gender-D relationship survives controlling for binding mechanism:
+partial r(gender, D | binding) = +0.403, p < 0.001. Gender structure is not
+simply a proxy for social versus material binding — it carries independent
+information about D after binding type is accounted for.
+
+Two mechanisms are plausible but cannot be distinguished cross-sectionally:
+
+(a) Latent variable: gender egalitarianism and political disobedience freedom both
+    reflect a common underlying disposition toward horizontal rather than vertical
+    social organisation. They are correlated because they measure aspects of the
+    same structural property, not because one causes the other.
+
+(b) Constituency expansion: societies with broader gender participation in governance
+    have more people with a stake in maintaining D, producing higher effective D
+    through a larger resistance-capable population.
+
+**Coding note:** The `Gender Roles` field contains ~140 unique values and required
+broad categorisation (egalitarian-ish = gender-neutral, gender-balanced, gender-mixed,
+gender-equal; male-dominated = all others). This coding is rough; finer distinctions
+would strengthen or attenuate the result.
+
+---
+
+## Note D: Collapse cause as evidence for lock-in brittleness
+
+(This note was incorporated directly into Paper 2 §8.2 as a robustness result.)
+See `paper_02_lock_in.md` §8.2 for the full analysis and statistics.
+
+Summary: internal collapses (revolt, civil war, administrative dissolution; n=16)
+occur at the highest S (mean=0.675) and lowest D (mean=0.200) of any collapse type.
+Environmental collapses occur at significantly higher D (mean=0.492) and lower S
+(mean=0.444). MW D: p=0.003; MW S: p=0.002. Lock-in produces brittleness, not
+stability.

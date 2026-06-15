@@ -1,0 +1,402 @@
+System,Region,Historical Epoch,Start,sovereignty_index,admin_index,disobedience_freedom,surplus_legibility,Latitude,abs_lat,seasonality,seas_ord,Economic Base,binding_mechanism,bind,Collapse Cause,ctype,Gender Roles,g_egal,norm_frac,coding_confidence
+Abbasid Caliphate,Middle East,Medieval,750,0.550,0.800,0.250,0.650,,,,,,,mixed,,other,,0,0.938,2
+Aboriginal Elders Councils,Australia,,-5000,0.200,0.100,0.750,0.100,,,medium,2.000,,kinship/sacred,social,,other,,0,0.500,3
+Aboriginal Tjurunga Councils,Australia,Paleolithic,-8000,0.400,0.300,0.600,0.100,-25.000,25.000,low,1.000,Foraging,none,none/voluntary,,other,Gender-restricted,0,0.500,1
+Achaemenid Persian Empire,Middle East,Ancient,-550,0.550,0.800,0.280,0.600,,,,,,,mixed,,other,,0,0.812,2
+Adena Moundbuilder Councils,USA,Woodland,-1000,0.650,0.500,0.350,0.400,39.000,39.000,medium,2.000,Pipeweed,ritual,ritual,Climate change,environmental,Gender-balanced,1,0.600,1
+Ainu Bear Ritual Governance,Japan,Paleolithic,-10000,0.850,0.600,0.100,0.100,43.100,43.100,low,1.000,Salmon/foraging,ritual,ritual,Japanese annexation,conquest,Gender-segregated,0,0.500,1
+Akan Amanhene Gold States,Ghana,Early Modern,1400,0.750,0.450,0.200,0.400,6.700,6.700,low,1.000,Gold/cocoa,ritual,ritual,British colonization,conquest,Male kings (female advisors),0,0.667,1
+Akan Chieftaincy,West Africa (Akan),,1000,0.500,0.200,0.600,0.400,,,low,1.000,,clan,social,,other,,0,0.500,2
+Aleut Unangan Whalebone Chiefs,USA,Early Modern,1741,0.500,0.450,0.200,0.400,52.000,52.000,low,1.000,Sea otter pelts,none,none/voluntary,Russian conquest,conquest,Male whalers,0,0.667,1
+Almoravid Lamtuna Councils,Morocco,Medieval,1040,0.650,0.500,0.350,0.500,31.800,31.800,low,1.000,Trans-Saharan trade,none,none/voluntary,Almohad revolt,internal,Male imams,0,0.600,1
+Alpine Pastoral Communes,Switzerland/Austria,Medieval,1200,0.400,0.300,0.500,0.400,46.500,46.500,low,1.000,Dairy farming,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,1.000,1
+Althingi Carbon-Neutral Parliament,Iceland,Medieval-Modern,930,0.200,0.750,0.850,0.400,64.100,64.100,low,1.000,Geothermal energy,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.133,2
+Anasazi Kiva Water Councils,USA,Medieval,750,0.200,0.400,0.800,0.400,36.100,36.100,low,1.000,Corn/beans,none,none/voluntary,Drought,environmental,Gender-restricted,0,0.750,1
+Andean Ayllu Systems,Peru,Bronze Age,-1000,0.200,0.250,0.750,0.450,-13.200,13.200,medium,2.000,Potato/maize,clan,social,Spanish conquest,conquest,Gender-complementary,0,0.800,2
+Andean Tinku,Andean South America,,-500,0.200,0.100,0.700,0.300,,,medium,2.000,,ritual,ritual,,other,,0,0.500,2
+Andorran Co-Principality,Andorra,Medieval,1278,0.300,0.550,0.700,0.400,42.500,42.500,none,0.000,Tourism/Banking,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.182,2
+Apartheid Bantustans,South Africa,Modern,1948,0.850,0.600,0.100,0.400,-29.000,29.000,low,1.000,Migrant labor,none,none/voluntary,ANC resistance,other,Male puppets,0,0.500,1
+Arctic Nenets Yamal Councils,Russia,Modern,1700,0.200,0.400,0.900,0.400,67.500,67.500,high,3.000,Reindeer fur,none,none/voluntary,Sovietization,other,Male herders,0,0.750,1
+Ashanti Confederacy,West Africa,Early Modern,1670,0.650,0.400,0.350,0.600,6.700,6.700,none,0.000,Gold/cocoa,tribute/military,material,British colonization,conquest,Male kings (female advisors),0,0.750,2
+Assyrian Military Autocracy,Mesopotamia,Iron Age,-911,0.950,0.850,0.000,0.800,36.400,36.400,none,0.000,Tribute economy,coercion,coercive,Medo-Babylonian revolt,internal,Male soldiers,0,0.824,2
+Athenian Democracy,Greece,Iron Age,-508,0.150,0.450,0.850,0.550,37.900,37.900,medium,2.000,Olive trade,citizenship,social,Macedonian conquest,conquest,Male citizens only,0,1.222,2
+Ayutthaya Elephant Bureaucracy,Thailand,Early Modern,1351,0.400,0.300,0.500,0.400,14.400,14.400,low,1.000,Rice/tin,none,none/voluntary,Burmese sack,other,Male nobles,0,1.000,1
+Aztec Triple Alliance,Mesoamerica,Medieval,1428,0.800,0.700,0.200,0.850,19.400,19.400,low,1.000,Maize/chocolate,land/tribute/ritual,material,Cortés,other,Male warriors,0,1.000,3
+Bactrian Greek Syncretism,Afghanistan,Classical,-250,0.750,0.450,0.050,0.400,36.700,36.700,low,1.000,Wine/gold,none,none/voluntary,Kushan conquest,conquest,Male elites,0,0.667,1
+Balinese Negara,Bali,,900,0.200,0.150,0.700,0.200,,,medium,2.000,,ritual,ritual,,other,,0,0.667,3
+Bamum Script Bureaucracy,Cameroon,Early Modern,1390,0.850,0.600,0.100,0.750,5.700,5.700,low,1.000,Palm oil,none,none/voluntary,German colonization,other,Male scribes,0,1.000,1
+Bamum Scriptocracy,Cameroon,Modern,1880,0.850,0.600,0.100,0.750,5.500,5.500,low,1.000,Palm oil/ivory,none,none/voluntary,German annexation,other,Male scribes,0,1.000,1
+Bantu Mfecane Councils,Central Africa,Iron Age,-500,0.400,0.300,0.500,0.400,-5.000,5.000,low,1.000,Iron/bananas,clan,social,None (transformation),ongoing,Gender-restricted,0,0.500,1
+Barbuda Communal Land System,Barbuda,Early Modern,1685,0.150,0.200,0.900,0.200,17.600,17.600,low,1.000,Lobster fishing,land,material,Climate threats,environmental,Gender-mixed,1,0.750,1
+Batavian Republic,Netherlands,Early Modern,1795,0.350,0.550,0.650,0.500,52.100,52.100,low,1.000,Trade/industry,none,none/voluntary,Napoleonic restoration,other,Male patriots,0,0.545,1
+Bavarian Beer Hall Communes,Germany,Medieval,1200,0.400,0.300,0.500,0.500,48.100,48.100,low,1.000,Barley trade,none,none/voluntary,Napoleonic reforms,other,Male burghers,0,1.000,1
+Benin Oba Divine Kingship,Nigeria,Medieval,1200,0.800,0.550,0.100,0.550,6.300,6.300,none,0.000,Ivory/Bronze,tribute/ritual,material,British invasion,conquest,Male obas,0,0.727,2
+Benin Oba Eweka Dynasty,Nigeria,Medieval,1200,0.700,0.850,0.000,0.400,6.300,6.300,low,1.000,Bronze casting,none,none/voluntary,British invasion,conquest,Male obas,0,0.353,1
+Berber Amazigh Councils,North Africa,Medieval,-500,0.200,0.400,0.900,0.400,31.800,31.800,low,1.000,Salt caravans,clan,social,Arab conquest,conquest,Gender-balanced,1,1.500,1
+Berber Jemaa,North Africa,,-1000,0.250,0.100,0.750,0.300,,,low,1.000,,clan,social,,other,,0,0.500,2
+Bermudian Parliamentary Hybrid,Bermuda,Modern,1620,0.200,0.400,0.900,0.400,32.300,32.300,low,1.000,Tourism/reinsurance,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,0.750,1
+Bhutanese Gross National Happiness,Bhutan,Modern,2008,0.750,0.450,0.200,0.400,27.500,27.500,low,1.000,Hydroelectricity,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,0.667,1
+Bitcoin Decentralized Governance,Digital,Information Age,2009,0.200,0.200,0.850,0.600,,,low,1.000,Crypto mining,none,none/voluntary,None (ongoing),ongoing,Pseudonymous,0,1.500,1
+Blackfoot Confederacy,USA/Canada,Early Modern,1700,0.300,0.150,0.800,0.400,49.000,49.000,low,1.000,Bison herds,none,none/voluntary,Reservation era,other,Gender-balanced,1,2.333,1
+Blemmyes Desert Assemblies,Sudan,Classical,200,0.200,0.400,0.900,0.400,22.000,22.000,high,3.000,Camel herding,none,none/voluntary,Nubian conquest,conquest,Gender-neutral,1,0.750,1
+Bolivian Plurinational State,Bolivia,Modern,2009,0.600,0.650,0.400,0.400,-16.300,16.300,low,1.000,Lithium/Gas,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,0.231,1
+Botswana Tribal Democracy,Botswana,Modern,1966,0.750,0.450,0.300,0.600,-22.300,22.300,low,1.000,Diamond mining,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,0.667,1
+Breton Parish Closes,France,Early Modern,1500,0.650,0.500,0.250,0.200,48.200,48.200,low,1.000,Fishing/Linen,none,none/voluntary,French Revolution,conquest,Gender-mixed,1,0.600,1
+British Parliamentary System,UK,Modern,1689,0.200,0.750,0.850,0.750,51.500,51.500,none,0.000,Industrial,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,1.200,2
+Buganda Clan-Based Monarchy,Uganda,Medieval,1300,0.750,0.450,0.050,0.400,0.300,0.300,low,1.000,Banana/iron,clan,social,British protectorate,conquest,Male clan heads,0,0.667,1
+Byzantine Theme System,Turkey,Medieval,680,0.700,0.800,0.200,0.700,41.000,41.000,none,0.000,Wheat/silk,land/military,material,Crusader sack,other,Male strategoi,0,0.938,2
+Cahokia Birdman Dynasty,USA,Medieval,1050,0.650,0.500,0.100,0.400,38.700,38.700,low,1.000,Maize/copper,ritual,ritual,Drought,environmental,Male priest-kings,0,0.700,1
+Calusa Shell Mound Kingdom,USA,Medieval,500,0.750,0.450,0.050,0.400,26.500,26.500,low,1.000,Shellfish,none,none/voluntary,European diseases,environmental,Male fisher-kings,0,1.778,1
+Carolingian Empire,Europe,Medieval,768,0.500,0.550,0.350,0.450,,,,,,,mixed,,other,,0,1.000,2
+Cathar Perfecti Councils,France,Medieval,1150,0.650,0.500,0.250,0.400,43.600,43.600,low,1.000,Viticulture,none,none/voluntary,Crusader extermination,other,Gender-balanced,1,0.600,1
+Celtic Druidic Synods,Western Europe,Iron Age,-500,0.500,0.450,0.350,0.400,48.900,48.900,low,1.000,Ironworking,none,none/voluntary,Roman conquest,conquest,Male druids,0,1.333,1
+Celtic Tribal Assemblies,Northwestern Europe,,-800,0.300,0.100,0.700,0.300,,,medium,2.000,,clan/honour,social,,other,,0,1.000,2
+Chachapoya Cloud Forest Clans,Peru,Medieval,800,0.250,0.200,0.600,0.400,-6.700,6.700,low,1.000,Quinoa/coca,none,none/voluntary,Inca conquest,conquest,Gender-balanced,1,1.500,1
+Champa Linga-Kings,Vietnam,Classical,192,0.650,0.500,0.100,0.400,11.900,11.900,low,1.000,Sandalwood,none,none/voluntary,Vietnamese conquest,conquest,Male priests,0,0.600,1
+Cherokee Constitutional Republic,USA,Modern,1821,0.200,0.400,0.900,0.550,35.500,35.500,low,1.000,Agriculture,none,none/voluntary,US removal,other,Male/female councils,0,1.500,1
+Cheyenne Council of 44,Great Plains,Early Modern,1800,0.300,0.150,0.800,0.150,44.000,44.000,low,1.000,Bison hunting,military,coercive,US displacement,other,Gender-balanced,1,2.000,1
+Chilean Constitutional Experiment,Chile,Modern,2022,0.250,0.500,0.850,0.400,-33.400,33.400,low,1.000,Copper exports,none,none/voluntary,Rejection vote,other,Gender-balanced,1,0.600,1
+Chinese Communist Party Governance,East Asia,Modern,1949,0.900,0.900,0.080,0.850,,,,,,,mixed,,other,,0,1.056,3
+Chola Naval Assemblies,India,Medieval,850,0.550,0.550,0.550,0.600,10.500,10.500,low,1.000,Pepper/textiles,tribute,material,Pandyan resurgence,other,Male merchants,0,0.909,2
+Chukchi Whalebone Assemblies,Russia,Early Modern,1700,0.200,0.400,0.900,0.400,64.400,64.400,low,1.000,Walrus/whale,clan,social,Soviet collectivization,other,Male hunters,0,0.750,1
+Chumash Tomol Canoe Guilds,California,Medieval,500,0.500,0.450,0.200,0.400,34.500,34.500,low,1.000,Shell beads,none,none/voluntary,Spanish missions,conquest,Gender-separate,0,0.667,1
+Circassian Xabze Councils,Russia/Georgia,Early Modern,1400,0.250,0.200,0.850,0.400,44.000,44.000,low,1.000,Horses/wine,none,none/voluntary,Russian conquest,conquest,Gender-balanced,1,1.500,1
+Classic Maya City-States,Mesoamerica,,250,0.650,0.550,0.350,0.600,,,low,1.000,,ritual/land,material,,other,,0,1.182,3
+Clovis Megafauna Quotas,N. America,Paleolithic,-13000,0.400,0.300,0.550,0.400,39.000,39.000,low,1.000,Big game,none,none/voluntary,Extinction event,other,Gender-balanced,1,1.000,1
+Confucian Bureaucracy,China,,-202,0.800,0.950,0.150,0.900,,,none,0.000,,land/exam,material,,other,,0,0.947,3
+Cornish Stannary,England,Medieval,1201,0.400,0.300,0.500,0.400,50.200,50.200,low,1.000,Stannary charters,none,none/voluntary,Industrialization,other,Male tinners,0,0.500,1
+Cossack Hetmanate,Ukraine,,1649,0.500,0.300,0.650,0.450,,,low,1.000,,military,coercive,,other,,0,0.833,2
+Cossack Sich Republic,Ukraine,Early Modern,1550,0.200,0.400,0.900,0.700,48.000,48.000,low,1.000,Grain/raiding,military,coercive,Russian abolition,conquest,Male warriors,0,0.750,1
+Cuban Revolutionary Committees,Cuba,Modern,1960,0.400,0.300,0.500,0.400,21.500,21.500,low,1.000,Sugar/medical,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,1.000,1
+Cucuteni-Trypillia Mega-Settlements,Ukraine/Moldova,Neolithic,-5500,0.100,0.350,0.850,0.400,47.700,47.700,medium,2.000,Wheat/barley,community,social,Drought,environmental,Matrilocal,0,0.286,2
+Cuman Tribal Federations,Ukraine,Medieval,1100,0.200,0.400,0.900,0.400,48.000,48.000,high,3.000,Horse breeding,none,none/voluntary,Mongol conquest,conquest,Gender-mixed,1,0.750,1
+D'mt Beehive Councils,Eritrea,Classical,-300,0.650,0.500,0.250,0.400,15.000,15.000,low,1.000,Honey/incense,tribute,material,Axumite conquest,conquest,Gender-mixed,1,0.600,1
+Dahomey Mino Amazon State,Benin,Early Modern,1600,0.800,0.550,0.150,0.550,9.300,9.300,none,0.000,Palm oil,military,coercive,French conquest,conquest,Female soldiers,0,0.636,2
+Dalriada Gaelic Law Schools,Scotland,Early Medieval,500,0.400,0.300,0.500,0.400,56.800,56.800,low,1.000,Cattle herding,none,none/voluntary,Viking raids,other,Male jurists,0,1.000,1
+Delhi Sultanate Slave Kings,India,Medieval,1206,0.700,0.850,0.150,0.500,28.600,28.600,low,1.000,Spice trade,military,coercive,Mughals,other,Male sultans,0,0.353,1
+Denisovan Cave Networks,"Siberia, Altai Mountains",Paleolithic,-100000,0.200,0.400,0.900,0.100,51.400,51.400,low,1.000,Foraging,clan,social,Climate change,environmental,Egalitarian bands,1,0.375,1
+Digger Communes,England,Early Modern,1649,0.600,0.650,0.400,0.400,51.500,51.500,low,1.000,Subsistence farming,land,material,Landowner repression,other,Gender-equal,1,0.923,1
+Domari Blacksmith Networks,Middle East,Medieval-Modern,800,0.400,0.300,0.350,0.400,31.000,31.000,low,1.000,Metalwork,clan,social,Assimilation,other,Gender-separate,0,1.000,1
+Dutch Republic States-General,Netherlands,Early Modern,1581,0.300,0.700,0.600,0.750,52.100,52.100,none,0.000,Tulips/slaves,trade,mixed,French invasion,conquest,Male regents,0,1.071,2
+Early Uruk,Mesopotamia,,-4000,0.400,0.550,0.550,0.700,,,low,1.000,,temple/debt,material,,other,,0,1.000,3
+Egyptian Middle Kingdom,Egypt,,-2055,0.700,0.650,0.200,0.800,,,none,0.000,,land/debt,material,,other,,0,0.923,3
+Egyptian Nomarchies,Egypt,Bronze Age,-3150,0.600,0.650,0.200,0.750,26.800,26.800,none,0.000,Wine/grain,land,material,Centralization,other,Male nobles,0,0.769,2
+Egyptian Old Kingdom,Egypt,,-2686,0.900,0.450,0.100,0.750,,,none,0.000,,land/coercion,material,,other,,0,0.889,3
+Estonian Digital Democracy,Estonia,Information Age,2002,0.150,0.950,0.850,0.550,58.700,58.700,none,0.000,IT services,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.000,2
+Etruscan Haruspex Diviners,Italy,Iron Age,-800,0.850,0.600,0.100,0.500,42.800,42.800,low,1.000,Wine trade,none,none/voluntary,Roman conquest,conquest,Male priests,0,0.500,1
+Etruscan Lucumones,Italy,Iron Age,-700,0.600,0.300,0.400,0.500,42.800,42.800,low,1.000,Wine trade,clan/ritual,social,Roman assimilation,other,Male aristocrats,0,0.667,2
+European Union Governance,Europe,Modern,1993,0.300,0.900,0.550,0.700,50.800,50.800,none,0.000,Single market,law,mixed,None (ongoing),ongoing,Gender-mixed,1,0.944,2
+Evenk Tungus Clan Federations,Russia,Medieval,1200,0.200,0.400,0.900,0.500,55.000,55.000,low,1.000,Fur trade,none,none/voluntary,Chinese expansion,other,Gender-balanced,1,0.750,1
+Fante Asafo Companies,Ghana,Early Modern,1700,0.400,0.300,0.600,0.400,5.000,5.000,low,1.000,Gold/cocoa,none,none/voluntary,None (ongoing),ongoing,Male warriors,0,1.000,1
+Faroe Islands Løgting,Faroe Islands,Medieval-Modern,900,0.200,0.400,0.800,0.200,62.000,62.000,low,1.000,Fishing,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,0.750,1
+Faroese Sheep Court,Faroe Islands,Medieval,1000,0.200,0.400,0.800,0.400,62.000,62.000,medium,2.000,Sheep/wool,land,material,None (ongoing),ongoing,Gender-neutral,1,0.750,1
+Fijian Bati Warrior Guilds,Fiji,Medieval,1000,0.400,0.300,0.500,0.400,-18.100,18.100,low,1.000,Yams/whales,military,coercive,British annexation,conquest,Male warriors,0,1.000,1
+Finnish Kalevala Singing Governors,Finland,Medieval,1000,0.650,0.500,0.250,0.400,63.000,63.000,low,1.000,Fur/fish,none,none/voluntary,Swedish conquest,conquest,Male singers,0,0.300,1
+Freetown Settler Democracy,Sierra Leone,Early Modern,1792,0.350,0.550,0.750,0.400,8.500,8.500,low,1.000,Cash crops,coercion,coercive,British takeover,conquest,Gender-mixed,1,0.545,1
+French Third Republic,Europe,Modern,1870,0.500,0.750,0.600,0.750,,,,,,,mixed,,other,,0,1.133,2
+Frisian Moot Hall Democracy,Netherlands,Medieval,800,0.200,0.400,0.900,0.200,53.200,53.200,low,1.000,Fishing/salt,none,none/voluntary,Habsburg rule,other,Gender-neutral,1,0.750,1
+Frisian Sea-Law Republics,Netherlands,Medieval,800,0.200,0.400,0.900,0.200,53.200,53.200,low,1.000,Fishing/salt,none,none/voluntary,Habsburg rule,other,Gender-neutral,1,0.750,1
+Frisian Sea-Law Tribunals,Netherlands,Medieval,1100,0.400,0.400,0.600,0.200,53.200,53.200,low,1.000,Fishing/Dikes,none,none/voluntary,Habsburg centralization,other,Gender-neutral,1,0.750,1
+Frisian Tribal Thing,Netherlands/Germany,Early Medieval,500,0.200,0.400,0.900,0.200,53.200,53.200,low,1.000,Fishing/salt,none,none/voluntary,Frankish conquest,conquest,Gender-mixed,1,0.750,1
+Fuegian Canoe Councils,Tierra del Fuego,Paleolithic,-8000,0.200,0.400,0.900,0.150,-54.500,54.500,low,1.000,Seal hunting,none,none/voluntary,European diseases,environmental,Egalitarian,1,0.875,1
+Gadaa System,Oromo (Ethiopia),,1500,0.300,0.100,0.850,0.300,,,high,3.000,,age-set,social,,other,,0,0.500,3
+Garamantian Foggaras,Libya,Classical,-400,0.850,0.600,0.000,0.400,26.000,26.000,low,1.000,Date/slave,coercion,coercive,Islamic conquest,conquest,Male engineers,0,0.500,1
+Genoese Black Sea Colonies,Ukraine/Crimea,Medieval,1266,0.500,0.450,0.350,0.700,45.000,45.000,low,1.000,Grain/slaves,coercion,coercive,Ottoman conquest,conquest,Male patricians,0,0.667,1
+Ghana Empire,West Africa,Medieval,830,0.750,0.450,0.050,0.400,15.700,15.700,low,1.000,Gold/salt,ritual,ritual,Almoravid invasion,conquest,Male rulers,0,0.333,1
+Ghana Empire Wagadu,West Africa,Medieval,400,0.650,0.500,0.250,0.400,15.700,15.700,low,1.000,Gold/salt,none,none/voluntary,Almoravid invasion,conquest,Male merchants,0,0.600,1
+Golden Horde Yam System,Russia/Kazakhstan,Medieval,1240,0.750,0.650,0.200,0.600,50.000,50.000,medium,2.000,Fur/tribute,tribute/military,material,Disintegration,other,Male riders,0,0.846,2
+Gotlandic Sea-Farmer Althing,Sweden,Medieval,1000,0.400,0.300,0.600,0.700,57.000,57.000,low,1.000,Grain/silver,none,none/voluntary,Danish rule,other,Gender-mixed,1,1.000,1
+Great Zimbabwe Rain Priests,Zimbabwe,Medieval,1100,0.650,0.500,0.100,0.400,-20.300,20.300,low,1.000,Gold/cattle,ritual,ritual,Drought,environmental,Male priests,0,0.600,1
+Greek Aristocracy,Greek,,-800,0.550,0.200,0.350,0.400,,,low,1.000,,clan/birth,social,,other,,0,1.000,2
+Greek Democracy,Greek,,-508,0.200,0.350,0.800,0.550,,,low,1.000,,citizenship,social,,other,,0,1.429,3
+Greek Diarchy,Greek,,-900,0.600,0.300,0.350,0.450,,,none,0.000,,military,coercive,,other,,0,0.667,2
+Greek Oligarchy,Greek,,-600,0.500,0.300,0.350,0.500,,,low,1.000,,wealth,mixed,,other,,0,1.000,2
+Greek Stratocracy,Greek,,-700,0.800,0.400,0.150,0.500,,,none,0.000,,military,coercive,,other,,0,0.750,2
+Greek Timocracy,Greek,,-594,0.400,0.350,0.500,0.500,,,low,1.000,,wealth,mixed,,other,,0,0.857,2
+Greek Tyranny,Greek,,-650,0.750,0.250,0.250,0.500,,,none,0.000,,charisma,ritual,,other,,0,0.800,2
+Greenland Norse Althing,Greenland,Medieval,985,0.200,0.400,0.800,0.400,61.000,61.000,low,1.000,Dairy/whale,none,none/voluntary,Climate cooling,environmental,Gender-mixed,1,0.750,1
+Gupta Golden Age,India,Classical,320,0.450,0.550,0.300,0.500,25.600,25.600,low,1.000,Spice trade,land,material,Hun invasions,conquest,Male brahmins,0,0.909,2
+Göbekli Tepe (ritual complex),Southeast Anatolia,,-9600,0.200,0.050,0.850,0.100,,,high,3.000,,none,none/voluntary,,other,,0,1.000,2
+Göktürk Orkhon Script Khans,Mongolia,Medieval,552,0.750,0.450,0.200,0.400,47.900,47.900,high,3.000,Horse breeding,none,none/voluntary,Uyghur revolt,internal,Male warriors,0,1.333,1
+Habsburg Composite Monarchy,Central Europe,Early Modern,1526,0.550,0.650,0.400,0.650,48.200,48.200,none,0.000,Mining,land/law,material,Nationalism,other,Male emperors,0,1.000,2
+Haida Potlatch Governance,Canada,Early Modern,1700,0.200,0.100,0.750,0.400,53.300,53.300,low,1.000,Cedar/copper,none,none/voluntary,Canadian ban,other,Male/female hosts,0,3.000,1
+Haitian Revolutionary Councils,Haiti,Early Modern,1791,0.150,0.200,0.900,0.400,19.000,19.000,low,1.000,Sugar plantations,coercion,coercive,French invasion,conquest,Gender-mixed,1,1.500,1
+Hallstatt Salt Lords,Austria,Iron Age,-1000,0.500,0.450,0.200,0.400,47.600,47.600,low,1.000,Salt/iron,none,none/voluntary,Roman expansion,other,Male elites,0,0.667,1
+Han Dynasty Examination Prototype,China,Classical,-202,0.700,0.850,0.150,0.400,34.500,34.500,low,1.000,Silk Road,none,none/voluntary,Warlord era,conquest,Male scholars,0,0.353,1
+Hanseatic Kontor,England/Germany,Medieval,1200,0.400,0.550,0.600,0.400,51.500,51.500,low,1.000,Wool/beer,none,none/voluntary,Nation-states,other,Male merchants,0,0.545,1
+Hanseatic League,Northern Europe,Medieval,1356,0.250,0.500,0.650,0.700,54.300,54.300,low,1.000,Timber/amber,trade,mixed,Nation-states,other,Male merchants,0,1.200,2
+Hawaiian Ahupuaʻa System,Hawaii,Medieval,1000,0.400,0.300,0.350,0.400,19.900,19.900,low,1.000,Taro farming,none,none/voluntary,Christian overthrow,other,Gender-separated,0,1.000,1
+Hawaiian Kapu System,Hawaii,Early Modern,1000,0.850,0.600,0.000,0.400,19.900,19.900,low,1.000,Taro farming,none,none/voluntary,Missionary overthrow,other,Gender-segregated,0,0.500,1
+Highland New Guinea Big Man System,Papua New Guinea,,-1000,0.100,0.050,0.850,0.200,,,medium,2.000,,none,none/voluntary,,other,,0,1.000,3
+Hittite Panku Council,Anatolia,Bronze Age,-1650,0.550,0.450,0.450,0.550,39.700,39.700,none,0.000,Iron smelting,land/military,material,Sea Peoples,other,Male elders,0,1.000,3
+Hittite Sun Priest-Kings,Turkey,Bronze Age,-1600,0.750,0.450,0.050,0.400,40.000,40.000,low,1.000,Wheat/iron,none,none/voluntary,Sea Peoples,other,Male priests,0,0.667,1
+Holy Roman Empire,Central Europe,,800,0.400,0.450,0.450,0.550,,,low,1.000,,land/law,material,,other,,0,1.222,2
+Holy Roman Imperial Diarchy,Central Europe,Medieval,800,0.350,0.500,0.500,0.550,50.100,50.100,low,1.000,Manorialism,land/law,material,Napoleon,other,Male rulers,0,1.200,2
+Hopewell Copper Exchange,USA,Woodland,-200,0.300,0.150,0.800,0.400,39.800,39.800,low,1.000,Copper/pipe,ritual,ritual,Climate cooling,environmental,Gender-mixed,1,2.000,1
+Icelandic Althing,Iceland,Medieval,930,0.150,0.250,0.800,0.300,64.100,64.100,high,3.000,Fishing,honour,social,Danish rule,other,Male landowners,0,1.000,2
+Icelandic Commonwealth,Iceland,Medieval,930,0.100,0.200,0.800,0.300,64.000,64.000,medium,2.000,Fish/wool,honour,social,Norwegian takeover,other,Gender-mixed,1,1.000,2
+Icelandic Crowdsourced Constitution,Iceland,Modern,2010,0.200,0.400,0.900,0.400,64.100,64.100,low,1.000,Fisheries,none,none/voluntary,Parliamentary veto,other,Gender-balanced,1,0.750,1
+Igbo Assemblies,Igbo (Nigeria),,-500,0.100,0.100,0.850,0.300,,,low,1.000,,community,social,,other,,0,0.500,3
+Igbo Umunna Councils,Nigeria,Early Modern,1000,0.200,0.400,0.900,0.750,5.500,5.500,low,1.000,Yam/palm oil,none,none/voluntary,British conquest,conquest,Male elders,0,0.375,1
+Imbangala Kilombo,Angola,Early Modern,1600,0.800,0.400,0.150,0.400,-12.000,12.000,low,1.000,Slave raiding,military,coercive,Portuguese conquest,conquest,Male cohorts,0,0.750,1
+Inca Empire (Tawantinsuyu),Andean South America,Medieval,1438,0.750,0.800,0.100,0.900,-13.500,13.500,none,0.000,Potato/maize,labour/land,material,Spanish conquest,conquest,Dual-gender,0,0.750,3
+Indian Panchayati Raj,India,Modern,1992,0.200,0.400,0.900,0.550,20.600,20.600,low,1.000,Agriculture/GDP,none,none/voluntary,None (ongoing),ongoing,Gender-quota,0,0.750,1
+Indigenous IPLCs,Global,All Ages,-10000,0.400,0.300,0.600,0.400,,,low,1.000,Subsistence,none,none/voluntary,Land grabs,other,Gender-varied,0,1.000,1
+Indus Priest-Kings,Pakistan/India,Bronze Age,-3300,0.650,0.500,0.250,0.500,30.600,30.600,low,1.000,Cotton trade,none,none/voluntary,Climate shift,environmental,Unknown,0,1.600,1
+Inuit Qaggiq Assemblies,Arctic,Medieval,-1000,0.100,0.050,0.900,0.100,70.000,70.000,high,3.000,Seal hunting,none,none/voluntary,None (ongoing),ongoing,Egalitarian,1,1.000,3
+Irish Brehon Law,Ireland,Medieval,500,0.400,0.300,0.500,0.400,53.500,53.500,low,1.000,Cattle/dairy,none,none/voluntary,English conquest,conquest,Gender-mixed,1,1.000,1
+Irish Traveller Cant Systems,Ireland,Modern,1700,0.400,0.300,0.500,0.400,53.000,53.000,low,1.000,Scrap/tarmac,none,none/voluntary,None (ongoing),ongoing,Gender-complementary,0,1.000,1
+Iroquois Confederacy / Haudenosaunee,Northeast North America,Medieval,1450,0.250,0.200,0.850,0.350,43.100,43.100,medium,2.000,Maize/beans,clan,social,Colonial pressures,other,Female clan heads,0,0.750,3
+Isocracy,Greek,,-460,0.150,0.350,0.800,0.500,,,low,1.000,,citizenship,social,,other,,0,1.143,2
+Javanese Kabuyutan Councils,Indonesia,Medieval,1200,0.500,0.450,0.350,0.400,-7.600,7.600,low,1.000,Rice farming,none,none/voluntary,Dutch colonialism,conquest,Male scholars,0,1.333,1
+Jomon Shellfish Consensus,Japan,Mesolithic,-14000,0.200,0.400,0.800,0.100,36.500,36.500,high,3.000,Marine foraging,none,none/voluntary,Yayoi migration,other,Gender-mixed,1,0.750,1
+Jomsviking Warrior Commune,Denmark/Poland,Medieval,980,0.400,0.300,0.500,0.400,55.000,55.000,low,1.000,Plunder/Iron,none,none/voluntary,Norwegian invasion,conquest,Male warriors,0,1.000,1
+Joseon Confucian Bureaucracy,Korea,Early Modern,1392,0.750,0.850,0.150,0.800,37.500,37.500,none,0.000,Rice/silk,land/exam,material,Japanese annexation,conquest,Male yangban,0,1.000,2
+Jukun Aku Oracle Kings,Nigeria,Early Modern,1400,0.650,0.500,0.100,0.200,8.900,8.900,low,1.000,Yam/fishing,none,none/voluntary,British conquest,conquest,Male priests,0,0.600,1
+Kalderash Gold-Smithing Dynasties,Balkans,Early Modern,1500,0.400,0.300,0.500,0.400,44.000,44.000,low,1.000,Goldsmithing,clan,social,None (ongoing),ongoing,Gender-separate,0,1.000,1
+Kalmyk Khanate Nomadic Parliament,Russia,Early Modern,1630,0.200,0.200,0.800,0.400,47.000,47.000,high,3.000,Horse herds,none,none/voluntary,Russian annexation,conquest,Male lamas,0,3.000,1
+Kanem Duguwa Nomad-Kings,Chad,Medieval,700,0.850,0.600,0.100,0.400,14.100,14.100,medium,2.000,Salt/slaves,coercion,coercive,Bulala invasion,conquest,Male warrior-elite,0,0.500,1
+Kanem-Bornu Sufi Knights,Chad,Medieval,1100,0.800,0.400,0.150,0.400,13.100,13.100,low,1.000,Salt/slaves,coercion,coercive,Fulani jihad,other,Male scholars,0,1.500,1
+Kerala People’s Planning,India,Modern,1996,0.600,0.650,0.400,0.400,8.500,8.500,low,1.000,Spice/remittances,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,0.462,1
+Ket Yenisei Fish-Taboo Councils,Russia,Early Modern,1600,0.400,0.300,0.600,0.200,63.000,63.000,low,1.000,Sturgeon fishing,clan,social,Sovietization,other,Gender-mixed,1,1.000,1
+Khazar Jewish Khaganate,Russia/Kazakhstan,Medieval,650,0.400,0.350,0.600,0.400,47.000,47.000,low,1.000,Fur/slaves,coercion,coercive,Kievan conquest,conquest,Male khagans,0,0.857,1
+Khmer Devaraja,Cambodia,Medieval,802,0.850,0.600,0.100,0.800,13.400,13.400,none,0.000,Rice farming,land/ritual,material,Thai invasion,conquest,Male god-kings,0,0.833,3
+Khmer Water Mandala,Cambodia,Medieval,1113,0.800,0.650,0.100,0.800,13.400,13.400,none,0.000,Rice farming,land/ritual,material,Cham invasion,conquest,Male engineers,0,0.846,2
+Khotanese Buddhist Monarchy,China,Medieval,200,0.400,0.300,0.350,0.500,37.100,37.100,low,1.000,Jade trade,none,none/voluntary,Kara-Khanid invasion,conquest,Male monks,0,2.000,1
+Kibbutz Movement,Israel,Modern,1909,0.100,0.300,0.850,0.450,32.500,32.500,none,0.000,Agriculture,community,social,None (ongoing),ongoing,Gender-equal,1,1.167,2
+Kingdom of Kush,Sudan,Iron Age,-780,0.750,0.450,0.200,0.600,19.600,19.600,low,1.000,Gold mining,none,none/voluntary,Assyrian invasion,conquest,Female co-rulers,0,1.333,1
+Kiribati Maneaba Councils,Kiribati,Early Modern,1400,0.150,0.200,0.800,0.200,1.400,1.400,low,1.000,Fishing/coconut,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,0.750,1
+Konbaung Hluttaw,Myanmar,Early Modern,1752,0.700,0.850,0.150,0.400,21.000,21.000,low,1.000,Rice/teak,coercion,coercive,British conquest,conquest,Male officials,0,0.353,1
+Kongo Mbanza Council,Angola,Early Modern,1390,0.400,0.300,0.500,0.400,-8.800,8.800,low,1.000,Copper/ivory,none,none/voluntary,Portuguese interference,other,Male electors (female spies),0,1.000,1
+Koryak Reindeer-Oracle System,Russia,Early Modern,1600,0.650,0.500,0.250,0.400,59.200,59.200,low,1.000,Reindeer blood,none,none/voluntary,Russian conquest,conquest,Gender-fluid,0,0.600,1
+Kuba Bushong Cloth Kings,DRC,Early Modern,1600,0.750,0.450,0.050,0.400,-5.000,5.000,low,1.000,Raffia cloth,none,none/voluntary,Belgian conquest,conquest,Male kings (female weavers),0,0.667,1
+Kurultai,Mongolia,,1206,0.600,0.200,0.600,0.300,,,medium,2.000,,military,coercive,,other,,0,0.500,2
+Kushan Devaputra,Afghanistan,Classical,30,0.750,0.450,0.050,0.500,36.000,36.000,low,1.000,Silk Road trade,none,none/voluntary,Kidarite invasion,conquest,Male elites,0,1.333,1
+Kven Arctic Trader Networks,Norway/Finland,Medieval,1200,0.400,0.300,0.500,0.400,70.000,70.000,medium,2.000,Fur/fish,none,none/voluntary,State borders,other,Gender-mixed,1,0.500,1
+La Tène Tribal Federations,Switzerland,Iron Age,-450,0.350,0.200,0.650,0.400,47.000,47.000,low,1.000,Amber/wool,clan,social,Roman conquest,conquest,Gender-mixed,1,1.500,1
+Lan Xang Million Elephant Kings,Laos,Medieval,1353,0.650,0.450,0.100,0.400,17.900,17.900,low,1.000,Teak/opium,land,material,Siamese invasion,conquest,Male warriors,0,1.778,1
+Lapita Voyaging Networks,Pacific,Iron Age,-1500,0.200,0.400,0.800,0.400,-16.000,16.000,low,1.000,Taro/obsidian,clan,social,Isolation,other,Gender-mixed,1,0.750,1
+Late Uruk / Early Dynastic,Mesopotamia,,-3100,0.750,0.700,0.300,0.850,,,none,0.000,,debt/land/coercion,material,,other,,0,1.071,3
+Leveller Agitators,England,Early Modern,1647,0.200,0.400,0.900,0.400,51.500,51.500,low,1.000,War taxes,tribute,material,Cromwell suppression,other,Gender-mixed,1,0.750,1
+Libyan Jamahiriya,Libya,Modern,1977,0.400,0.300,0.600,0.750,32.900,32.900,low,1.000,Oil wealth,none,none/voluntary,NATO intervention,other,Male-dominated,0,1.000,1
+Liechtenstein Direct Democracy,Liechtenstein,Modern,1862,0.400,0.600,0.750,0.550,47.200,47.200,none,0.000,Finance/Tourism,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.250,2
+Liechtenstein Direct Monarchy,Liechtenstein,Modern,1719,0.200,0.400,0.800,0.400,47.200,47.200,low,1.000,Banking,none,none/voluntary,None (ongoing),ongoing,Male prince,0,0.750,1
+Lithuanian Pagan Kings,Lithuania/Ukraine,Medieval,1250,0.750,0.450,0.050,0.400,55.000,55.000,low,1.000,Amber/bees,none,none/voluntary,Polish union,other,Male rulers,0,0.667,1
+Lozi Litunga Flood Kings,Zambia,Early Modern,1600,0.750,0.450,0.050,0.400,-15.200,15.200,high,3.000,Fish/sorghum,none,none/voluntary,,other,Male kings with female advisors,0,0.333,1
+Luba Bambudye Memory State,DRC,Early Modern,1585,0.500,0.450,0.350,0.400,-6.100,6.100,low,1.000,Copper/ivory,none,none/voluntary,Belgian colonialism,other,Male initiates,0,0.333,1
+Lunda Ruwej Matrilineacy,DRC,Early Modern,1600,0.800,0.200,0.150,0.400,-8.300,8.300,low,1.000,Ivory/beeswax,none,none/voluntary,Belgian conquest,conquest,Female monarchs,0,0.750,1
+Lydian Electrum Oligarchy,Turkey,Iron Age,-650,0.400,0.550,0.500,0.400,38.000,38.000,low,1.000,Silver/gold,none,none/voluntary,Persian conquest,conquest,Male elites,0,0.545,1
+Magna Carta Baronage,England,Medieval,1215,0.500,0.400,0.550,0.600,51.800,51.800,none,0.000,Wool trade,land,material,Centralization,other,Male barons,0,1.250,2
+Majapahit Mandala,Indonesia,,1293,0.550,0.400,0.500,0.600,,,low,1.000,,tribute,material,,other,,0,0.875,2
+Majapahit Terracotta Bureaucracy,Indonesia,Medieval,1293,0.400,0.300,0.500,0.400,-7.500,7.500,low,1.000,Rice/indigo,none,none/voluntary,Islamic sultanates,other,Male administrators,0,2.000,1
+Malacca Straits Mandala,Malaysia,Medieval,1400,0.200,0.200,0.700,0.500,2.200,2.200,low,1.000,Spice trade,tribute,material,Portuguese invasion,conquest,Male merchants,0,4.000,1
+Malagasy Fokonolona,Madagascar,Early Modern,1700,0.150,0.200,0.900,0.400,-18.900,18.900,low,1.000,Rice farming,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,1.500,1
+Maldivian Furya Coral Councils,Maldives,Medieval,1100,0.200,0.400,0.900,0.500,3.200,3.200,low,1.000,Sea cucumber trade,none,none/voluntary,British protectorate,conquest,Gender-mixed,1,0.375,1
+Mali Mansa Rule,Mali,Medieval,1235,0.750,0.450,0.050,0.400,12.600,12.600,low,1.000,Gold/salt,none,none/voluntary,Civil war,conquest,Male rulers,0,0.667,1
+Maluku Sasi Harvest Bans,Indonesia,Medieval,1200,0.400,0.300,0.600,0.500,-3.700,3.700,high,3.000,Spice trade,ritual,ritual,Dutch colonialism,conquest,Gender-balanced,1,1.167,1
+Manush Circus Kingdoms,France,Modern,1850,0.850,0.600,0.000,0.400,47.000,47.000,low,1.000,Entertainment,none,none/voluntary,None (ongoing),ongoing,Gender-stratified,0,0.500,1
+Manx Tynwald,Isle of Man,Medieval,979,0.250,0.550,0.750,0.450,54.200,54.200,medium,2.000,Herring fishing,none,none/voluntary,None (ongoing),ongoing,Male landowners,0,1.182,2
+Maohi Tapu System,French Polynesia,Modern,1840,0.650,0.500,0.350,0.400,-17.500,17.500,low,1.000,Vanilla/fish,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,0.300,1
+Mapuche Parlamento Confederacy,Chile,Early Modern,1550,0.300,0.150,0.800,0.400,-38.700,38.700,low,1.000,Horse/maize,none,none/voluntary,Chilean conquest,conquest,Gender-balanced,1,2.000,1
+Marajoara Amazonian Queens,Brazil,Classical,400,0.400,0.300,0.350,0.400,-1.400,1.400,low,1.000,Manioc/fish,none,none/voluntary,Climate change,environmental,Female rulers,0,1.000,1
+Maroon Communities (Jamaica/Suriname),Caribbean,,1655,0.300,0.150,0.800,0.300,,,medium,2.000,,community,social,,other,,0,0.667,2
+Maroon Palenque Republics,Colombia,Early Modern,1600,0.800,0.200,0.250,0.400,10.000,10.000,low,1.000,Cassava/arms,military,coercive,State repression,other,Gender-mixed,1,0.750,1
+Marshallese Stick Chart Navigators,Marshall Islands,Medieval,1000,0.400,0.300,0.500,0.500,7.100,7.100,low,1.000,Coconut trade,none,none/voluntary,German colonization,other,Male navigators,0,1.000,1
+Mauryan Arthashastra State,India,Iron Age,-322,0.700,0.850,0.000,0.400,28.600,28.600,low,1.000,Rice taxation,tribute,material,Internal revolt,internal,Male administrators,0,0.941,1
+Mauryan Empire,South Asia,,-322,0.800,0.850,0.150,0.850,,,none,0.000,,land/debt/coercion,material,,other,,0,0.941,3
+Mayan Ajaw System,Mesoamerica,Classical,250,0.700,0.600,0.250,0.600,17.200,17.200,medium,2.000,Cacao trade,ritual/tribute,material,Drought,environmental,Male rulers,0,1.083,2
+Meiji Oligarchy,Japan,Modern,1868,0.750,0.850,0.150,0.750,35.700,35.700,none,0.000,Textiles/steel,land/conscription,material,WWII,other,Male genrō,0,1.000,2
+Merina Andriana Castes,Madagascar,Early Modern,1700,0.400,0.300,0.350,0.400,-19.000,19.000,low,1.000,Rice/silk,clan,social,French conquest,conquest,Gender-stratified,0,1.000,1
+Metis Buffalo Councils,Canada,Early Modern,1780,0.200,0.400,0.900,0.500,51.000,51.000,medium,2.000,Pemmican trade,none,none/voluntary,Buffalo extinction,other,Gender-mixed,1,0.375,1
+Micronesian Yapese Stone Council,Micronesia,,-1000,0.300,0.100,0.650,0.350,,,low,1.000,,prestige/tribute,material,,other,,0,0.500,2
+Ming Dynasty,East Asia,Early Modern,1368,0.850,0.950,0.080,0.900,,,,,,,mixed,,other,,0,0.947,3
+Ming Yellow Register Census,China,Early Modern,1368,0.850,0.850,0.050,0.900,32.100,32.100,none,0.000,Rice/tax,land/coercion,material,Li Zicheng revolt,internal,Male heads,0,1.000,2
+Minoan Crete,Aegean,,-2700,0.500,0.700,0.450,0.700,,,low,1.000,,land/palace,material,,other,,0,0.714,2
+Minoan Thalassocracy,Crete,Bronze Age,-2000,0.650,0.500,0.100,0.500,35.300,35.300,low,1.000,Bronze trade,none,none/voluntary,Mycenaean invasion,conquest,Female-dominated,0,0.600,1
+Mississippian Chiefdoms,Mississippi Valley,,800,0.650,0.300,0.300,0.500,,,low,1.000,,tribute,material,,other,,0,0.333,2
+Moche Ceremonial Brewmasters,Peru,Classical,100,0.400,0.300,0.500,0.400,-8.100,8.100,low,1.000,Maize/peanuts,none,none/voluntary,Climate change,environmental,Gender-mixed,1,1.000,1
+Moche Sacrificial Hydraulics,Peru,Classical,100,0.850,0.600,0.000,0.200,-8.100,8.100,low,1.000,Maize/fishing,ritual,ritual,El Niño floods,environmental,Male priests,0,0.500,1
+Mogollon Pit-House Democracies,USA,Woodland,-200,0.200,0.400,0.800,0.400,33.000,33.000,low,1.000,Maize/beans,none,none/voluntary,Drought,environmental,Gender-mixed,1,0.750,1
+Mohenjo-daro / Indus Valley Civilisation,South Asia,,-2600,0.100,0.400,0.750,0.600,,,unknown,,,unknown,mixed,,other,,0,1.125,2
+Mongolian Kurultai,Mongolia,Medieval,1206,0.750,0.450,0.250,0.400,47.900,47.900,high,3.000,Herding,none,none/voluntary,Disintegration,other,Male warriors,0,0.667,1
+Moravian Mission Communes,USA,Early Modern,1735,0.650,0.500,0.250,0.400,40.600,40.600,low,1.000,Textiles,none,none/voluntary,,other,Gender-separate,0,0.600,1
+Mossi Naam Militias,Burkina Faso,Medieval,1100,0.400,0.300,0.500,0.400,12.400,12.400,low,1.000,Millet/cattle,none,none/voluntary,French conquest,conquest,Male cohorts,0,1.000,1
+Mughal Empire Akbar Period,South Asia,Early Modern,1556,0.700,0.800,0.180,0.650,,,,,,,mixed,,other,,0,0.812,2
+Mughal Mansabdari System,India,Early Modern,1526,0.700,0.850,0.150,0.500,28.600,28.600,low,1.000,Spice trade,land,material,British Raj,conquest,Male mansabdars,0,0.353,1
+Mycenaean Wanax System,Greece,Bronze Age,-1600,0.750,0.450,0.050,0.750,37.700,37.700,low,1.000,Olive oil,military,coercive,Dorian invasion,conquest,Male warriors,0,0.667,1
+Māori Iwi River Federations,New Zealand,Medieval,1300,0.800,0.400,0.000,0.400,-40.900,40.900,low,1.000,Kūmara farming,none,none/voluntary,Colonialism,other,Male warriors,0,0.750,1
+Māori Umu Tī Earth Oven Parleys,New Zealand,Medieval,1300,0.200,0.400,0.800,0.400,-40.900,40.900,low,1.000,Kūmara farming,none,none/voluntary,British colonization,conquest,Male speakers,0,0.375,1
+Nabatean Water Merchants,Jordan,Classical,-400,0.500,0.450,0.200,0.500,30.300,30.300,low,1.000,Incense trade,none,none/voluntary,Roman annexation,other,Gender-mixed,1,1.333,1
+Nan Madol Coral Kingdoms,Micronesia,Medieval,1000,0.650,0.500,0.100,0.400,6.800,6.800,low,1.000,Breadfruit/reef fish,land,material,Invasion,conquest,Male priests,0,0.300,1
+Napoleonic Meritocracy,France,Modern,1799,0.900,0.900,0.050,0.800,48.900,48.900,none,0.000,War plunder,conscription/law,coercive,Coalition armies,other,Male elites,0,0.889,2
+Natufian Communities,Levant,,-12500,0.150,0.050,0.900,0.100,,,high,3.000,,none,none/voluntary,,other,,0,1.000,2
+Natufian Grain Storage Pacts,Levant,Mesolithic,-15000,0.250,0.200,0.750,0.100,32.500,32.500,low,1.000,Foraging,none,none/voluntary,Climate change,environmental,Gender-mixed,1,1.750,1
+Nazi Germany,Europe,Modern,1933,0.950,0.900,0.030,0.850,,,,,,,mixed,,other,,0,1.000,3
+Neanderthal Megafauna Councils,Eurasia,Paleolithic,-300000,0.100,0.050,0.800,0.150,45.000,45.000,low,1.000,Megafauna hunting,none,none/voluntary,H. sapiens expansion,other,Male-dominated,0,7.000,1
+Nenets Yamal Clan Councils,Russia,Medieval,1000,0.200,0.400,0.900,0.400,67.500,67.500,high,3.000,Reindeer fur,none,none/voluntary,Russian annexation,conquest,Male herders,0,0.750,1
+Nok Terracotta Chiefdoms,Nigeria,Iron Age,-1000,0.500,0.450,0.350,0.400,9.500,9.500,low,1.000,Yam/iron,ritual,ritual,Climate change,environmental,Gender-balanced,1,1.333,1
+Nordic Sami Parliaments,Scandinavia,Modern,1989,0.400,0.300,0.600,0.400,68.300,68.300,low,1.000,Reindeer herding,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,1.000,1
+Norman Feudal Domesday,England,Medieval,1086,0.750,0.800,0.150,0.800,51.500,51.500,none,0.000,Wool tax,land,material,Anarchy,other,Male barons,0,0.938,2
+Norse Thing System,Scandinavia,,800,0.300,0.150,0.750,0.300,,,medium,2.000,,honour/law,social,,other,,0,0.667,2
+Norwegian Sovereign Wealth Democracy,Norway,Modern,1990,0.150,0.750,0.900,0.750,60.500,60.500,none,0.000,Oil/Gas,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.200,2
+Novgorod Veche Republic,Russia,Medieval,1136,0.200,0.400,0.900,0.400,58.500,58.500,low,1.000,Fur/beeswax,none,none/voluntary,Muscovite conquest,conquest,Male landowners,0,0.750,1
+Nri Kingdom Pacifist Theocracy,Nigeria,Medieval,948,0.650,0.500,0.250,0.400,6.200,6.200,low,1.000,Yam farming,ritual,ritual,British invasion,conquest,Male priests,0,1.200,1
+Nubian Qustul Sacral Kingship,Sudan,Predynastic,-3500,0.650,0.500,0.250,0.400,22.500,22.500,low,1.000,Cattle/ivory,none,none/voluntary,Egyptian conquest,conquest,Unknown,0,0.300,1
+Ochlokratia,Greek,,-430,0.200,0.200,0.700,0.450,,,none,0.000,,performance,mixed,,other,,0,1.500,2
+Olmec,Gulf Coast Mexico,,-1500,0.600,0.200,0.350,0.500,,,low,1.000,,ritual/tribute,material,,other,,0,0.500,2
+Olmec Were-Jaguar Cult,Mesoamerica,Bronze Age,-1200,0.650,0.500,0.250,0.400,18.400,18.400,low,1.000,Maize farming,none,none/voluntary,Environmental collapse,environmental,Male priests,0,0.600,1
+Orkney Jarl Sea-Kingdoms,Scotland,Medieval,800,0.750,0.450,0.300,0.200,59.000,59.000,low,1.000,Fishing/whaling,none,none/voluntary,Scottish annexation,other,Male landowners,0,0.667,1
+Ottoman Empire,Anatolia/Middle East,,1299,0.800,0.800,0.200,0.800,,,none,0.000,,law/religion,ritual,,other,,0,1.000,3
+Ottoman Millet System,Turkey,Early Modern,1453,0.750,0.800,0.200,0.800,41.000,41.000,none,0.000,Silk/tax farming,law/religion,ritual,Nationalism,other,Male sultans,0,1.000,2
+Pacific Potlatch,Northwest Coast Pacific,,-1000,0.300,0.100,0.750,0.350,,,high,3.000,,honour/clan,social,,other,,0,0.500,3
+Pagan Temple-State,Myanmar,Medieval,849,0.650,0.500,0.100,0.500,21.200,21.200,low,1.000,Rice trade,none,none/voluntary,Mongol invasion,conquest,Male monks,0,1.200,1
+Palauan Stone Money Yap,Palau,Modern,1800,0.400,0.300,0.500,0.200,7.500,7.500,low,1.000,Fishing/pearls,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,1.000,1
+Pallava Guild Republics,India,Classical,275,0.500,0.450,0.450,0.400,12.500,12.500,low,1.000,Textiles/perfume,none,none/voluntary,Chola conquest,conquest,Gender-mixed,1,0.667,1
+Pampas Querandí Nomadism,Argentina,Early Modern,1500,0.100,0.050,1.000,0.400,-36.000,36.000,medium,2.000,Guanaco herds,none,none/voluntary,European horses,other,Gender-balanced,1,6.000,1
+Paris Commune,France,Modern,1871,0.150,0.300,0.850,0.450,48.900,48.900,none,0.000,Manufacturing,none,none/voluntary,German invasion,conquest,Gender-mixed,1,1.167,2
+Pavee Road Councils,Ireland/UK,Modern,1900,0.400,0.300,0.600,0.400,53.000,53.000,low,1.000,Roadwork,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,1.000,1
+Persian Satrapy System,Iran,Iron Age,-550,0.750,0.800,0.200,0.850,32.400,32.400,none,0.000,Royal Road taxes,tribute,material,Alexander's conquest,conquest,Male nobles,0,0.938,2
+Phoenician Merchant Oligarchies,Levant,Iron Age,-1000,0.400,0.600,0.550,0.700,33.900,33.900,low,1.000,Cedar/purple dye,trade,mixed,Alexander's conquest,conquest,Male merchants,0,1.083,2
+Phrygian Matar Cult,Turkey,Iron Age,-800,0.650,0.500,0.250,0.400,39.000,39.000,low,1.000,Textiles/Oracles,none,none/voluntary,Lydian conquest,conquest,Female-dominated,0,0.600,1
+Pictish Matrilineal Kings,Scotland,Early Medieval,300,0.750,0.450,0.050,0.400,57.500,57.500,low,1.000,Cattle/stone,none,none/voluntary,Gaelic assimilation,other,Gender-balanced,1,0.667,1
+Pirate Articles,Atlantic/Caribbean,Early Modern,1650,0.200,0.400,0.900,0.400,25.000,25.000,low,1.000,Plunder,none,none/voluntary,Naval suppression,other,Male crews,0,0.750,1
+Polish-Lithuanian Elective Monarchy,Poland,Early Modern,1569,0.200,0.400,0.800,0.700,52.200,52.200,low,1.000,Grain exports,none,none/voluntary,Partitions,other,Male nobles,0,0.750,1
+Politeia,Greek,,-700,0.400,0.350,0.550,0.500,,,low,1.000,,law,mixed,,other,,0,0.857,2
+Pomeranian Veleti Tribal Republic,Germany/Poland,Medieval,900,0.200,0.400,0.900,0.400,54.000,54.000,low,1.000,Amber/fish,clan,social,German crusades,other,Gender-mixed,1,0.750,1
+Post-Apartheid Ubuntu Democracy,South Africa,Modern,1994,0.300,0.150,0.800,0.600,-29.000,29.000,low,1.000,Mining/tech,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,2.000,1
+Poverty Point Earthwork League,USA,Archaic,-1700,0.350,0.200,0.750,0.400,32.600,32.600,low,1.000,Stone tools,none,none/voluntary,Climate shift,environmental,Gender-balanced,1,1.500,1
+Powhatan Paramount Chiefdom,USA,Early Modern,1570,0.550,0.250,0.400,0.400,37.500,37.500,low,1.000,Corn/tobacco,none,none/voluntary,English conquest,conquest,Matrilineal,0,1.200,1
+Pre-Pottery Neolithic A (PPNA),Levant/Anatolia,,-9500,0.200,0.100,0.800,0.250,,,medium,2.000,,land,material,,other,,0,0.500,2
+Pre-Pottery Neolithic B (PPNB),Levant/Anatolia,,-8700,0.300,0.200,0.700,0.350,,,low,1.000,,land/ancestor,material,,other,,0,0.500,2
+Proto-Norse Thing Assemblies,Scandinavia,Iron Age,-500,0.200,0.400,0.900,0.400,60.000,60.000,low,1.000,Iron/amber,none,none/voluntary,Christianization,other,Male landowners,0,0.750,1
+Pueblo Council Governance,American Southwest,,-500,0.200,0.200,0.800,0.400,,,high,3.000,,community,social,,other,,0,0.500,2
+Pueblo Kiva Councils,USA,Medieval,1100,0.200,0.400,0.900,0.400,35.000,35.000,low,1.000,Maize/beans,none,none/voluntary,Drought,environmental,Gender-segregated,0,0.375,1
+Qi Jixia Academy,China,Warring States,-350,0.400,0.300,0.500,0.400,36.800,36.800,low,1.000,Millet/silk,none,none/voluntary,Qin conquest,conquest,Male scholars,0,2.000,1
+Qin Legalism,China,Iron Age,-221,0.950,0.900,0.000,0.900,34.200,34.200,none,0.000,Millet farming,coercion/land,material,Peasant revolts,internal,Male bureaucrats,0,0.889,2
+Qing Dynasty Banner System,China,Early Modern,1644,0.800,0.850,0.100,0.850,39.900,39.900,none,0.000,Rice/silk,land/status,material,Republicanism,other,Male bannermen,0,1.000,2
+Qing Lifan Yuan Tributaries,China,Early Modern,1636,0.800,0.700,0.150,0.400,39.900,39.900,low,1.000,Horse/tribute,tribute,material,Nationalism,other,Male banners,0,0.429,1
+Ragusan Aristocratic Republic,Croatia,Early Modern,1358,0.500,0.450,0.350,0.500,42.600,42.600,low,1.000,Salt trade,coercion,coercive,Napoleon,other,Male nobles,0,0.667,1
+Rapa Iti Tūtae Councils,French Polynesia,Medieval,1200,0.400,0.300,0.500,0.200,-27.600,27.600,low,1.000,Fishing,land,material,French conquest,conquest,Gender-balanced,1,1.000,1
+Rapa Nui Birdman Cult,Easter Island,Medieval,1200,0.400,0.300,0.500,0.400,-27.100,27.100,low,1.000,Sweet potatoes,ritual,ritual,Slave raids,other,Male competitors,0,1.000,1
+Rapa Nui Tangata Manu Trials,Chile,Medieval,1200,0.400,0.300,0.500,0.400,-27.100,27.100,low,1.000,Sweet potatoes,ritual,ritual,Slave raids,other,Male competitors,0,1.000,1
+Rhenish City Leagues,Germany,Medieval,1250,0.350,0.200,0.650,0.500,50.100,50.100,low,1.000,Wine trade,none,none/voluntary,Habsburg centralization,other,Male merchants,0,1.500,1
+Rhenish Hanseatic Cities,Germany,Medieval,1356,0.350,0.550,0.600,0.650,51.200,51.200,none,0.000,Textiles,trade,mixed,Thirty Years' War,conquest,Male merchants,0,1.091,2
+Rhodes Naval Oligarchy,Greece,Classical,-408,0.400,0.550,0.600,0.500,36.400,36.400,low,1.000,Grain trade,none,none/voluntary,Roman annexation,other,Male shipowners,0,0.545,1
+Rojava Democratic Confederalism,Syria,Modern,2014,0.250,0.200,0.850,0.750,36.900,36.900,low,1.000,Olive oil,none,none/voluntary,Turkish invasion,conquest,Female co-leaders,0,1.500,1
+Roman Collegia Guild Republics,Italy,Classical,-500,0.200,0.400,0.900,0.400,41.900,41.900,low,1.000,Craftsmanship,none,none/voluntary,Christian bans,other,Gender-separate,0,0.750,1
+Roman Republic,Italy,Iron Age,-509,0.450,0.650,0.500,0.700,41.900,41.900,none,0.000,Slave plantations,land/patron,material,Imperialism,other,Male patricians,0,1.000,3
+Romani Kris Councils,Europe,Medieval-Modern,1100,0.350,0.100,0.700,0.500,45.000,45.000,high,3.000,Crafts/trade,none,none/voluntary,Persecution,other,Gender-separate,0,1.500,1
+Romanichal Wagon Republics,UK,Early Modern,1600,0.200,0.400,0.900,0.400,53.000,53.000,low,1.000,Smithing/horses,none,none/voluntary,Sedentarization,other,Gender-mixed,1,0.750,1
+Ruthenian Viche,Ukraine/Belarus,Medieval,1000,0.200,0.400,0.900,0.400,50.500,50.500,low,1.000,Forest products,none,none/voluntary,Lithuanian conquest,conquest,Male warriors,0,0.750,1
+Rwandan Unity Government,Rwanda,Modern,1994,0.400,0.300,0.500,0.550,-1.900,1.900,low,1.000,Agriculture/Tech,none,none/voluntary,None (ongoing),ongoing,Female-majority,0,1.000,1
+Ryukyu Gusuku Trade Kingdom,Japan,Early Modern,1429,0.400,0.300,0.350,0.400,26.200,26.200,low,1.000,Sulfur/tribute,tribute,material,Japanese annexation,conquest,Male nobles,0,1.000,1
+Ryukyu Maritime Tributary,Japan,Early Modern,1429,0.400,0.300,0.350,0.400,26.000,26.000,low,1.000,Sulfur/tribute,land,material,Japanese annexation,conquest,Male nobles,0,1.000,1
+Sabaean Dam Council,Yemen,Classical,-800,0.650,0.500,0.100,0.400,15.400,15.400,low,1.000,Frankincense,none,none/voluntary,Himyarite conquest,conquest,Male priests,0,1.200,1
+Saho-Irob Mountain Democracies,Eritrea,Medieval,1000,0.200,0.400,0.900,0.400,15.200,15.200,medium,2.000,Apiculture,land,material,Ethiopian annexation,other,Gender-balanced,1,0.750,1
+Sami Noaide Shamanic Bands,Scandinavia,Medieval,1000,0.400,0.300,0.500,0.400,68.300,68.300,low,1.000,Reindeer herding,clan,social,Christianization,other,Gender-balanced,1,0.500,1
+Sami Reindeer Herding Units,Scandinavia,Early Modern,1500,0.350,0.100,0.800,0.400,68.300,68.300,high,3.000,Reindeer,land,material,None (ongoing),ongoing,Gender-balanced,1,1.500,1
+Samoan Matai Talking Chiefs,Samoa,Medieval,1000,0.200,0.400,0.900,0.400,-13.800,13.800,low,1.000,Breadfruit,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,0.750,1
+San Xaro Networks,Southern Africa (Kalahari),Paleolithic,-10000,0.050,0.050,0.950,0.100,-23.000,23.000,high,3.000,Foraging,none,none/voluntary,Colonialism,other,Egalitarian,1,1.000,3
+Sao Clay Wall Cities,Chad,Medieval,500,0.400,0.300,0.500,0.400,13.000,13.000,low,1.000,Millet/fish,none,none/voluntary,Kanem conquest,conquest,Gender-balanced,1,1.000,1
+Sarmatian Female Warbands,Russia/Kazakhstan,Iron Age,-300,0.400,0.300,0.500,0.400,47.000,47.000,low,1.000,Mare's milk,clan,social,Gothic invasion,conquest,Female warriors,0,1.000,1
+Satrapy System,Persian Empire,,-550,0.700,0.750,0.250,0.800,,,none,0.000,,land/tribute,material,,other,,0,0.933,3
+Scottish Tacksmen,Scotland,Early Modern,1400,0.650,0.450,0.100,0.400,57.000,57.000,low,1.000,Cattle/kelp,land,material,Clearances,other,Male tacksmen,0,0.667,1
+Scottish Traveller Peat Laws,Scotland,Modern,1800,0.400,0.300,0.500,0.400,57.000,57.000,low,1.000,Peat/flowers,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,1.000,1
+Scythian Kurgan Diarchy,Ukraine/Kazakhstan,Iron Age,-700,0.750,0.450,0.200,0.700,48.000,48.000,low,1.000,Horse/grains,none,none/voluntary,Sarmatian invasion,conquest,Male co-rulers,0,0.667,1
+Scythian Nomadic Confederacy,Eurasian Steppe,,-700,0.450,0.050,0.700,0.200,,,medium,2.000,,none,none/voluntary,,other,,0,1.000,2
+Seljuk Iqta System,Persia,Medieval,1037,0.650,0.450,0.250,0.400,32.400,32.400,low,1.000,Wheat/silk,land,material,Mongols,conquest,Male ghazis,0,0.667,1
+Sennar Funj Sultanate,Sudan,Early Modern,1504,0.400,0.300,0.500,0.400,13.600,13.600,low,1.000,Sorghum/slaves,military,coercive,Mahdist revolt,internal,Male cavalry,0,2.000,1
+Shang Dynasty,China,,-1600,0.850,0.350,0.150,0.650,,,none,0.000,,land/ritual,material,,other,,0,0.857,3
+Shang Dynasty Oracle Kings,China,Bronze Age,-1600,0.750,0.450,0.050,0.400,36.100,36.100,low,1.000,Bronze working,ritual,ritual,Zhou conquest,conquest,Male priests,0,1.333,1
+Shilluk Divine Kingship,South Sudan,Early Modern,1500,0.650,0.500,0.250,0.200,10.000,10.000,low,1.000,Fishing/cattle,none,none/voluntary,Colonialism,other,Male priests,0,0.600,1
+Siberian Yukaghir Moon Calendar,Russia,Medieval,1000,0.400,0.300,0.500,0.400,68.000,68.000,low,1.000,Elk/fish,none,none/voluntary,Russian conquest,conquest,Gender-neutral,1,1.167,1
+Sikh Misldar Confederacy,Punjab,Early Modern,1716,0.200,0.400,0.900,0.500,31.100,31.100,low,1.000,Wheat/trade,military,coercive,Ranjit Singh's empire,other,Male misldars,0,0.750,1
+Silla Bone-Rank System,Korea,Classical,57,0.800,0.400,0.000,0.400,35.800,35.800,low,1.000,Rice/iron,none,none/voluntary,Goryeo revolt,internal,Male nobles,0,0.750,1
+Singapore Technocracy,East Asia,Modern,1965,0.800,0.900,0.200,0.900,,,,,,,mixed,,other,,0,1.056,2
+Singaporean Technocracy,Singapore,Modern,1965,0.750,0.850,0.200,0.800,1.300,1.300,none,0.000,Global trade,law,mixed,None (ongoing),ongoing,Gender-neutral,1,1.059,2
+Sinti Musical Guilds,Germany,Early Modern,1500,0.400,0.300,0.500,0.400,51.000,51.000,low,1.000,Entertainment,none,none/voluntary,None (ongoing),ongoing,Gender-stratified,0,1.000,1
+Sogdian Merchant Caravanserais,Uzbekistan,Medieval,500,0.500,0.450,0.350,0.400,39.700,39.700,low,1.000,Silk/glass,none,none/voluntary,Arab conquest,conquest,Male traders,0,0.667,1
+Sogdian Merchant-Republics,Uzbekistan,Medieval,500,0.200,0.400,0.800,0.400,39.000,39.000,low,1.000,Silk/glass,none,none/voluntary,Arab conquest,conquest,Male traders,0,0.750,1
+Song Dynasty,East Asia,Medieval,960,0.550,0.900,0.150,0.850,,,,,,,mixed,,other,,0,1.000,2
+Sorbian Serbski Sejm,Germany,Modern,1848,0.400,0.300,0.600,0.600,51.300,51.300,low,1.000,Lignite mining,none,none/voluntary,Nazi dissolution,internal,Gender-mixed,1,1.000,1
+Soviet Republics System,Eurasia,Modern,1922,0.900,0.900,0.050,0.850,55.800,55.800,none,0.000,Heavy industry,land/coercion,material,Collapse,other,Male-dominated,0,0.944,2
+Srivijayan Mandala,Indonesia,Medieval,650,0.400,0.400,0.350,0.500,-3.000,3.000,low,1.000,Spice trade,none,none/voluntary,Javanese invasion,conquest,Male sea-kings,0,1.500,1
+Sumerian Temple States,Mesopotamia,Bronze Age,-3500,0.550,0.650,0.300,0.750,31.300,31.300,low,1.000,Barley farming,land/ritual,material,Akkadian conquest,conquest,Male priests,0,0.923,2
+Swahili Waungwana Councils,Kenya,Medieval,1000,0.500,0.450,0.200,0.400,-4.100,4.100,low,1.000,Ivory/glass,none,none/voluntary,Portuguese invasion,conquest,Male elite,0,0.667,1
+Swiss Cantonal Democracy,Switzerland,Early Modern,1291,0.200,0.500,0.850,0.600,46.800,46.800,low,1.000,Cheese/clockmaking,law/community,social,French invasion,conquest,Male citizens,0,1.300,3
+Swiss Consensus Democracy,Switzerland,Modern,1848,0.150,0.650,0.900,0.650,46.800,46.800,none,0.000,Finance/tech,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.231,2
+Syracusan Mathematical Tyrants,Sicily,Classical,-400,0.500,0.800,0.200,0.700,37.100,37.100,low,1.000,Grain/engineering,none,none/voluntary,Roman siege,other,Male elites,0,0.375,1
+Sámi Siida Councils,Scandinavia,Medieval,500,0.150,0.200,0.900,0.400,68.000,68.000,high,3.000,Reindeer fur,none,none/voluntary,State borders,other,Gender-balanced,1,0.750,1
+Tahitian Arioi Cult Society,French Polynesia,Medieval,1000,0.500,0.450,0.350,0.400,-17.700,17.700,low,1.000,Breadfruit,ritual,ritual,Christianity,other,Gender-fluid,0,0.667,1
+Tahitian Arioi Society,French Polynesia,Early Modern,1600,0.500,0.450,0.350,0.400,-17.700,17.700,low,1.000,Breadfruit,ritual,ritual,Christianity,other,Gender-fluid,0,0.667,1
+Taino Cacique Matrilineage,Cuba,Medieval,800,0.550,0.250,0.250,0.400,21.500,21.500,low,1.000,Cassava/yucca,land,material,Spanish conquest,conquest,Gender-balanced,1,1.200,1
+Taiping Heavenly Kingdom,China,Modern,1851,0.400,0.300,0.500,0.400,23.000,23.000,low,1.000,Rice/millet,none,none/voluntary,Qing suppression,other,Gender-equal,1,2.667,1
+Tairona Gold-Shaman Councils,Colombia,Classical,200,0.650,0.500,0.250,0.400,11.300,11.300,low,1.000,Gold/coca,none,none/voluntary,Spanish conquest,conquest,Male shamans,0,0.600,1
+Taiwanese Digital Democracy,Taiwan,Information Age,2016,0.200,0.400,0.900,0.400,25.000,25.000,low,1.000,Semiconductors,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,0.750,1
+Tang Dynasty,China,,618,0.850,0.900,0.100,0.900,,,none,0.000,,land/law/exam,material,,other,,0,1.000,3
+Tang Dynasty Keju,China,Medieval,618,0.850,0.900,0.100,0.900,34.300,34.300,none,0.000,Tea/porcelain,land/exam,material,Huang Chao rebellion,other,Male scholars,0,1.000,2
+Tang Fanzhen Clans,China,Medieval,618,0.700,0.850,0.000,0.400,34.300,34.300,low,1.000,Tea/porcelain,none,none/voluntary,Huang Chao revolt,internal,Male clans,0,0.353,1
+Tanzanian Ujamaa Villages,Tanzania,Modern,1967,0.600,0.650,0.400,0.400,-6.300,6.300,low,1.000,Subsistence farming,none,none/voluntary,Structural adjustment,other,Gender-mixed,1,0.462,1
+Taosi,Northern China,,-2300,0.450,0.300,0.550,0.500,,,low,1.000,,land,material,,other,,0,0.667,2
+Teotihuacan,Mesoamerica,,100,0.300,0.500,0.650,0.650,,,low,1.000,,community/ritual,social,,other,,0,0.800,3
+Teotihuacan Theocratic Oligarchy,Mexico,Classical,-200,0.650,0.500,0.250,0.500,19.700,19.700,low,1.000,Obsidian trade,clan,social,Internal collapse,internal,Gender-balanced,1,0.600,1
+Teutonic Ordensstaat,Poland,Medieval,1226,0.750,0.650,0.150,0.600,54.000,54.000,none,0.000,Amber trade,military/ritual,coercive,Polish secularization,other,Male knights,0,0.846,2
+Theatrocracy,Greek,,-430,0.300,0.300,0.650,0.500,,,medium,2.000,,performance,mixed,,other,,0,1.333,2
+Theban Sacred Band Oligarchy,Greece,Classical,-378,0.400,0.300,0.550,0.750,38.300,38.300,low,1.000,Olive/oil,military,coercive,Macedonian conquest,conquest,Male warriors,0,1.000,1
+Tibetan Ganden Phodrang,Tibet,Early Modern,1642,0.650,0.500,0.250,0.400,29.600,29.600,low,1.000,Yak herding,none,none/voluntary,Chinese annexation,other,Monastic elite,0,0.600,1
+Timbuktu Qadi Scholar-Judges,Mali,Medieval,1327,0.650,0.500,0.250,0.500,16.800,16.800,low,1.000,Book trade,none,none/voluntary,Moroccan invasion,conquest,Male scholars,0,1.200,1
+Timucua Waterborne Councils,USA,Medieval,1000,0.200,0.400,0.900,0.400,30.000,30.000,low,1.000,Fish/maize,none,none/voluntary,Spanish conquest,conquest,Gender-mixed,1,0.750,1
+Tiv Segmentary Lineage System,Nigeria,,-500,0.050,0.050,0.900,0.200,,,low,1.000,,clan,social,,other,,0,1.000,3
+Tlaxcala Republic,Mesoamerica,,1384,0.400,0.400,0.600,0.550,,,low,1.000,,clan/honour,social,,other,,0,0.750,2
+Tlingit Potlatch Confederacy,Canada,Early Modern,1700,0.200,0.100,0.750,0.400,58.300,58.300,low,1.000,Salmon/cedar,clan,social,Canadian ban,other,Matrilineal,0,1.500,1
+Tokelau Village Atoll Consensus,Tokelau,Modern,1948,0.200,0.400,0.800,0.200,-9.000,9.000,low,1.000,Fishing/coconut,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,0.750,1
+Tokugawa Shogunate,Japan,Early Modern,1603,0.800,0.800,0.150,0.750,35.700,35.700,none,0.000,Rice taxation,land/hostage/status,social,Meiji Restoration,other,Male shōguns,0,0.875,3
+Toltec Warrior-Poet State,Mexico,Medieval,900,0.650,0.500,0.100,0.400,19.700,19.700,low,1.000,Obsidian/feathers,military,coercive,Drought,environmental,Male warriors,0,0.600,1
+Toltec Warrior-Priest State,Mexico,Medieval,900,0.650,0.500,0.100,0.400,19.700,19.700,low,1.000,Obsidian/feathers,none,none/voluntary,Drought,environmental,Male elites,0,0.600,1
+Tongan Maritime Empire,Polynesia,Medieval,950,0.750,0.250,0.300,0.550,-21.100,21.100,low,1.000,Yams/tribute,tribute/ritual,material,Christianization,other,Male chiefs (female advisors),0,0.400,2
+Transylvanian Saxon Seats,Romania,Medieval,1224,0.400,0.300,0.500,0.400,45.800,45.800,low,1.000,Craft guilds,none,none/voluntary,Hungarian revolution,internal,Male burghers,0,1.000,1
+Tswana Kgotla,Botswana,Early Modern,1700,0.200,0.200,0.800,0.400,-22.300,22.300,low,1.000,Cattle herding,none,none/voluntary,None (ongoing),ongoing,Male elders,0,0.750,1
+Tupi Confederacies,Brazil,,-500,0.200,0.050,0.800,0.200,,,medium,2.000,,none,none/voluntary,,other,,0,1.000,2
+Tuvan People's Republic,Tuva,Modern,1921,0.350,0.550,0.750,0.400,51.700,51.700,high,3.000,Yak/cattle,none,none/voluntary,Soviet annexation,other,Male herders,0,0.545,1
+UN Trusteeship Councils,Global,Modern,1945,0.200,0.400,0.800,0.400,40.700,40.700,low,1.000,Resource extraction,none,none/voluntary,Obsolescence,other,Mixed,1,0.750,1
+Ubaid Culture,Mesopotamia,,-6500,0.350,0.250,0.650,0.500,,,low,1.000,,land/temple,material,,other,,0,0.800,2
+Ubuntu Councils,South Africa,Modern,1994,0.200,0.400,0.900,0.600,-29.000,29.000,low,1.000,Mining/tech,none,none/voluntary,None (ongoing),ongoing,Gender-balanced,1,0.750,1
+United Arab Emirates Tribal Technocracy,UAE,Modern,1971,0.750,0.450,0.050,0.750,24.400,24.400,low,1.000,Oil/AI,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,0.667,1
+United Nations Security Council,Global,Modern,1945,0.500,0.450,0.350,0.400,40.700,40.700,low,1.000,Member dues,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,0.667,1
+United States Federal Republic,North America,Modern,1789,0.450,0.700,0.700,0.800,,,,,,,mixed,,other,,0,1.357,2
+Urartian Hydraulic Kings,Armenia,Iron Age,-860,0.900,0.500,0.000,0.400,38.500,38.500,low,1.000,Wine/iron,none,none/voluntary,Median invasion,conquest,Male engineers,0,0.600,1
+Utopian Socialist Colonies,USA,Modern,1820,0.400,0.300,0.600,0.400,40.000,40.000,low,1.000,Handicrafts,none,none/voluntary,Industrialization,other,Gender-equal,1,1.000,1
+Vanuatu Nimangki Grade-taking,Vanuatu,Early Modern,1700,0.200,0.100,0.750,0.400,-16.000,16.000,low,1.000,Yams/pigs,none,none/voluntary,None (ongoing),ongoing,Male-dominated,0,3.000,1
+Vedic Jana/Gana Sanghas,North India,,-1500,0.350,0.350,0.650,0.400,,,medium,2.000,,clan,social,,other,,0,0.429,2
+Vedic Sabha Assemblies,India,Bronze Age,-1500,0.200,0.400,0.900,0.400,28.600,28.600,low,1.000,Cattle herding,none,none/voluntary,Urbanization,other,Male landowners,0,0.375,1
+Venetian Arsenal Guilds,Italy,Medieval,1104,0.500,0.800,0.450,0.700,45.400,45.400,none,0.000,Naval production,trade/status,mixed,Napoleon,other,Male artisans,0,0.750,2
+Venetian Merchant Oligarchy,Italy,Medieval,1297,0.300,0.750,0.550,0.750,45.400,45.400,none,0.000,Spice trade,trade/citizenship,social,Napoleon,other,Male elites,0,1.067,2
+Venetian Republic,Italy,Medieval,697,0.350,0.700,0.600,0.750,45.400,45.400,none,0.000,Spice trade,trade/citizenship,social,Napoleon,other,Male patricians,0,1.071,2
+Viking Law Speakers,Scandinavia,Medieval,800,0.250,0.100,0.750,0.300,61.000,61.000,medium,2.000,Fish/iron,honour,social,Christianization,other,Male lawspeakers,0,1.000,2
+Visigothic Code Judges,Spain,Early Medieval,418,0.400,0.300,0.500,0.400,40.400,40.400,low,1.000,Sheep farming,none,none/voluntary,Muslim conquest,conquest,Male judges,0,1.000,1
+Vlax Rom Baro Systems,Romania,Early Modern,1400,0.300,0.150,0.550,0.400,46.000,46.000,low,1.000,Metalwork/fortune-telling,clan,social,None (ongoing),ongoing,Male-dominated,0,2.000,1
+Volga Bulgar Islamic Merchants,Russia,Medieval,900,0.650,0.500,0.250,0.400,55.000,55.000,low,1.000,Fur/honey,none,none/voluntary,Mongol invasion,conquest,Male elites,0,0.600,1
+Wari Tinku Labor System,Peru,Medieval,600,0.800,0.700,0.150,0.400,-13.000,13.000,medium,2.000,Potato/llama,ritual,ritual,Drought,environmental,Gender-complementary,0,0.429,1
+Weimar Coalition Governance,Germany,Modern,1919,0.200,0.400,0.900,0.750,52.500,52.500,low,1.000,Industrial,none,none/voluntary,Nazi takeover,other,Male politicians,0,0.750,1
+Weimar Republic,Europe,Modern,1919,0.400,0.650,0.600,0.700,,,,,,,mixed,,other,,0,1.308,3
+Welsh Cantrefi,Wales,Medieval,800,0.150,0.200,0.800,0.400,52.500,52.500,medium,2.000,Sheep/wool,clan,social,English conquest,conquest,Gender-mixed,1,1.500,1
+Wolof Ceddo Slave Armies,Senegal,Medieval,1350,0.400,0.300,0.350,0.400,14.700,14.700,low,1.000,Peanuts/millet,military,coercive,French conquest,conquest,Male soldiers,0,1.000,1
+Wolof Garmi Anti-Corruption,Senegal,Medieval,1350,0.650,0.450,0.250,0.400,14.700,14.700,low,1.000,Gold/salt,land,material,French colonialism,conquest,Meritocratic,0,0.667,1
+Xia Dynasty Hydraulic Rule,China,Bronze Age,-2070,0.700,0.850,0.000,0.400,34.500,34.500,low,1.000,Millet farming,none,none/voluntary,Shang conquest,conquest,Male engineers,0,0.941,1
+Xingu Tribal Aquatic Law,Brazil,Medieval,1000,0.400,0.300,0.600,0.400,-12.400,12.400,low,1.000,Fish/cassava,clan,social,None (ongoing),ongoing,Gender-neutral,1,1.000,1
+Yenish Horse-Tribes,Switzerland,Modern,1800,0.300,0.150,0.800,0.400,47.000,47.000,high,3.000,Odd jobs,none,none/voluntary,None (ongoing),ongoing,Gender-mixed,1,2.000,1
+Yolngu Aboriginal Kinship,Australia,Paleolithic,-10000,0.400,0.300,0.500,0.100,-12.700,12.700,low,1.000,Foraging,land,material,,other,Gender-restricted,0,0.500,1
+Yoruba Ogboni Earth Justice,Nigeria,Medieval,1000,0.200,0.400,0.900,0.400,7.500,7.500,low,1.000,Kola nuts,none,none/voluntary,British conquest,conquest,Gender-restricted,0,0.750,1
+Yuan Semu Caste System,China,Medieval,1271,0.650,0.450,0.100,0.400,39.900,39.900,low,1.000,Silk Road,land,material,Red Turban revolt,internal,Male-dominated,0,0.667,1
+Yuezhi Nomad Diarchy,Kazakhstan,Classical,-300,0.400,0.300,0.500,0.500,45.000,45.000,low,1.000,Horse trade,military,coercive,Kushan consolidation,other,Male co-rulers,0,1.000,1
+Yupik Bladder Festival Rule,Alaska,Medieval,1000,0.400,0.300,0.500,0.400,61.200,61.200,low,1.000,Whale/seal,ritual,ritual,Russian colonization,conquest,Gender-mixed,1,1.000,1
+Zanzibar Clove Plantation Councils,Tanzania,Modern,1810,0.400,0.300,0.350,0.400,-6.100,6.100,low,1.000,Clove exports,land,material,Zanzibar Revolution,internal,Male patricians,0,1.000,1
+Zapatista Caracoles,Mexico,Modern,1994,0.050,0.050,0.950,0.400,16.800,16.800,low,1.000,Coffee farming,none,none/voluntary,Mexican state,other,Gender-balanced,1,6.000,1
+Zapotec Cocijo Cult,Mesoamerica,,-500,0.650,0.500,0.300,0.600,,,low,1.000,,ritual,ritual,,other,,0,0.900,2
+Zapotec Glyph-Judge System,Mexico,Classical,-500,0.700,0.850,0.000,0.400,17.100,17.100,low,1.000,Corn/obsidian,none,none/voluntary,Mixtec conquest,conquest,Male scribes,0,0.353,1
+Zhou Dynasty Mandate of Heaven,China,Iron Age,-1046,0.500,0.400,0.350,0.650,34.700,34.700,low,1.000,Millet/rice,land,material,Qin conquest,conquest,Male nobles,0,1.125,2
+Zomia Highland Communities,Highland Southeast Asia,,500,0.050,0.050,0.900,0.050,,,high,3.000,,none,none/voluntary,,other,,0,1.000,3
+Zulu Impi Regiments,Southern Africa,Modern,1816,0.300,0.150,0.700,0.400,-28.800,28.800,low,1.000,Cattle herding,none,none/voluntary,British invasion,conquest,Male cohorts,0,2.000,1
+Zulu Monarchy,Southern Africa,,1816,0.900,0.300,0.100,0.500,,,none,0.000,,military,coercive,,other,,0,0.333,2
+Åland Islands Neutrality,Finland/Sweden,Modern,1809,0.200,0.200,0.850,0.400,60.000,60.000,low,1.000,Shipping/tourism,none,none/voluntary,None (ongoing),ongoing,Gender-neutral,1,1.500,1
+Çatalhöyük,Anatolia,,-7500,0.050,0.050,0.900,0.300,,,low,1.000,,community,social,,other,,0,1.000,3
