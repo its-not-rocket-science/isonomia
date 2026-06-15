@@ -276,6 +276,32 @@ Mechanism class is the strongest predictor: multivariate log-rank p = 0.001. Heg
 
 The interpretation is that L alone does not determine vulnerability because the causal pathway from L to S is institution-dependent. High-L systems that maintain institutional constraints on sovereign capacity — those that structurally decoupled legibility from sovereignty — can sustain high L with high D indefinitely. The seven counter-cases identified in Section 6 are precisely these systems: high L, institutional constraints on S, D above θ. The survival analysis confirms this structurally rather than case-by-case. The mechanism by which legibility is allowed to rise without sovereign capacity is what the institutional analysis in Section 6 describes qualitatively; C(S) = 0.940 is the quantitative confirmation. Full analysis and replication code are in `src/survival_analysis.py`.
 
+### 8.5 Trajectory shape clustering and governance archetypes
+
+The survival analysis treats each trajectory as a single event. A complementary analysis clusters the 30 trajectory systems by the *shape* of their D time-series using Dynamic Time Warping (DTW) distance on normalised trajectories, asking not when systems cross θ but what *kind* of trajectory they follow.
+
+DTW with hierarchical (Ward) linkage on shape-normalised 10-point series yields three clusters at k = 3 (silhouette = 0.656):
+
+*Cluster 1 — Descending/stable (n = 19, mean D = 0.20, mean trend = −0.15).* All hegemonic mechanism types: educational (Abbasid, Confucian Bureaucracy, Meiji), ideological (Achaemenid, Tokugawa, Zhou), coercive (CCP, Nazi Germany), administrative (Mauryan, Ming, Ottoman).
+
+*Cluster 2 — Rising counter-hegemonic (n = 4, mean D = 0.72, mean trend = +0.17).* British Parliamentary System, Norwegian Sovereign Wealth Democracy, Swiss Cantonal Democracy, United States Federal Republic. Exactly four of the seven counter-cases from Section 6 with trajectory data. The cluster captures their shared shape — stable or rising D throughout — discovered from trajectory form alone, without mechanism labels as inputs.
+
+*Cluster 3 — Falling high-D (n = 7, mean D = 0.61, mean trend = −0.26).* Athenian Democracy, French Third Republic, Hanseatic League, Icelandic Commonwealth, Roman Republic, Venetian Republic, Weimar Republic. All started above θ and declined. These are the *failed* counter-hegemonic systems: they had D₀ but not the structural constraints on S to sustain it.
+
+The mechanism-cluster alignment is near-perfect: every Cluster 2 system carries the counter_hegemony mechanism; every Cluster 3 system carries administrative_absorption, passive_revolution, resilient_then_absorbed, failing_counter_hegemony, or administrative_closure. The DTW empirically validates the Paper 5 mechanism taxonomy without using those labels as clustering inputs. Full analysis is in `src/trajectory_cluster_lca.py`.
+
+### 8.6 Latent class analysis of high-freedom governance types
+
+Cross-sectional clustering of all 401 systems on the full six-dimensional governance space (S, A, P, E, D, R) using Gaussian Mixture Models (GMM) identifies two structurally distinct archetypes within the high-D/low-S region (D ≥ 0.65, S ≤ 0.35, n = 136) that are invisible in the two-dimensional S-D phase space:
+
+*Civic-competitive (n = 51): P = 0.65, A = 0.40, E = 0.65.* Freedom maintained through institutional voice mechanisms — assemblies, thing systems, guild republics, collegiate institutions. High P prevents any actor from converting administrative capacity into sovereign dominance.
+
+*Mobile-stateless (n = 85): P = 0.50, A = 0.24, E = 0.73.* Freedom maintained through exit and dispersal — nomadic confederacies, foraging networks, highland communities. The structural impossibility of monopolising dispersed, mobile, or perishable resources prevents administrative capacity accumulating.
+
+The distinction is confirmed genuine: GMM finds it independently of the KMeans analysis that first identified it. Mann-Whitney tests within the subspace: P, p < 0.001; A, p < 0.001. This is the Hirschman (1970) Exit versus Voice distinction and the Scott (2009) highland-stateless versus civic-republican distinction quantified at p < 0.001 in six-dimensional governance space. Both archetypes remain outside the lock-in sequence trajectory precisely because their structural conditions prevent sovereignty accumulation — through institutional competition (Civic-competitive) or resource dispersal illegibility (Mobile-stateless). Full analysis is in `src/trajectory_cluster_lca.py`.
+
+### 8.7 Irreversibility and the Roman case
+
 The most open question in the lock-in sequence framework concerns endogenous reform: can a society below θ return above it through internal reorganisation, without the external perturbation of collapse? The Roman Republic provides the most instructive natural experiment in the dataset for addressing this question.
 
 The Roman Republic (509–27 BCE, L = 0.70, I = 0.65, A = 0.60, EDR = 0.43) sits just below θ at 0.43. It had meaningful institutional D mechanisms: tribunes with veto power, senatorial deliberation, popular assemblies, and the legal tradition of provocatio (appeal against magisterial coercion). These were not cosmetic. For much of the Republic's history, they functioned to constrain elite extraction sufficiently to keep EDR near θ, if not above it.
