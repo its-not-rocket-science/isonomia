@@ -1,0 +1,17 @@
+system_name,vdem_country_text_id,vdem_year_start,vdem_year_end,vdem_variable,polity_ccode,polity_year_start,polity_year_end,wjp_country,wjp_year,notes
+Swiss Consensus Democracy,CHE,1848.0,2025.0,v2x_libdem,225.0,1848.0,2022,,,Continuous democracy; use mean over period
+Weimar Republic,DEU,1919.0,1933.0,v2x_libdem,255.0,1919.0,1933,,,Germany 1919-1933
+Nazi Germany,DEU,1933.0,1945.0,v2x_libdem,255.0,1933.0,1945,,,Germany 1933-1945
+Soviet Republics System,RUS,1922.0,1991.0,v2x_libdem,365.0,1922.0,1991,,,Russia/USSR; Polity uses Russia
+Norwegian Sovereign Wealth Democracy,NOR,1990.0,2025.0,v2x_libdem,385.0,1990.0,2022,,,Norway post-petroleum fund
+French Third Republic,FRA,1870.0,1940.0,v2x_libdem,220.0,1870.0,1940,,,France 1870-1940
+Chinese Communist Party Governance,CHN,1949.0,2025.0,v2x_libdem,710.0,1949.0,2022,,,PRC from founding
+Meiji Oligarchy,JPN,1868.0,1912.0,v2x_libdem,740.0,1868.0,1912,,,Japan 1868-1912
+Estonian Digital Democracy,EST,2002.0,2025.0,v2x_libdem,366.0,2002.0,2022,,,Estonia from digital governance period
+Botswana Tribal Democracy,BWA,1966.0,2025.0,v2x_libdem,571.0,1966.0,2022,,,Botswana from independence
+Indian Panchayati Raj,IND,1992.0,2025.0,v2x_libdem,750.0,1992.0,2022,,,India post-73rd Amendment
+Rwandan Unity Government,RWA,1994.0,2025.0,v2x_libdem,517.0,1994.0,2022,,,Rwanda post-genocide
+Bolivian Plurinational State,BOL,2009.0,2025.0,v2x_libdem,145.0,2009.0,2022,,,Bolivia post-2009 constitution
+Singaporean Technocracy,SGP,1965.0,2025.0,v2x_libdem,830.0,1965.0,2022,,,Duplicate of Singapore Technocracy
+Post-Apartheid Ubuntu Democracy,ZAF,1994.0,2025.0,v2x_libdem,560.0,1994.0,2022,,,South Africa post-apartheid
+European Union Governance,,,,,,,European Union,2015.0,WJP only; no V-Dem/Polity country code for EU,

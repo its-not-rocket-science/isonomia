@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it using the metadata below."
+title: "Isonomia: A Formal Model of Political Freedom, Legal Equality, and Governance Resilience"
+authors:
+  - family-names: Schleifer
+    given-names: Paul
+    orcid: "https://orcid.org/0009-0004-7972-3566"
+version: 1.0.0
+date-released: 2026-06-17
+url: "https://github.com/its-not-rocket-science/isonomia"
+repository-code: "https://github.com/its-not-rocket-science/isonomia"
+license: MIT
+abstract: >
+  Isonomia is an open dataset and paper series modelling how governance
+  systems gain, lose, and recover the practical freedom to exit, disobey,
+  and replace authority. The dataset covers 401 governance systems from
+  deep prehistory to the present; the core statistical analyses focus on
+  the past 2,600 years. The six-dimensional framework (S, A, P, E, D, R)
+  operationalises disobedience freedom, sovereign capacity, administrative
+  index, competitive politics, exit freedom, and arrangement freedom.
+keywords:
+  - governance
+  - political freedom
+  - isonomia
+  - lock-in sequence
+  - cliodynamics
+  - computational political science
+  - historical dataset
+  - agent-based modelling
