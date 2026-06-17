@@ -929,7 +929,13 @@ footer a:hover{text-decoration:underline}
       <div class="fblock"><div class="fnum">d=4&nbsp;sign reversal</div><p>Degree-4 sign reversal reproduced: r_d4&nbsp;=&nbsp;&minus;0.392 (target &minus;0.391). Bridge-seeded initialisation is the key: bridge nodes (0.35&nbsp;&le;&nbsp;EDR&nbsp;&le;&nbsp;0.60) connect via contrast to both poles simultaneously.</p></div>
       <div class="fblock"><div class="fnum">r&nbsp;=&nbsp;+0.415</div><p>Partial r(R,&nbsp;D&nbsp;|&nbsp;S): arrangement freedom predicts disobedience freedom beyond sovereign capacity. R and E are structurally coupled (r&nbsp;=&nbsp;0.922): both require absence of irreversible institutional commitment.</p></div>
       <div class="fblock"><div class="fnum">Exit&nbsp;vs&nbsp;Voice</div><p>Two genuinely distinct high-freedom archetypes: Civic-competitive (voice, P&nbsp;=&nbsp;0.65) and Mobile-stateless (exit, E&nbsp;=&nbsp;0.73). Confirmed by GMM independent of KMeans (MW p&nbsp;&lt;&nbsp;0.001 for both P and A).</p></div>
-    <div class="measure reveal" style="margin-top:3rem">
+  </div>
+</section>
+
+<!-- 7b. Implications -->
+<section id="implications">
+  <div class="wide centre">
+    <div class="measure reveal">
       <h3>What this implies</h3>
       <p>The lock-in sequence has been observed in enough modern governance systems to suggest that the structural mechanisms identified here are not exclusively historical. The D&#x2080; result is particularly relevant: the evidence suggests that the most effective protection against autocratic consolidation is the prior existence of a high-D political culture, with the civic institutions, legal traditions, and cultures of organised dissent that sustain it. Dismantling those institutions, even incrementally, reduces the structural resource available for resistance later.</p>
       <p>The hegemonic inertia finding suggests that removing a coercive apparatus may be insufficient to restore freedom in societies where the normalisation of compliance has become deeply embedded. The Abbasid case shows that even after coercive capacity is gone, D may continue falling for centuries because the educational, juridical, and cultural infrastructure of compliance has become self-reproducing.</p>
@@ -1317,14 +1323,14 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     });
 
     grey.forEach(p => {
-      h += `<circle cx="${sx(p.lat)}" cy="${sy(p.D)}" r="3" fill="rgba(122,150,176,.12)" stroke="none" data-n="${p.n}" data-lat="${p.lat}" data-D="${p.D}" data-e="${p.e}" data-b="${p.b}"/>`;
+      h += `<circle cx="${sx(p.lat)}" cy="${sy(p.D)}" r="3" fill="rgba(122,150,176,.12)" stroke="none" data-n="${p.n}" data-lat="${p.lat}" data-vald="${p.D}" data-e="${p.e}" data-b="${p.b}"/>`;
     });
     pts.forEach(p => {
       const col = ECOL[p.e] || '#888';
       const r   = p.gw ? 6.5 : 4.5;
       const stroke = p.gw ? ` stroke="${AMBER}" stroke-width="1.5"` : '';
       const fill = p.gw ? 'white' : col;
-      h += `<circle cx="${sx(p.lat)}" cy="${sy(p.D)}" r="${r}" fill="${fill}" fill-opacity="0.82"${stroke} data-n="${p.n}" data-lat="${p.lat}" data-D="${p.D}" data-e="${p.e}" data-b="${p.b}" data-gw="${p.gw}" style="cursor:pointer"/>`;
+      h += `<circle cx="${sx(p.lat)}" cy="${sy(p.D)}" r="${r}" fill="${fill}" fill-opacity="0.82"${stroke} data-n="${p.n}" data-lat="${p.lat}" data-vald="${p.D}" data-e="${p.e}" data-b="${p.b}" data-gw="${p.gw}" style="cursor:pointer"/>`;
     });
 
     // Legend strip (bottom right)
@@ -1381,7 +1387,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
         const cx = bPAD.l + d*bPW;
         // Highlight active econ if filter is on
         const highlight = (activeEcon === 'all' || activeEcon === 'gw');
-        h += `<circle cx="${cx}" cy="${cy+jit}" r="3" fill="${col}" fill-opacity="${highlight?0.32:0.55}" stroke="none" data-n="${b}" data-D="${d}"/>`;
+        h += `<circle cx="${cx}" cy="${cy+jit}" r="3" fill="${col}" fill-opacity="${highlight?0.32:0.55}" stroke="none" data-n="${b}" data-vald="${d}"/>`;
       });
       // SD bar
       const x1 = bPAD.l + (bd.mn-bd.sd)*bPW;
@@ -1389,7 +1395,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       h += `<line x1="${x1}" y1="${cy}" x2="${x2}" y2="${cy}" stroke="${col}" stroke-width="2.2" stroke-linecap="round"/>`;
       // Mean dot
       const xm = bPAD.l + bd.mn*bPW;
-      h += `<circle cx="${xm}" cy="${cy}" r="5.5" fill="${col}" stroke="white" stroke-width="0.8" style="cursor:pointer" data-n="${b}" data-D="${bd.mn}" data-sd="${bd.sd}" data-count="${bd.n}"/>`;
+      h += `<circle cx="${xm}" cy="${cy}" r="5.5" fill="${col}" stroke="white" stroke-width="0.8" style="cursor:pointer" data-n="${b}" data-vald="${bd.mn}" data-sd="${bd.sd}" data-count="${bd.n}"/>`;
       // Label
       h += `<text x="${bPAD.l-8}" y="${cy+4}" text-anchor="end" fill="${col}" font-size="10.5" font-family="Source Sans 3,sans-serif">${b}</text>`;
       h += `<text x="${x2+6}" y="${cy+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">${bd.mn.toFixed(2)}</text>`;
@@ -1400,7 +1406,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     // Events for mean dots
     svg.querySelectorAll('circle[data-count]').forEach(c => {
       c.addEventListener('mouseenter', e => {
-        showTT(e, c.dataset.n, `mean D\u202f=\u202f${parseFloat(c.dataset.D).toFixed(3)}<br>\u00b1${parseFloat(c.dataset.sd).toFixed(3)} SD<br>n\u202f=\u202f${c.dataset.count}`);
+        showTT(e, c.dataset.n, `mean D\u202f=\u202f${parseFloat(c.dataset.vald).toFixed(3)}<br>\u00b1${parseFloat(c.dataset.sd).toFixed(3)} SD<br>n\u202f=\u202f${c.dataset.count}`);
       });
       c.addEventListener('mousemove', moveTT);
       c.addEventListener('mouseleave', hideTT);
@@ -1423,7 +1429,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       c.addEventListener('mouseenter', e => {
         const gw = c.dataset.gw === 'true' ? ' \u2022 <span style="color:var(--amber)">Graeber &amp; Wengrow</span>' : '';
         showTT(e, c.dataset.n,
-          `Latitude\u202f=\u202f${c.dataset.lat}\u00b0<br>D\u202f=\u202f${c.dataset.D}<br>${(c.dataset.e||'').replace(/_/g,' ')}${gw}`);
+          `Latitude\u202f=\u202f${c.dataset.lat}\u00b0<br>D\u202f=\u202f${c.dataset.vald}<br>${(c.dataset.e||'').replace(/_/g,' ')}${gw}`);
       });
       c.addEventListener('mousemove', moveTT);
       c.addEventListener('mouseleave', hideTT);
@@ -1821,7 +1827,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     elite.forEach(p => {
       const r = Math.sqrt(p.dts)*28 + 8;
       const cx = sx(p.S), cy = sy(p.D);
-      h += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${GREEN}" fill-opacity="0.85" stroke="white" stroke-width="0.8" data-n="${p.n}" data-D="${p.D}" data-S="${p.S}" data-dts="${p.dts}" style="cursor:pointer"/>`;
+      h += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${GREEN}" fill-opacity="0.85" stroke="white" stroke-width="0.8" data-n="${p.n}" data-vald="${p.D}" data-vals="${p.S}" data-dts="${p.dts}" style="cursor:pointer"/>`;
     });
 
     svg.innerHTML = h;
@@ -1829,8 +1835,8 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     svg.querySelectorAll('circle[data-n]').forEach(c => {
       c.addEventListener('mouseenter', e => {
         showTT(e, c.dataset.n,
-          `D\u202f=\u202f${c.dataset.D}\u2003S\u202f=\u202f${c.dataset.S}<br>D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}`);
-        info.textContent = `${c.dataset.n}: D\u202f=\u202f${c.dataset.D}, S\u202f=\u202f${c.dataset.S}, D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}`;
+          `D\u202f=\u202f${c.dataset.vald}\u2003S\u202f=\u202f${c.dataset.vals}<br>D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}`);
+        info.textContent = `${c.dataset.n}: D\u202f=\u202f${c.dataset.vald}, S\u202f=\u202f${c.dataset.vals}, D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}`;
       });
       c.addEventListener('mousemove', moveTT);
       c.addEventListener('mouseleave', () => { hideTT(); info.textContent=''; });
@@ -1889,11 +1895,11 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
         // Merged Greek point
         const mergedDts = 0.35; // 2 × 0.175
         const mr = Math.sqrt(mergedDts)*26 + 8;
-        h += `<circle cx="${xbase}" cy="${cy}" r="${mr}" fill="${col}" fill-opacity="0.85" stroke="white" stroke-width="0.8" data-n="Greek reforms \u00d72 (\u2212508 &amp; \u2212403 BCE)" data-D="${p.D}" data-S="${p.S}" data-dts="0.175 each" style="cursor:pointer"/>`;
+        h += `<circle cx="${xbase}" cy="${cy}" r="${mr}" fill="${col}" fill-opacity="0.85" stroke="white" stroke-width="0.8" data-n="Greek reforms \u00d72 (\u2212508 &amp; \u2212403 BCE)" data-vald="${p.D}" data-vals="${p.S}" data-dts="0.175 each" style="cursor:pointer"/>`;
         greekDone[ci] = true;
         return;
       }
-      h += `<circle cx="${xbase}" cy="${cy}" r="${r}" fill="${col}" fill-opacity="0.88" stroke="white" stroke-width="0.8" data-n="${p.n}" data-D="${p.D}" data-S="${p.S}" data-dts="${p.dts}" data-cause="${p.c}" style="cursor:pointer"/>`;
+      h += `<circle cx="${xbase}" cy="${cy}" r="${r}" fill="${col}" fill-opacity="0.88" stroke="white" stroke-width="0.8" data-n="${p.n}" data-vald="${p.D}" data-vals="${p.S}" data-dts="${p.dts}" data-cause="${p.c}" style="cursor:pointer"/>`;
     });
 
     svg.innerHTML = h;
@@ -1901,7 +1907,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     svg.querySelectorAll('circle[data-n]').forEach(c => {
       c.addEventListener('mouseenter', e => {
         showTT(e, c.dataset.n,
-          `D\u202f=\u202f${c.dataset.D}\u2003S\u202f=\u202f${c.dataset.S}<br>D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}<br>${(c.dataset.cause||'').replace(/_/g,' ')}`);
+          `D\u202f=\u202f${c.dataset.vald}\u2003S\u202f=\u202f${c.dataset.vals}<br>D\u2080\u00d7(1\u2212S)\u202f=\u202f${c.dataset.dts}<br>${(c.dataset.cause||'').replace(/_/g,' ')}`);
         info.textContent = `${c.dataset.n}`;
       });
       c.addEventListener('mousemove', moveTT);
@@ -2048,10 +2054,10 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       if(p.ev===1){
         // X marker
         const d=7;
-        h+=`<line x1="${cx-d}" y1="${cy-d}" x2="${cx+d}" y2="${cy+d}" stroke="${col}" stroke-width="2.2" stroke-linecap="round" data-n="${p.n}" data-t="${p.t}" data-L="${p.L}" data-S="${p.S}" data-ev="1" data-mc="${p.mc}" style="cursor:pointer"/>`;
-        h+=`<line x1="${cx+d}" y1="${cy-d}" x2="${cx-d}" y2="${cy+d}" stroke="${col}" stroke-width="2.2" stroke-linecap="round" data-n="${p.n}" data-t="${p.t}" data-L="${p.L}" data-S="${p.S}" data-ev="1" data-mc="${p.mc}" style="cursor:pointer"/>`;
+        h+=`<line x1="${cx-d}" y1="${cy-d}" x2="${cx+d}" y2="${cy+d}" stroke="${col}" stroke-width="2.2" stroke-linecap="round" data-n="${p.n}" data-t="${p.t}" data-edrl="${p.L}" data-edrs="${p.S}" data-ev="1" data-mc="${p.mc}" style="cursor:pointer"/>`;
+        h+=`<line x1="${cx+d}" y1="${cy-d}" x2="${cx-d}" y2="${cy+d}" stroke="${col}" stroke-width="2.2" stroke-linecap="round" data-n="${p.n}" data-t="${p.t}" data-edrl="${p.L}" data-edrs="${p.S}" data-ev="1" data-mc="${p.mc}" style="cursor:pointer"/>`;
       } else {
-        h+=`<circle cx="${cx}" cy="${cy}" r="7" fill="${col}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8" data-n="${p.n}" data-t="${p.t}" data-L="${p.L}" data-S="${p.S}" data-ev="0" data-mc="${p.mc}" style="cursor:pointer"/>`;
+        h+=`<circle cx="${cx}" cy="${cy}" r="7" fill="${col}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8" data-n="${p.n}" data-t="${p.t}" data-edrl="${p.L}" data-edrs="${p.S}" data-ev="0" data-mc="${p.mc}" style="cursor:pointer"/>`;
       }
       // Short label for prominent cases
       const notable=['Nazi Germany','British Parliamentary System','Venetian Republic','Icelandic Commonwealth','Norwegian Sovereign Wealth Democracy'];
@@ -2063,17 +2069,19 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     });
 
     // Legend
-    h+=`<circle cx="${PL+12}" cy="${PT+16}" r="6" fill="${GREEN}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
-    h+=`<text x="${PL+22}" y="${PT+20}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Counter-hegemonic</text>`;
-    h+=`<circle cx="${PL+155}" cy="${PT+16}" r="6" fill="${SLATE}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
-    h+=`<text x="${PL+165}" y="${PT+20}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Administrative</text>`;
-    h+=`<circle cx="${PL+278}" cy="${PT+16}" r="6" fill="${RED}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
-    h+=`<text x="${PL+288}" y="${PT+20}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Hegemonic</text>`;
-    h+=`<line x1="${PL+375}" y1="${PT+10}" x2="${PL+388}" y2="${PT+22}" stroke="#888" stroke-width="2" stroke-linecap="round"/>`;
-    h+=`<line x1="${PL+388}" y1="${PT+10}" x2="${PL+375}" y2="${PT+22}" stroke="#888" stroke-width="2" stroke-linecap="round"/>`;
-    h+=`<text x="${PL+393}" y="${PT+20}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Event (\u00d7)</text>`;
-    h+=`<circle cx="${PL+455}" cy="${PT+16}" r="6" fill="#888" fill-opacity="0.5" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
-    h+=`<text x="${PL+465}" y="${PT+20}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Censored (\u25cb)</text>`;
+    // Legend — placed inside the plot area just above the bottom grid line
+    const LY=PT+PH-18;
+    h+=`<circle cx="${PL}" cy="${LY}" r="6" fill="${GREEN}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
+    h+=`<text x="${PL+10}" y="${LY+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Counter-hegemonic</text>`;
+    h+=`<circle cx="${PL+153}" cy="${LY}" r="6" fill="${SLATE}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
+    h+=`<text x="${PL+163}" y="${LY+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Administrative</text>`;
+    h+=`<circle cx="${PL+276}" cy="${LY}" r="6" fill="${RED}" fill-opacity="0.75" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
+    h+=`<text x="${PL+286}" y="${LY+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Hegemonic</text>`;
+    h+=`<line x1="${PL+370}" y1="${LY-6}" x2="${PL+382}" y2="${LY+6}" stroke="#888" stroke-width="2" stroke-linecap="round"/>`;
+    h+=`<line x1="${PL+382}" y1="${LY-6}" x2="${PL+370}" y2="${LY+6}" stroke="#888" stroke-width="2" stroke-linecap="round"/>`;
+    h+=`<text x="${PL+387}" y="${LY+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Event (\u00d7)</text>`;
+    h+=`<circle cx="${PL+449}" cy="${LY}" r="6" fill="#888" fill-opacity="0.5" stroke="rgba(240,236,224,.6)" stroke-width="0.8"/>`;
+    h+=`<text x="${PL+459}" y="${LY+4}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Censored (\u25cb)</text>`;
 
     svg.innerHTML=h;
     const info=document.getElementById('surv-info');
@@ -2081,8 +2089,8 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       el.addEventListener('mouseenter',e=>{
         const mc=el.dataset.mc;
         const evStr=el.dataset.ev==='1'?`crossed \u03b8 at ${el.dataset.t}y`:`censored at ${el.dataset.t}y (still above \u03b8)`;
-        showTT(e,el.dataset.n,`L\u202f=\u202f${el.dataset.L}\u2003S\u202f=\u202f${el.dataset.S}<br>${evStr}<br>${MC_LABEL[mc]||mc}`);
-        info.textContent=`${el.dataset.n}: L=${el.dataset.L}, S=${el.dataset.S}, ${evStr}`;
+        showTT(e,el.dataset.n,`L\u202f=\u202f${el.dataset.edrl}\u2003S\u202f=\u202f${el.dataset.edrs}<br>${evStr}<br>${MC_LABEL[mc]||mc}`);
+        info.textContent=`${el.dataset.n}: L=${el.dataset.edrl}, S=${el.dataset.edrs}, ${evStr}`;
       });
       el.addEventListener('mousemove',moveTT);
       el.addEventListener('mouseleave',()=>{hideTT();info.textContent='';});
@@ -2269,7 +2277,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     ARCHETYPE_DATA.lca.forEach(p=>{
       const col=LC_COL[p.lc]||'#888';
       const jx=(rng()-0.5)*0.025, jy=(rng()-0.5)*0.025;
-      h+=`<circle cx="${sx(p.P+jx)}" cy="${sy(p.E+jy)}" r="4.5" fill="${col}" fill-opacity="0.55" stroke="none" data-n="${p.n}" data-P="${p.P}" data-E="${p.E}" data-lc="${p.lc}" style="cursor:pointer"/>`;
+      h+=`<circle cx="${sx(p.P+jx)}" cy="${sy(p.E+jy)}" r="4.5" fill="${col}" fill-opacity="0.55" stroke="none" data-n="${p.n}" data-valp="${p.P}" data-vale="${p.E}" data-lc="${p.lc}" style="cursor:pointer"/>`;
     });
     // GMM means
     const ctrs=ARCHETYPE_DATA.lca_ctrs;
@@ -2291,7 +2299,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     svg.querySelectorAll('circle[data-n]').forEach(c=>{
       c.addEventListener('mouseenter',e=>{
         const lbl=LC_LABEL[c.dataset.lc]||c.dataset.lc;
-        showTT(e,c.dataset.n,`P\u202f=\u202f${c.dataset.P}\u2003E\u202f=\u202f${c.dataset.E}<br>${lbl}`);
+        showTT(e,c.dataset.n,`P\u202f=\u202f${c.dataset.valp}\u2003E\u202f=\u202f${c.dataset.vale}<br>${lbl}`);
         info.textContent=`${c.dataset.n}: ${lbl}`;
       });
       c.addEventListener('mousemove',moveTT);
@@ -2454,7 +2462,7 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       else if(p.D>=0.45 && s<0.45) col=GREEN;
       else if(p.D<0.45 && s>=0.45) col=RED;
       const jx=(rng()-0.5)*0.018, jy=(rng()-0.5)*0.018;
-      h+=`<circle cx="${sx(p.R+jx)}" cy="${sy(p.D+jy)}" r="3.5" fill="${col}" fill-opacity="0.45" stroke="none" data-R="${p.R}" data-D="${p.D}" data-S="${p.S}" style="cursor:pointer"/>`;
+      h+=`<circle cx="${sx(p.R+jx)}" cy="${sy(p.D+jy)}" r="3.5" fill="${col}" fill-opacity="0.45" stroke="none" data-valr="${p.R}" data-vald="${p.D}" data-vals="${p.S}" style="cursor:pointer"/>`;
     });
     h+=`<text x="${PL+8}" y="${PT+16}" fill="rgba(240,236,224,.6)" font-size="9.5" font-family="Source Sans 3,sans-serif">Partial r(R,D|S)\u202f=\u202f${ADECOMP_DATA.R.partial_r_S}\u2003r(R,E)\u202f=\u202f0.922\u2003r(R,D)\u202f=\u202f0.922</text>`;
 
@@ -2462,8 +2470,8 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     const info=document.getElementById('ad-info');
     svg.querySelectorAll('circle[data-R]').forEach(c=>{
       c.addEventListener('mouseenter',e=>{
-        showTT(e,'System',`R\u202f=\u202f${c.dataset.R}\u2003D\u202f=\u202f${c.dataset.D}\u2003S\u202f=\u202f${c.dataset.S}`);
-        info.textContent=`R=${c.dataset.R}, D=${c.dataset.D}, S=${c.dataset.S}`;
+        showTT(e,'System',`R\u202f=\u202f${c.dataset.valr}\u2003D\u202f=\u202f${c.dataset.vald}\u2003S\u202f=\u202f${c.dataset.vals}`);
+        info.textContent=`R=${c.dataset.valr}, D=${c.dataset.vald}, S=${c.dataset.vals}`;
       });
       c.addEventListener('mousemove',moveTT);
       c.addEventListener('mouseleave',()=>{hideTT();info.textContent='';});
@@ -2492,10 +2500,10 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
       const y=PT+i*(bH+4);
       const Rv=b.R, Ev=b.E;
       const col=Rv>=0.50?GREEN:Rv>=0.38?SLATE:RED;
-      h+=`<rect x="${PL}" y="${y}" width="${sx(Rv)-PL}" height="${bH}" fill="${col}" fill-opacity="0.78" rx="2" data-bind="${b.label}" data-R="${Rv}" data-E="${Ev}" style="cursor:pointer"/>`;
+      h+=`<rect x="${PL}" y="${y}" width="${sx(Rv)-PL}" height="${bH}" fill="${col}" fill-opacity="0.78" rx="2" data-bind="${b.label}" data-valr="${Rv}" data-vale="${Ev}" style="cursor:pointer"/>`;
       h+=`<text x="${sx(Rv)+5}" y="${y+bH/2+4}" fill="rgba(240,236,224,.65)" font-size="8.5" font-family="Source Sans 3,sans-serif">R=${Rv.toFixed(3)}</text>`;
       // E diamond
-      h+=`<path d="M${sx(Ev)},${y+bH/2-7} L${sx(Ev)+7},${y+bH/2} L${sx(Ev)},${y+bH/2+7} L${sx(Ev)-7},${y+bH/2}Z" fill="${AMBER}" fill-opacity="0.85" data-bind="${b.label}" data-R="${Rv}" data-E="${Ev}" style="cursor:pointer"/>`;
+      h+=`<path d="M${sx(Ev)},${y+bH/2-7} L${sx(Ev)+7},${y+bH/2} L${sx(Ev)},${y+bH/2+7} L${sx(Ev)-7},${y+bH/2}Z" fill="${AMBER}" fill-opacity="0.85" data-bind="${b.label}" data-valr="${Rv}" data-vale="${Ev}" style="cursor:pointer"/>`;
       h+=`<text x="${PL-6}" y="${y+bH/2+4}" text-anchor="end" fill="rgba(240,236,224,.7)" font-size="9" font-family="Source Sans 3,sans-serif">${b.label}</text>`;
     });
 
@@ -2509,8 +2517,8 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     const info=document.getElementById('ad-info');
     svg.querySelectorAll('[data-bind]').forEach(el=>{
       el.addEventListener('mouseenter',e=>{
-        showTT(e,el.dataset.bind,`R\u202f=\u202f${el.dataset.R}\u2003E\u202f=\u202f${el.dataset.E}`);
-        info.textContent=`${el.dataset.bind}: R=${el.dataset.R}, E=${el.dataset.E}`;
+        showTT(e,el.dataset.bind,`R\u202f=\u202f${el.dataset.valr}\u2003E\u202f=\u202f${el.dataset.vale}`);
+        info.textContent=`${el.dataset.bind}: R=${el.dataset.valr}, E=${el.dataset.vale}`;
       });
       el.addEventListener('mousemove',moveTT);
       el.addEventListener('mouseleave',()=>{hideTT();info.textContent='';});
@@ -2629,11 +2637,13 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     });
     t0_bars.forEach((v,i)=>{
       const x=PL+i*BW; const barH=(v/maxH)*PH;
-      h+=`<rect x="${x}" y="${PT+PH-barH}" width="${BW-1}" height="${barH}" fill="${SLATE}" fill-opacity="0.55"/>`;
+      const edrLo=(i/BINS).toFixed(2), edrHi=((i+1)/BINS).toFixed(2);
+      h+=`<rect x="${x}" y="${PT+PH-barH}" width="${BW-1}" height="${barH}" fill="${SLATE}" fill-opacity="0.55" data-edr="${edrLo}-${edrHi}" data-dens="${v.toFixed(3)}" data-time="t=0" style="cursor:pointer"/>`;
     });
     t200_bars.forEach((v,i)=>{
       const x=PL+i*BW; const barH=(v/maxH)*PH;
-      h+=`<rect x="${x+1}" y="${PT+PH-barH}" width="${BW-2}" height="${barH}" fill="${AMBER}" fill-opacity="0.55"/>`;
+      const edrLo=(i/BINS).toFixed(2), edrHi=((i+1)/BINS).toFixed(2);
+      h+=`<rect x="${x+1}" y="${PT+PH-barH}" width="${BW-2}" height="${barH}" fill="${AMBER}" fill-opacity="0.55" data-edr="${edrLo}-${edrHi}" data-dens="${v.toFixed(3)}" data-time="t=200" style="cursor:pointer"/>`;
     });
     const theta_x=sx(0.45);
     h+=`<line x1="${theta_x}" y1="${PT}" x2="${theta_x}" y2="${PT+PH}" stroke="${RED}" stroke-width="1.2" stroke-dasharray="5,4" stroke-opacity="0.7"/>`;
@@ -2646,6 +2656,15 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
     h+=`<rect x="${PL+115}" y="${PT+8}" width="14" height="10" fill="${AMBER}" fill-opacity="0.55"/>`;
     h+=`<text x="${PL+133}" y="${PT+17}" fill="rgba(240,236,224,.7)" font-size="9" font-family="Source Sans 3,sans-serif">t=200 (poles reinforced)</text>`;
     svg.innerHTML=h;
+    const info=document.getElementById('abm-info');
+    svg.querySelectorAll('rect[data-edr]').forEach(el=>{
+      el.addEventListener('mouseenter',e=>{
+        showTT(e,el.dataset.time,`EDR\u202f${el.dataset.edr}<br>Density\u202f=\u202f${el.dataset.dens}`);
+        if(info) info.textContent=`${el.dataset.time}: EDR ${el.dataset.edr}, density=${el.dataset.dens}`;
+      });
+      el.addEventListener('mousemove',moveTT);
+      el.addEventListener('mouseleave',()=>{hideTT(); if(info) info.textContent='';});
+    });
     distBuilt=true;
   }
 
