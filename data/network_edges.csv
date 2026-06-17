@@ -1,774 +1,774 @@
-source,target,edge_type
-Neanderthal Megafauna Councils,Zulu Impi Regiments,parallel
-Inuit Qaggiq Assemblies,Neanderthal Megafauna Councils,contrast
-Denisovan Cave Networks,Inuit Qaggiq Assemblies,comparator
-Denisovan Cave Networks,Lapita Voyaging Networks,parallel
-Denisovan Cave Networks,Pueblo Kiva Councils,contrast
-Natufian Grain Storage Pacts,Çatalhöyük,comparator
-Mohenjo-daro / Indus Valley Civilisation,Natufian Grain Storage Pacts,comparator
-Natufian Grain Storage Pacts,Pre-Pottery Neolithic A (PPNA),parallel
-Jomon Shellfish Consensus,Natufian Communities,comparator
-Inuit Qaggiq Assemblies,Jomon Shellfish Consensus,comparator
-Igbo Assemblies,San Xaro Networks,comparator
-Pacific Potlatch,San Xaro Networks,comparator
-Inuit Qaggiq Assemblies,San Xaro Networks,parallel
-Ainu Bear Ritual Governance,Inuit Qaggiq Assemblies,comparator
-Ainu Bear Ritual Governance,Norse Thing System,comparator
-Ainu Bear Ritual Governance,Natufian Communities,parallel
-Ainu Bear Ritual Governance,Jomon Shellfish Consensus,contrast
-Indigenous IPLCs,Iroquois Confederacy / Haudenosaunee,comparator
-Aboriginal Elders Councils,Indigenous IPLCs,comparator
-Bhutanese Gross National Happiness,Indigenous IPLCs,parallel
-Akan Amanhene Gold States,Indigenous IPLCs,contrast
-Iroquois Confederacy / Haudenosaunee,Yolngu Aboriginal Kinship,comparator
-Inuit Qaggiq Assemblies,Yolngu Aboriginal Kinship,parallel
-Chumash Tomol Canoe Guilds,Fuegian Canoe Councils,comparator
-Fuegian Canoe Councils,Pueblo Kiva Councils,contrast
-Aboriginal Tjurunga Councils,Iroquois Confederacy / Haudenosaunee,parallel
-Aboriginal Tjurunga Councils,Pueblo Kiva Councils,comparator
-Aboriginal Tjurunga Councils,Blemmyes Desert Assemblies,contrast
-Cucuteni-Trypillia Mega-Settlements,Pueblo Kiva Councils,comparator
-Cucuteni-Trypillia Mega-Settlements,Rhenish Hanseatic Cities,comparator
-Anasazi Kiva Water Councils,Cucuteni-Trypillia Mega-Settlements,parallel
-Egyptian Old Kingdom,Nubian Qustul Sacral Kingship,comparator
-Egyptian Nomarchies,Nubian Qustul Sacral Kingship,parallel
-Andean Ayllu Systems,Sumerian Temple States,comparator
-Khmer Devaraja,Sumerian Temple States,comparator
-Hawaiian Kapu System,Sumerian Temple States,contrast
-Indus Priest-Kings,Minoan Crete,comparator
-Indus Priest-Kings,Napoleonic Meritocracy,parallel
-Egyptian Nomarchies,Persian Satrapy System,comparator
-Egyptian Nomarchies,Hittite Panku Council,contrast
-Egyptian Nomarchies,Xia Dynasty Hydraulic Rule,comparator
-Mohenjo-daro / Indus Valley Civilisation,Xia Dynasty Hydraulic Rule,comparator
-Akan Amanhene Gold States,Xia Dynasty Hydraulic Rule,parallel
-Minoan Thalassocracy,Venetian Republic,comparator
-Minoan Thalassocracy,Phoenician Merchant Oligarchies,comparator
-Lapita Voyaging Networks,Minoan Thalassocracy,parallel
-British Parliamentary System,Poverty Point Earthwork League,parallel
-Hopewell Copper Exchange,Poverty Point Earthwork League,contrast
-Hittite Panku Council,Holy Roman Empire,comparator
-Hittite Panku Council,Late Uruk / Early Dynastic,parallel
-Athenian Democracy,Hittite Panku Council,contrast
-Egyptian Old Kingdom,Hittite Sun Priest-Kings,comparator
-Hittite Panku Council,Mycenaean Wanax System,comparator
-Celtic Druidic Synods,Mycenaean Wanax System,comparator
-Mycenaean Wanax System,Viking Law Speakers,parallel
-Mycenaean Wanax System,Phoenician Merchant Oligarchies,contrast
-Egyptian Old Kingdom,Shang Dynasty Oracle Kings,comparator
-Shang Dynasty Oracle Kings,Zapotec Cocijo Cult,parallel
-Greek Democracy,Vedic Sabha Assemblies,comparator
-Iroquois Confederacy / Haudenosaunee,Vedic Sabha Assemblies,comparator
-Norse Thing System,Vedic Sabha Assemblies,parallel
-Holy Roman Empire,Vedic Sabha Assemblies,contrast
-Lapita Voyaging Networks,Viking Law Speakers,comparator
-Lapita Voyaging Networks,Phoenician Merchant Oligarchies,parallel
-Minoan Crete,Olmec Were-Jaguar Cult,comparator
-Aztec Triple Alliance,Olmec Were-Jaguar Cult,comparator
-Olmec Were-Jaguar Cult,Shang Dynasty,parallel
-Holy Roman Empire,Zhou Dynasty Mandate of Heaven,comparator
-Tokugawa Shogunate,Zhou Dynasty Mandate of Heaven,comparator
-European Union Governance,Zhou Dynasty Mandate of Heaven,parallel
-Hittite Panku Council,Zhou Dynasty Mandate of Heaven,contrast
-Hallstatt Salt Lords,Phoenician Merchant Oligarchies,comparator
-Hallstatt Salt Lords,Volga Bulgar Islamic Merchants,comparator
-Hallstatt Salt Lords,Nabatean Water Merchants,parallel
-Phoenician Merchant Oligarchies,Venetian Republic,comparator
-Hanseatic League,Phoenician Merchant Oligarchies,comparator
-Egyptian Nomarchies,Phoenician Merchant Oligarchies,contrast
-Adena Moundbuilder Councils,Hopewell Copper Exchange,comparator
-Adena Moundbuilder Councils,Mississippian Chiefdoms,comparator
-Adena Moundbuilder Councils,Jomon Shellfish Consensus,parallel
-Adena Moundbuilder Councils,Cahokia Birdman Dynasty,contrast
-Nok Terracotta Chiefdoms,Shang Dynasty,comparator
-Nok Terracotta Chiefdoms,Olmec,parallel
-Assyrian Military Autocracy,Holy Roman Empire,comparator
-Assyrian Military Autocracy,Napoleonic Meritocracy,comparator
-Assyrian Military Autocracy,Persian Satrapy System,contrast
-Khmer Devaraja,Urartian Hydraulic Kings,comparator
-Nabatean Water Merchants,Urartian Hydraulic Kings,comparator
-Irish Traveller Cant Systems,Urartian Hydraulic Kings,parallel
-Minoan Crete,Phrygian Matar Cult,comparator
-Etruscan Haruspex Diviners,Shang Dynasty,comparator
-Etruscan Haruspex Diviners,Hittite Panku Council,comparator
-Nabatean Water Merchants,Sabaean Dam Council,comparator
-Khmer Devaraja,Sabaean Dam Council,comparator
-Anasazi Kiva Water Councils,Sabaean Dam Council,parallel
-Egyptian Nomarchies,Kingdom of Kush,comparator
-Greek Diarchy,Scythian Kurgan Diarchy,comparator
-Etruscan Lucumones,Holy Roman Empire,contrast
-Etruscan Lucumones,Greek Democracy,comparator
-Lydian Electrum Oligarchy,Phoenician Merchant Oligarchies,comparator
-Greek Democracy,Lydian Electrum Oligarchy,comparator
-Lydian Electrum Oligarchy,Venetian Arsenal Guilds,parallel
-Ottoman Millet System,Satrapy System,comparator
-Icelandic Crowdsourced Constitution,Roman Republic,comparator
-Roman Republic,Venetian Arsenal Guilds,parallel
-Athenian Democracy,Roman Republic,contrast
-Athenian Democracy,Swiss Cantonal Democracy,comparator
-Athenian Democracy,Iroquois Confederacy / Haudenosaunee,comparator
-Celtic Druidic Synods,Irish Brehon Law,comparator
-Celtic Druidic Synods,Tibetan Ganden Phodrang,parallel
-Roman Collegia Guild Republics,Sinti Musical Guilds,comparator
-Ottoman Millet System,Roman Collegia Guild Republics,comparator
-Bantu Mfecane Councils,Celtic Druidic Synods,comparator
-Bantu Mfecane Councils,Iroquois Confederacy / Haudenosaunee,comparator
-Bantu Mfecane Councils,Lapita Voyaging Networks,parallel
-Bantu Mfecane Councils,Great Zimbabwe Rain Priests,contrast
-Iroquois Confederacy / Haudenosaunee,Proto-Norse Thing Assemblies,comparator
-Greek Democracy,Proto-Norse Thing Assemblies,comparator
-Celtic Druidic Synods,Proto-Norse Thing Assemblies,parallel
-Shang Dynasty,Zapotec Glyph-Judge System,comparator
-Egyptian Nomarchies,Zapotec Glyph-Judge System,parallel
-Aztec Triple Alliance,Zapotec Glyph-Judge System,contrast
-Berber Jemaa,Celtic Druidic Synods,comparator
-Berber Jemaa,Sami Noaide Shamanic Bands,parallel
-Iroquois Confederacy / Haudenosaunee,La Tène Tribal Federations,comparator
-La Tène Tribal Federations,Viking Law Speakers,parallel
-Rhodes Naval Oligarchy,Venetian Republic,comparator
-Phoenician Merchant Oligarchies,Rhodes Naval Oligarchy,comparator
-Hanseatic League,Rhodes Naval Oligarchy,parallel
-Nabatean Water Merchants,Phoenician Merchant Oligarchies,comparator
-Nabatean Water Merchants,Venetian Republic,comparator
-Nabatean Water Merchants,Sogdian Merchant Caravanserais,parallel
-Garamantian Foggaras,Nabatean Water Merchants,comparator
-Garamantian Foggaras,Persian Satrapy System,comparator
-Garamantian Foggaras,Khmer Water Mandala,parallel
-Byzantine Theme System,Mauryan Empire,comparator
-Mauryan Empire,Qin Legalism,comparator
-Greek Diarchy,Yuezhi Nomad Diarchy,comparator
-Holy Roman Empire,Yuezhi Nomad Diarchy,parallel
-Dahomey Mino Amazon State,Sarmatian Female Warbands,comparator
-D'mt Beehive Councils,Minoan Crete,comparator
-D'mt Beehive Councils,Hittite Panku Council,comparator
-D'mt Beehive Councils,Saho-Irob Mountain Democracies,parallel
-Bactrian Greek Syncretism,Kushan Devaputra,comparator
-Byzantine Theme System,Han Dynasty Examination Prototype,comparator
-British Parliamentary System,Han Dynasty Examination Prototype,comparator
-Han Dynasty Examination Prototype,Ottoman Millet System,parallel
-Hopewell Copper Exchange,Minoan Crete,comparator
-Hopewell Copper Exchange,Lapita Voyaging Networks,parallel
-Cahokia Birdman Dynasty,Hopewell Copper Exchange,contrast
-Rhenish Hanseatic Cities,Teotihuacan Theocratic Oligarchy,comparator
-Khmer Devaraja,Teotihuacan Theocratic Oligarchy,comparator
-Mogollon Pit-House Democracies,Pueblo Kiva Councils,comparator
-Iroquois Confederacy / Haudenosaunee,Mogollon Pit-House Democracies,comparator
-Anasazi Kiva Water Councils,Mogollon Pit-House Democracies,parallel
-Kushan Devaputra,Mauryan Empire,comparator
-Indian Panchayati Raj,Silla Bone-Rank System,comparator
-Persian Satrapy System,Silla Bone-Rank System,parallel
-Aztec Triple Alliance,Moche Sacrificial Hydraulics,comparator
-Moche Sacrificial Hydraulics,Shang Dynasty,comparator
-Moche Ceremonial Brewmasters,Sumerian Temple States,comparator
-Moche Ceremonial Brewmasters,Tibetan Ganden Phodrang,parallel
-Champa Linga-Kings,Khmer Devaraja,comparator
-Champa Linga-Kings,Javanese Kabuyutan Councils,comparator
-Champa Linga-Kings,Greek Democracy,parallel
-Blemmyes Desert Assemblies,Mongolian Kurultai,parallel
-Khotanese Buddhist Monarchy,Tibetan Ganden Phodrang,comparator
-Khmer Devaraja,Khotanese Buddhist Monarchy,comparator
-Shang Dynasty,Tairona Gold-Shaman Councils,parallel
-Tairona Gold-Shaman Councils,Teotihuacan,contrast
-Classic Maya City-States,Khmer Devaraja,comparator
-Classic Maya City-States,Egyptian Old Kingdom,comparator
-Bitcoin Decentralized Governance,Classic Maya City-States,contrast
-Pallava Guild Republics,Venetian Republic,comparator
-Pallava Guild Republics,Phoenician Merchant Oligarchies,comparator
-Pallava Guild Republics,Sinti Musical Guilds,parallel
-Pallava Guild Republics,Rhodes Naval Oligarchy,contrast
-Pictish Matrilineal Kings,Tang Fanzhen Clans,comparator
-Lunda Ruwej Matrilineacy,Pictish Matrilineal Kings,parallel
-Irish Traveller Cant Systems,Pictish Matrilineal Kings,contrast
-Gupta Golden Age,Holy Roman Empire,comparator
-Ghana Empire Wagadu,Venetian Republic,comparator
-Ghana Empire Wagadu,Hanseatic League,comparator
-Ghana Empire Wagadu,Phoenician Merchant Oligarchies,parallel
-Marajoara Amazonian Queens,Minoan Crete,comparator
-Bantu Mfecane Councils,Marajoara Amazonian Queens,comparator
-Cucuteni-Trypillia Mega-Settlements,Marajoara Amazonian Queens,parallel
-Byzantine Theme System,Visigothic Code Judges,comparator
-Visigothic Code Judges,Volga Bulgar Islamic Merchants,comparator
-Phoenician Merchant Oligarchies,Sogdian Merchant-Republics,comparator
-Hanseatic League,Sogdian Merchant-Republics,comparator
-Sogdian Merchant-Republics,Swahili Waungwana Councils,parallel
-Frisian Tribal Thing,Icelandic Althing,comparator
-Frisian Tribal Thing,Transylvanian Saxon Seats,comparator
-Frisian Tribal Thing,Viking Law Speakers,parallel
-Frisian Tribal Thing,Holy Roman Empire,contrast
-Sogdian Merchant Caravanserais,Venetian Republic,comparator
-Phoenician Merchant Oligarchies,Sogdian Merchant Caravanserais,comparator
-Berber Amazigh Councils,Sogdian Merchant Caravanserais,parallel
-Rhenish Hanseatic Cities,Sogdian Merchant Caravanserais,contrast
-Dalriada Gaelic Law Schools,Irish Brehon Law,comparator
-Celtic Druidic Synods,Dalriada Gaelic Law Schools,parallel
-Dalriada Gaelic Law Schools,Holy Roman Empire,contrast
-Sao Clay Wall Cities,Ubaid Culture,comparator
-Great Zimbabwe Rain Priests,Sao Clay Wall Cities,comparator
-Pueblo Kiva Councils,Sao Clay Wall Cities,parallel
-Irish Brehon Law,Iroquois Confederacy / Haudenosaunee,comparator
-Holy Roman Empire,Irish Brehon Law,comparator
-Irish Brehon Law,Norman Feudal Domesday,contrast
-Cahokia Birdman Dynasty,Calusa Shell Mound Kingdom,comparator
-Calusa Shell Mound Kingdom,Poverty Point Earthwork League,comparator
-Calusa Shell Mound Kingdom,Jomon Shellfish Consensus,parallel
-Chumash Tomol Canoe Guilds,Viking Law Speakers,comparator
-Chumash Tomol Canoe Guilds,Rhenish Hanseatic Cities,parallel
-Inuit Qaggiq Assemblies,Sámi Siida Councils,comparator
-Nenets Yamal Clan Councils,Sámi Siida Councils,parallel
-Norse Thing System,Sámi Siida Councils,contrast
-Blemmyes Desert Assemblies,Göktürk Orkhon Script Khans,comparator
-Göktürk Orkhon Script Khans,Hittite Panku Council,comparator
-Göktürk Orkhon Script Khans,Viking Law Speakers,comparator
-Göktürk Orkhon Script Khans,Pictish Matrilineal Kings,parallel
-Göktürk Orkhon Script Khans,Kalderash Gold-Smithing Dynasties,contrast
-Holy Roman Empire,Wari Tinku Labor System,comparator
-Greek Democracy,Wari Tinku Labor System,parallel
-British Parliamentary System,Tang Dynasty,comparator
-Sarmatian Female Warbands,Tang Dynasty,contrast
-Tang Fanzhen Clans,Venetian Arsenal Guilds,parallel
-Holy Roman Empire,Khazar Jewish Khaganate,comparator
-Khazar Jewish Khaganate,Polish-Lithuanian Elective Monarchy,comparator
-Almoravid Lamtuna Councils,Khazar Jewish Khaganate,parallel
-Majapahit Mandala,Srivijayan Mandala,comparator
-Phoenician Merchant Oligarchies,Srivijayan Mandala,comparator
-Srivijayan Mandala,Venetian Republic,parallel
-Khmer Devaraja,Srivijayan Mandala,comparator
-Athenian Democracy,Srivijayan Mandala,parallel
-Byzantine Theme System,Persian Satrapy System,comparator
-Byzantine Theme System,Ottoman Millet System,parallel
-Dutch Republic States-General,Venetian Republic,comparator
-Singaporean Technocracy,Venetian Republic,parallel
-Göktürk Orkhon Script Khans,Kanem Duguwa Nomad-Kings,comparator
-Berber Jemaa,Kanem Duguwa Nomad-Kings,comparator
-Kanem Duguwa Nomad-Kings,Pomeranian Veleti Tribal Republic,parallel
-Anasazi Kiva Water Councils,Pueblo Kiva Councils,comparator
-Anasazi Kiva Water Councils,Nabatean Water Merchants,comparator
-Anasazi Kiva Water Councils,Irish Traveller Cant Systems,parallel
-Celtic Tribal Assemblies,Viking Law Speakers,comparator
-Holy Roman Empire,Viking Law Speakers,contrast
-Swiss Consensus Democracy,Welsh Cantrefi,comparator
-Andean Ayllu Systems,Welsh Cantrefi,comparator
-Icelandic Althing,Orkney Jarl Sea-Kingdoms,comparator
-Faroese Sheep Court,Orkney Jarl Sea-Kingdoms,parallel
-Frisian Sea-Law Republics,Venetian Arsenal Guilds,comparator
-Frisian Sea-Law Republics,Icelandic Althing,comparator
-Frisian Sea-Law Republics,Nan Madol Coral Kingdoms,parallel
-Frisian Moot Hall Democracy,Icelandic Althing,comparator
-Frisian Moot Hall Democracy,Swiss Cantonal Democracy,comparator
-Frisian Moot Hall Democracy,Venetian Arsenal Guilds,parallel
-Iroquois Confederacy / Haudenosaunee,Taino Cacique Matrilineage,comparator
-Taino Cacique Matrilineage,Tang Fanzhen Clans,parallel
-Byzantine Theme System,Holy Roman Imperial Diarchy,comparator
-Holy Roman Imperial Diarchy,Pictish Matrilineal Kings,comparator
-Egyptian Old Kingdom,Khmer Devaraja,comparator
-Khmer Devaraja,Shilluk Divine Kingship,parallel
-Ghana Empire,Venetian Republic,comparator
-Ghana Empire,Great Zimbabwe Rain Priests,comparator
-Ghana Empire,Phoenician Merchant Oligarchies,parallel
-Ghana Empire,Timbuktu Qadi Scholar-Judges,contrast
-Khmer Devaraja,Pagan Temple-State,comparator
-Egyptian Nomarchies,Pagan Temple-State,parallel
-Pagan Temple-State,Tongan Maritime Empire,contrast
-Chola Naval Assemblies,Venetian Republic,comparator
-Chola Naval Assemblies,Marshallese Stick Chart Navigators,comparator
-Chola Naval Assemblies,Phoenician Merchant Oligarchies,parallel
-Chola Naval Assemblies,Icelandic Crowdsourced Constitution,contrast
-Aztec Triple Alliance,Toltec Warrior-Priest State,comparator
-Mycenaean Wanax System,Toltec Warrior-Priest State,comparator
-Aztec Triple Alliance,Toltec Warrior-Poet State,comparator
-Mycenaean Wanax System,Toltec Warrior-Poet State,comparator
-Frisian Sea-Law Republics,Pomeranian Veleti Tribal Republic,comparator
-Pomeranian Veleti Tribal Republic,Rhenish Hanseatic Cities,contrast
-Venetian Republic,Volga Bulgar Islamic Merchants,comparator
-Swahili Waungwana Councils,Volga Bulgar Islamic Merchants,contrast
-Hanseatic League,Volga Bulgar Islamic Merchants,parallel
-Faroe Islands Løgting,Icelandic Althing,comparator
-Faroe Islands Løgting,Manx Tynwald,comparator
-Faroe Islands Løgting,Scottish Tacksmen,parallel
-Athenian Democracy,Icelandic Commonwealth,comparator
-Icelandic Commonwealth,Iroquois Confederacy / Haudenosaunee,comparator
-Icelandic Commonwealth,Swiss Cantonal Democracy,parallel
-Icelandic Althing,Iroquois Confederacy / Haudenosaunee,comparator
-Icelandic Althing,Swiss Cantonal Democracy,comparator
-Icelandic Althing,Viking Law Speakers,parallel
-Athenian Democracy,Icelandic Althing,contrast
-Althingi Carbon-Neutral Parliament,Swiss Cantonal Democracy,comparator
-Althingi Carbon-Neutral Parliament,Athenian Democracy,comparator
-Althingi Carbon-Neutral Parliament,Bhutanese Gross National Happiness,parallel
-Frisian Sea-Law Republics,Nri Kingdom Pacifist Theocracy,comparator
-Khotanese Buddhist Monarchy,Nri Kingdom Pacifist Theocracy,comparator
-Maroon Communities (Jamaica/Suriname),Nri Kingdom Pacifist Theocracy,parallel
-Hawaiian Kapu System,Tongan Maritime Empire,comparator
-Tongan Maritime Empire,Viking Law Speakers,comparator
-Khmer Devaraja,Tongan Maritime Empire,parallel
-Majapahit Mandala,Tongan Maritime Empire,contrast
-Icelandic Althing,Manx Tynwald,comparator
-Manx Tynwald,Swiss Cantonal Democracy,comparator
-Faroese Sheep Court,Manx Tynwald,parallel
-Jomsviking Warrior Commune,Teutonic Ordensstaat,comparator
-Jomsviking Warrior Commune,Tang Fanzhen Clans,parallel
-Greenland Norse Althing,Icelandic Althing,comparator
-Greenland Norse Althing,Inuit Qaggiq Assemblies,contrast
-Alpine Pastoral Communes,Greenland Norse Althing,parallel
-Gotlandic Sea-Farmer Althing,Venetian Republic,comparator
-Gotlandic Sea-Farmer Althing,Viking Law Speakers,comparator
-Genoese Black Sea Colonies,Gotlandic Sea-Farmer Althing,parallel
-Icelandic Althing,Ruthenian Viche,comparator
-Novgorod Veche Republic,Ruthenian Viche,comparator
-Rhenish Hanseatic Cities,Ruthenian Viche,contrast
-Swahili Waungwana Councils,Venetian Arsenal Guilds,comparator
-Phoenician Merchant Oligarchies,Swahili Waungwana Councils,comparator
-Hanseatic League,Swahili Waungwana Councils,parallel
-Nan Madol Coral Kingdoms,Venetian Arsenal Guilds,comparator
-Khmer Devaraja,Nan Madol Coral Kingdoms,comparator
-Nan Madol Coral Kingdoms,Rhenish Hanseatic Cities,parallel
-Tanzanian Ujamaa Villages,Timucua Waterborne Councils,parallel
-Calusa Shell Mound Kingdom,Timucua Waterborne Councils,contrast
-Finnish Kalevala Singing Governors,Vedic Sabha Assemblies,comparator
-Celtic Druidic Synods,Finnish Kalevala Singing Governors,parallel
-Sami Noaide Shamanic Bands,Siberian Yukaghir Moon Calendar,comparator
-Inuit Qaggiq Assemblies,Sami Noaide Shamanic Bands,comparator
-Norse Thing System,Sami Noaide Shamanic Bands,contrast
-Celtic Tribal Assemblies,Tahitian Arioi Cult Society,comparator
-Greek Democracy,Tahitian Arioi Cult Society,parallel
-Inuit Qaggiq Assemblies,Siberian Yukaghir Moon Calendar,comparator
-Siberian Yukaghir Moon Calendar,Tang Fanzhen Clans,comparator
-Natufian Communities,Siberian Yukaghir Moon Calendar,parallel
-Göbekli Tepe (ritual complex),Siberian Yukaghir Moon Calendar,contrast
-Andean Ayllu Systems,Hawaiian Ahupuaʻa System,parallel
-Saho-Irob Mountain Democracies,Swiss Cantonal Democracy,comparator
-Berber Amazigh Councils,Saho-Irob Mountain Democracies,parallel
-Iroquois Confederacy / Haudenosaunee,Yoruba Ogboni Earth Justice,comparator
-Celtic Druidic Synods,Yoruba Ogboni Earth Justice,parallel
-Benin Oba Eweka Dynasty,Yoruba Ogboni Earth Justice,contrast
-Igbo Umunna Councils,Swiss Cantonal Democracy,comparator
-Athenian Democracy,Igbo Umunna Councils,comparator
-Greek Democracy,Igbo Umunna Councils,parallel
-Benin Oba Eweka Dynasty,Igbo Umunna Councils,contrast
-Inuit Qaggiq Assemblies,Yupik Bladder Festival Rule,comparator
-Jomon Shellfish Consensus,Yupik Bladder Festival Rule,parallel
-Haida Potlatch Governance,Yupik Bladder Festival Rule,contrast
-Marshallese Stick Chart Navigators,Venetian Arsenal Guilds,comparator
-Marshallese Stick Chart Navigators,Norse Thing System,parallel
-Majapahit Mandala,Marshallese Stick Chart Navigators,contrast
-Iroquois Confederacy / Haudenosaunee,Samoan Matai Talking Chiefs,comparator
-Greek Democracy,Samoan Matai Talking Chiefs,comparator
-Samoan Matai Talking Chiefs,Swiss Cantonal Democracy,parallel
-Kurultai,Nenets Yamal Clan Councils,comparator
-Faroese Sheep Court,Icelandic Althing,comparator
-Faroese Sheep Court,Swiss Consensus Democracy,comparator
-Ottoman Millet System,Seljuk Iqta System,comparator
-European Union Governance,Seljuk Iqta System,comparator
-Almoravid Lamtuna Councils,Berber Jemaa,comparator
-Cahokia Birdman Dynasty,Teotihuacan,comparator
-Cahokia Birdman Dynasty,Egyptian Old Kingdom,parallel
-Cahokia Birdman Dynasty,Taino Cacique Matrilineage,contrast
-Norman Feudal Domesday,Qin Legalism,comparator
-Inca Empire (Tawantinsuyu),Norman Feudal Domesday,comparator
-Norman Feudal Domesday,Ottoman Millet System,parallel
-Cuman Tribal Federations,Iroquois Confederacy / Haudenosaunee,comparator
-Cuman Tribal Federations,Kurultai,comparator
-Cuman Tribal Federations,Sami Noaide Shamanic Bands,parallel
-Classic Maya City-States,Great Zimbabwe Rain Priests,comparator
-Egyptian Nomarchies,Great Zimbabwe Rain Priests,parallel
-Great Zimbabwe Rain Priests,Swahili Waungwana Councils,contrast
-Frisian Sea-Law Tribunals,Icelandic Crowdsourced Constitution,comparator
-Frisian Sea-Law Tribunals,Phoenician Merchant Oligarchies,comparator
-Frisian Sea-Law Tribunals,Venetian Arsenal Guilds,parallel
-Frisian Sea-Law Tribunals,Rhenish Hanseatic Cities,contrast
-Kanem-Bornu Sufi Knights,Teutonic Ordensstaat,comparator
-Kanem-Bornu Sufi Knights,Timbuktu Qadi Scholar-Judges,contrast
-Dahomey Mino Amazon State,Mossi Naam Militias,contrast
-Maldivian Furya Coral Councils,Swahili Waungwana Councils,comparator
-Maldivian Furya Coral Councils,Venetian Arsenal Guilds,comparator
-Dalriada Gaelic Law Schools,Maldivian Furya Coral Councils,parallel
-Iroquois Confederacy / Haudenosaunee,Pueblo Kiva Councils,comparator
-Aboriginal Elders Councils,Pueblo Kiva Councils,comparator
-Pueblo Kiva Councils,Swiss Consensus Democracy,parallel
-Aztec Triple Alliance,Pueblo Kiva Councils,contrast
-Khazar Jewish Khaganate,Romani Kris Councils,comparator
-Iroquois Confederacy / Haudenosaunee,Romani Kris Councils,comparator
-Soviet Republics System,Venetian Arsenal Guilds,comparator
-Rhenish Hanseatic Cities,Venetian Arsenal Guilds,comparator
-Dutch Republic States-General,Venetian Arsenal Guilds,contrast
-Holy Roman Empire,Khmer Water Mandala,parallel
-Dutch Republic States-General,Khmer Water Mandala,contrast
-Icelandic Althing,Novgorod Veche Republic,comparator
-Athenian Democracy,Novgorod Veche Republic,comparator
-Novgorod Veche Republic,Rhenish Hanseatic Cities,parallel
-Novgorod Veche Republic,Rhodes Naval Oligarchy,contrast
-Iroquois Confederacy / Haudenosaunee,Tokelau Village Atoll Consensus,comparator
-Iroquois Confederacy / Haudenosaunee,Swiss Cantonal Democracy,comparator
-Iroquois Confederacy / Haudenosaunee,Nordic Sami Parliaments,parallel
-Cathar Perfecti Councils,Khotanese Buddhist Monarchy,parallel
-Hanseatic Kontor,Venetian Arsenal Guilds,comparator
-Hanseatic Kontor,Phoenician Merchant Oligarchies,comparator
-Hanseatic Kontor,Sinti Musical Guilds,contrast
-Bavarian Beer Hall Communes,Rhenish Hanseatic Cities,comparator
-Bavarian Beer Hall Communes,Swiss Cantonal Democracy,comparator
-Bavarian Beer Hall Communes,Venetian Arsenal Guilds,parallel
-Bavarian Beer Hall Communes,Dutch Republic States-General,contrast
-Javanese Kabuyutan Councils,Tibetan Ganden Phodrang,comparator
-European Union Governance,Javanese Kabuyutan Councils,parallel
-Javanese Kabuyutan Councils,Timbuktu Qadi Scholar-Judges,contrast
-Inuit Qaggiq Assemblies,Kven Arctic Trader Networks,comparator
-Kven Arctic Trader Networks,Rhenish Hanseatic Cities,comparator
-Kven Arctic Trader Networks,Metis Buffalo Councils,parallel
-Irish Traveller Cant Systems,Rapa Iti Tūtae Councils,parallel
-Göbekli Tepe (ritual complex),Rapa Iti Tūtae Councils,contrast
-Mayan Ajaw System,Rapa Nui Tangata Manu Trials,comparator
-Mayan Ajaw System,Rapa Nui Birdman Cult,comparator
-Benin Oba Eweka Dynasty,Khmer Devaraja,comparator
-Ashanti Confederacy,Benin Oba Eweka Dynasty,comparator
-Benin Oba Divine Kingship,Khmer Devaraja,comparator
-Benin Oba Divine Kingship,Egyptian Old Kingdom,comparator
-Benin Oba Divine Kingship,Kongo Mbanza Council,parallel
-Evenk Tungus Clan Federations,Iroquois Confederacy / Haudenosaunee,parallel
-Alpine Pastoral Communes,Andean Ayllu Systems,comparator
-Alpine Pastoral Communes,Norse Thing System,comparator
-Alpine Pastoral Communes,Swiss Consensus Democracy,contrast
-Hawaiian Kapu System,Maluku Sasi Harvest Bans,comparator
-Maluku Sasi Harvest Bans,Swiss Consensus Democracy,comparator
-Inuit Qaggiq Assemblies,Iroquois Confederacy / Haudenosaunee,comparator
-Inuit Qaggiq Assemblies,Swiss Cantonal Democracy,comparator
-Alpine Pastoral Communes,Inuit Qaggiq Assemblies,parallel
-Inuit Qaggiq Assemblies,Pueblo Kiva Councils,contrast
-Cornish Stannary,Swiss Cantonal Democracy,comparator
-Cornish Stannary,Iroquois Confederacy / Haudenosaunee,comparator
-Blemmyes Desert Assemblies,Kurultai,comparator
-Göktürk Orkhon Script Khans,Kurultai,comparator
-Holy Roman Empire,Kurultai,parallel
-Delhi Sultanate Slave Kings,Ottoman Millet System,comparator
-Delhi Sultanate Slave Kings,Holy Roman Empire,parallel
-Delhi Sultanate Slave Kings,Volga Bulgar Islamic Merchants,contrast
-Golden Horde Yam System,Magna Carta Baronage,comparator
-Icelandic Crowdsourced Constitution,Magna Carta Baronage,comparator
-Icelandic Althing,Magna Carta Baronage,parallel
-Teutonic Ordensstaat,Transylvanian Saxon Seats,comparator
-Rhenish Hanseatic Cities,Transylvanian Saxon Seats,comparator
-Tongan Maritime Empire,Transylvanian Saxon Seats,contrast
-Teutonic Ordensstaat,Tibetan Ganden Phodrang,comparator
-Ghana Empire,Mali Mansa Rule,comparator
-Mali Mansa Rule,Sumerian Temple States,comparator
-Byzantine Theme System,Mali Mansa Rule,parallel
-Golden Horde Yam System,Persian Satrapy System,comparator
-Golden Horde Yam System,Holy Roman Empire,parallel
-Aztec Triple Alliance,Lithuanian Pagan Kings,comparator
-Lithuanian Pagan Kings,Norse Thing System,comparator
-Lithuanian Pagan Kings,Teutonic Ordensstaat,contrast
-Hanseatic League,Rhenish City Leagues,comparator
-Iroquois Confederacy / Haudenosaunee,Rhenish City Leagues,comparator
-Rhenish City Leagues,Ryukyu Gusuku Trade Kingdom,parallel
-Genoese Black Sea Colonies,Venetian Republic,comparator
-Genoese Black Sea Colonies,Phoenician Merchant Oligarchies,comparator
-Dutch Republic States-General,Genoese Black Sea Colonies,parallel
-Genoese Black Sea Colonies,Rhenish Hanseatic Cities,contrast
-Indian Panchayati Raj,Yuan Semu Caste System,comparator
-Ottoman Millet System,Yuan Semu Caste System,parallel
-Andorran Co-Principality,Shilluk Divine Kingship,comparator
-Andorran Co-Principality,Holy Roman Empire,comparator
-Pirate Articles,Swiss Cantonal Democracy,contrast
-Majapahit Terracotta Bureaucracy,Qin Legalism,comparator
-Majapahit Terracotta Bureaucracy,Ottoman Millet System,parallel
-Dutch Republic States-General,Venetian Merchant Oligarchy,comparator
-Phoenician Merchant Oligarchies,Venetian Merchant Oligarchy,comparator
-Māori Umu Tī Earth Oven Parleys,Pacific Potlatch,comparator
-Greek Democracy,Māori Umu Tī Earth Oven Parleys,parallel
-Māori Umu Tī Earth Oven Parleys,Tongan Maritime Empire,contrast
-Iroquois Confederacy / Haudenosaunee,Māori Iwi River Federations,comparator
-Mississippian Chiefdoms,Māori Iwi River Federations,parallel
-Buganda Clan-Based Monarchy,Holy Roman Empire,comparator
-Paris Commune,Timbuktu Qadi Scholar-Judges,comparator
-Tibetan Ganden Phodrang,Timbuktu Qadi Scholar-Judges,parallel
-Ottoman Millet System,Wolof Garmi Anti-Corruption,comparator
-Persian Satrapy System,Wolof Garmi Anti-Corruption,parallel
-Ottoman Millet System,Wolof Ceddo Slave Armies,comparator
-Ayutthaya Elephant Bureaucracy,Khmer Water Mandala,comparator
-Ayutthaya Elephant Bureaucracy,Mughal Mansabdari System,comparator
-Ayutthaya Elephant Bureaucracy,Persian Satrapy System,parallel
-Khmer Water Mandala,Lan Xang Million Elephant Kings,comparator
-Lan Xang Million Elephant Kings,Rhodes Naval Oligarchy,contrast
-Hanseatic League,Venetian Republic,comparator
-Dutch Republic States-General,Hanseatic League,contrast
-Rhenish Hanseatic Cities,Venetian Republic,comparator
-Rhenish Hanseatic Cities,Swahili Waungwana Councils,comparator
-Ragusan Aristocratic Republic,Venetian Republic,comparator
-Inca Empire (Tawantinsuyu),Ming Yellow Register Census,comparator
-Ming Yellow Register Census,Ottoman Millet System,comparator
-Ming Yellow Register Census,Qin Legalism,parallel
-Benin Oba Eweka Dynasty,Kongo Mbanza Council,comparator
-Holy Roman Empire,Kongo Mbanza Council,comparator
-Bamum Script Bureaucracy,Cherokee Constitutional Republic,comparator
-Bamum Script Bureaucracy,Egyptian Nomarchies,parallel
-British Parliamentary System,Joseon Confucian Bureaucracy,comparator
-Joseon Confucian Bureaucracy,Tokugawa Shogunate,contrast
-Majapahit Mandala,Malacca Straits Mandala,comparator
-Malacca Straits Mandala,Swahili Waungwana Councils,comparator
-Malacca Straits Mandala,Phoenician Merchant Oligarchies,parallel
-Iroquois Confederacy / Haudenosaunee,Scottish Tacksmen,comparator
-Circassian Xabze Councils,Iroquois Confederacy / Haudenosaunee,comparator
-Circassian Xabze Councils,Swiss Cantonal Democracy,comparator
-Akan Amanhene Gold States,Ashanti Confederacy,comparator
-Akan Amanhene Gold States,Byzantine Theme System,parallel
-Jukun Aku Oracle Kings,Shang Dynasty,comparator
-Jukun Aku Oracle Kings,Olmec,comparator
-Jukun Aku Oracle Kings,Tongan Maritime Empire,contrast
-Iroquois Confederacy / Haudenosaunee,Kiribati Maneaba Councils,comparator
-Greek Democracy,Kiribati Maneaba Councils,comparator
-Kiribati Maneaba Councils,Maldivian Furya Coral Councils,parallel
-Fijian Bati Warrior Guilds,Kiribati Maneaba Councils,contrast
-Tang Fanzhen Clans,Vlax Rom Baro Systems,comparator
-Pomeranian Veleti Tribal Republic,Vlax Rom Baro Systems,parallel
-Akan Amanhene Gold States,Vlax Rom Baro Systems,contrast
-Aztec Triple Alliance,Hanseatic League,comparator
-Aztec Triple Alliance,Iroquois Confederacy / Haudenosaunee,comparator
-Aztec Triple Alliance,Holy Roman Empire,parallel
-Aztec Triple Alliance,Teotihuacan Theocratic Oligarchy,contrast
-Ryukyu Gusuku Trade Kingdom,Venetian Republic,comparator
-Malacca Straits Mandala,Ryukyu Gusuku Trade Kingdom,comparator
-Joseon Confucian Bureaucracy,Ryukyu Gusuku Trade Kingdom,parallel
-Ryukyu Maritime Tributary,Venetian Republic,comparator
-Malacca Straits Mandala,Ryukyu Maritime Tributary,comparator
-Hawaiian Kapu System,Ryukyu Maritime Tributary,parallel
-Joseon Confucian Bureaucracy,Ryukyu Maritime Tributary,contrast
-Inca Empire (Tawantinsuyu),Soviet Republics System,comparator
-Egyptian Nomarchies,Inca Empire (Tawantinsuyu),comparator
-Habsburg Composite Monarchy,Ottoman Millet System,comparator
-Mughal Mansabdari System,Ottoman Millet System,comparator
-Pampas Querandí Nomadism,Sami Reindeer Herding Units,parallel
-Mapuche Parlamento Confederacy,Pampas Querandí Nomadism,contrast
-Breton Parish Closes,Irish Traveller Cant Systems,comparator
-Mongolian Kurultai,Sami Reindeer Herding Units,comparator
-Sami Reindeer Herding Units,Swiss Consensus Democracy,comparator
-Irish Traveller Cant Systems,Sami Reindeer Herding Units,parallel
-Sami Reindeer Herding Units,Tanzanian Ujamaa Villages,contrast
-Egyptian Old Kingdom,Shilluk Divine Kingship,comparator
-Jukun Aku Oracle Kings,Shilluk Divine Kingship,comparator
-Lozi Litunga Flood Kings,Shilluk Divine Kingship,parallel
-Buganda Clan-Based Monarchy,Shilluk Divine Kingship,contrast
-Indian Panchayati Raj,Sinti Musical Guilds,comparator
-Kalderash Gold-Smithing Dynasties,Venetian Arsenal Guilds,comparator
-Ottoman Millet System,Sennar Funj Sultanate,parallel
-Mughal Mansabdari System,Napoleonic Meritocracy,parallel
-British Parliamentary System,Habsburg Composite Monarchy,comparator
-Habsburg Composite Monarchy,Soviet Republics System,parallel
-Cossack Sich Republic,Swiss Cantonal Democracy,comparator
-Cossack Sich Republic,Pirate Articles,comparator
-Cossack Sich Republic,Viking Law Speakers,parallel
-Cossack Sich Republic,Rhodes Naval Oligarchy,contrast
-Iroquois Confederacy / Haudenosaunee,Mapuche Parlamento Confederacy,comparator
-Mapuche Parlamento Confederacy,Swiss Cantonal Democracy,comparator
-Mapuche Parlamento Confederacy,Samoan Matai Talking Chiefs,parallel
-Holy Roman Empire,Polish-Lithuanian Elective Monarchy,comparator
-Hawaiian Kapu System,Powhatan Paramount Chiefdom,comparator
-Manush Circus Kingdoms,Powhatan Paramount Chiefdom,comparator
-Dutch Republic States-General,Swiss Cantonal Democracy,comparator
-Inca Empire (Tawantinsuyu),Luba Bambudye Memory State,comparator
-Celtic Druidic Synods,Luba Bambudye Memory State,comparator
-Luba Bambudye Memory State,Timbuktu Qadi Scholar-Judges,contrast
-Celtic Tribal Assemblies,Tahitian Arioi Society,comparator
-Greek Democracy,Tahitian Arioi Society,parallel
-Haitian Revolutionary Councils,Maroon Palenque Republics,comparator
-Maroon Palenque Republics,Zapatista Caracoles,parallel
-Lunda Ruwej Matrilineacy,Tang Fanzhen Clans,comparator
-Dahomey Mino Amazon State,Lunda Ruwej Matrilineacy,contrast
-Byzantine Theme System,Dahomey Mino Amazon State,comparator
-Dahomey Mino Amazon State,Teutonic Ordensstaat,parallel
-Byzantine Theme System,Kuba Bushong Cloth Kings,comparator
-Inca Empire (Tawantinsuyu),Kuba Bushong Cloth Kings,comparator
-Benin Oba Eweka Dynasty,Kuba Bushong Cloth Kings,parallel
-Kuba Bushong Cloth Kings,Swahili Waungwana Councils,contrast
-Imbangala Kilombo,Ottoman Millet System,parallel
-Imbangala Kilombo,Kongo Mbanza Council,contrast
-Berber Amazigh Councils,Romanichal Wagon Republics,comparator
-Koryak Reindeer-Oracle System,Siberian Yukaghir Moon Calendar,comparator
-Koryak Reindeer-Oracle System,Shang Dynasty,parallel
-Jomon Shellfish Consensus,Ket Yenisei Fish-Taboo Councils,contrast
-Egyptian Old Kingdom,Lozi Litunga Flood Kings,comparator
-Khmer Devaraja,Lozi Litunga Flood Kings,comparator
-Dutch Republic States-General,Lozi Litunga Flood Kings,parallel
-Greek Diarchy,Tokugawa Shogunate,comparator
-Ottoman Millet System,Tokugawa Shogunate,parallel
-Qin Legalism,Tokugawa Shogunate,comparator
-Persian Satrapy System,Tokugawa Shogunate,parallel
-Bermudian Parliamentary Hybrid,Kalmyk Khanate Nomadic Parliament,comparator
-Bermudian Parliamentary Hybrid,Åland Islands Neutrality,parallel
-Kalmyk Khanate Nomadic Parliament,Tibetan Ganden Phodrang,comparator
-Kalmyk Khanate Nomadic Parliament,Kurultai,comparator
-Bhutanese Gross National Happiness,Kalmyk Khanate Nomadic Parliament,parallel
-British Parliamentary System,Qing Lifan Yuan Tributaries,comparator
-Holy Roman Empire,Qing Lifan Yuan Tributaries,comparator
-Habsburg Composite Monarchy,Qing Lifan Yuan Tributaries,parallel
-Qing Lifan Yuan Tributaries,Rhodes Naval Oligarchy,contrast
-Akan Amanhene Gold States,Tibetan Ganden Phodrang,comparator
-Khmer Devaraja,Tibetan Ganden Phodrang,comparator
-Ottoman Millet System,Qing Dynasty Banner System,comparator
-Qing Dynasty Banner System,Soviet Republics System,comparator
-British Parliamentary System,Qing Dynasty Banner System,parallel
-Athenian Democracy,Leveller Agitators,comparator
-Leveller Agitators,Paris Commune,comparator
-Leveller Agitators,Zapatista Caracoles,parallel
-Digger Communes,Zapatista Caracoles,comparator
-Digger Communes,Maroon Communities (Jamaica/Suriname),parallel
-Pirate Articles,Viking Law Speakers,comparator
-Barbuda Communal Land System,Kibbutz Movement,comparator
-Andean Ayllu Systems,Barbuda Communal Land System,comparator
-Barbuda Communal Land System,Scottish Tacksmen,parallel
-British Parliamentary System,Liechtenstein Direct Democracy,contrast
-Blackfoot Confederacy,Iroquois Confederacy / Haudenosaunee,comparator
-Blackfoot Confederacy,Kurultai,comparator
-Blackfoot Confederacy,Sami Noaide Shamanic Bands,parallel
-Aztec Triple Alliance,Blackfoot Confederacy,contrast
-Haida Potlatch Governance,Pacific Potlatch,parallel
-Haida Potlatch Governance,Phoenician Merchant Oligarchies,contrast
-Haida Potlatch Governance,Tlingit Potlatch Confederacy,comparator
-Balinese Negara,Merina Andriana Castes,parallel
-Merina Andriana Castes,Swahili Waungwana Councils,contrast
-Chukchi Whalebone Assemblies,Inuit Qaggiq Assemblies,comparator
-Chukchi Whalebone Assemblies,Koryak Reindeer-Oracle System,comparator
-Chukchi Whalebone Assemblies,Norse Thing System,parallel
-Aleut Unangan Whalebone Chiefs,Chukchi Whalebone Assemblies,contrast
-Igbo Assemblies,Tswana Kgotla,comparator
-Athenian Democracy,Tswana Kgotla,comparator
-Greek Democracy,Tswana Kgotla,contrast
-Balinese Negara,Malagasy Fokonolona,comparator
-Malagasy Fokonolona,Merina Andriana Castes,contrast
-Fante Asafo Companies,Venetian Arsenal Guilds,comparator
-Ashanti Confederacy,Fante Asafo Companies,contrast
-Pacific Potlatch,Vanuatu Nimangki Grade-taking,comparator
-Phoenician Merchant Oligarchies,Vanuatu Nimangki Grade-taking,contrast
-Arctic Nenets Yamal Councils,Inuit Qaggiq Assemblies,comparator
-Arctic Nenets Yamal Councils,Sámi Siida Councils,comparator
-Ashanti Confederacy,Holy Roman Empire,comparator
-Ashanti Confederacy,Iroquois Confederacy / Haudenosaunee,comparator
-Ashanti Confederacy,Holy Roman Imperial Diarchy,parallel
-Iroquois Confederacy / Haudenosaunee,Sikh Misldar Confederacy,comparator
-Cossack Hetmanate,Sikh Misldar Confederacy,comparator
-Sikh Misldar Confederacy,Swiss Cantonal Democracy,parallel
-Liechtenstein Direct Monarchy,Swiss Cantonal Democracy,comparator
-Liechtenstein Direct Monarchy,Venetian Republic,comparator
-Aleut Unangan Whalebone Chiefs,Tlingit Potlatch Confederacy,comparator
-Aleut Unangan Whalebone Chiefs,Haida Potlatch Governance,comparator
-Aleut Unangan Whalebone Chiefs,Norse Thing System,parallel
-Konbaung Hluttaw,Persian Satrapy System,comparator
-Cossack Hetmanate,Metis Buffalo Councils,comparator
-Haitian Revolutionary Councils,Soviet Republics System,comparator
-Haitian Revolutionary Councils,Paris Commune,comparator
-Cuban Revolutionary Committees,Haitian Revolutionary Councils,parallel
-Freetown Settler Democracy,Haitian Revolutionary Councils,comparator
-Freetown Settler Democracy,Maroon Palenque Republics,parallel
-Batavian Republic,Roman Republic,comparator
-Batavian Republic,Swiss Consensus Democracy,contrast
-Joseon Confucian Bureaucracy,Napoleonic Meritocracy,comparator
-Napoleonic Meritocracy,Singaporean Technocracy,parallel
-Cheyenne Council of 44,Iroquois Confederacy / Haudenosaunee,comparator
-Cheyenne Council of 44,Greek Democracy,comparator
-Cheyenne Council of 44,United Nations Security Council,parallel
-Bitcoin Decentralized Governance,Palauan Stone Money Yap,comparator
-Sámi Siida Councils,Yenish Horse-Tribes,comparator
-Romani Kris Councils,Yenish Horse-Tribes,parallel
-Scythian Nomadic Confederacy,Yenish Horse-Tribes,contrast
-Inuit Qaggiq Assemblies,Scottish Traveller Peat Laws,comparator
-Aboriginal Elders Councils,Scottish Traveller Peat Laws,comparator
-Liechtenstein Direct Democracy,Åland Islands Neutrality,comparator
-Norwegian Sovereign Wealth Democracy,Åland Islands Neutrality,contrast
-Sámi Siida Councils,Zanzibar Clove Plantation Councils,comparator
-Venetian Arsenal Guilds,Zanzibar Clove Plantation Councils,comparator
-Hawaiian Kapu System,Zanzibar Clove Plantation Councils,parallel
-Ottoman Millet System,Zulu Impi Regiments,comparator
-Holy Roman Empire,Zulu Impi Regiments,parallel
-Kibbutz Movement,Utopian Socialist Colonies,parallel
-Akan Amanhene Gold States,Utopian Socialist Colonies,contrast
-Cherokee Constitutional Republic,Rwandan Unity Government,comparator
-Cherokee Constitutional Republic,Iroquois Confederacy / Haudenosaunee,comparator
-Cherokee Constitutional Republic,Kalmyk Khanate Nomadic Parliament,parallel
-Hawaiian Kapu System,Maohi Tapu System,comparator
-Maohi Tapu System,Theban Sacred Band Oligarchy,parallel
-Sorbian Serbski Sejm,Welsh Cantrefi,comparator
-Blemmyes Desert Assemblies,Sorbian Serbski Sejm,comparator
-Breton Parish Closes,Sorbian Serbski Sejm,parallel
-Iroquois Confederacy / Haudenosaunee,Swiss Consensus Democracy,comparator
-Athenian Democracy,Swiss Consensus Democracy,comparator
-Indian Panchayati Raj,Manush Circus Kingdoms,comparator
-Paris Commune,Taiping Heavenly Kingdom,comparator
-Taiping Heavenly Kingdom,Zapatista Caracoles,parallel
-Meiji Oligarchy,Taiping Heavenly Kingdom,contrast
-Liechtenstein Direct Democracy,Swiss Cantonal Democracy,comparator
-Athenian Democracy,Liechtenstein Direct Democracy,comparator
-Paris Commune,Soviet Republics System,comparator
-Paris Commune,Rojava Democratic Confederalism,parallel
-Jomsviking Warrior Commune,Paris Commune,parallel
-Bamum Scriptocracy,Cherokee Constitutional Republic,comparator
-Bamum Scriptocracy,Egyptian Nomarchies,parallel
-Bamum Scriptocracy,Tswana Kgotla,contrast
-Genoese Black Sea Colonies,Kibbutz Movement,comparator
-Mongolian Kurultai,Tuvan People's Republic,comparator
-Tibetan Ganden Phodrang,Tuvan People's Republic,comparator
-Kalmyk Khanate Nomadic Parliament,Tuvan People's Republic,parallel
-Hanseatic League,UN Trusteeship Councils,comparator
-Cuban Revolutionary Committees,UN Trusteeship Councils,comparator
-Norwegian Sovereign Wealth Democracy,UN Trusteeship Councils,contrast
-Holy Roman Imperial Diarchy,United Nations Security Council,comparator
-Apartheid Bantustans,Indian Panchayati Raj,contrast
-Swiss Cantonal Democracy,Tokelau Village Atoll Consensus,comparator
-Faroese Sheep Court,Tokelau Village Atoll Consensus,parallel
-Cuban Revolutionary Committees,Soviet Republics System,comparator
-Cuban Revolutionary Committees,Taiwanese Digital Democracy,contrast
-Qin Legalism,Singaporean Technocracy,comparator
-Botswana Tribal Democracy,Norwegian Sovereign Wealth Democracy,comparator
-Ashanti Confederacy,Botswana Tribal Democracy,comparator
-Botswana Tribal Democracy,Pomeranian Veleti Tribal Republic,parallel
-Soviet Republics System,Tanzanian Ujamaa Villages,comparator
-Jomsviking Warrior Commune,Tanzanian Ujamaa Villages,parallel
-Khmer Water Mandala,Tanzanian Ujamaa Villages,contrast
-United Arab Emirates Tribal Technocracy,Venetian Arsenal Guilds,comparator
-Singaporean Technocracy,United Arab Emirates Tribal Technocracy,comparator
-Athenian Democracy,Libyan Jamahiriya,comparator
-Libyan Jamahiriya,Soviet Republics System,comparator
-Barbuda Communal Land System,Libyan Jamahiriya,parallel
-Libyan Jamahiriya,Swiss Consensus Democracy,contrast
-Inuit Qaggiq Assemblies,Nordic Sami Parliaments,comparator
-Nordic Sami Parliaments,Transylvanian Saxon Seats,parallel
-Indian Panchayati Raj,Swiss Cantonal Democracy,comparator
-Indian Panchayati Raj,Iroquois Confederacy / Haudenosaunee,comparator
-European Union Governance,Holy Roman Empire,comparator
-European Union Governance,Swiss Cantonal Democracy,comparator
-European Union Governance,Irish Traveller Cant Systems,parallel
-Iroquois Confederacy / Haudenosaunee,Post-Apartheid Ubuntu Democracy,comparator
-Post-Apartheid Ubuntu Democracy,Rwandan Unity Government,parallel
-Rojava Democratic Confederalism,Zapatista Caracoles,comparator
-Paris Commune,Zapatista Caracoles,comparator
-Rwandan Unity Government,Singaporean Technocracy,comparator
-Pomeranian Veleti Tribal Republic,Rwandan Unity Government,parallel
-Botswana Tribal Democracy,Rwandan Unity Government,contrast
-Rwandan Unity Government,Ubuntu Councils,comparator
-Ubuntu Councils,Zapatista Caracoles,comparator
-Kerala People’s Planning,Rojava Democratic Confederalism,comparator
-Estonian Digital Democracy,Singaporean Technocracy,comparator
-Athenian Democracy,Estonian Digital Democracy,comparator
-Estonian Digital Democracy,Taiwanese Digital Democracy,parallel
-Bhutanese Gross National Happiness,Swiss Cantonal Democracy,comparator
-Bitcoin Decentralized Governance,Phoenician Merchant Oligarchies,comparator
-Bitcoin Decentralized Governance,Swiss Cantonal Democracy,comparator
-Bitcoin Decentralized Governance,Iroquois Confederacy / Haudenosaunee,parallel
-Akan Amanhene Gold States,Bitcoin Decentralized Governance,contrast
-Bolivian Plurinational State,Zapatista Caracoles,comparator
-Bolivian Plurinational State,United Nations Security Council,comparator
-Bolivian Plurinational State,Maroon Communities (Jamaica/Suriname),parallel
-Chilean Constitutional Experiment,Icelandic Crowdsourced Constitution,comparator
-Athenian Democracy,Icelandic Crowdsourced Constitution,comparator
-Swiss Consensus Democracy,Taiwanese Digital Democracy,comparator
-Bitcoin Decentralized Governance,Taiwanese Digital Democracy,contrast
-Celtic Tribal Assemblies,Roman Republic,contrast
-Celtic Tribal Assemblies,Greek Democracy,contrast
-Celtic Tribal Assemblies,Phoenician Merchant Oligarchies,contrast
-Celtic Tribal Assemblies,Celtic Druidic Synods,parallel
-Zomia Highland Communities,Confucian Bureaucracy,contrast
-Zomia Highland Communities,Ming Yellow Register Census,contrast
-Zomia Highland Communities,Khmer Devaraja,contrast
-Zomia Highland Communities,Khmer Water Mandala,contrast
-Zomia Highland Communities,Maroon Communities (Jamaica/Suriname),parallel
-Zomia Highland Communities,San Xaro Networks,parallel
-Zomia Highland Communities,Aboriginal Elders Councils,parallel
-Iroquois Confederacy / Haudenosaunee,British Parliamentary System,contrast
-Iroquois Confederacy / Haudenosaunee,Mississippian Chiefdoms,contrast
+source,target,edge_type,delta_edr
+31,263,comparator,0.0500
+267,66,comparator,0.1000
+56,211,comparator,0.0500
+166,189,comparator,0.0500
+147,30,comparator,0.1000
+93,243,comparator,0.0500
+267,138,comparator,0.0000
+201,271,comparator,0.0000
+49,105,comparator,0.0000
+272,125,comparator,0.0000
+61,41,comparator,0.1500
+326,283,comparator,0.0000
+265,38,comparator,0.0000
+100,66,comparator,0.0000
+2,316,comparator,0.1000
+225,116,comparator,0.0000
+270,59,comparator,0.1500
+208,180,comparator,0.0500
+260,273,comparator,0.0000
+300,149,comparator,0.1000
+8,10,comparator,0.1000
+327,338,comparator,0.0500
+77,204,comparator,0.1000
+167,39,comparator,0.1000
+207,45,comparator,0.0500
+19,299,comparator,0.0500
+326,350,comparator,0.0000
+320,293,comparator,0.1500
+243,294,comparator,0.1000
+2,242,comparator,0.0500
+289,303,comparator,0.0500
+38,240,comparator,0.1500
+275,299,comparator,0.0000
+323,156,comparator,0.0500
+76,302,comparator,0.0500
+35,36,comparator,0.0000
+173,55,comparator,0.0500
+17,48,comparator,0.1000
+351,337,comparator,0.1000
+249,246,comparator,0.0000
+254,333,comparator,0.2000
+4,145,comparator,0.0500
+230,244,comparator,0.1000
+212,264,comparator,0.0500
+45,47,comparator,0.0000
+217,128,comparator,0.0500
+229,184,comparator,0.0500
+44,162,comparator,0.1000
+296,19,comparator,0.1000
+223,107,comparator,0.1000
+60,317,comparator,0.1500
+115,48,comparator,0.1000
+183,182,comparator,0.1500
+269,100,comparator,0.0500
+40,8,comparator,0.0000
+242,338,comparator,0.1000
+59,178,comparator,0.0500
+289,111,comparator,0.0500
+348,332,comparator,0.0500
+147,131,comparator,0.0000
+120,306,comparator,0.1000
+35,68,comparator,0.1000
+337,158,comparator,0.0000
+232,302,comparator,0.1500
+325,163,comparator,0.1000
+189,169,comparator,0.0500
+249,318,comparator,0.0000
+285,46,comparator,0.0000
+1,342,comparator,0.2500
+44,302,comparator,0.0500
+99,129,comparator,0.0000
+31,146,comparator,0.0500
+330,17,comparator,0.0000
+302,228,comparator,0.0000
+35,181,comparator,0.0500
+264,265,comparator,0.0500
+221,159,comparator,0.0500
+351,106,comparator,0.1000
+345,1,comparator,0.0500
+13,129,comparator,0.2000
+30,277,comparator,0.0000
+57,182,comparator,0.2000
+16,54,comparator,0.0000
+347,204,comparator,0.0500
+324,18,comparator,0.0500
+9,43,comparator,0.0500
+47,24,comparator,0.1000
+54,234,comparator,0.1500
+217,17,comparator,0.1500
+260,137,comparator,0.0000
+141,132,comparator,0.0000
+303,204,comparator,0.1000
+186,287,comparator,0.0500
+156,127,comparator,0.0000
+170,209,comparator,0.1000
+328,338,comparator,0.1500
+184,242,comparator,0.1500
+348,50,comparator,0.0500
+66,72,comparator,0.1000
+209,33,comparator,0.1000
+32,35,comparator,0.1000
+303,54,comparator,0.0500
+35,117,comparator,0.1500
+188,290,comparator,0.1000
+211,42,comparator,0.0500
+271,94,comparator,0.0500
+17,89,comparator,0.1000
+20,89,comparator,0.1500
+272,350,comparator,0.1000
+264,287,comparator,0.1000
+105,307,comparator,0.0000
+12,65,comparator,0.0000
+25,336,comparator,0.1000
+61,208,comparator,0.1500
+293,349,comparator,0.0000
+176,38,comparator,0.0500
+202,195,comparator,0.1500
+43,307,comparator,0.0500
+300,36,comparator,0.1000
+266,297,comparator,0.0500
+344,227,comparator,0.0500
+178,199,comparator,0.0500
+221,19,comparator,0.0500
+198,187,comparator,0.0500
+183,192,comparator,0.0000
+263,226,comparator,0.0000
+254,56,comparator,0.1500
+265,109,comparator,0.1500
+317,339,comparator,0.0500
+102,295,comparator,0.0000
+198,211,comparator,0.1000
+260,81,comparator,0.0000
+179,84,comparator,0.1500
+277,302,comparator,0.0500
+273,196,comparator,0.0000
+238,75,comparator,0.0000
+204,181,comparator,0.1000
+64,153,comparator,0.2000
+184,222,comparator,0.1500
+132,260,comparator,0.0000
+264,74,comparator,0.0000
+51,218,comparator,0.2000
+307,83,comparator,0.0000
+73,85,comparator,0.1500
+66,157,comparator,0.1000
+45,314,comparator,0.0500
+322,207,comparator,0.0500
+246,321,comparator,0.0500
+52,209,comparator,0.1000
+216,51,comparator,0.4000
+4,273,comparator,0.0500
+16,21,comparator,0.0500
+53,92,comparator,0.0500
+297,223,comparator,0.0500
+300,26,comparator,0.1500
+128,12,comparator,0.0500
+199,339,comparator,0.1500
+99,236,comparator,0.0500
+253,102,comparator,0.0500
+15,27,comparator,0.0000
+224,336,comparator,0.0500
+332,293,comparator,0.0000
+343,288,comparator,0.2500
+290,282,comparator,0.0000
+97,154,comparator,0.0500
+325,189,comparator,0.1500
+175,273,comparator,0.0000
+142,87,comparator,0.0000
+35,12,comparator,0.1500
+265,194,comparator,0.0500
+70,202,comparator,0.0000
+200,231,comparator,0.0000
+239,163,comparator,0.0000
+169,96,comparator,0.1500
+5,306,comparator,0.0500
+170,111,comparator,0.0500
+216,316,comparator,0.1500
+226,105,comparator,0.1000
+151,255,comparator,0.0000
+203,303,comparator,0.0500
+242,267,comparator,0.1000
+306,251,comparator,0.1000
+74,333,comparator,0.1000
+180,57,comparator,0.1500
+141,221,comparator,0.0000
+8,221,comparator,0.0000
+78,96,comparator,0.0500
+165,26,comparator,0.0000
+352,48,comparator,0.1000
+335,104,comparator,0.0500
+107,147,comparator,0.0000
+158,31,comparator,0.0500
+349,31,comparator,0.0000
+230,75,comparator,0.1000
+159,44,comparator,0.1000
+340,65,comparator,0.1000
+133,84,comparator,0.0000
+149,238,comparator,0.1500
+159,7,comparator,0.1500
+155,231,comparator,0.1500
+335,199,comparator,0.0500
+0,11,comparator,0.0500
+98,55,comparator,0.0500
+311,328,comparator,0.0500
+37,79,comparator,0.0500
+176,330,comparator,0.1500
+179,117,comparator,0.2500
+327,270,comparator,0.0000
+316,307,comparator,0.0500
+71,41,comparator,0.1000
+194,19,comparator,0.2000
+350,255,comparator,0.0000
+167,59,comparator,0.0000
+181,16,comparator,0.0500
+132,188,comparator,0.0000
+50,290,comparator,0.0500
+195,113,comparator,0.2000
+316,127,comparator,0.0500
+188,175,comparator,0.0000
+265,78,comparator,0.1000
+272,324,comparator,0.0000
+168,179,comparator,0.0000
+309,350,comparator,0.1000
+342,158,comparator,0.0500
+238,162,comparator,0.0000
+188,341,comparator,0.1500
+43,100,comparator,0.0500
+12,27,comparator,0.0500
+141,179,comparator,0.0000
+22,352,comparator,0.0500
+263,156,comparator,0.1000
+167,153,comparator,0.1000
+152,112,comparator,0.0000
+157,143,comparator,0.0000
+176,128,comparator,0.0500
+288,2,comparator,0.1000
+8,42,comparator,0.0000
+313,37,comparator,0.2000
+279,166,comparator,0.1000
+349,64,comparator,0.0500
+302,317,comparator,0.0000
+247,162,comparator,0.1500
+79,53,comparator,0.0500
+92,150,comparator,0.0000
+310,23,comparator,0.0500
+196,311,comparator,0.0000
+51,95,comparator,0.0000
+302,141,comparator,0.1000
+291,72,comparator,0.0500
+205,229,comparator,0.1000
+294,347,comparator,0.0500
+176,244,comparator,0.0000
+7,178,comparator,0.0500
+117,315,comparator,0.0500
+1,350,comparator,0.0000
+194,34,comparator,0.0000
+323,295,comparator,0.0500
+177,111,comparator,0.1000
+99,217,comparator,0.1500
+206,240,comparator,0.0500
+322,138,comparator,0.0000
+173,285,comparator,0.0000
+136,275,comparator,0.1500
+242,350,comparator,0.1000
+232,89,comparator,0.0500
+315,14,comparator,0.0500
+73,19,comparator,0.1000
+162,103,comparator,0.0500
+38,236,comparator,0.0500
+132,229,comparator,0.1000
+310,318,comparator,0.0500
+37,330,comparator,0.1000
+323,190,comparator,0.0500
+29,213,comparator,0.0000
+251,290,comparator,0.2000
+56,124,comparator,0.0000
+266,254,comparator,0.2000
+208,30,comparator,0.1500
+35,110,comparator,0.0000
+84,124,comparator,0.1500
+28,337,comparator,0.1500
+304,40,comparator,0.1000
+213,300,comparator,0.1500
+169,275,comparator,0.0000
+95,299,comparator,0.1000
+245,41,comparator,0.1000
+338,334,comparator,0.1500
+291,45,comparator,0.0500
+198,342,comparator,0.0000
+166,311,comparator,0.0000
+84,46,comparator,0.1500
+201,333,comparator,0.1000
+231,264,comparator,0.1000
+256,161,comparator,0.1000
+33,186,comparator,0.1000
+8,313,comparator,0.1000
+123,348,comparator,0.0500
+330,352,comparator,0.0000
+41,112,comparator,0.1000
+270,188,comparator,0.1500
+346,7,comparator,0.3000
+76,164,comparator,0.0500
+264,129,comparator,0.1500
+339,211,comparator,0.1000
+151,326,comparator,0.0000
+289,20,comparator,0.0500
+349,332,comparator,0.0000
+49,98,comparator,0.3000
+263,344,comparator,0.0500
+311,141,comparator,0.0000
+72,226,comparator,0.1000
+162,107,comparator,0.0000
+158,319,comparator,0.1500
+306,280,comparator,0.0000
+255,251,comparator,0.1000
+170,33,comparator,0.0000
+132,196,comparator,0.0000
+120,9,comparator,0.1000
+262,90,comparator,0.0000
+45,237,comparator,0.0000
+289,114,comparator,0.0000
+298,251,comparator,0.0000
+96,232,comparator,0.1000
+209,212,comparator,0.1000
+47,225,comparator,0.0000
+13,75,comparator,0.0500
+43,309,comparator,0.0500
+114,131,comparator,0.1500
+33,32,comparator,0.0000
+284,201,comparator,0.0500
+178,50,comparator,0.1000
+269,319,comparator,0.1000
+5,320,comparator,0.0500
+27,160,comparator,0.1000
+15,79,comparator,0.0500
+280,332,comparator,0.1500
+17,15,comparator,0.1000
+314,146,comparator,0.0500
+259,298,comparator,0.0500
+45,262,comparator,0.0000
+324,253,comparator,0.0500
+80,213,comparator,0.0000
+188,42,comparator,0.0000
+107,340,comparator,0.1000
+175,305,comparator,0.1000
+187,335,comparator,0.0500
+9,279,comparator,0.3000
+285,155,comparator,0.0000
+49,23,comparator,0.0000
+337,187,comparator,0.0000
+128,232,comparator,0.0500
+139,72,comparator,0.0000
+231,29,comparator,0.0000
+218,272,comparator,0.0000
+161,49,comparator,0.0000
+235,197,comparator,0.0500
+231,273,comparator,0.1500
+191,212,comparator,0.2000
+189,4,comparator,0.0000
+186,208,comparator,0.1000
+289,170,comparator,0.1000
+261,72,comparator,0.0000
+194,89,comparator,0.0500
+129,122,comparator,0.1500
+58,78,comparator,0.2000
+168,108,comparator,0.0000
+104,211,comparator,0.0500
+340,333,comparator,0.0000
+347,20,comparator,0.0500
+59,285,comparator,0.0000
+22,115,comparator,0.0500
+166,86,comparator,0.0000
+237,293,comparator,0.1500
+202,145,comparator,0.1000
+211,137,comparator,0.0500
+200,15,comparator,0.1500
+244,231,comparator,0.1000
+128,6,comparator,0.1000
+46,231,comparator,0.1500
+157,344,comparator,0.0500
+296,214,comparator,0.0000
+352,154,comparator,0.0500
+36,233,comparator,0.0500
+152,331,comparator,0.1000
+60,25,comparator,0.0000
+212,35,comparator,0.1000
+275,141,comparator,0.0000
+42,273,comparator,0.0000
+85,239,comparator,0.1000
+274,316,comparator,0.0500
+203,152,comparator,0.0000
+284,203,comparator,0.1000
+186,266,comparator,0.0500
+83,246,comparator,0.0000
+92,71,comparator,0.0500
+138,283,comparator,0.0000
+115,238,comparator,0.1500
+109,277,comparator,0.0000
+11,272,comparator,0.0500
+29,336,comparator,0.0000
+154,136,comparator,0.2000
+77,111,comparator,0.0000
+274,72,comparator,0.1000
+125,252,comparator,0.0500
+134,95,comparator,0.1000
+60,231,comparator,0.1000
+344,274,comparator,0.0500
+194,264,comparator,0.0000
+44,336,comparator,0.0000
+137,98,comparator,0.1000
+271,115,comparator,0.0500
+84,217,comparator,0.1000
+335,143,comparator,0.2500
+262,121,comparator,0.0500
+69,243,comparator,0.1500
+225,144,comparator,0.0000
+88,245,comparator,0.0500
+179,187,comparator,0.2000
+212,12,comparator,0.0500
+123,242,comparator,0.0500
+67,35,comparator,0.0500
+277,13,comparator,0.0500
+262,139,comparator,0.0000
+292,4,comparator,0.3500
+28,169,comparator,0.0500
+197,61,comparator,0.0500
+124,132,comparator,0.0000
+28,189,comparator,0.0000
+104,85,comparator,0.1000
+310,49,comparator,0.0500
+198,100,comparator,0.1500
+77,88,comparator,0.0000
+209,329,comparator,0.2000
+0,207,comparator,0.0500
+103,97,comparator,0.1000
+226,344,comparator,0.0500
+183,281,comparator,0.3000
+39,238,comparator,0.1500
+195,164,comparator,0.1500
+127,283,comparator,0.0000
+60,133,comparator,0.1000
+307,72,comparator,0.0000
+18,120,comparator,0.0500
+204,133,comparator,0.2000
+80,131,comparator,0.1000
+10,282,comparator,0.0000
+345,276,comparator,0.0000
+209,201,comparator,0.0500
+76,165,comparator,0.1000
+308,187,parallel,0.1500
+198,285,parallel,0.1500
+20,16,parallel,0.0500
+344,249,parallel,0.0500
+270,7,parallel,0.0500
+345,138,parallel,0.0500
+228,328,parallel,0.1500
+94,62,parallel,0.0000
+332,225,parallel,0.1500
+334,198,parallel,0.1000
+47,320,parallel,0.0000
+339,281,parallel,0.1000
+10,179,parallel,0.1000
+253,247,parallel,0.3500
+333,77,parallel,0.1000
+18,24,parallel,0.0500
+111,284,parallel,0.0500
+289,203,parallel,0.0000
+57,185,parallel,0.3500
+164,141,parallel,0.0000
+225,106,parallel,0.0000
+63,93,parallel,0.0500
+303,25,parallel,0.2000
+244,60,parallel,0.0000
+63,234,parallel,0.0000
+312,314,parallel,0.0500
+164,168,parallel,0.0000
+54,115,parallel,0.1000
+244,13,parallel,0.0500
+71,271,parallel,0.0500
+194,52,parallel,0.0500
+277,254,parallel,0.0000
+39,26,parallel,0.0500
+211,282,parallel,0.0500
+247,133,parallel,0.0500
+75,231,parallel,0.1000
+244,110,parallel,0.1500
+326,242,parallel,0.1000
+192,233,parallel,0.1000
+115,152,parallel,0.0000
+41,194,parallel,0.0500
+19,122,parallel,0.2000
+85,222,parallel,0.0000
+19,141,parallel,0.0500
+127,242,parallel,0.1000
+13,236,parallel,0.1500
+245,347,parallel,0.0000
+21,183,parallel,0.0000
+172,123,parallel,0.1500
+246,106,parallel,0.0000
+197,287,parallel,0.0500
+19,173,parallel,0.0500
+200,224,parallel,0.0500
+111,92,parallel,0.1000
+105,144,parallel,0.0000
+197,244,parallel,0.1500
+23,309,parallel,0.1000
+113,214,parallel,0.2000
+21,115,parallel,0.0500
+76,136,parallel,0.1000
+25,96,parallel,0.1000
+19,76,parallel,0.0000
+25,112,parallel,0.1500
+2,304,parallel,0.1500
+109,195,parallel,0.0000
+214,281,parallel,0.0000
+176,182,parallel,0.0500
+276,261,parallel,0.0500
+98,168,parallel,0.1000
+205,146,parallel,0.1000
+75,147,parallel,0.0000
+21,197,parallel,0.0500
+263,66,parallel,0.0000
+75,212,parallel,0.0500
+251,350,parallel,0.1000
+81,275,parallel,0.0000
+196,304,parallel,0.1000
+216,237,parallel,0.1000
+333,97,parallel,0.0500
+107,243,parallel,0.1000
+119,47,parallel,0.1000
+43,45,parallel,0.0500
+89,74,parallel,0.0500
+266,294,parallel,0.1000
+195,162,parallel,0.1000
+260,221,parallel,0.0000
+99,186,parallel,0.0000
+120,252,parallel,0.0500
+284,6,parallel,0.1000
+109,217,parallel,0.1000
+28,31,parallel,0.2000
+191,122,parallel,0.2500
+167,260,parallel,0.0000
+317,42,parallel,0.1000
+300,243,parallel,0.0500
+48,67,parallel,0.0500
+86,95,parallel,0.1000
+169,308,parallel,0.0500
+157,140,parallel,0.0000
+287,315,parallel,0.0500
+311,163,parallel,0.1000
+1,253,parallel,0.1500
+196,165,parallel,0.1500
+183,300,parallel,0.1500
+227,250,parallel,0.0500
+17,12,parallel,0.1500
+40,145,parallel,0.1000
+117,74,parallel,0.0000
+345,31,parallel,0.1000
+237,127,parallel,0.0000
+48,69,parallel,0.0000
+254,228,parallel,0.0500
+120,102,parallel,0.0000
+150,35,parallel,0.0500
+235,41,parallel,0.1500
+102,1,parallel,0.1000
+3,252,parallel,0.0500
+113,50,parallel,0.1000
+250,1,parallel,0.0500
+87,299,parallel,0.0000
+130,282,parallel,0.3000
+76,275,parallel,0.0500
+91,236,parallel,0.0500
+315,200,parallel,0.1500
+100,253,parallel,0.0500
+156,225,parallel,0.0000
+228,73,parallel,0.0500
+302,281,parallel,0.0500
+199,211,parallel,0.0500
+54,171,parallel,0.1000
+196,42,parallel,0.0000
+72,158,parallel,0.2000
+108,247,parallel,0.1000
+256,3,parallel,0.0000
+298,332,parallel,0.0500
+15,78,parallel,0.1000
+90,346,parallel,0.0000
+110,128,parallel,0.1000
+342,174,parallel,0.0500
+243,212,parallel,0.0500
+231,214,parallel,0.0000
+189,51,parallel,0.0500
+163,134,parallel,0.1000
+304,348,parallel,0.1000
+187,269,parallel,0.0500
+12,109,parallel,0.1000
+229,179,parallel,0.1000
+79,162,parallel,0.0000
+224,84,parallel,0.0500
+206,89,parallel,0.1000
+122,89,parallel,0.0500
+53,165,parallel,0.1500
+157,72,parallel,0.0000
+148,231,parallel,0.0000
+148,302,parallel,0.0500
+319,276,parallel,0.0000
+292,47,parallel,0.0000
+121,312,parallel,0.0500
+226,324,parallel,0.0000
+67,289,parallel,0.0500
+330,193,parallel,0.1500
+62,181,parallel,0.0500
+95,163,parallel,0.0000
+68,93,parallel,0.1000
+12,264,parallel,0.0000
+101,259,parallel,0.0000
+86,196,parallel,0.0000
+142,222,parallel,0.0000
+220,169,parallel,0.0000
+72,312,parallel,0.0000
+97,147,parallel,0.0500
+42,126,parallel,0.1000
+236,26,parallel,0.2000
+82,332,parallel,0.0500
+158,302,parallel,0.3000
+295,158,parallel,0.1000
+141,202,parallel,0.0000
+324,146,parallel,0.0000
+134,168,parallel,0.0000
+259,351,parallel,0.0500
+247,224,parallel,0.0000
+243,63,parallel,0.0000
+327,98,parallel,0.0500
+186,177,parallel,0.0500
+231,76,parallel,0.1000
+27,217,parallel,0.0500
+119,269,parallel,0.0500
+93,297,parallel,0.0000
+218,258,parallel,0.2000
+47,50,parallel,0.2500
+299,195,parallel,0.1500
+316,3,parallel,0.0500
+87,167,parallel,0.0000
+114,203,parallel,0.0000
+170,235,parallel,0.0500
+69,71,parallel,0.1000
+51,87,parallel,0.1000
+8,59,parallel,0.0000
+288,226,parallel,0.0500
+35,54,parallel,0.1000
+54,183,parallel,0.0500
+19,133,parallel,0.1000
+232,301,parallel,0.0500
+332,252,parallel,0.0000
+29,261,contrast,0.5500
+69,255,contrast,0.9000
+345,32,contrast,0.8500
+228,68,contrast,0.4000
+31,315,contrast,0.5500
+305,131,contrast,0.3500
+88,283,contrast,0.8500
+17,241,contrast,0.8000
+174,79,contrast,0.3500
+131,130,contrast,0.6500
+101,54,contrast,0.7500
+275,197,contrast,0.4000
+166,216,contrast,0.5000
+336,66,contrast,0.4500
+276,245,contrast,0.7500
+328,294,contrast,0.5000
+54,90,contrast,0.9000
+251,111,contrast,0.7500
+76,33,contrast,0.4500
+255,330,contrast,0.8000
+201,157,contrast,0.8500
+132,64,contrast,0.3000
+178,240,contrast,0.5000
+226,99,contrast,0.7000
+302,102,contrast,0.4000
+129,105,contrast,0.8000
+88,274,contrast,0.7500
+267,16,contrast,0.9000
+264,344,contrast,0.6000
+144,315,contrast,0.7000
+118,181,contrast,0.7500
+119,22,contrast,0.7500
+334,225,contrast,0.3500
+68,218,contrast,0.8000
+94,252,contrast,0.7500
+225,181,contrast,0.8500
+238,45,contrast,0.6500
+0,171,contrast,0.7000
+172,88,contrast,0.8500
+28,191,contrast,0.5500
+152,274,contrast,0.7000
+314,289,contrast,0.7500
+349,203,contrast,0.6500
+322,197,contrast,0.8000
+243,346,contrast,0.7500
+78,293,contrast,0.4500
+221,192,contrast,0.4500
+126,61,contrast,0.5500
+209,246,contrast,0.8000
+117,116,contrast,0.6500
+346,266,contrast,0.7500
+163,68,contrast,0.6000
+269,245,contrast,0.6500
+277,161,contrast,0.5500
+317,295,contrast,0.4000
+196,248,contrast,0.4000
+15,121,contrast,0.6500
+206,312,contrast,0.8000
+310,111,contrast,0.9000
+108,306,contrast,0.4000
+40,93,contrast,0.4000
+131,116,contrast,0.6500
+7,149,contrast,0.5000
+281,276,contrast,0.5000
+25,207,contrast,0.6000
+291,62,contrast,0.8500
+318,149,contrast,0.8000
+89,306,contrast,0.7000
+244,288,contrast,0.6000
+286,152,contrast,0.6500
+41,275,contrast,0.3000
+163,69,contrast,0.6000
+27,250,contrast,0.6500
+334,52,contrast,0.3500
+100,129,contrast,0.7000
+24,53,contrast,0.6000
+82,79,contrast,0.5500
+312,170,contrast,0.9000
+314,68,contrast,0.8500
+23,209,contrast,0.8000
+12,43,contrast,0.6000
+259,20,contrast,0.7000
+6,5,contrast,0.8500
+33,241,contrast,0.9000
+100,77,contrast,0.7500
+327,57,contrast,0.6500
+292,111,contrast,0.8500
+123,92,contrast,0.6000
+174,115,contrast,0.5000
+282,32,contrast,0.6000
+170,324,contrast,0.8000
+81,114,contrast,0.4000
+301,123,contrast,0.4500
+339,127,contrast,0.4500
+335,61,contrast,0.6000
+98,75,contrast,0.3500
+72,114,contrast,0.8000
+144,115,contrast,0.8000
+120,61,contrast,0.7500
+9,240,contrast,0.8500
+81,152,contrast,0.4000
+265,0,contrast,0.6000
+196,49,contrast,0.4000
+136,161,contrast,0.5500
+253,133,contrast,0.4000
+284,252,contrast,0.7500
+177,127,contrast,0.7500
+110,268,contrast,0.8000
+181,283,contrast,0.8500
+31,54,contrast,0.7500
+72,77,contrast,0.8500
+134,161,contrast,0.4000
+150,255,contrast,0.7500
+217,306,contrast,0.6500
+335,115,contrast,0.5500
+124,245,contrast,0.4000
+133,350,contrast,0.5500
+157,67,contrast,0.8500
+77,246,contrast,0.8500
+61,242,contrast,0.7500

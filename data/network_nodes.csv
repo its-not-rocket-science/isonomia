@@ -1,0 +1,354 @@
+id,system,edr,L,region
+0,Neanderthal Megafauna Councils,0.8000,0.1500,Eurasia
+1,Denisovan Cave Networks,0.9000,0.1000,"Siberia, Altai Mountains"
+2,Natufian Grain Storage Pacts,0.7500,0.1000,Levant
+3,Jomon Shellfish Consensus,0.8000,0.1000,Japan
+4,Clovis Megafauna Quotas,0.5500,0.4000,N. America
+5,San Xaro Networks,0.9500,0.1000,Southern Africa (Kalahari)
+6,Ainu Bear Ritual Governance,0.1000,0.1000,Japan
+7,Indigenous IPLCs,0.6000,0.4000,Global
+8,Yolngu Aboriginal Kinship,0.5000,0.1000,Australia
+9,Fuegian Canoe Councils,0.9000,0.1500,Tierra del Fuego
+10,Aboriginal Tjurunga Councils,0.6000,0.1000,Australia
+11,Cucuteni-Trypillia Mega-Settlements,0.8500,0.4000,Ukraine/Moldova
+12,Nubian Qustul Sacral Kingship,0.2500,0.4000,Sudan
+13,Sumerian Temple States,0.3000,0.7500,Mesopotamia
+14,Indus Priest-Kings,0.2500,0.5000,Pakistan/India
+15,Egyptian Nomarchies,0.2000,0.7500,Egypt
+16,Xia Dynasty Hydraulic Rule,0.0000,0.4000,China
+17,Minoan Thalassocracy,0.1000,0.5000,Crete
+18,Poverty Point Earthwork League,0.7500,0.4000,USA
+19,Hittite Panku Council,0.4500,0.5500,Anatolia
+20,Hittite Sun Priest-Kings,0.0500,0.4000,Turkey
+21,Mycenaean Wanax System,0.0500,0.7500,Greece
+22,Shang Dynasty Oracle Kings,0.0500,0.4000,China
+23,Vedic Sabha Assemblies,0.9000,0.4000,India
+24,Lapita Voyaging Networks,0.8000,0.4000,Pacific
+25,Olmec Were-Jaguar Cult,0.2500,0.4000,Mesoamerica
+26,Zhou Dynasty Mandate of Heaven,0.3500,0.6500,China
+27,Hallstatt Salt Lords,0.2000,0.4000,Austria
+28,Phoenician Merchant Oligarchies,0.5500,0.7000,Levant
+29,Adena Moundbuilder Councils,0.3500,0.4000,USA
+30,Nok Terracotta Chiefdoms,0.3500,0.4000,Nigeria
+31,Andean Ayllu Systems,0.7500,0.4500,Peru
+32,Assyrian Military Autocracy,0.0000,0.8000,Mesopotamia
+33,Urartian Hydraulic Kings,0.0000,0.4000,Armenia
+34,Phrygian Matar Cult,0.2500,0.4000,Turkey
+35,Etruscan Haruspex Diviners,0.1000,0.5000,Italy
+36,Sabaean Dam Council,0.1000,0.4000,Yemen
+37,Kingdom of Kush,0.2000,0.6000,Sudan
+38,Scythian Kurgan Diarchy,0.2000,0.7000,Ukraine/Kazakhstan
+39,Etruscan Lucumones,0.4000,0.5000,Italy
+40,Lydian Electrum Oligarchy,0.5000,0.4000,Turkey
+41,Persian Satrapy System,0.2000,0.8500,Iran
+42,Roman Republic,0.5000,0.7000,Italy
+43,Athenian Democracy,0.8500,0.5500,Greece
+44,Celtic Druidic Synods,0.3500,0.4000,Western Europe
+45,Roman Collegia Guild Republics,0.9000,0.4000,Italy
+46,Bantu Mfecane Councils,0.5000,0.4000,Central Africa
+47,Proto-Norse Thing Assemblies,0.9000,0.4000,Scandinavia
+48,Zapotec Glyph-Judge System,0.0000,0.4000,Mexico
+49,Berber Amazigh Councils,0.9000,0.4000,North Africa
+50,La Tène Tribal Federations,0.6500,0.4000,Switzerland
+51,Rhodes Naval Oligarchy,0.6000,0.5000,Greece
+52,Syracusan Mathematical Tyrants,0.2000,0.7000,Sicily
+53,Nabatean Water Merchants,0.2000,0.5000,Jordan
+54,Garamantian Foggaras,0.0000,0.4000,Libya
+55,Theban Sacred Band Oligarchy,0.5500,0.7500,Greece
+56,Qi Jixia Academy,0.5000,0.4000,China
+57,Mauryan Arthashastra State,0.0000,0.4000,India
+58,Yuezhi Nomad Diarchy,0.5000,0.5000,Kazakhstan
+59,Sarmatian Female Warbands,0.5000,0.4000,Russia/Kazakhstan
+60,D'mt Beehive Councils,0.2500,0.4000,Eritrea
+61,Bactrian Greek Syncretism,0.0500,0.4000,Afghanistan
+62,Qin Legalism,0.0000,0.9000,China
+63,Han Dynasty Examination Prototype,0.1500,0.4000,China
+64,Hopewell Copper Exchange,0.8000,0.4000,USA
+65,Teotihuacan Theocratic Oligarchy,0.2500,0.5000,Mexico
+66,Mogollon Pit-House Democracies,0.8000,0.4000,USA
+67,Kushan Devaputra,0.0500,0.5000,Afghanistan
+68,Silla Bone-Rank System,0.0000,0.4000,Korea
+69,Moche Sacrificial Hydraulics,0.0000,0.2000,Peru
+70,Moche Ceremonial Brewmasters,0.5000,0.4000,Peru
+71,Champa Linga-Kings,0.1000,0.4000,Vietnam
+72,Blemmyes Desert Assemblies,0.9000,0.4000,Sudan
+73,Khotanese Buddhist Monarchy,0.3500,0.5000,China
+74,Tairona Gold-Shaman Councils,0.2500,0.4000,Colombia
+75,Mayan Ajaw System,0.2500,0.6000,Mesoamerica
+76,Pallava Guild Republics,0.4500,0.4000,India
+77,Pictish Matrilineal Kings,0.0500,0.4000,Scotland
+78,Gupta Golden Age,0.3000,0.5000,India
+79,Ghana Empire Wagadu,0.2500,0.4000,West Africa
+80,Marajoara Amazonian Queens,0.3500,0.4000,Brazil
+81,Visigothic Code Judges,0.5000,0.4000,Spain
+82,Sogdian Merchant-Republics,0.8000,0.4000,Uzbekistan
+83,Frisian Tribal Thing,0.9000,0.2000,Netherlands/Germany
+84,Sogdian Merchant Caravanserais,0.3500,0.4000,Uzbekistan
+85,Dalriada Gaelic Law Schools,0.5000,0.4000,Scotland
+86,Sao Clay Wall Cities,0.5000,0.4000,Chad
+87,Irish Brehon Law,0.5000,0.4000,Ireland
+88,Calusa Shell Mound Kingdom,0.0500,0.4000,USA
+89,Chumash Tomol Canoe Guilds,0.2000,0.4000,California
+90,Sámi Siida Councils,0.9000,0.4000,Scandinavia
+91,Göktürk Orkhon Script Khans,0.2000,0.4000,Mongolia
+92,Wari Tinku Labor System,0.1500,0.4000,Peru
+93,Tang Dynasty Keju,0.1000,0.9000,China
+94,Tang Fanzhen Clans,0.0000,0.4000,China
+95,Khazar Jewish Khaganate,0.6000,0.4000,Russia/Kazakhstan
+96,Srivijayan Mandala,0.3500,0.5000,Indonesia
+97,Byzantine Theme System,0.2000,0.7000,Turkey
+98,Venetian Republic,0.6000,0.7500,Italy
+99,Kanem Duguwa Nomad-Kings,0.1000,0.4000,Chad
+100,Anasazi Kiva Water Councils,0.8000,0.4000,USA
+101,Viking Law Speakers,0.7500,0.3000,Scandinavia
+102,Welsh Cantrefi,0.8000,0.4000,Wales
+103,Orkney Jarl Sea-Kingdoms,0.3000,0.2000,Scotland
+104,Chachapoya Cloud Forest Clans,0.6000,0.4000,Peru
+105,Frisian Sea-Law Republics,0.9000,0.2000,Netherlands
+106,Frisian Moot Hall Democracy,0.9000,0.2000,Netherlands
+107,Taino Cacique Matrilineage,0.2500,0.4000,Cuba
+108,Holy Roman Imperial Diarchy,0.5000,0.5500,Central Europe
+109,Domari Blacksmith Networks,0.3500,0.4000,Middle East
+110,Khmer Devaraja,0.1000,0.8000,Cambodia
+111,Ghana Empire,0.0500,0.4000,West Africa
+112,Pagan Temple-State,0.1000,0.5000,Myanmar
+113,Chola Naval Assemblies,0.5500,0.6000,India
+114,Toltec Warrior-Priest State,0.1000,0.4000,Mexico
+115,Toltec Warrior-Poet State,0.1000,0.4000,Mexico
+116,Pomeranian Veleti Tribal Republic,0.9000,0.4000,Germany/Poland
+117,Volga Bulgar Islamic Merchants,0.2500,0.4000,Russia
+118,Faroe Islands Løgting,0.8000,0.2000,Faroe Islands
+119,Icelandic Commonwealth,0.8000,0.3000,Iceland
+120,Icelandic Althing,0.8000,0.3000,Iceland
+121,Althingi Carbon-Neutral Parliament,0.8500,0.4000,Iceland
+122,Nri Kingdom Pacifist Theocracy,0.2500,0.4000,Nigeria
+123,Manx Tynwald,0.7500,0.4500,Isle of Man
+124,Jomsviking Warrior Commune,0.5000,0.4000,Denmark/Poland
+125,Greenland Norse Althing,0.8000,0.4000,Greenland
+126,Gotlandic Sea-Farmer Althing,0.6000,0.7000,Sweden
+127,Ruthenian Viche,0.9000,0.4000,Ukraine/Belarus
+128,Swahili Waungwana Councils,0.2000,0.4000,Kenya
+129,Nan Madol Coral Kingdoms,0.1000,0.4000,Micronesia
+130,Timucua Waterborne Councils,0.9000,0.4000,USA
+131,Finnish Kalevala Singing Governors,0.2500,0.4000,Finland
+132,Sami Noaide Shamanic Bands,0.5000,0.4000,Scandinavia
+133,Tahitian Arioi Cult Society,0.3500,0.4000,French Polynesia
+134,Siberian Yukaghir Moon Calendar,0.5000,0.4000,Russia
+135,Hawaiian Kapu System,0.0000,0.4000,Hawaii
+136,Hawaiian Ahupuaʻa System,0.3500,0.4000,Hawaii
+137,Fijian Bati Warrior Guilds,0.5000,0.4000,Fiji
+138,Saho-Irob Mountain Democracies,0.9000,0.4000,Eritrea
+139,Yoruba Ogboni Earth Justice,0.9000,0.4000,Nigeria
+140,Igbo Umunna Councils,0.9000,0.7500,Nigeria
+141,Yupik Bladder Festival Rule,0.5000,0.4000,Alaska
+142,Marshallese Stick Chart Navigators,0.5000,0.5000,Marshall Islands
+143,Samoan Matai Talking Chiefs,0.9000,0.4000,Samoa
+144,Nenets Yamal Clan Councils,0.9000,0.4000,Russia
+145,Xingu Tribal Aquatic Law,0.6000,0.4000,Brazil
+146,Faroese Sheep Court,0.8000,0.4000,Faroe Islands
+147,Seljuk Iqta System,0.2500,0.4000,Persia
+148,Almoravid Lamtuna Councils,0.3500,0.5000,Morocco
+149,Cahokia Birdman Dynasty,0.1000,0.4000,USA
+150,Norman Feudal Domesday,0.1500,0.8000,England
+151,Cuman Tribal Federations,0.9000,0.4000,Ukraine
+152,Great Zimbabwe Rain Priests,0.1000,0.4000,Zimbabwe
+153,Frisian Sea-Law Tribunals,0.6000,0.2000,Netherlands
+154,Kanem-Bornu Sufi Knights,0.1500,0.4000,Chad
+155,Mossi Naam Militias,0.5000,0.4000,Burkina Faso
+156,Maldivian Furya Coral Councils,0.9000,0.5000,Maldives
+157,Pueblo Kiva Councils,0.9000,0.4000,USA
+158,Romani Kris Councils,0.7000,0.5000,Europe
+159,Venetian Arsenal Guilds,0.4500,0.7000,Italy
+160,Khmer Water Mandala,0.1000,0.8000,Cambodia
+161,Novgorod Veche Republic,0.9000,0.4000,Russia
+162,Cathar Perfecti Councils,0.2500,0.4000,France
+163,Hanseatic Kontor,0.6000,0.4000,England/Germany
+164,Bavarian Beer Hall Communes,0.5000,0.5000,Germany
+165,Javanese Kabuyutan Councils,0.3500,0.4000,Indonesia
+166,Kven Arctic Trader Networks,0.5000,0.4000,Norway/Finland
+167,Rapa Iti Tūtae Councils,0.5000,0.2000,French Polynesia
+168,Rapa Nui Tangata Manu Trials,0.5000,0.4000,Chile
+169,Rapa Nui Birdman Cult,0.5000,0.4000,Easter Island
+170,Benin Oba Eweka Dynasty,0.0000,0.4000,Nigeria
+171,Benin Oba Divine Kingship,0.1000,0.5500,Nigeria
+172,Evenk Tungus Clan Federations,0.9000,0.5000,Russia
+173,Alpine Pastoral Communes,0.5000,0.4000,Switzerland/Austria
+174,Maluku Sasi Harvest Bans,0.6000,0.5000,Indonesia
+175,Cornish Stannary,0.5000,0.4000,England
+176,Mongolian Kurultai,0.2500,0.4000,Mongolia
+177,Delhi Sultanate Slave Kings,0.1500,0.5000,India
+178,Magna Carta Baronage,0.5500,0.6000,England
+179,Transylvanian Saxon Seats,0.5000,0.4000,Romania
+180,Teutonic Ordensstaat,0.1500,0.6000,Poland
+181,Mali Mansa Rule,0.0500,0.4000,Mali
+182,Golden Horde Yam System,0.2000,0.6000,Russia/Kazakhstan
+183,Lithuanian Pagan Kings,0.0500,0.4000,Lithuania/Ukraine
+184,Rhenish City Leagues,0.6500,0.5000,Germany
+185,Genoese Black Sea Colonies,0.3500,0.7000,Ukraine/Crimea
+186,Yuan Semu Caste System,0.1000,0.4000,China
+187,Andorran Co-Principality,0.7000,0.4000,Andorra
+188,Majapahit Terracotta Bureaucracy,0.5000,0.4000,Indonesia
+189,Venetian Merchant Oligarchy,0.5500,0.7500,Italy
+190,Māori Umu Tī Earth Oven Parleys,0.8000,0.4000,New Zealand
+191,Māori Iwi River Federations,0.0000,0.4000,New Zealand
+192,Buganda Clan-Based Monarchy,0.0500,0.4000,Uganda
+193,Timbuktu Qadi Scholar-Judges,0.2500,0.5000,Mali
+194,Wolof Garmi Anti-Corruption,0.2500,0.4000,Senegal
+195,Wolof Ceddo Slave Armies,0.3500,0.4000,Senegal
+196,Ayutthaya Elephant Bureaucracy,0.5000,0.4000,Thailand
+197,Lan Xang Million Elephant Kings,0.1000,0.4000,Laos
+198,Hanseatic League,0.6500,0.7000,Northern Europe
+199,Rhenish Hanseatic Cities,0.6000,0.6500,Germany
+200,Ragusan Aristocratic Republic,0.3500,0.5000,Croatia
+201,Ming Yellow Register Census,0.0500,0.9000,China
+202,Kongo Mbanza Council,0.5000,0.4000,Angola
+203,Bamum Script Bureaucracy,0.1000,0.7500,Cameroon
+204,Joseon Confucian Bureaucracy,0.1500,0.8000,Korea
+205,Malacca Straits Mandala,0.7000,0.5000,Malaysia
+206,Scottish Tacksmen,0.1000,0.4000,Scotland
+207,Circassian Xabze Councils,0.8500,0.4000,Russia/Georgia
+208,Akan Amanhene Gold States,0.2000,0.4000,Ghana
+209,Jukun Aku Oracle Kings,0.1000,0.2000,Nigeria
+210,Kiribati Maneaba Councils,0.8000,0.2000,Kiribati
+211,Vlax Rom Baro Systems,0.5500,0.4000,Romania
+212,Aztec Triple Alliance,0.2000,0.8500,Mesoamerica
+213,Ryukyu Gusuku Trade Kingdom,0.3500,0.4000,Japan
+214,Ryukyu Maritime Tributary,0.3500,0.4000,Japan
+215,Ottoman Millet System,0.2000,0.8000,Turkey
+216,Pampas Querandí Nomadism,1.0000,0.4000,Argentina
+217,Breton Parish Closes,0.2500,0.2000,France
+218,Sami Reindeer Herding Units,0.8000,0.4000,Scandinavia
+219,Shilluk Divine Kingship,0.2500,0.2000,South Sudan
+220,Sinti Musical Guilds,0.5000,0.4000,Germany
+221,Kalderash Gold-Smithing Dynasties,0.5000,0.4000,Balkans
+222,Sennar Funj Sultanate,0.5000,0.4000,Sudan
+223,Mughal Mansabdari System,0.1500,0.5000,India
+224,Habsburg Composite Monarchy,0.4000,0.6500,Central Europe
+225,Cossack Sich Republic,0.9000,0.7000,Ukraine
+226,Mapuche Parlamento Confederacy,0.8000,0.4000,Chile
+227,Polish-Lithuanian Elective Monarchy,0.8000,0.7000,Poland
+228,Powhatan Paramount Chiefdom,0.4000,0.4000,USA
+229,Dutch Republic States-General,0.6000,0.7500,Netherlands
+230,Luba Bambudye Memory State,0.3500,0.4000,DRC
+231,Tahitian Arioi Society,0.3500,0.4000,French Polynesia
+232,Maroon Palenque Republics,0.2500,0.4000,Colombia
+233,Lunda Ruwej Matrilineacy,0.1500,0.4000,DRC
+234,Dahomey Mino Amazon State,0.1500,0.5500,Benin
+235,Kuba Bushong Cloth Kings,0.0500,0.4000,DRC
+236,Imbangala Kilombo,0.1500,0.4000,Angola
+237,Romanichal Wagon Republics,0.9000,0.4000,UK
+238,Koryak Reindeer-Oracle System,0.2500,0.4000,Russia
+239,Ket Yenisei Fish-Taboo Councils,0.6000,0.2000,Russia
+240,Lozi Litunga Flood Kings,0.0500,0.4000,Zambia
+241,Bermudian Parliamentary Hybrid,0.9000,0.4000,Bermuda
+242,Kalmyk Khanate Nomadic Parliament,0.8000,0.4000,Russia
+243,Qing Lifan Yuan Tributaries,0.1500,0.4000,China
+244,Tibetan Ganden Phodrang,0.2500,0.4000,Tibet
+245,Qing Dynasty Banner System,0.1000,0.8500,China
+246,Leveller Agitators,0.9000,0.4000,England
+247,Digger Communes,0.4000,0.4000,England
+248,Pirate Articles,0.9000,0.4000,Atlantic/Caribbean
+249,Barbuda Communal Land System,0.9000,0.2000,Barbuda
+250,British Parliamentary System,0.8500,0.7500,UK
+251,Blackfoot Confederacy,0.8000,0.4000,USA/Canada
+252,Haida Potlatch Governance,0.7500,0.4000,Canada
+253,Tlingit Potlatch Confederacy,0.7500,0.4000,Canada
+254,Merina Andriana Castes,0.3500,0.4000,Madagascar
+255,Chukchi Whalebone Assemblies,0.9000,0.4000,Russia
+256,Tswana Kgotla,0.8000,0.4000,Botswana
+257,Malagasy Fokonolona,0.9000,0.4000,Madagascar
+258,Fante Asafo Companies,0.6000,0.4000,Ghana
+259,Vanuatu Nimangki Grade-taking,0.7500,0.4000,Vanuatu
+260,Irish Traveller Cant Systems,0.5000,0.4000,Ireland
+261,Arctic Nenets Yamal Councils,0.9000,0.4000,Russia
+262,Sikh Misldar Confederacy,0.9000,0.5000,Punjab
+263,Liechtenstein Direct Monarchy,0.8000,0.4000,Liechtenstein
+264,Moravian Mission Communes,0.2500,0.4000,USA
+265,Aleut Unangan Whalebone Chiefs,0.2000,0.4000,USA
+266,Konbaung Hluttaw,0.1500,0.4000,Myanmar
+267,Metis Buffalo Councils,0.9000,0.5000,Canada
+268,Haitian Revolutionary Councils,0.9000,0.4000,Haiti
+269,Freetown Settler Democracy,0.7500,0.4000,Sierra Leone
+270,Batavian Republic,0.6500,0.5000,Netherlands
+271,Napoleonic Meritocracy,0.0500,0.8000,France
+272,Cheyenne Council of 44,0.8000,0.1500,Great Plains
+273,Palauan Stone Money Yap,0.5000,0.2000,Palau
+274,Yenish Horse-Tribes,0.8000,0.4000,Switzerland
+275,Scottish Traveller Peat Laws,0.5000,0.4000,Scotland
+276,Åland Islands Neutrality,0.8500,0.4000,Finland/Sweden
+277,Zanzibar Clove Plantation Councils,0.3500,0.4000,Tanzania
+278,Zulu Impi Regiments,0.7000,0.4000,Southern Africa
+279,Utopian Socialist Colonies,0.6000,0.4000,USA
+280,Cherokee Constitutional Republic,0.9000,0.5500,USA
+281,Maohi Tapu System,0.3500,0.4000,French Polynesia
+282,Sorbian Serbski Sejm,0.6000,0.6000,Germany
+283,Swiss Consensus Democracy,0.9000,0.6500,Switzerland
+284,Manush Circus Kingdoms,0.0000,0.4000,France
+285,Taiping Heavenly Kingdom,0.5000,0.4000,China
+286,Liechtenstein Direct Democracy,0.7500,0.5500,Liechtenstein
+287,Meiji Oligarchy,0.1500,0.7500,Japan
+288,Paris Commune,0.8500,0.4500,France
+289,Bamum Scriptocracy,0.1000,0.7500,Cameroon
+290,Pavee Road Councils,0.6000,0.4000,Ireland/UK
+291,Kibbutz Movement,0.8500,0.4500,Israel
+292,Weimar Coalition Governance,0.9000,0.7500,Germany
+293,Tuvan People's Republic,0.7500,0.4000,Tuva
+294,Soviet Republics System,0.0500,0.8500,Eurasia
+295,UN Trusteeship Councils,0.8000,0.4000,Global
+296,United Nations Security Council,0.3500,0.4000,Global
+297,Apartheid Bantustans,0.1000,0.4000,South Africa
+298,Tokelau Village Atoll Consensus,0.8000,0.2000,Tokelau
+299,Cuban Revolutionary Committees,0.5000,0.4000,Cuba
+300,Singaporean Technocracy,0.2000,0.8000,Singapore
+301,Botswana Tribal Democracy,0.3000,0.6000,Botswana
+302,Tanzanian Ujamaa Villages,0.4000,0.4000,Tanzania
+303,United Arab Emirates Tribal Technocracy,0.0500,0.7500,UAE
+304,Libyan Jamahiriya,0.6000,0.7500,Libya
+305,Nordic Sami Parliaments,0.6000,0.4000,Scandinavia
+306,Norwegian Sovereign Wealth Democracy,0.9000,0.7500,Norway
+307,Indian Panchayati Raj,0.9000,0.5500,India
+308,European Union Governance,0.5500,0.7000,Europe
+309,Post-Apartheid Ubuntu Democracy,0.8000,0.6000,South Africa
+310,Zapatista Caracoles,0.9500,0.4000,Mexico
+311,Rwandan Unity Government,0.5000,0.5500,Rwanda
+312,Ubuntu Councils,0.9000,0.6000,South Africa
+313,Kerala People’s Planning,0.4000,0.4000,India
+314,Estonian Digital Democracy,0.8500,0.5500,Estonia
+315,Bhutanese Gross National Happiness,0.2000,0.4000,Bhutan
+316,Bitcoin Decentralized Governance,0.8500,0.6000,Digital
+317,Bolivian Plurinational State,0.4000,0.4000,Bolivia
+318,Icelandic Crowdsourced Constitution,0.9000,0.4000,Iceland
+319,Rojava Democratic Confederalism,0.8500,0.7500,Syria
+320,Taiwanese Digital Democracy,0.9000,0.4000,Taiwan
+321,Chilean Constitutional Experiment,0.8500,0.4000,Chile
+322,Natufian Communities,0.9000,0.1000,Levant
+323,Göbekli Tepe (ritual complex),0.8500,0.1000,Southeast Anatolia
+324,Pre-Pottery Neolithic A (PPNA),0.8000,0.2500,Levant/Anatolia
+325,Pre-Pottery Neolithic B (PPNB),0.7000,0.3500,Levant/Anatolia
+326,Çatalhöyük,0.9000,0.3000,Anatolia
+327,Ubaid Culture,0.6500,0.5000,Mesopotamia
+328,Early Uruk,0.5500,0.7000,Mesopotamia
+329,Late Uruk / Early Dynastic,0.3000,0.8500,Mesopotamia
+330,Egyptian Old Kingdom,0.1000,0.7500,Egypt
+331,Egyptian Middle Kingdom,0.2000,0.8000,Egypt
+332,Mohenjo-daro / Indus Valley Civilisation,0.7500,0.6000,South Asia
+333,Shang Dynasty,0.1500,0.6500,China
+334,Taosi,0.5500,0.5000,Northern China
+335,Vedic Jana/Gana Sanghas,0.6500,0.4000,North India
+336,Olmec,0.3500,0.5000,Gulf Coast Mexico
+337,Celtic Tribal Assemblies,0.7000,0.3000,Northwestern Europe
+338,Scythian Nomadic Confederacy,0.7000,0.2000,Eurasian Steppe
+339,Minoan Crete,0.4500,0.7000,Aegean
+340,Mauryan Empire,0.1500,0.8500,South Asia
+341,Classic Maya City-States,0.3500,0.6000,Mesoamerica
+342,Teotihuacan,0.6500,0.6500,Mesoamerica
+343,Tlaxcala Republic,0.6000,0.5500,Mesoamerica
+344,Iroquois Confederacy / Haudenosaunee,0.8500,0.3500,Northeast North America
+345,Highland New Guinea Big Man System,0.8500,0.2000,Papua New Guinea
+346,Zomia Highland Communities,0.9000,0.0500,Highland Southeast Asia
+347,Inca Empire (Tawantinsuyu),0.1000,0.9000,Andean South America
+348,Balinese Negara,0.7000,0.2000,Bali
+349,Norse Thing System,0.7500,0.3000,Scandinavia
+350,Tiv Segmentary Lineage System,0.9000,0.2000,Nigeria
+351,Maroon Communities (Jamaica/Suriname),0.8000,0.3000,Caribbean
+352,Tang Dynasty,0.1000,0.9000,China
