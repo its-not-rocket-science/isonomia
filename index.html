@@ -14,6 +14,7 @@
 <meta property="og:image"        content="https://its-not-rocket-science.github.io/isonomia/social_preview.png">
 <meta property="og:image:width"  content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt"    content="Isonomia phase-space scatter: 401 governance systems coloured by quadrant, with key statistical results">
 <meta property="og:site_name"    content="Isonomia">
 
 <!-- Twitter / X -->
@@ -189,14 +190,36 @@ footer a:hover{text-decoration:underline}
 #succ-panels-full{display:grid;grid-template-columns:1fr;gap:1.2rem}
 .succ-view-btn-wrap{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
 @media(max-width:800px){#succ-panels{grid-template-columns:1fr}}
+
+/* ── Hamburger nav ─────────────────────────────────────── */
+.nav-burger{display:none;flex-direction:column;justify-content:space-between;width:26px;height:19px;background:none;border:none;cursor:pointer;padding:0;margin-left:auto}
+.nav-burger span{display:block;height:2px;background:var(--amber);border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-burger.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+@media(max-width:700px){
+  nav{flex-wrap:wrap;padding:.65rem 1.1rem;gap:.6rem}
+  .nav-burger{display:flex}
+  #nav-links{display:none;flex-direction:column;width:100%;gap:0;background:rgba(13,27,42,.97);border-top:1px solid var(--rule);margin:0 -1.1rem;padding:.5rem 1.1rem .8rem}
+  #nav-links.open{display:flex}
+  #nav-links li a{padding:.45rem 0;font-size:.85rem;display:block;border-bottom:1px solid rgba(255,255,255,.04)}
+  #nav-links li:last-child a{border-bottom:none}
+}
+
+/* ── Tooltip mobile fade ─────────────────────────── */
+#tt{transition:opacity .35s}
+#tt.fading{opacity:0;pointer-events:none}
 </style>
 </head>
 <body>
 <div id="tt"><div class="tt-name"></div><div class="tt-vals"></div></div>
 
-<nav>
+<nav id="main-nav">
   <a href="#hero" class="wm">isonomia</a>
-  <ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-links">
     <li><a href="#origin">Origin</a></li>
     <li><a href="#framework">Framework</a></li>
     <li><a href="#explorer">Explorer</a></li>
@@ -1054,12 +1077,24 @@ const TNAME = {
 // ── Tooltip ─────────────────────────────────────────────────────────────
 const tt = document.getElementById('tt');
 let ttTimer;
+let ttFadeTimer = null;
+const isTouchDevice = () => window.matchMedia('(hover:none)').matches;
 function showTT(e, name, vals) {
   clearTimeout(ttTimer);
+  clearTimeout(ttFadeTimer);
+  tt.classList.remove('fading');
   tt.querySelector('.tt-name').textContent = name;
   tt.querySelector('.tt-vals').innerHTML = vals;
   tt.style.display = 'block';
+  tt.style.opacity = '1';
   moveTT(e);
+  // On touch devices auto-fade after 3.5s
+  if (isTouchDevice()) {
+    ttFadeTimer = setTimeout(() => {
+      tt.classList.add('fading');
+      ttTimer = setTimeout(() => { tt.style.display='none'; tt.classList.remove('fading'); }, 400);
+    }, 3500);
+  }
 }
 function moveTT(e) {
   const x = e.clientX + 14, y = e.clientY - 10;
@@ -2817,6 +2852,40 @@ document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
   });
 
   buildScatter('vdem');
+})();
+
+// ── Hamburger nav toggle ──────────────────────────────────────────────────
+(function(){
+  const burger = document.getElementById('nav-burger');
+  const links  = document.getElementById('nav-links');
+  if (!burger || !links) return;
+  burger.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  // Close on link click (mobile UX)
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// ── Clear tooltip when chart scrolls out of view ─────────────────────────
+(function(){
+  const chartObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        clearTimeout(ttTimer);
+        clearTimeout(typeof ttFadeTimer !== 'undefined' ? ttFadeTimer : null);
+        if (tt) { tt.style.display = 'none'; tt.classList.remove('fading'); }
+      }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.chart-box').forEach(el => chartObs.observe(el));
 })();
 
 
