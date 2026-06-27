@@ -145,6 +145,11 @@ def plot_geo_schismogenesis(geo):
 
     c_q  = quartile_means(c_sorted,  n_q)
     co_q = quartile_means(co_sorted, n_q)
+    
+    # guard before indexing into c_q and co_q
+    if not c_q or not co_q:
+        print("  No geographic contrast data — skipping plot")
+        return
 
     x_c  = [q[0] for q in c_q];  y_c  = [q[1] for q in c_q]
     x_co = [q[0] for q in co_q]; y_co = [q[1] for q in co_q]
@@ -255,7 +260,8 @@ def compute_decay(G, nodes, hc, max_degree=4):
                 try:
                     br, _ = stats.pearsonr([own[i] for i in idx], [nbr[i] for i in idx])
                     boots.append(br)
-                except: pass
+                except ValueError:
+                    pass
             ci = np.percentile(boots, [2.5, 97.5])
             results[degree] = {'r': r_val, 'p': p_val, 'n': len(own),
                                 'ci_lo': ci[0], 'ci_hi': ci[1]}
@@ -263,6 +269,10 @@ def compute_decay(G, nodes, hc, max_degree=4):
 
 
 def plot_contagion_decay(G, nodes, edges_raw):
+    if G.number_of_edges() == 0:
+        print("  No graph edges — skipping contagion decay plot")
+        return
+    
     hc = [n for n in G.nodes if n in nodes and nodes[n]['conf'] >= 2]
 
     # Full graph decay
