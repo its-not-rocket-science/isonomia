@@ -127,6 +127,20 @@ work.
 
 ### 2.1 Structure and scale
 
+Three distinct types of distance appear in this paper and should not be
+conflated:
+
+- **EDR distance** (|ΔEDR|): the absolute difference in EDR composite between
+  two governance systems, measured on the 0–1 scale.
+- **Network distance**: the shortest-path length between two nodes in the
+  citation network, measured in hops (degree-1 through degree-4). This is the
+  sense used in "degree-4 sign reversal": four citation hops, not four units
+  of EDR difference.
+- **Geographic distance**: physical proximity between governance systems.
+  Section 2.3 below establishes that geographic distance does not predict
+  citation network structure, confirming that the network's organisation is
+  ideational rather than spatial.
+
 The citation network contains 353 governance systems (nodes) and 773 citation
 relationships (edges). Edges are typed by the character of the citation:
 comparator edges (n = 449) indicate structural similarity — the cited system is
@@ -401,10 +415,17 @@ targets:
 
 ### 5.1 Sweep results and calibration
 
-Best-fit parameters: α = 0.20, β = 0.003, γ = 0.006, loss = 0.553 across
-20 replicates. Panel C of Figure 1 shows the loss landscape as a function of
-α and γ (at best β = 0.003): loss decreases monotonically as α decreases from
-0.30 to 0.20, with the minimum at the lower boundary of the swept range.
+Best-fit parameters: α = 0.30, β = 0.003, γ = 0.012, loss = 0.553 across
+20 replicates. Panel A of Figure 1 shows the loss landscape as a function of
+α and γ (at best β = 0.003): loss decreases as α increases toward 0.30, with
+the minimum at the upper boundary of the swept range (α = 0.10–0.30). This
+suggests the optimal α may lie above 0.30; we did not extend the sweep beyond
+this boundary because the theoretical motivation for a contrast threshold above
+0.30 is weak — a governance system with |ΔEDR| < 0.30 from a potential
+contrast partner has less than 30 percentage points difference in freedom
+profile, which is a plausible lower bound for the kind of governance opposition
+that historically motivates explicit contrast citation. Extending the sweep to
+α = 0.40 is identified as a robustness check for future work.
 
 **The sign reversal is reproduced at the correct position.** All 60 parameter
 combinations in the sweep produce positive r_d3 and negative r_d4 — not by
